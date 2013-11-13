@@ -1,0 +1,308 @@
+body {
+	margin: 0;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+        font-family: "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+#front {
+}
+
+#back {
+	position: absolute;
+	display: none;
+	background: url(Images/Back.png) no-repeat;
+	width: 320px;
+	height: 160px;
+	
+	text-align: center;
+	font-size: 10pt;
+	color: #ccc;
+	
+	cursor: default;
+	
+	-khtml-user-select: none;
+}
+
+#top {}
+
+#top-left {
+	background: url(Images/Calc_01.png) no-repeat;	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 29px;
+	height: 36px;
+}
+
+#top-middle {
+	background: url(Images/Calc_02.png) repeat-x;	
+	position: absolute;
+	top: 0px;
+	left: 29px;
+	right: 34px;
+	height: 36px;
+}
+
+#top-right {
+	background: url(Images/Calc_03.png) no-repeat;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 34px;
+	height: 36px;
+}
+
+#middle {
+	position: absolute;
+	top:36px;
+	left:0px;
+	right:0px;
+	bottom:85px;
+}
+
+#middle-left {
+	background: url(Images/Calc_04.png) repeat-y;	
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 29px;
+}
+
+#middle-middle {
+	background: url(Images/Calc_05.png) repeat;		
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 29px;
+	right: 34px;
+}
+
+#middle-right {
+	background: url(Images/Calc_06.png) repeat-y;		
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	width: 34px;
+}
+
+#bottom {
+	position: absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	height:85px;	
+}
+
+#bottom-left {
+	background: url(Images/Calc_07.png) no-repeat;		
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 29px;
+	height: 85px;
+}
+
+#bottom-middle {
+	background: url(Images/Calc_08.png) repeat-x;	
+	position: absolute;
+	left: 29px;
+	right: 34px;
+	bottom: 0px;
+	height: 85px;
+}
+
+#bottom-right {
+	background: url(Images/Calc_09.png) no-repeat;	
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width: 34px;
+	height: 85px;
+}
+
+
+/*
+	Controls
+*/
+
+#info-button {
+	position: absolute;
+	right: 18px;
+	top: 9px;
+	width: 13px;
+	height: 13px;
+}
+
+#info-options {
+	position: relative;
+	top: 47px;
+	text-align: center;
+}
+
+#info-content {
+	position: absolute;
+	left: 22px;
+	bottom: 28px;
+	text-align: left;
+}
+
+#done-button {
+	position: absolute;
+	right: 26px;
+	bottom: 29px;
+}
+
+.link {
+	color: #ccc;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+#scrollArea {
+	position: absolute;
+	left: 20px;
+	top: 25px;
+	bottom: 72px;
+	right: 24px;
+	overflow: hidden;
+	display: block;
+	
+	/*background-color: #d9d9d9;*/
+}
+
+#resize {
+	position:absolute;
+	bottom: 22px;
+	right: 20px;
+	-apple-dashboard-region: dashboard-region(control rectangle);
+}
+
+#scrollBar {
+	position: absolute;
+	top: 27px;
+	bottom: 73px;
+	right: 22px;
+	width: 19px;
+	display: block;
+}
+
+#editIcon {
+	position: absolute;
+	left: 25px;
+	bottom: 27px;
+	border: 0;
+}
+	
+#editArea {
+	position: absolute;
+	left: 19px;
+	right: 22px;
+	bottom: 41px;
+	height: 22px;
+}
+
+#edit {
+	font-size: 12pt;
+	height: 100%;
+	width: 100%;
+}
+
+#menu {
+	position: absolute;
+	left: 26px;
+	bottom: 21px;
+}
+
+#menu .button {
+	font-size: 8pt;
+	border: 0;
+	padding: 0;
+	margin-right: 7px;
+	color: #ccc;
+}
+
+#menu .button:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+/*
+	Output (history) display
+*/
+
+#output {
+	-khtml-user-select:text;
+	-apple-dashboard-region: dashboard-region(control rectangle);
+        bottom: 0px;
+        position: absolute;
+        max-height: 100%;
+	color: #000;
+}
+
+.even {
+	/*background-color: #ced1d5;*/
+	padding: 2px 22px 3px 10px;
+}
+
+.odd {
+	/*background-color: #d9d9d9;*/
+	padding: 2px 22px 3px 10px;
+}
+
+.input {
+	font-size: 10pt;
+	color: #444;
+}
+
+.error {
+	font-size: 10pt;
+	padding-left: 24px;
+	color: #c33;
+}
+
+.answer {
+	font-size: 11pt;
+	padding-left: 24px;
+}
+
+.help {
+	font-size: 10pt;
+	padding: 4px 22px 5px 10px;
+}
+
+.helpHeader {
+	padding-top: 1em;
+	font-weight: bold;
+}
+
+.help ul {
+	padding-left: 2em;
+	margin: 0;
+}
+
+.help table {
+	font-size: 10pt;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.help td {
+	padding-right: 1em;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.memory {
+	padding-left: 20px;
+	text-indent: -20px;
+}
+

@@ -1,0 +1,86 @@
+<html>
+<head>
+	<title>Calculate</title>
+	<style type="text/css">
+		@import "Calc.css";
+	</style>
+
+	<script type='text/javascript' src='CalculateWidget.js'></script>
+</head>
+
+<body onload="CalcWidget.UI.onLoad();">
+	
+	<div id="front">
+	
+		<div id="top">
+			<div id="top-left"></div>
+			<div id="top-middle"></div>
+			<div id="top-right"></div>
+		</div>
+
+		<div id="middle">
+			<div id="middle-left"></div>
+			<div id="middle-middle"></div>
+			<div id="middle-right"></div>	
+		</div>
+
+		<div id="bottom">
+			<div id="bottom-left"></div>
+			<div id="bottom-middle"></div>
+			<div id="bottom-right"></div>		
+		</div>
+		
+		<div id="info-button"></div>
+		
+		<div id="scrollArea">
+			<div id="output"></div>
+		</div>
+		
+		<div id='scrollBar'></div>
+		
+		<img id='resize' src='resize.png' alt=""
+			onmousedown='CalcWidget.UI.resizeStart(event);'/>
+		
+		<!--<img id='editIcon' src='edit-icon.png' />-->
+		
+		<div id="editArea">
+			<input id="edit" type="text" 
+				onkeypress="CalcWidget.UI.keyPress(event);"
+				onkeydown="CalcWidget.UI.keyDown(event);"
+				/>
+		</div>
+		
+		<div id="menu">
+			<span class="button" onclick='CalcWidget.UI.clearOutput();' 
+				title="Clear Output Window &#x2318;K">C</span>
+			<span class="button" onclick='CalcWidget.UI.showMemory();' 
+				title="Show Memory &#x2318;M">M</span>
+			<!--<span class="button" onclick='CalcWidget.UI.clearMemory();'>Clear Memory</span>-->
+			<span class="button" onclick='CalcWidget.UI.showHelp();' 
+				title="Help">?</span>
+		</div>
+	</div>
+	<div id="back">
+		<div id="info-options">
+		<select id="anglemode" onchange="CalcWidget.UI.setAngleMode(this.value);">
+			<option value="0">Radians</option>
+			<option value="1">Degrees</option>
+		</select>
+		<!--<br />
+		<input type="radio" name="autocompletion" id="autocompletion" value="1" 
+			onclick='CalcWidget.UI.setAutocompletion(this.checked);'
+			checked="checked" /><label for="autocompletion">Auto-completion</label><br />
+		<input type="radio" name="autocompletion" id="tabcompletion" value="0" 
+			onclick='CalcWidget.UI.setAutocompletion(!this.checked);'><label 
+			for="tabcompletion">Tab completion</label>
+		-->
+		</div>
+		<div id="info-content">
+		Calculate 1.2.0<br />
+		<div class="link" onclick="widget.openURL('http://www.brackeen.com/calculate/?version=1.2.0');">Check for new version</div>
+		</div>
+		<div id="done-button"></div>
+	</div>
+</body>
+
+</html>

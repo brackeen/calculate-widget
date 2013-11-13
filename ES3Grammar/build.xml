@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<project name="ES3Grammar" default="build" basedir=".">
+
+    <target name="init">
+        <mkdir dir="build" />
+        <condition property="do.build">
+            <or>
+                <not><available file="build/ECMAScript3Lexer.js" /></not>
+                <not><available file="build/ECMAScript3Parser.js" /></not>
+                <not><available file="build/ECMAScript3Walker.js" /></not>
+                <uptodate srcfile="build/ECMAScript3Lexer.js" targetfile="res/ECMAScript3.g" />
+                <uptodate srcfile="build/ECMAScript3Parser.js" targetfile="res/ECMAScript3.g" />
+                <uptodate srcfile="build/ECMAScript3Walker.js" targetfile="res/ECMAScript3Walker.g" />
+            </or>
+        </condition>
+    </target>
+
+    <target name="build" depends="init" if="do.build"
+        description="Generate ECMAScript3Lexer.js, ECMAScript3Parser.js, and ECMAScript3Walker.js">
+        <java classpath="lib/antlr-3.1.2.jar" classname="org.antlr.Tool" failonerror="true">
+            <arg value="res/ECMAScript3.g" />
+            <arg line="-fo build" />
+        </java>
+        <java classpath="lib/antlr-3.1.2.jar" classname="org.antlr.Tool" failonerror="true">
+            <arg value="res/ECMAScript3Walker.g" />
+            <arg line="-fo build" />
+        </java>
+        <!--
+            HACK HACK HACK!
+            ANTLR for JS inserts illegal code that should be commented out.
+            Convert this:
+                set89=input.LT(1);
+                set89=this.input.LT(1);
+            to this:
+                set89=null;
+                set89=this.input.LT(1);
+
+        -->
+        <replace file="build/ECMAScript3Parser.js" token="=input.LT(1);" value="=null;"/>
+    </target>
+
+    <target name="test" depends="build" description="Test JS Parser/Emitter">
+        <java
+            classpath="test/lib/js.jar:test/lib/commons-io-1.4.jar"
+            classname="org.mozilla.javascript.tools.shell.Main"
+            failonerror="true">
+            <arg line="-opt 9" />
+            <arg line="-f test/src/init.js" />
+            <arg line="-f test/src/antlr3-all.js" />
+            <arg line="-f test/src/antlr3-cli.js" />
+            <arg line="-f build/ECMAScript3Lexer.js" />
+            <arg line="-f build/ECMAScript3Parser.js" />
+            <arg line="-f build/ECMAScript3Walker.js" />
+            <arg line="-f src/ECMAScript3Emitter.js" />
+            <arg value="test/src/test.js" />
+        </java>
+    </target>
+
+</project>
+

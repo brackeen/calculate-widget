@@ -1,0 +1,4 @@
+build/
+gen/
+nbproject/private/
+.DS_Store

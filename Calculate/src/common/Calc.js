@@ -12,7 +12,7 @@ CalcWidget.evaluate = function(_expression, _answer, _convert) {
     // Global constants and functions
     // Reset each time so they can't be permanantly overridden
     var _pseudoGlobals = { };
-    _pseudoGlobals.answer = _answer;
+    _pseudoGlobals["ans"] = _answer;
     try {
         // Unicode pi character (may not work on all JavaScript implementations)
         _pseudoGlobals["\u03c0"] = Math.PI;

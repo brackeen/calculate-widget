@@ -39,17 +39,19 @@ CalcWidget.UI = (function() {
         '<div class="answer">1.618033988749895</div>' +
         '<div class="input">r=1/2</div>' +
         '<div class="answer">0.5</div>' +
-        '<div class="input">2*' + (isUnicode()?"&#960;":"pi") + '*r</div>' +
+        '<div class="input">2*pi*r</div>' +
         '<div class="answer">3.141592653589793</div>' +
-        '<div class="input">cos(answer)</div>' +
+        '<div class="input">cos(ans)</div>' +
         '<div class="answer">-1</div>' +
         '<div class="input">sqr = function(x) { return x*x }</div>' +
         '<div class="answer">Function defined</div>' +
         '<div class="input">sqr(3)</div>' +
         '<div class="answer">9</div>' +
 
+        '<div class="helpHeader">Previous answer</div>' +
+        "ans" +
+        
         '<div class="helpHeader">Constants</div>' +
-        (isUnicode()?"&#960;, ":"") +
         "pi, e" +
 
         '<div class="helpHeader">Basic functions</div>' +
@@ -69,7 +71,7 @@ CalcWidget.UI = (function() {
         '<div class="helpHeader">More info</div>' +
         '<ul>' +
         '<li>Typing an operator (+, -, *, /, %) on an empty line automatically inserts ' +
-        '"answer" before it. So typing "+1" expands to "answer+1".</li>' +
+        '"ans" before it. So typing "+1" expands to "ans+1".</li>' +
         '<li>Click the <b>C</b> button to clear the output window.</li>' +
         '<li>Click the <b>M</b> button to view the list of all constants, ' +
             'variables, and functions.</li>' +
@@ -276,10 +278,9 @@ CalcWidget.UI = (function() {
         showMemory: function() {
             var userVars = CalcWidget.Calc.getUserVars();
             var html =
-                (isUnicode() ? '<div class="memory"><b>&#960;</b> = ' + Math.PI + "</div>" : '') +
                 '<div class="memory"><b>pi</b> = ' + Math.PI + "</div>" +
                 '<div class="memory"><b>e</b> = ' + Math.E + "</div>" +
-                '<div class="memory"><b>answer</b> = ' + CalcWidget.Calc.getLastAnswer() + "</div>";
+                '<div class="memory"><b>ans</b> = ' + CalcWidget.Calc.getLastAnswer() + "</div>";
 
             for (var i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
@@ -378,7 +379,7 @@ CalcWidget.UI = (function() {
             // First key handling
             else if (firstKey && edit.value === "" &&
                 (ch === '+' || ch === '-' || ch === "*" || ch === "/" || ch === "%" || ch === "&" || ch === "|" || ch === "^")) {
-                edit.value = "answer" + ch;
+                edit.value = "ans" + ch;
                 edit.selectionStart = edit.value.length;
                 firstKey = false;
             }
@@ -517,7 +518,7 @@ CalcWidget.UI = (function() {
                     possibleCompletions.push(i);
                 }
             }
-            possibleCompletions.push("answer");
+            possibleCompletions.push("ans");
 
             // Find completions for this word
             var word = text.substr(wordStart);

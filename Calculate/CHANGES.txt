@@ -1,4 +1,5 @@
 Version 1.2
+- The previous answer is now "ans" (instead of "answer").
 - Minor display changes
 - Minor bug fixes
 

@@ -209,6 +209,10 @@ CalcWidget.UI = (function() {
                 }
                 event.stopPropagation();
             };
+            
+            window.onfocus = function() {
+                edit.focus();
+            };
         },
 
         showBack: function() {

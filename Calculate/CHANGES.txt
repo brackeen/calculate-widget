@@ -1,4 +1,7 @@
 Version 1.2
+- Fixed floating-point precision for simple addition, subtraction, and 
+  multiplication. For example, "0.1+0.2" is now "0.3" instead of 
+  "0.30000000000000004".
 - The previous answer is now "ans" (instead of "answer").
 - Minor display changes
 - Minor bug fixes

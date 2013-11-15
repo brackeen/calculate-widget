@@ -511,9 +511,6 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         case ECMAScript3ExtParser.NEQ:
         case ECMAScript3ExtParser.SAME:
         case ECMAScript3ExtParser.NSAME:
-        case ECMAScript3ExtParser.ADD:
-        case ECMAScript3ExtParser.SUB:
-        case ECMAScript3ExtParser.MUL:
         case ECMAScript3ExtParser.MOD:
         case ECMAScript3ExtParser.SHL:
         case ECMAScript3ExtParser.SHR:
@@ -523,9 +520,6 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         case ECMAScript3ExtParser.LAND:
         case ECMAScript3ExtParser.LOR:
         case ECMAScript3ExtParser.ASSIGN:
-        case ECMAScript3ExtParser.ADDASS:
-        case ECMAScript3ExtParser.SUBASS:
-        case ECMAScript3ExtParser.MULASS:
         case ECMAScript3ExtParser.MODASS:
         case ECMAScript3ExtParser.SHLASS:
         case ECMAScript3ExtParser.SHRASS:
@@ -536,6 +530,60 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         case ECMAScript3ExtParser.DIVASS:
             requiredChildren = 2;
             this.printBinaryOperator(node);
+            break;
+            
+        case ECMAScript3ExtParser.ADD:
+            requiredChildren = 2;
+            this.out.print("Math.add(");
+            this.print(child1);
+            this.out.print(",");
+            this.print(child2);
+            this.out.print(")");
+            break;
+        
+        case ECMAScript3ExtParser.ADDASS:
+            requiredChildren = 2;
+            this.out.print(" = Math.add(");
+            this.print(child1);
+            this.out.print(",");
+            this.print(child2);
+            this.out.print(")");
+            break;
+            
+        case ECMAScript3ExtParser.SUB:
+            requiredChildren = 2;
+            this.out.print("Math.sub(");
+            this.print(child1);
+            this.out.print(",");
+            this.print(child2);
+            this.out.print(")");
+            break;
+        
+        case ECMAScript3ExtParser.SUBASS:
+            requiredChildren = 2;
+            this.out.print(" = Math.sub(");
+            this.print(child1);
+            this.out.print(",");
+            this.print(child2);
+            this.out.print(")");
+            break;
+            
+        case ECMAScript3ExtParser.MUL:
+            requiredChildren = 2;
+            this.out.print("Math.mul(");
+            this.print(child1);
+            this.out.print(",");
+            this.print(child2);
+            this.out.print(")");
+            break;
+        
+        case ECMAScript3ExtParser.MULASS:
+            requiredChildren = 2;
+            this.out.print(" = Math.mul(");
+            this.print(child1);
+            this.out.print(",");
+            this.print(child2);
+            this.out.print(")");
             break;
 
         case ECMAScript3ExtParser.XOR:

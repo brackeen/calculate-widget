@@ -68,6 +68,7 @@
             </sources>
 
             <sources dir="src/common">
+                <file name="FPError.js"/>
                 <file name="ECMAScript3ExtEmitter.js"/>
                 <file name="Util.js"/>
                 <file name="Calc.js"/>

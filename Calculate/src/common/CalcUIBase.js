@@ -198,35 +198,16 @@ CalcWidget.UI = (function() {
             edit.value = defaultText;
             edit.focus();
             edit.select();
-
-            edit.onbeforecopy = function(event) {
+            
+            document.oncopy = function(event) {
                 var selection = window.getSelection().toString();
                 if (selection.length === 0) {
-                    // If the Dashboard isn't the clipboard owner,
-                    // and the selection is empty, setting the clipboard data will fail.
-                    // HACK: force a selection.
-                    var edit = document.getElementById("edit");
-                    edit.value += "\t";
-                    edit.setSelectionRange(edit.value.length - 1, edit.value.length);
-                }
-            };
-
-            edit.oncopy = function(event) {
-
-                // If the selection is empty, copy the last answer to the clipboard
-                var lastAnswer = CalcWidget.Calc.getLastAnswer().toString();
-                var selection = window.getSelection().toString();
-                if (selection === "\t") {
-
-                    var edit = document.getElementById("edit");
-                    if (edit.value.length > 0 && edit.value.charAt(edit.value.length - 1) === "\t") {
-                        edit.value = edit.value.substring(0, edit.value.length - 1);
-                    }
-
+                    // No selection - copy last answer
+                    var lastAnswer = CalcWidget.valueToString(CalcWidget.Calc.getLastAnswer());
                     event.clipboardData.setData("Text", lastAnswer);
                     event.preventDefault();
-                    event.stopPropagation();
                 }
+                event.stopPropagation();
             };
         },
 

@@ -327,9 +327,11 @@ CalcWidget.Calc = (function() {
                     lastAnswer = answer;
                 }
                 else if (typeof answer === "function") {
+                    lastAnswer = answer;
                     answer = "Function defined";
                 }
                 else {
+                    lastAnswer = answer;
                     answer = CalcWidget.valueToString(answer);
                 }
             }

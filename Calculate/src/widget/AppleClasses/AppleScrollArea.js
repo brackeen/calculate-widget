@@ -82,7 +82,7 @@ function AppleScrollArea(content)
 	this._mousewheelScrollHandler = function(event) { _self.mousewheelScroll(event); };
 
     // Set up the style for the content element just to be certain
-	this.content.style.overflow = "hidden";
+	//this.content.style.overflow = "hidden";
 	this.content.scrollTop = 0;
 	this.content.scrollLeft = 0;
 	

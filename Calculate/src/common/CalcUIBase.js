@@ -260,6 +260,32 @@ CalcWidget.UI = (function() {
             outputHTML('<div class="help">' + helpHTML + '</div>');
         },
 
+        breakString: function(s) {
+            // HTML Hack for pretty word wrapping. 
+            // Insert zero-width space ("\u200B") after break chars.
+            var breakChars = "+-*/%&|^,;";
+            for (var i = 0; i < breakChars.length; i++) {
+                var ch = breakChars[i];
+                var index = 0;
+                while (true) {
+                    index = s.indexOf(ch, index);
+                    if (index < 0 || index >= s.length - 1) {
+                        break;
+                    }
+                    
+                    if (s[index+1] !== ' ') {
+                        s = s.slice(0, index+1) + "\u200B" + s.slice(index+1);
+                        index += 2;
+                    }
+                    else {
+                        index++;
+                    }
+                }
+            }
+
+            return s;
+        },
+
         showMemory: function() {
             var userVars = CalcWidget.Calc.getUserVars();
             var html =
@@ -270,10 +296,8 @@ CalcWidget.UI = (function() {
             for (var i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
                     var name = userVars[i];
-                    var value = window[name];
-                    if (typeof window[name] !== "function") {
-                        value = CalcWidget.valueToString(window[name]);
-                    }
+                    var value = CalcWidget.valueToString(window[name]);
+                    value = CalcWidget.UI.breakString(value);
                     html += '<div class="memory"><b>' + name + "</b> = " + value + "</div>";
                 }
             }
@@ -391,6 +415,8 @@ CalcWidget.UI = (function() {
                     firstKey = true;
 
                     // Output results.
+                    expression = CalcWidget.UI.breakString(expression.toString());
+                    result = CalcWidget.UI.breakString(result.toString());
                     var resultClass = CalcWidget.Calc.wasError()?"error":"answer";
                     outputHTML("<div class='input'>" + expression + "</div>" +
                         "<div class='" + resultClass + "'>" + result + "</div>");

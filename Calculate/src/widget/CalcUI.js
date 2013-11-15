@@ -45,9 +45,7 @@ CalcWidget.UI.refreshScrollArea = function() {
 
 CalcWidget.UI.onLoad = function() {
     CalcWidget.UI.onLoadInternal();
-
-    var scrollbar = new AppleVerticalScrollbar(document.getElementById("scrollBar"));
-    CalcWidget.UI.scrollArea = new AppleScrollArea(document.getElementById("scrollArea"), scrollbar);
+    CalcWidget.UI.scrollArea = new AppleScrollArea(document.getElementById("scrollArea"));
     CalcWidget.UI.scrollArea.scrollsHorizontally = false;
     CalcWidget.UI.scrollArea.singlepressScrollPixels = 25;
 

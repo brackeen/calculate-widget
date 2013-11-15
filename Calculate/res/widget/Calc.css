@@ -165,17 +165,15 @@ body {
 	cursor: pointer;
 }
 
-
 #scrollArea {
 	position: absolute;
 	left: 20px;
 	top: 25px;
 	bottom: 72px;
-	right: 24px;
-	overflow: hidden;
+	right: 21px;
+    overflow-x: hidden;
+	overflow-y: scroll;
 	display: block;
-	
-	/*background-color: #d9d9d9;*/
 }
 
 #resize {
@@ -185,14 +183,14 @@ body {
 	-apple-dashboard-region: dashboard-region(control rectangle);
 }
 
-#scrollBar {
+/*#scrollBar {
 	position: absolute;
 	top: 27px;
 	bottom: 73px;
 	right: 22px;
 	width: 19px;
 	display: block;
-}
+}*/
 
 #editIcon {
 	position: absolute;
@@ -242,20 +240,20 @@ body {
 #output {
 	-khtml-user-select:text;
 	-apple-dashboard-region: dashboard-region(control rectangle);
-        bottom: 0px;
-        position: absolute;
-        max-height: 100%;
+    bottom: 0px;
+    position: absolute;
+    max-height: 100%;
 	color: #000;
 }
 
 .even {
 	/*background-color: #ced1d5;*/
-	padding: 2px 22px 3px 10px;
+	padding: 2px 8px 3px 10px;
 }
 
 .odd {
 	/*background-color: #d9d9d9;*/
-	padding: 2px 22px 3px 10px;
+	padding: 2px 8px 3px 10px;
 }
 
 .input {
@@ -276,7 +274,7 @@ body {
 
 .help {
 	font-size: 10pt;
-	padding: 4px 22px 5px 10px;
+	padding: 4px 8px 5px 10px;
 }
 
 .helpHeader {

@@ -543,6 +543,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         
         case ECMAScript3ExtParser.ADDASS:
             requiredChildren = 2;
+            this.print(child1);
             this.out.print(" = Math.add(");
             this.print(child1);
             this.out.print(",");
@@ -561,6 +562,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         
         case ECMAScript3ExtParser.SUBASS:
             requiredChildren = 2;
+            this.print(child1);
             this.out.print(" = Math.sub(");
             this.print(child1);
             this.out.print(",");
@@ -579,6 +581,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         
         case ECMAScript3ExtParser.MULASS:
             requiredChildren = 2;
+            this.print(child1);
             this.out.print(" = Math.mul(");
             this.print(child1);
             this.out.print(",");

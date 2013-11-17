@@ -127,6 +127,57 @@ body {
 	height: 85px;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    #back {
+        background: url(Images/Back@2x.png) no-repeat;
+        background-size: 320px 160px;
+    }
+    
+    #top-left {
+        background: url(Images/Calc_01@2x.png) no-repeat;
+        background-size: 29px 36px;
+    }
+
+    #top-middle {
+        background: url(Images/Calc_02@2x.png) repeat-x;
+        background-size: 4px 36px;
+    }
+
+    #top-right {
+        background: url(Images/Calc_03@2x.png) no-repeat;
+        background-size: 34px 36px;
+    }
+
+    #middle-left {
+        background: url(Images/Calc_04@2x.png) repeat-y;
+        background-size: 29px 5px;
+    }
+
+    #middle-middle {
+        background: url(Images/Calc_05@2x.png) repeat;
+        background-size: 4px 5px;
+    }
+
+    #middle-right {
+        background: url(Images/Calc_06@2x.png) repeat-y;
+        background-size: 34px 5px;
+    }
+
+    #bottom-left {
+        background: url(Images/Calc_07@2x.png) no-repeat;
+        background-size: 29px 85px;
+    }
+
+    #bottom-middle {
+        background: url(Images/Calc_08@2x.png) repeat-x;
+        background-size: 4px 85px;
+    }
+
+    #bottom-right {
+        background: url(Images/Calc_09@2x.png) no-repeat;
+        background-size: 34px 85px;
+    }
+}
 
 /*
 	Controls

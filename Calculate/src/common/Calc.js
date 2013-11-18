@@ -320,10 +320,7 @@ CalcWidget.Calc = (function() {
             lastError = false;
             try {
                 answer = CalcWidget.evaluate(expression, lastAnswer, true);
-                if (answer === undefined) {
-                    lastError = true;
-                }
-                else if (typeof answer === "number") {
+                if (typeof answer === "number") {
                     lastAnswer = answer;
                 }
                 else if (typeof answer === "function") {

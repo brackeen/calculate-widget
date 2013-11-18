@@ -6,6 +6,7 @@ Version 1.2
 - Retina support
 - Modern scroll indicator
 - Minor bug fixes
+- Requires Safari 5 (Tested on Mac OS X Lion with Safari 5).
 
 Version 1.1.5 (Apr 15, 2010)
 - Added power operator ^. Example: 2^8 == 256 (If you're a programmer, for xor use >< instead of ^)

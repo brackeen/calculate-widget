@@ -6,7 +6,7 @@ body {
 	right: 0;
 	width: 100%;
 	height: 100%;
-        font-family: "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 #front {
@@ -218,13 +218,16 @@ body {
 
 #scrollArea {
 	position: absolute;
-	left: 20px;
-	top: 25px;
-	bottom: 72px;
-	right: 21px;
+	left: 18px;
+	top: 24px;
+	bottom: 73px;
+	right: 22px;
     overflow-x: hidden;
 	overflow-y: scroll;
 	display: block;
+    border-radius: 4px;
+    border: 1px solid white;
+    background-color: white;
 }
 
 #resize {
@@ -233,15 +236,6 @@ body {
 	right: 20px;
 	-apple-dashboard-region: dashboard-region(control rectangle);
 }
-
-/*#scrollBar {
-	position: absolute;
-	top: 27px;
-	bottom: 73px;
-	right: 22px;
-	width: 19px;
-	display: block;
-}*/
 
 #editIcon {
 	position: absolute;
@@ -253,7 +247,7 @@ body {
 #editArea {
 	position: absolute;
 	left: 19px;
-	right: 22px;
+	right: 23px;
 	bottom: 41px;
 	height: 22px;
 }

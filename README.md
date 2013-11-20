@@ -23,3 +23,8 @@ JavaScript source code, and executes it using `eval()`.
 The source is organized as an Ant-based NetBeans project. 
 (NetBeans isn't required - you just need Apache Ant.) 
 Requires Mac OS X, of course.
+
+## Credits
+* ANTLR by Terence Parr.
+* EMCAScript grammar by Patrick Hulsmeijer.
+* Emitter code based on JavaEmitter by Andy Tripp.

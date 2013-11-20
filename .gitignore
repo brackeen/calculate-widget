@@ -1,4 +1,4 @@
 build/
 gen/
-nbproject/private/
+/Calculate/nbproject/private/
 .DS_Store

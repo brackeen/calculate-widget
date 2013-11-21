@@ -289,9 +289,9 @@ CalcWidget.UI = (function() {
         showMemory: function() {
             var userVars = CalcWidget.Calc.getUserVars();
             var html =
+                '<div class="memory"><b>ans</b> = ' + CalcWidget.Calc.getLastAnswer() + "</div>" +
                 '<div class="memory"><b>pi</b> = ' + Math.PI + "</div>" +
-                '<div class="memory"><b>e</b> = ' + Math.E + "</div>" +
-                '<div class="memory"><b>ans</b> = ' + CalcWidget.Calc.getLastAnswer() + "</div>";
+                '<div class="memory"><b>e</b> = ' + Math.E + "</div>";
 
             for (var i in userVars) {
                 if (userVars.hasOwnProperty(i)) {

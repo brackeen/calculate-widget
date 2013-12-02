@@ -205,8 +205,13 @@ CalcWidget.UI = (function() {
                     // No selection - copy last answer
                     var lastAnswer = CalcWidget.valueToString(CalcWidget.Calc.getLastAnswer());
                     event.clipboardData.setData("Text", lastAnswer);
-                    event.preventDefault();
                 }
+                else {
+                    // Remove "\u200B" characters from selection
+                    selection = selection.replace(/\u200B/g, "");
+                    event.clipboardData.setData("Text", selection);
+                }
+                event.preventDefault();
                 event.stopPropagation();
             };
             

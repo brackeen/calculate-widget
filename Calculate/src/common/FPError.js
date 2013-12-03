@@ -28,22 +28,24 @@ void function () {
     }
     
     function getSignificantDigits(n) {
-        var s = n.toString().split("e")[0].split('.');
-        var count;
-        if (s[0] === "0") {
-            count = 0;
-            if (s.length > 1) {
-                // Remove leading zeroes
-                count += s[1].replace(/^0+/, '').length;
-            }
+        var s = Math.abs(n).toString().split("e")[0].split('.');
+        
+        // String before decimal. Remove leading zeroes
+        var a = s[0].replace(/^0+/, '');
+        // String after decimal. Remove trailing zeroes
+        var b = s.length === 1 ? "" : s[1].replace(/0*$/, '');
+        
+        if (b.length === 0) {
+            // Remove trailing zeroes
+            return a.replace(/0*$/, '').length;
+        }
+        else if (a.length === 0) {
+            // Remove leading zeroes
+            return b.replace(/^0+/, '').length;
         }
         else {
-            count = s[0].length;
-            if (s.length > 1) {
-                count += s[1].length;
-            }
+            return a.length + b.length;
         }
-        return count;
     }
 
     Math.fixPrecision = function(n) {

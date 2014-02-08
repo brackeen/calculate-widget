@@ -5,20 +5,20 @@
  * pasting:
  
  [
-    0.1+0.2      == 0.3 ,
-    1.25-1.245   == 0.005 ,
-    1.1-1        == 0.1 ,
-    1.1-1.05     == 0.05 ,
-    1.1-1.005    == 0.095 ,
-    1.1-1.0005   == 0.0995 ,
-    1-3          == -2 ,
-    1.1-1.01     == 0.09 ,
-    1.1-1.001    == 0.099 ,
-    1.1-1.0001   == 0.0999 ,
-    1.1-1.00001  == 0.09999 ,
-    1.05*7       == 7.35 ,
-    1.1*7        == 7.7 ,
-    10.35/3      == 3.45 ,
+    Math.fixPrecision(0.1 + 0.2    ) == 0.3 ,
+    Math.fixPrecision(1.25 - 1.245 ) == 0.005 ,
+    Math.fixPrecision(1.1 - 1      ) == 0.1 ,
+    Math.fixPrecision(1.1 - 1.05   ) == 0.05 ,
+    Math.fixPrecision(1.1 - 1.005  ) == 0.095 ,
+    Math.fixPrecision(1.1 - 1.0005 ) == 0.0995 ,
+    Math.fixPrecision(1 - 3        ) == -2 ,
+    Math.fixPrecision(1.1 - 1.01   ) == 0.09 ,
+    Math.fixPrecision(1.1 - 1.001  ) == 0.099 ,
+    Math.fixPrecision(1.1 - 1.0001 ) == 0.0999 ,
+    Math.fixPrecision(1.1 - 1.00001) == 0.09999 ,
+    Math.fixPrecision(1.05 * 7     ) == 7.35 ,
+    Math.fixPrecision(1.1 * 7      ) == 7.7 ,
+    Math.fixPrecision(10.35 / 3    ) == 3.45 ,
 ]
 */
 void function () {
@@ -61,25 +61,5 @@ void function () {
             }
         }
         return n;
-    };
-    
-    Math.add = function(x, y) {
-        return Math.fixPrecision(x + y);
-    };
-    
-    Math.sub = function(x, y) {
-        return Math.fixPrecision(x - y);
-    };
-    
-    Math.mul = function(x, y) {
-        return Math.fixPrecision(x * y);
-    };
-    
-    Math.div = function(x, y) {
-        return Math.fixPrecision(x / y);
-    };
-    
-    Math.mod = function(x, y) {
-        return Math.fixPrecision(x % y);
     };
 }();

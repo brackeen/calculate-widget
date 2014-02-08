@@ -53,8 +53,11 @@ CalcWidget.valueToString = function(value) {
     else if (value === null) {
         value = "null";
     }
-    else if (typeof value === "number" || typeof value === "boolean") {
+    else if (typeof value === "boolean") {
         value = value.toString();
+    }
+    else if (typeof value === "number") {
+        value = Math.fixPrecision(value).toString();
     }
     else if (value instanceof Array) {
         value = CalcWidget.arrayToString(value);

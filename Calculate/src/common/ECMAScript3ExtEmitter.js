@@ -529,99 +529,80 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
             break;
             
         case ECMAScript3ExtParser.ADD:
+        case ECMAScript3ExtParser.SUB:
+        case ECMAScript3ExtParser.MUL:
+        case ECMAScript3ExtParser.DIV:
+        case ECMAScript3ExtParser.MOD:
+        case ECMAScript3ExtParser.ADDASS:
+        case ECMAScript3ExtParser.SUBASS:
+        case ECMAScript3ExtParser.MULASS:
+        case ECMAScript3ExtParser.DIVASS:
+        case ECMAScript3ExtParser.MODASS:
             requiredChildren = 2;
-            this.out.print("Math.add(");
-            this.print(child1);
-            this.out.print(",");
-            this.print(child2);
+            this.printBinaryOperator(node);
+            break;
+            /*
+        case ECMAScript3ExtParser.ADD:
+        case ECMAScript3ExtParser.SUB:
+        case ECMAScript3ExtParser.MUL:
+        case ECMAScript3ExtParser.DIV:
+        case ECMAScript3ExtParser.MOD:
+            requiredChildren = 2;
+            this.out.print("Math.fixPrecision(");
+            this.printBinaryOperator(node);
             this.out.print(")");
             break;
         
         case ECMAScript3ExtParser.ADDASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.add(");
+            this.out.print(" = Math.fixPrecision(");
             this.print(child1);
-            this.out.print(",");
+            this.out.print(" + ");
             this.print(child2);
             this.out.print(")");
             break;
             
-        case ECMAScript3ExtParser.SUB:
-            requiredChildren = 2;
-            this.out.print("Math.sub(");
-            this.print(child1);
-            this.out.print(",");
-            this.print(child2);
-            this.out.print(")");
-            break;
-        
         case ECMAScript3ExtParser.SUBASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.sub(");
+            this.out.print(" = Math.fixPrecision(");
             this.print(child1);
-            this.out.print(",");
+            this.out.print(" - ");
             this.print(child2);
             this.out.print(")");
             break;
-            
-        case ECMAScript3ExtParser.MUL:
-            requiredChildren = 2;
-            this.out.print("Math.mul(");
-            this.print(child1);
-            this.out.print(",");
-            this.print(child2);
-            this.out.print(")");
-            break;
-        
+                    
         case ECMAScript3ExtParser.MULASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.mul(");
+            this.out.print(" = Math.fixPrecision(");
             this.print(child1);
-            this.out.print(",");
+            this.out.print(" * ");
             this.print(child2);
             this.out.print(")");
             break;
-            
-        case ECMAScript3ExtParser.DIV:
-            requiredChildren = 2;
-            this.out.print("Math.div(");
-            this.print(child1);
-            this.out.print(",");
-            this.print(child2);
-            this.out.print(")");
-            break;
-            
+                        
         case ECMAScript3ExtParser.DIVASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.div(");
+            this.out.print(" = Math.fixPrecision(");
             this.print(child1);
-            this.out.print(",");
+            this.out.print(" / ");
             this.print(child2);
             this.out.print(")");
             break;
-            
-        case ECMAScript3ExtParser.MOD:
-            requiredChildren = 2;
-            this.out.print("Math.mod(");
-            this.print(child1);
-            this.out.print(",");
-            this.print(child2);
-            this.out.print(")");
-            break;
-            
+                        
         case ECMAScript3ExtParser.MODASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.mod(");
+            this.out.print(" = Math.fixPrecision(");
             this.print(child1);
-            this.out.print(",");
+            this.out.print(" % ");
             this.print(child2);
             this.out.print(")");
             break;
+            */
 
         case ECMAScript3ExtParser.XOR:
             requiredChildren = 2;
@@ -778,7 +759,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
 
         case ECMAScript3ExtParser.FINALLY:
             requiredChildren = 1;
-	    this.out.print(this.name(node));
+            this.out.print(this.name(node));
             this.out.print(" ");
             if (this.needsSemicolon(child1)) {
                 this.out.println();

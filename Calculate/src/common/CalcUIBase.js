@@ -288,9 +288,13 @@ CalcWidget.UI = (function() {
                 }
             }
 
-            return s;
+            // Escape HTML
+            return s.replace(/&/g, '&amp;')
+                .replace(/"/g, '&quot;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
         },
-
+        
         showMemory: function() {
             var userVars = CalcWidget.Calc.getUserVars();
             var html =

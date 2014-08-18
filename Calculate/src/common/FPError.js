@@ -19,6 +19,8 @@
     Math.fixPrecision(1.05 * 7     ) == 7.35 ,
     Math.fixPrecision(1.1 * 7      ) == 7.7 ,
     Math.fixPrecision(10.35 / 3    ) == 3.45 ,
+    Math.fixPrecision(5010-5000.94 ) == 9.06 ,
+    Math.fixPrecision(100010-100000.94) == 9.06 ,
 ]
 */
 void function () {
@@ -50,12 +52,12 @@ void function () {
 
     Math.fixPrecision = function(n) {
         if (isNumber(n)) {
-            // If the number has at least 15 significant digits, reduce the number of significant digits by 3.
-            // If the resulting number has much less precision, then use it instead of the original number.
             var p = getSignificantDigits(n);
-            if (p >= 15) {
-                var n2 = parseFloat(n.toPrecision(p - 3));
-                if (getSignificantDigits(n2) < p - 3) {
+            // If the number has at least 13 significant digits, reduce to 9 significant digits.
+            // If the resulting number has much less precision, then use it instead of the original number.
+            if (p >= 13) {
+                var n2 = parseFloat(n.toPrecision(9));
+                if (getSignificantDigits(n2) < 9) {
                     n = n2;
                 }
             }

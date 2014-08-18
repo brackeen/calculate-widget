@@ -1,3 +1,6 @@
+Version 1.2.1
+- Tweaking to floating-point precision display
+
 Version 1.2
 - Fixed floating-point precision for simple addition, subtraction, and 
   multiplication. For example, "0.1+0.2" is now "0.3" instead of 

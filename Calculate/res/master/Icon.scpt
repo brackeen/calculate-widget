@@ -1,5 +1,7 @@
 -- This AppleScript creates a Icon.icns from a 1024x1024 Icon.psd file.
 -- Requires Icon.psd and Icon.jsx 
+-- Run from the command line using:
+-- osascript Icon.scpt
 
 -- First, run the jsx file to create scaled versions of the icon
 tell application "Finder"

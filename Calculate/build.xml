@@ -99,6 +99,17 @@
     </target>
 
     <target name="build" depends="compile, res" />
+    
+    <target name="install" depends="build" description="Build and install">
+        <delete dir="${user.home}/Library/Widgets/Calculate.wdgt" failonerror="false"/>
+        <copy todir="${user.home}/Library/Widgets/Calculate.wdgt">
+            <fileset dir="build/Calculate.wdgt"/>
+        </copy>
+        <exec executable="/usr/bin/killall">
+            <arg value="-KILL"/>
+            <arg value="Dock"/>
+        </exec>
+    </target>
 
     <!-- Requires Mac OS X to make distribution zip -->
     <target name="dist" depends="build" description="Creates distribution zip">
@@ -115,7 +126,7 @@
         <exec executable="/usr/libexec/PlistBuddy" 
             outputproperty="CFBundleVersion">
             <arg value="-c"/>
-            <arg value ="Print:CFBundleVersion"/>
+            <arg value="Print:CFBundleVersion"/>
             <arg value="res/widget/Info.plist"/>
         </exec>
         

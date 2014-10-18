@@ -6,7 +6,7 @@ body {
 	right: 0;
 	width: 100%;
 	height: 100%;
-    font-family: "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 #front {
@@ -260,21 +260,24 @@ body {
 
 #menu {
 	position: absolute;
-	left: 26px;
-	bottom: 21px;
+	left: 19px;
+	bottom: 18px;
+    font-size: 9pt;
+    font-weight: bold;
 }
 
 #menu .button {
-	font-size: 8pt;
+    display: inline-block;
 	border: 0;
-	padding: 0;
-	margin-right: 7px;
-	color: #ccc;
+	padding: 0 0 2px 0;
+    width: 15pt;
+    text-align: center;
+	color: #777;
+    transition: color 0.25s ease;
 }
 
 #menu .button:hover {
-	text-decoration: underline;
-	cursor: pointer;
+    color: #fff;
 }
 
 

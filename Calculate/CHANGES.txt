@@ -1,5 +1,6 @@
 Version 1.2.1
-- Tweaking to floating-point precision display
+- Floating-point precision display tweaks.
+- Updates for Mac OS X 10.10 Yosemite (Use Helvetica Neue instead of Lucida Grande, other tweaks).
 
 Version 1.2
 - Fixed floating-point precision for simple addition, subtraction, and 

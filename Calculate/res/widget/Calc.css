@@ -6,7 +6,7 @@ body {
 	right: 0;
 	width: 100%;
 	height: 100%;
-    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: -apple-system, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 #front {
@@ -230,6 +230,12 @@ body {
     background-color: white;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+      #scrollArea {
+          border: 0.5px solid white;
+      }
+}
+
 #resize {
 	position:absolute;
 	bottom: 22px;
@@ -262,7 +268,7 @@ body {
 	position: absolute;
 	left: 19px;
 	bottom: 18px;
-    font-size: 9pt;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -353,4 +359,3 @@ body {
 	padding-left: 20px;
 	text-indent: -20px;
 }
-

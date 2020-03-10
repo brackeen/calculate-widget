@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E30E63012417EE45002EF546 /* ECMAScript3ExtParser.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62F92417EE45002EF546 /* ECMAScript3ExtParser.js */; };
+		E30E63022417EE45002EF546 /* Util.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FA2417EE45002EF546 /* Util.js */; };
+		E30E63032417EE45002EF546 /* ECMAScript3ExtLexer.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FB2417EE45002EF546 /* ECMAScript3ExtLexer.js */; };
+		E30E63042417EE45002EF546 /* antlr3-cli.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FC2417EE45002EF546 /* antlr3-cli.js */; };
+		E30E63052417EE45002EF546 /* ECMAScript3ExtEmitter.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FD2417EE45002EF546 /* ECMAScript3ExtEmitter.js */; };
+		E30E63062417EE45002EF546 /* antlr3-all.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FE2417EE45002EF546 /* antlr3-all.js */; };
+		E30E63072417EE45002EF546 /* FPError.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FF2417EE45002EF546 /* FPError.js */; };
+		E30E63082417EE45002EF546 /* Calc.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E63002417EE45002EF546 /* Calc.js */; };
 		E321A0AB2417C3A900D40474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0AA2417C3A900D40474 /* AppDelegate.swift */; };
 		E321A0AD2417C3A900D40474 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0AC2417C3A900D40474 /* ViewController.swift */; };
 		E321A0AF2417C3AA00D40474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E321A0AE2417C3AA00D40474 /* Assets.xcassets */; };
 		E321A0B22417C3AA00D40474 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E321A0B02417C3AA00D40474 /* Main.storyboard */; };
-		E321A0C42417C78800D40474 /* Util.js in Resources */ = {isa = PBXBuildFile; fileRef = E321A0BC2417C78800D40474 /* Util.js */; };
-		E321A0C62417C78800D40474 /* antlr3-cli.js in Resources */ = {isa = PBXBuildFile; fileRef = E321A0BE2417C78800D40474 /* antlr3-cli.js */; };
-		E321A0C72417C78800D40474 /* ECMAScript3ExtEmitter.js in Resources */ = {isa = PBXBuildFile; fileRef = E321A0BF2417C78800D40474 /* ECMAScript3ExtEmitter.js */; };
-		E321A0C82417C78800D40474 /* antlr3-all.js in Resources */ = {isa = PBXBuildFile; fileRef = E321A0C02417C78800D40474 /* antlr3-all.js */; };
-		E321A0C92417C78800D40474 /* FPError.js in Resources */ = {isa = PBXBuildFile; fileRef = E321A0C12417C78800D40474 /* FPError.js */; };
-		E321A0CA2417C78800D40474 /* Calc.js in Resources */ = {isa = PBXBuildFile; fileRef = E321A0C22417C78800D40474 /* Calc.js */; };
-		E321A0D52417C84A00D40474 /* ECMAScript3ExtParser.js in Resources */ = {isa = PBXBuildFile; fileRef = E321A0D22417C84A00D40474 /* ECMAScript3ExtParser.js */; };
-		E321A0D62417C84A00D40474 /* ECMAScript3ExtLexer.js in Resources */ = {isa = PBXBuildFile; fileRef = E321A0D32417C84A00D40474 /* ECMAScript3ExtLexer.js */; };
 		E321A0D92417C97400D40474 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0D82417C97400D40474 /* Calculate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E30E62F72417E64A002EF546 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E30E62F92417EE45002EF546 /* ECMAScript3ExtParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtParser.js; sourceTree = "<group>"; };
+		E30E62FA2417EE45002EF546 /* Util.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Util.js; sourceTree = "<group>"; };
+		E30E62FB2417EE45002EF546 /* ECMAScript3ExtLexer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtLexer.js; sourceTree = "<group>"; };
+		E30E62FC2417EE45002EF546 /* antlr3-cli.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "antlr3-cli.js"; sourceTree = "<group>"; };
+		E30E62FD2417EE45002EF546 /* ECMAScript3ExtEmitter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtEmitter.js; sourceTree = "<group>"; };
+		E30E62FE2417EE45002EF546 /* antlr3-all.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "antlr3-all.js"; sourceTree = "<group>"; };
+		E30E62FF2417EE45002EF546 /* FPError.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = FPError.js; sourceTree = "<group>"; };
+		E30E63002417EE45002EF546 /* Calc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Calc.js; sourceTree = "<group>"; };
 		E321A0A72417C3A900D40474 /* Calculate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E321A0AA2417C3A900D40474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E321A0AC2417C3A900D40474 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,14 +39,6 @@
 		E321A0B12417C3AA00D40474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E321A0B32417C3AA00D40474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E321A0B42417C3AA00D40474 /* Calculate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calculate.entitlements; sourceTree = "<group>"; };
-		E321A0BC2417C78800D40474 /* Util.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Util.js; sourceTree = "<group>"; };
-		E321A0BE2417C78800D40474 /* antlr3-cli.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "antlr3-cli.js"; sourceTree = "<group>"; };
-		E321A0BF2417C78800D40474 /* ECMAScript3ExtEmitter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtEmitter.js; sourceTree = "<group>"; };
-		E321A0C02417C78800D40474 /* antlr3-all.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "antlr3-all.js"; sourceTree = "<group>"; };
-		E321A0C12417C78800D40474 /* FPError.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = FPError.js; sourceTree = "<group>"; };
-		E321A0C22417C78800D40474 /* Calc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Calc.js; sourceTree = "<group>"; };
-		E321A0D22417C84A00D40474 /* ECMAScript3ExtParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtParser.js; sourceTree = "<group>"; };
-		E321A0D32417C84A00D40474 /* ECMAScript3ExtLexer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtLexer.js; sourceTree = "<group>"; };
 		E321A0D82417C97400D40474 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,11 +53,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E30E62F82417EE45002EF546 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				E30E62FE2417EE45002EF546 /* antlr3-all.js */,
+				E30E62FC2417EE45002EF546 /* antlr3-cli.js */,
+				E30E63002417EE45002EF546 /* Calc.js */,
+				E30E62FD2417EE45002EF546 /* ECMAScript3ExtEmitter.js */,
+				E30E62FB2417EE45002EF546 /* ECMAScript3ExtLexer.js */,
+				E30E62F92417EE45002EF546 /* ECMAScript3ExtParser.js */,
+				E30E62FF2417EE45002EF546 /* FPError.js */,
+				E30E62FA2417EE45002EF546 /* Util.js */,
+			);
+			name = js;
+			path = Calculate/js;
+			sourceTree = "<group>";
+		};
 		E321A09E2417C3A900D40474 = {
 			isa = PBXGroup;
 			children = (
 				E30E62F72417E64A002EF546 /* README.md */,
-				E321A0BA2417C77800D40474 /* js */,
+				E30E62F82417EE45002EF546 /* js */,
 				E321A0A92417C3A900D40474 /* Calculate */,
 				E321A0A82417C3A900D40474 /* Products */,
 			);
@@ -83,39 +99,6 @@
 				E321A0D82417C97400D40474 /* Calculate.swift */,
 			);
 			path = Calculate;
-			sourceTree = "<group>";
-		};
-		E321A0BA2417C77800D40474 /* js */ = {
-			isa = PBXGroup;
-			children = (
-				E321A0D12417C84A00D40474 /* gen */,
-				E321A0BB2417C78800D40474 /* common */,
-			);
-			name = js;
-			sourceTree = "<group>";
-		};
-		E321A0BB2417C78800D40474 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				E321A0C02417C78800D40474 /* antlr3-all.js */,
-				E321A0BE2417C78800D40474 /* antlr3-cli.js */,
-				E321A0C22417C78800D40474 /* Calc.js */,
-				E321A0BF2417C78800D40474 /* ECMAScript3ExtEmitter.js */,
-				E321A0C12417C78800D40474 /* FPError.js */,
-				E321A0BC2417C78800D40474 /* Util.js */,
-			);
-			name = common;
-			path = Calculate/src/common;
-			sourceTree = "<group>";
-		};
-		E321A0D12417C84A00D40474 /* gen */ = {
-			isa = PBXGroup;
-			children = (
-				E321A0D32417C84A00D40474 /* ECMAScript3ExtLexer.js */,
-				E321A0D22417C84A00D40474 /* ECMAScript3ExtParser.js */,
-			);
-			name = gen;
-			path = Calculate/gen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,16 +159,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E321A0C42417C78800D40474 /* Util.js in Resources */,
-				E321A0D52417C84A00D40474 /* ECMAScript3ExtParser.js in Resources */,
+				E30E63032417EE45002EF546 /* ECMAScript3ExtLexer.js in Resources */,
+				E30E63072417EE45002EF546 /* FPError.js in Resources */,
+				E30E63022417EE45002EF546 /* Util.js in Resources */,
+				E30E63062417EE45002EF546 /* antlr3-all.js in Resources */,
 				E321A0AF2417C3AA00D40474 /* Assets.xcassets in Resources */,
-				E321A0C72417C78800D40474 /* ECMAScript3ExtEmitter.js in Resources */,
-				E321A0D62417C84A00D40474 /* ECMAScript3ExtLexer.js in Resources */,
-				E321A0CA2417C78800D40474 /* Calc.js in Resources */,
-				E321A0C62417C78800D40474 /* antlr3-cli.js in Resources */,
-				E321A0C82417C78800D40474 /* antlr3-all.js in Resources */,
-				E321A0C92417C78800D40474 /* FPError.js in Resources */,
+				E30E63012417EE45002EF546 /* ECMAScript3ExtParser.js in Resources */,
 				E321A0B22417C3AA00D40474 /* Main.storyboard in Resources */,
+				E30E63082417EE45002EF546 /* Calc.js in Resources */,
+				E30E63042417EE45002EF546 /* antlr3-cli.js in Resources */,
+				E30E63052417EE45002EF546 /* ECMAScript3ExtEmitter.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

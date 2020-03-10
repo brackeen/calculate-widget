@@ -199,8 +199,8 @@ CalcWidget.Calc = (function() {
 
     function init() {
         // List of known variables at startup. Other variables will be considered "user variables"
-        for (var i in window) {
-            if (window.hasOwnProperty(i)) {
+        for (var i in globalThis) {
+            if (globalThis.hasOwnProperty(i)) {
                 knownMembers.push(i);
             }
         }
@@ -241,8 +241,8 @@ CalcWidget.Calc = (function() {
         getUserVars: function() {
             var userVars = [];
 
-            for (var i in window) {
-                if (window.hasOwnProperty(i)) {
+            for (var i in globalThis) {
+                if (globalThis.hasOwnProperty(i)) {
                     var isKnown = false;
                     if (i.startsWith("script") && parseInt(i.substring(6)) > 0) {
                         // Chrome seems to insert this for an unknown reason
@@ -271,10 +271,10 @@ CalcWidget.Calc = (function() {
             for (var i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
                     var name = userVars[i];
-                    if (window[name] !== undefined) {
-                        var value = window[name];
-                        if (typeof window[name] !== "function") {
-                            value = CalcWidget.valueToString(window[name]);
+                    if (globalThis[name] !== undefined) {
+                        var value = globalThis[name];
+                        if (typeof globalThis[name] !== "function") {
+                            value = CalcWidget.valueToString(globalThis[name]);
                         }
 
                         memory += name + "=" + value + ";";

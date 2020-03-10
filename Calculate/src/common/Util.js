@@ -21,20 +21,20 @@ else {
     CalcWidget.log = function(message) { };
 }
 
-if (window.widget) {
+if (globalThis.widget) {
     CalcWidget.setPref = function(key, value) {
-        window.widget.setPreferenceForKey(value, key);
+        globalThis.widget.setPreferenceForKey(value, key);
     };
     CalcWidget.pref = function(key) {
-        return window.widget.preferenceForKey(key);
+        return globalThis.widget.preferenceForKey(key);
     };
 }
-else if (window.localStorage) {
+else if (globalThis.localStorage) {
     CalcWidget.setPref = function(key, value) {
-        window.localStorage.setItem(key, value);
+        globalThis.localStorage.setItem(key, value);
     };
     CalcWidget.pref = function(key) {
-        return window.localStorage.getItem(key);
+        return globalThis.localStorage.getItem(key);
     };
 }
 else {

@@ -2,3 +2,5 @@ build/
 gen/
 /Calculate/nbproject/private/
 .DS_Store
+xcuserdata/
+project.xcworkspace/

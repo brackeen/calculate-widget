@@ -1,5 +1,7 @@
 # Calculate
 
+> :warning: This code is in the process of being converted to a native app, and does not work at the moment. For the original dashboard version, see [version 1.2.2](https://github.com/brackeen/calculate-widget/tree/1.2.2).
+
 Calculate is a Mac OS X dashboard widget for evaluating math expressions.
 
 [http://www.brackeen.com/calculate/](http://www.brackeen.com/calculate/)
@@ -17,12 +19,6 @@ following changes:
 * Numbers with leading zeros are treated as decimal literals, not octal.
 * After parsing the input to a grammar tree, it emits the tree to standard 
 JavaScript source code, and executes it using `eval()`.
-
-## Building from source
-
-The source is organized as an Ant-based NetBeans project. 
-(NetBeans isn't required - you just need Apache Ant.) 
-Requires Mac OS X, of course.
 
 ## Credits
 * ANTLR by Terence Parr.

@@ -12,14 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Quick test
-        var result = Calculate.shared.calc("myvar=[2^8, cos(pi)]") ?? ""
-        print(result)
-        result = Calculate.shared.calc("myvar[0]") ?? ""
-        print(result)
-        Calculate.shared.getUserVariables().forEach { (name) in
-            print("User variable: \(name)")
-        }
+
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

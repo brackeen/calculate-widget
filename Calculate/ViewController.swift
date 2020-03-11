@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     
     fileprivate var textFieldWasEmpty = true
     fileprivate var allowInsertAnsVariable = true
+    fileprivate var historyEnd: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,26 @@ class ViewController: NSViewController {
     }
     
     @IBAction func enterPressed(_ sender: Any) {
-        let expression = inputField.stringValue
-        if let result = Calculate.shared.calc(expression, addToHistory: true) {
+        var expression = inputField.stringValue
+        var addToHistory = true
+        
+        if expression.isEmpty {
+            if let prevExpression = Calculate.shared.getInputHistoryPrev(), !prevExpression.isEmpty {
+                expression = prevExpression
+                addToHistory = false
+            } else {
+                return
+            }
+        }
+        
+        if let result = Calculate.shared.calc(expression, addToHistory: addToHistory) {
             print(result)
         }
         
         inputField.stringValue = ""
         textFieldWasEmpty = true
         allowInsertAnsVariable = true
+        historyEnd = nil
     }
 }
 
@@ -50,6 +63,28 @@ extension ViewController: NSTextFieldDelegate {
                 allowInsertAnsVariable = false
             }
             textFieldWasEmpty = false
+        }
+    }
+    
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        if commandSelector == #selector(moveUp(_:)) {
+            let isAtEndOfInputHistory = Calculate.shared.isAtEndOfInputHistory()
+            if let historyItem = Calculate.shared.getInputHistoryPrev() {
+                if isAtEndOfInputHistory {
+                    historyEnd = inputField.stringValue
+                }
+                inputField.stringValue = historyItem
+                inputField.currentEditor()?.moveToEndOfLine(nil)
+            }
+            return true
+        } else if commandSelector == #selector(moveDown(_:)) {
+            if let historyItem = Calculate.shared.getInputHistoryNext() ?? historyEnd {
+                inputField.stringValue = historyItem
+                inputField.currentEditor()?.moveToEndOfLine(nil)
+            }
+            return true
+        } else {
+            return false
         }
     }
 }

@@ -27,10 +27,18 @@ class Calculate {
     func calc(_ expression: String, addToHistory: Bool = true) -> String? {
         memoryNeedsSaving = true
         
+        if addToHistory {
+            inputHistory.append(expression)
+            if inputHistory.count > maxInputHistory {
+                inputHistory.removeFirst(inputHistory.count - maxInputHistory)
+            }
+        }
+        inputHistoryIndex = inputHistory.count
+        
         let result = context.objectForKeyedSubscript("CalcWidget")?
             .objectForKeyedSubscript("Calc")?
             .objectForKeyedSubscript("calc")?
-            .call(withArguments: [expression, addToHistory])
+            .call(withArguments: [expression])
         return result?.toString()
     }
     
@@ -39,6 +47,29 @@ class Calculate {
             .objectForKeyedSubscript("Calc")?
             .objectForKeyedSubscript("getUserVars")?
             .call(withArguments: [])?.toArray() as? [String] ?? []
+    }
+
+    func getInputHistoryPrev() -> String? {
+        if inputHistoryIndex > 0 {
+            inputHistoryIndex = min(inputHistoryIndex - 1, inputHistory.count)
+            return inputHistory[inputHistoryIndex]
+        } else {
+            return nil
+        }
+    }
+
+    func getInputHistoryNext() -> String? {
+        if inputHistoryIndex < inputHistory.count - 1 {
+            inputHistoryIndex = max(0, inputHistoryIndex + 1);
+            return inputHistory[inputHistoryIndex]
+        } else {
+            inputHistoryIndex = inputHistory.count
+            return nil
+        }
+    }
+    
+    func isAtEndOfInputHistory() -> Bool {
+        return inputHistoryIndex >= inputHistory.count
     }
     
     func save() {
@@ -61,6 +92,10 @@ class Calculate {
     private let angleModeKey = "anglemode"
     private let memoryKey = "memory"
     private let widgetPreferencesMigratedKey = "widgetMigrated"
+    
+    private let maxInputHistory = 1000
+    private var inputHistory: [String] = []
+    private var inputHistoryIndex = -1
     
     private var memoryNeedsSaving = false
     

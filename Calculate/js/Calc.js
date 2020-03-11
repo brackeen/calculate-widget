@@ -187,11 +187,6 @@ CalcWidget.Calc = (function() {
 
     // Private
 
-    // History of inputs
-    var history = [];
-    var historyIndex = -1;
-    var maxHistory = 100;
-
     var lastAnswer = 0;
     var lastError = false;
 
@@ -212,11 +207,6 @@ CalcWidget.Calc = (function() {
     // Public methods
 
     return {
-
-        clearHistory: function() {
-            history = [];
-            historyIndex = -1;
-        },
 
         getLastAnswer: function() {
             return lastAnswer;
@@ -296,18 +286,7 @@ CalcWidget.Calc = (function() {
             }
         },
 
-        calc: function(expression, addToHistory) {
-
-            // Add to history
-            if (addToHistory) {
-                history.push(expression);
-                if (history.length > maxHistory) {
-                    history = history.slice(history.length - maxHistory);
-                }
-            }
-            historyIndex = history.length;
-
-            // Evaluate the expression
+        calc: function(expression) {
             var answer;
             lastError = false;
             try {
@@ -332,27 +311,6 @@ CalcWidget.Calc = (function() {
         // Returns true if the last calculation in calc() resulted in an error
         wasError: function() {
             return lastError;
-        },
-
-        getHistoryPrev: function() {
-            if (historyIndex > 0) {
-                historyIndex = Math.min(historyIndex - 1, history.length);
-                return history[historyIndex];
-            }
-            else {
-                return null;
-            }
-        },
-
-        getHistoryNext: function() {
-            if (historyIndex < history.length - 1) {
-                historyIndex = Math.max(0, historyIndex + 1);
-                return history[historyIndex];
-            }
-            else {
-                historyIndex = history.length;
-                return "";
-            }
         }
     };
 })();

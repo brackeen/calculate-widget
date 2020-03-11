@@ -21,9 +21,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             print("User variable: \(name)")
         }
     }
+    
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+
+    func applicationDidResignActive(_ notification: Notification) {
+        Calculate.shared.save()
+    }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        
+        Calculate.shared.save()
     }
 }
-

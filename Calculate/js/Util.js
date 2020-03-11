@@ -21,31 +21,6 @@ else {
     CalcWidget.log = function(message) { };
 }
 
-if (globalThis.widget) {
-    CalcWidget.setPref = function(key, value) {
-        globalThis.widget.setPreferenceForKey(value, key);
-    };
-    CalcWidget.pref = function(key) {
-        return globalThis.widget.preferenceForKey(key);
-    };
-}
-else if (globalThis.localStorage) {
-    CalcWidget.setPref = function(key, value) {
-        globalThis.localStorage.setItem(key, value);
-    };
-    CalcWidget.pref = function(key) {
-        return globalThis.localStorage.getItem(key);
-    };
-}
-else {
-    CalcWidget.setPref = function(key, value) {
-        // Do nothing
-    };
-    CalcWidget.pref = function(key) {
-        return undefined;
-    };
-}
-
 CalcWidget.valueToString = function(value) {
     if (value === undefined) {
         value = "undefined";

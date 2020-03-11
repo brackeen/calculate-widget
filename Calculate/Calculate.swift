@@ -18,7 +18,15 @@ class Calculate {
         case degrees = 1
     }
     
+    var angleMode: AngleMode = .radians {
+        didSet {
+            updateAngleMode()
+        }
+    }
+    
     func calc(_ expression: String, addToHistory: Bool = true) -> String? {
+        memoryNeedsSaving = true
+        
         let result = context.objectForKeyedSubscript("CalcWidget")?
             .objectForKeyedSubscript("Calc")?
             .objectForKeyedSubscript("calc")?
@@ -33,6 +41,18 @@ class Calculate {
             .call(withArguments: [])?.toArray() as? [String] ?? []
     }
     
+    func save() {
+        if memoryNeedsSaving {
+            memoryNeedsSaving = false
+            if let memory = context.objectForKeyedSubscript("CalcWidget")?
+                .objectForKeyedSubscript("Calc")?
+                .objectForKeyedSubscript("getMemory")?
+                .call(withArguments: [])?.toString() {
+                UserDefaults.standard.set(memory, forKey: memoryKey)
+            }
+        }
+    }
+    
     // MARK: - Private
     
     private let context = JSContext()!
@@ -41,6 +61,8 @@ class Calculate {
     private let angleModeKey = "anglemode"
     private let memoryKey = "memory"
     private let widgetPreferencesMigratedKey = "widgetMigrated"
+    
+    private var memoryNeedsSaving = false
     
     private init() {
         evalulateScript("antlr3-all")
@@ -53,6 +75,7 @@ class Calculate {
         evalulateScript("Calc")
                 
         migrateWidgetPreferences()
+        loadPreferences()
     }
     
     private func evalulateScript(_ name: String) {
@@ -69,6 +92,26 @@ class Calculate {
             print("Error loading \(name).js: \(exceptionString)")
         }
         context.evaluateScript(source, withSourceURL: url)
+    }
+    
+    private func loadPreferences() {
+        angleMode = AngleMode(rawValue: UserDefaults.standard.integer(forKey: angleModeKey)) ?? .radians
+        
+        if let memory = UserDefaults.standard.string(forKey: memoryKey) {
+            context.objectForKeyedSubscript("CalcWidget")?
+                .objectForKeyedSubscript("Calc")?
+                .objectForKeyedSubscript("applyExpression")?
+                .call(withArguments: [memory])
+        }
+    }
+    
+    private func updateAngleMode() {
+        UserDefaults.standard.set(angleMode.rawValue, forKey: angleModeKey)
+        
+        context.objectForKeyedSubscript("CalcWidget")?
+            .objectForKeyedSubscript("Calc")?
+            .objectForKeyedSubscript("setAngleMode")?
+            .call(withArguments: [angleMode.rawValue])
     }
     
     private func migrateWidgetPreferences() {

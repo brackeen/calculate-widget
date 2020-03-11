@@ -207,19 +207,6 @@ CalcWidget.Calc = (function() {
         knownMembers.push("onload"); // Firefox
         knownMembers.push("onunload"); // Firefox
         knownMembers.push("CFInstall"); // Chrome frame script
-        loadUserVars();
-    }
-
-    function loadUserVars() {
-        var memory = CalcWidget.pref("memory");
-        if (typeof memory !== "undefined" && memory) {
-            try {
-                CalcWidget.evaluate(memory, 0, false);
-            }
-            catch (ex) {
-                // Do something?
-            }
-        }
     }
 
     // Constructor
@@ -265,7 +252,7 @@ CalcWidget.Calc = (function() {
             return userVars;
         },
 
-        saveUserVars: function() {
+        getMemory: function() {
             var userVars = CalcWidget.Calc.getUserVars();
             var memory = "";
             for (var i in userVars) {
@@ -282,7 +269,7 @@ CalcWidget.Calc = (function() {
                 }
             }
             memory = memory.replace(/\n/g, ' ');
-            CalcWidget.setPref("memory", memory);
+            return memory
         },
 
         clearUserVars: function() {
@@ -301,7 +288,21 @@ CalcWidget.Calc = (function() {
                     }
                 }
             }
-            CalcWidget.setPref("memory", null);
+        },
+        
+        setAngleMode: function(v) {
+            CalcWidget.Math._angle = (v !== 1) ? 1 : (Math.PI / 180);
+        },
+        
+        applyExpression: function(expression) {
+            if (typeof expression === "string") {
+                try {
+                    CalcWidget.evaluate(expression, 0, false);
+                }
+                catch (ex) {
+                    // Do something?
+                }
+            }
         },
 
         calc: function(expression, addToHistory) {

@@ -60,7 +60,3 @@ CalcWidget.objectToString = function(obj) {
     }
     return "{" + s + "}";
 };
-
-CalcWidget.isAlphaNumeric = function(ch) {
-    return ((ch >= '0' && ch <= '9') || ch.toLowerCase() !== ch.toUpperCase());
-};

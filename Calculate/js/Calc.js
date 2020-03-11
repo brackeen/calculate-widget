@@ -271,6 +271,17 @@ CalcWidget.Calc = (function() {
             }
         },
         
+        getPossibleCompletions: function() {
+            var possibleCompletions = CalcWidget.Calc.getUserVars();
+            for (var i in CalcWidget.Math) {
+                if (i.charAt(0) !== '_') {
+                    possibleCompletions.push(i);
+                }
+            }
+            possibleCompletions.push("ans");
+            return possibleCompletions;
+        },
+        
         setAngleMode: function(v) {
             CalcWidget.Math._angle = (v !== 1) ? 1 : (Math.PI / 180);
         },

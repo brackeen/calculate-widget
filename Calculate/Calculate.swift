@@ -72,6 +72,19 @@ class Calculate {
         return inputHistoryIndex >= inputHistory.count
     }
     
+    func getCompletions(prefix: String) -> [String] {
+        guard let possibleCompletions = context.objectForKeyedSubscript("CalcWidget")?
+            .objectForKeyedSubscript("Calc")?
+            .objectForKeyedSubscript("getPossibleCompletions")?
+            .call(withArguments: [])?.toArray() as? [String] else {
+                return []
+        }
+
+        var completions = possibleCompletions.filter { $0.starts(with: prefix) }
+        completions.sort()
+        return completions
+    }
+    
     func save() {
         if memoryNeedsSaving {
             memoryNeedsSaving = false

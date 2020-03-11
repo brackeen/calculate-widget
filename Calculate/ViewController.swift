@@ -66,6 +66,7 @@ class ViewController: NSViewController {
                     if lastCompletion == completions[i] {
                         let j = (i + offset) % completions.count
                         inputField.stringValue = input[..<completionWordStart] + completions[j]
+                        inputField.currentEditor()?.moveToEndOfLine(nil)
                         break
                     }
                 }
@@ -103,6 +104,7 @@ class ViewController: NSViewController {
                             completion = completions[1]
                         }
                         inputField.stringValue = input[..<completionWordStart] + completion
+                        inputField.currentEditor()?.moveToEndOfLine(nil)
                     }
                     self.completions = completions
                 }

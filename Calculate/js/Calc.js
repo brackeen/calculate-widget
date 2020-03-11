@@ -48,7 +48,7 @@ CalcWidget.evaluate = function(_expression, _answer, _convert) {
                 }
             }
             catch (e) {
-                CalcWidget.log("ANTLR error: " + e.toString());
+                //CalcWidget.log("ANTLR error: " + e.toString());
             }
         }
     }
@@ -204,9 +204,6 @@ CalcWidget.Calc = (function() {
                 knownMembers.push(i);
             }
         }
-        knownMembers.push("onload"); // Firefox
-        knownMembers.push("onunload"); // Firefox
-        knownMembers.push("CFInstall"); // Chrome frame script
     }
 
     // Constructor
@@ -231,16 +228,10 @@ CalcWidget.Calc = (function() {
             for (var i in globalThis) {
                 if (globalThis.hasOwnProperty(i)) {
                     var isKnown = false;
-                    if (i.startsWith("script") && parseInt(i.substring(6)) > 0) {
-                        // Chrome seems to insert this for an unknown reason
-                        isKnown = true;
-                    }
-                    else {
-                        for (var j in knownMembers) {
-                            if (i === knownMembers[j]) {
-                                isKnown = true;
-                                break;
-                            }
+                    for (var j in knownMembers) {
+                        if (i === knownMembers[j]) {
+                            isKnown = true;
+                            break;
                         }
                     }
                     if (!isKnown) {

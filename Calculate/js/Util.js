@@ -2,25 +2,6 @@ if (typeof CalcWidget === "undefined" || !CalcWidget) {
     var CalcWidget = {};
 }
 
-if (typeof console !== "undefined" && console.log) {
-    CalcWidget.log = function(message) {
-        console.log(message);
-    };
-}
-else if (typeof print !== "undefined") {
-    CalcWidget.log = function(message) {
-        print(message);
-    };
-}
-else if (typeof alert !== "undefined") {
-    CalcWidget.log = function(message) {
-        alert(message);
-    };
-}
-else {
-    CalcWidget.log = function(message) { };
-}
-
 CalcWidget.valueToString = function(value) {
     if (value === undefined) {
         value = "undefined";
@@ -82,8 +63,4 @@ CalcWidget.objectToString = function(obj) {
 
 CalcWidget.isAlphaNumeric = function(ch) {
     return ((ch >= '0' && ch <= '9') || ch.toLowerCase() !== ch.toUpperCase());
-};
-
-String.prototype.startsWith = function(str){
-    return (this.indexOf(str) === 0);
 };

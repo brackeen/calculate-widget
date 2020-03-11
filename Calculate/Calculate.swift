@@ -66,7 +66,6 @@ class Calculate {
     
     private init() {
         evalulateScript("antlr3-all")
-        evalulateScript("antlr3-cli")
         evalulateScript("ECMAScript3ExtLexer")
         evalulateScript("ECMAScript3ExtParser")
         evalulateScript("ECMAScript3ExtEmitter")

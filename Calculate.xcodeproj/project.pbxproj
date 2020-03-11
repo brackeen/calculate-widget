@@ -15,6 +15,7 @@
 		E30E63062417EE45002EF546 /* antlr3-all.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FE2417EE45002EF546 /* antlr3-all.js */; };
 		E30E63072417EE45002EF546 /* FPError.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FF2417EE45002EF546 /* FPError.js */; };
 		E30E63082417EE45002EF546 /* Calc.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E63002417EE45002EF546 /* Calc.js */; };
+		E30E631424190F49002EF546 /* container-migration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E30E631324190F49002EF546 /* container-migration.plist */; };
 		E321A0AB2417C3A900D40474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0AA2417C3A900D40474 /* AppDelegate.swift */; };
 		E321A0AD2417C3A900D40474 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0AC2417C3A900D40474 /* ViewController.swift */; };
 		E321A0AF2417C3AA00D40474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E321A0AE2417C3AA00D40474 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		E30E62FE2417EE45002EF546 /* antlr3-all.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "antlr3-all.js"; sourceTree = "<group>"; };
 		E30E62FF2417EE45002EF546 /* FPError.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = FPError.js; sourceTree = "<group>"; };
 		E30E63002417EE45002EF546 /* Calc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Calc.js; sourceTree = "<group>"; };
+		E30E631324190F49002EF546 /* container-migration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "container-migration.plist"; sourceTree = "<group>"; };
 		E321A0A72417C3A900D40474 /* Calculate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E321A0AA2417C3A900D40474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E321A0AC2417C3A900D40474 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				E321A0B32417C3AA00D40474 /* Info.plist */,
 				E321A0B42417C3AA00D40474 /* Calculate.entitlements */,
 				E321A0D82417C97400D40474 /* Calculate.swift */,
+				E30E631324190F49002EF546 /* container-migration.plist */,
 			);
 			path = Calculate;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				E321A0B22417C3AA00D40474 /* Main.storyboard in Resources */,
 				E30E63082417EE45002EF546 /* Calc.js in Resources */,
 				E30E63042417EE45002EF546 /* antlr3-cli.js in Resources */,
+				E30E631424190F49002EF546 /* container-migration.plist in Resources */,
 				E30E63052417EE45002EF546 /* ECMAScript3ExtEmitter.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

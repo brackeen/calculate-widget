@@ -9,22 +9,22 @@
 import Foundation
 import JavaScriptCore
 
-class Calculate {
+public class Calculate {
     
-    static let shared = Calculate()
+    public static let shared = Calculate()
     
-    enum AngleMode: Int {
+    public enum AngleMode: Int {
         case radians = 0
         case degrees = 1
     }
     
-    var angleMode: AngleMode = .radians {
+    public var angleMode: AngleMode = .radians {
         didSet {
             updateAngleMode()
         }
     }
     
-    func calc(_ expression: String, addToHistory: Bool = true) -> String? {
+    public func calc(_ expression: String, addToHistory: Bool = true) -> String? {
         memoryNeedsSaving = true
         
         if addToHistory {
@@ -42,14 +42,14 @@ class Calculate {
         return result?.toString()
     }
     
-    func getUserVariables() -> [String] {
+    public func getUserVariables() -> [String] {
         return context.objectForKeyedSubscript("CalcWidget")?
             .objectForKeyedSubscript("Calc")?
             .objectForKeyedSubscript("getUserVars")?
             .call(withArguments: [])?.toArray() as? [String] ?? []
     }
 
-    func getInputHistoryPrev() -> String? {
+    public func getInputHistoryPrev() -> String? {
         if inputHistoryIndex > 0 {
             inputHistoryIndex = min(inputHistoryIndex - 1, inputHistory.count)
             return inputHistory[inputHistoryIndex]
@@ -58,7 +58,7 @@ class Calculate {
         }
     }
 
-    func getInputHistoryNext() -> String? {
+    public func getInputHistoryNext() -> String? {
         if inputHistoryIndex < inputHistory.count - 1 {
             inputHistoryIndex = max(0, inputHistoryIndex + 1);
             return inputHistory[inputHistoryIndex]
@@ -68,11 +68,11 @@ class Calculate {
         }
     }
     
-    func isAtEndOfInputHistory() -> Bool {
+    public func isAtEndOfInputHistory() -> Bool {
         return inputHistoryIndex >= inputHistory.count
     }
     
-    func getCompletions(prefix: String) -> [String] {
+    public func getCompletions(prefix: String) -> [String] {
         guard let possibleCompletions = context.objectForKeyedSubscript("CalcWidget")?
             .objectForKeyedSubscript("Calc")?
             .objectForKeyedSubscript("getPossibleCompletions")?
@@ -85,7 +85,7 @@ class Calculate {
         return completions
     }
     
-    func save() {
+    public func save() {
         if memoryNeedsSaving {
             memoryNeedsSaving = false
             if let memory = context.objectForKeyedSubscript("CalcWidget")?

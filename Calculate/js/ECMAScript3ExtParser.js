@@ -1,4 +1,4 @@
-// $ANTLR 3.1.2 res/ECMAScript3Ext.g 2010-04-13 19:03:25
+// $ANTLR 3.1.2 ECMAScript3Ext.g 2020-03-12 06:06:17
 
 var ECMAScript3ExtParser = function(input, state) {
     if (!state) {
@@ -138,362 +138,362 @@ var ECMAScript3ExtParser = function(input, state) {
 };
 
 org.antlr.lang.augmentObject(ECMAScript3ExtParser, {
-    VT: 139,
-    LOR: 94,
-    FUNCTION: 17,
-    PACKAGE: 52,
-    SHR: 87,
-    RegularExpressionChar: 178,
-    LT: 72,
-    WHILE: 30,
-    MOD: 83,
-    SHL: 86,
-    CONST: 37,
-    BackslashSequence: 176,
-    LS: 147,
-    CASE: 8,
-    CHAR: 35,
-    NEW: 21,
-    DQUOTE: 136,
-    DO: 13,
-    NOT: 91,
-    DecimalDigit: 157,
-    BYFIELD: 112,
-    EOF: -1,
-    CEXPR: 115,
-    BREAK: 7,
-    Identifier: 153,
-    DIVASS: 108,
-    BYINDEX: 113,
-    FORSTEP: 118,
-    FINAL: 43,
-    RPAREN: 66,
-    INC: 84,
-    IMPORT: 47,
-    EOL: 150,
-    POW: 129,
-    POS: 127,
-    OctalDigit: 161,
-    CARET: 131,
-    THIS: 24,
-    RETURN: 22,
-    ExponentPart: 163,
-    ARGS: 109,
-    DOUBLE: 39,
-    WhiteSpace: 144,
-    VAR: 28,
-    EXPORT: 41,
-    VOID: 29,
-    LABELLED: 120,
-    SUPER: 58,
-    GOTO: 45,
-    EQ: 76,
-    XORASS: 134,
-    ADDASS: 98,
-    ARRAY: 110,
-    SHU: 88,
-    RBRACK: 68,
-    RBRACE: 64,
-    PRIVATE: 53,
-    STATIC: 57,
-    INV: 92,
-    SWITCH: 23,
-    NULL: 4,
-    ELSE: 14,
-    NATIVE: 51,
-    THROWS: 60,
-    INT: 48,
-    DELETE: 12,
-    MUL: 82,
     IdentifierStartASCII: 156,
-    TRY: 26,
-    FF: 140,
-    SHLASS: 102,
-    OctalEscapeSequence: 172,
-    USP: 143,
-    RegularExpressionFirstChar: 177,
-    ANDASS: 105,
-    TYPEOF: 27,
-    IdentifierNameASCIIStart: 159,
-    BinaryDigit: 162,
-    QUE: 95,
-    OR: 90,
-    DEBUGGER: 38,
-    GT: 73,
-    PDEC: 125,
-    CALL: 114,
-    CharacterEscapeSequence: 170,
-    CARETASS: 132,
-    CATCH: 9,
-    FALSE: 6,
-    BinaryIntegerLiteral: 168,
-    EscapeSequence: 175,
-    LAND: 93,
-    MULASS: 100,
-    THROW: 25,
-    PINC: 126,
-    OctalIntegerLiteral: 167,
-    PROTECTED: 54,
-    DEC: 85,
-    CLASS: 36,
-    LBRACK: 67,
-    HexEscapeSequence: 173,
-    ORASS: 106,
-    SingleLineComment: 152,
-    NAMEDVALUE: 121,
-    LBRACE: 63,
-    GTE: 75,
-    FOR: 16,
-    RegularExpressionLiteral: 160,
-    SUB: 81,
-    FLOAT: 44,
-    ABSTRACT: 32,
-    AND: 89,
-    DecimalIntegerLiteral: 165,
-    HexDigit: 155,
-    LTE: 74,
-    LPAREN: 65,
-    IF: 18,
-    SUBASS: 99,
-    EXPR: 116,
-    BOOLEAN: 33,
-    SYNCHRONIZED: 59,
-    IN: 19,
-    IMPLEMENTS: 46,
-    OBJECT: 123,
-    CONTINUE: 10,
-    COMMA: 71,
-    FORITER: 117,
-    TRANSIENT: 61,
-    SHRASS: 103,
-    MODASS: 101,
-    PS: 148,
-    DOT: 69,
-    FACTORIAL: 128,
-    IdentifierPart: 158,
-    MultiLineComment: 151,
-    WITH: 31,
-    POWASS: 130,
-    ADD: 80,
-    BYTE: 34,
-    XOR: 133,
-    ZeroToThree: 171,
-    ITEM: 119,
-    VOLATILE: 62,
-    UnicodeEscapeSequence: 174,
     SHUASS: 104,
-    DEFAULT: 11,
-    NSAME: 79,
-    TAB: 138,
-    SHORT: 56,
-    INSTANCEOF: 20,
-    SQUOTE: 137,
-    DecimalLiteral: 166,
-    TRUE: 5,
-    SAME: 78,
-    StringLiteral: 154,
-    COLON: 96,
-    PAREXPR: 124,
-    NEQ: 77,
-    ENUM: 40,
-    FINALLY: 15,
-    DecimalIntegerLiteralWithoutLeadingZero: 164,
-    HexIntegerLiteral: 169,
-    NBSP: 142,
-    SP: 141,
-    BLOCK: 111,
-    LineTerminator: 149,
-    NEG: 122,
-    ASSIGN: 97,
-    INTERFACE: 49,
-    DIV: 107,
-    SEMIC: 70,
-    CR: 146,
-    LONG: 50,
-    EXTENDS: 42,
-    PUBLIC: 55,
+    PS: 148,
+    VAR: 28,
+    THROW: 25,
+    EXPORT: 41,
+    MULASS: 100,
+    STATIC: 57,
     BSLASH: 135,
-    LF: 145
+    INTERFACE: 49,
+    BREAK: 7,
+    BYTE: 34,
+    ELSE: 14,
+    SHRASS: 103,
+    ANDASS: 105,
+    IF: 18,
+    DecimalIntegerLiteralWithoutLeadingZero: 164,
+    ENUM: 40,
+    SUB: 81,
+    IN: 19,
+    SEMIC: 70,
+    LPAREN: 65,
+    DOT: 69,
+    FORITER: 117,
+    POWASS: 130,
+    FUNCTION: 17,
+    HexDigit: 155,
+    LOR: 94,
+    SUBASS: 99,
+    CASE: 8,
+    HexIntegerLiteral: 169,
+    ITEM: 119,
+    BinaryDigit: 162,
+    StringLiteral: 154,
+    LBRACK: 67,
+    POS: 127,
+    NBSP: 142,
+    CharacterEscapeSequence: 170,
+    PUBLIC: 55,
+    THROWS: 60,
+    POW: 129,
+    XOR: 133,
+    DQUOTE: 136,
+    LBRACE: 63,
+    SAME: 78,
+    CALL: 114,
+    GOTO: 45,
+    UnicodeEscapeSequence: 174,
+    DecimalDigit: 157,
+    CHAR: 35,
+    LABELLED: 120,
+    PINC: 126,
+    ASSIGN: 97,
+    IdentifierPart: 158,
+    IMPORT: 47,
+    DELETE: 12,
+    CATCH: 9,
+    DecimalLiteral: 166,
+    CARETASS: 132,
+    OctalEscapeSequence: 172,
+    DOUBLE: 39,
+    PROTECTED: 54,
+    SP: 141,
+    LONG: 50,
+    COMMA: 71,
+    OctalIntegerLiteral: 167,
+    OctalDigit: 161,
+    DIVASS: 108,
+    CEXPR: 115,
+    DEBUGGER: 38,
+    PRIVATE: 53,
+    CR: 146,
+    LineTerminator: 149,
+    CONTINUE: 10,
+    DIV: 107,
+    NEG: 122,
+    USP: 143,
+    TAB: 138,
+    PAREXPR: 124,
+    LF: 145,
+    NEQ: 77,
+    FACTORIAL: 128,
+    VOLATILE: 62,
+    INSTANCEOF: 20,
+    NEW: 21,
+    EXTENDS: 42,
+    ADD: 80,
+    ARRAY: 110,
+    RegularExpressionLiteral: 160,
+    LS: 147,
+    LT: 72,
+    ADDASS: 98,
+    DO: 13,
+    CLASS: 36,
+    FINALLY: 15,
+    Identifier: 153,
+    BinaryIntegerLiteral: 168,
+    CONST: 37,
+    PACKAGE: 52,
+    SHL: 86,
+    FORSTEP: 118,
+    TRY: 26,
+    SHR: 87,
+    BackslashSequence: 176,
+    SYNCHRONIZED: 59,
+    QUE: 95,
+    SHU: 88,
+    NULL: 4,
+    MUL: 82,
+    RegularExpressionFirstChar: 177,
+    FOR: 16,
+    BLOCK: 111,
+    TRUE: 5,
+    FINAL: 43,
+    SingleLineComment: 152,
+    RPAREN: 66,
+    HexEscapeSequence: 173,
+    EQ: 76,
+    OBJECT: 123,
+    CARET: 131,
+    BOOLEAN: 33,
+    DecimalIntegerLiteral: 165,
+    RBRACK: 68,
+    NOT: 91,
+    RBRACE: 64,
+    NAMEDVALUE: 121,
+    AND: 89,
+    PDEC: 125,
+    THIS: 24,
+    ZeroToThree: 171,
+    SWITCH: 23,
+    VOID: 29,
+    LTE: 74,
+    TRANSIENT: 61,
+    VT: 139,
+    INC: 84,
+    FF: 140,
+    FLOAT: 44,
+    NATIVE: 51,
+    ARGS: 109,
+    NSAME: 79,
+    LAND: 93,
+    IdentifierNameASCIIStart: 159,
+    ABSTRACT: 32,
+    INT: 48,
+    INV: 92,
+    RETURN: 22,
+    BYFIELD: 112,
+    EXPR: 116,
+    ExponentPart: 163,
+    SHLASS: 102,
+    SQUOTE: 137,
+    BYINDEX: 113,
+    EOF: -1,
+    MODASS: 101,
+    ORASS: 106,
+    SUPER: 58,
+    MOD: 83,
+    DEC: 85,
+    OR: 90,
+    EOL: 150,
+    MultiLineComment: 151,
+    EscapeSequence: 175,
+    IMPLEMENTS: 46,
+    COLON: 96,
+    GT: 73,
+    WhiteSpace: 144,
+    WITH: 31,
+    SHORT: 56,
+    XORASS: 134,
+    TYPEOF: 27,
+    RegularExpressionChar: 178,
+    GTE: 75,
+    FALSE: 6,
+    WHILE: 30,
+    DEFAULT: 11
 });
 
 (function(){
 // public class variables
-var VT= 139,
-    LOR= 94,
-    FUNCTION= 17,
-    PACKAGE= 52,
-    SHR= 87,
-    RegularExpressionChar= 178,
-    LT= 72,
-    WHILE= 30,
-    MOD= 83,
-    SHL= 86,
-    CONST= 37,
-    BackslashSequence= 176,
-    LS= 147,
-    CASE= 8,
-    CHAR= 35,
-    NEW= 21,
-    DQUOTE= 136,
-    DO= 13,
-    NOT= 91,
-    DecimalDigit= 157,
-    BYFIELD= 112,
-    EOF= -1,
-    CEXPR= 115,
-    BREAK= 7,
-    Identifier= 153,
-    DIVASS= 108,
-    BYINDEX= 113,
-    FORSTEP= 118,
-    FINAL= 43,
-    RPAREN= 66,
-    INC= 84,
-    IMPORT= 47,
-    EOL= 150,
-    POW= 129,
-    POS= 127,
-    OctalDigit= 161,
-    CARET= 131,
-    THIS= 24,
-    RETURN= 22,
-    ExponentPart= 163,
-    ARGS= 109,
-    DOUBLE= 39,
-    WhiteSpace= 144,
-    VAR= 28,
-    EXPORT= 41,
-    VOID= 29,
-    LABELLED= 120,
-    SUPER= 58,
-    GOTO= 45,
-    EQ= 76,
-    XORASS= 134,
-    ADDASS= 98,
-    ARRAY= 110,
-    SHU= 88,
-    RBRACK= 68,
-    RBRACE= 64,
-    PRIVATE= 53,
-    STATIC= 57,
-    INV= 92,
-    SWITCH= 23,
-    NULL= 4,
-    ELSE= 14,
-    NATIVE= 51,
-    THROWS= 60,
-    INT= 48,
-    DELETE= 12,
-    MUL= 82,
-    IdentifierStartASCII= 156,
-    TRY= 26,
-    FF= 140,
-    SHLASS= 102,
-    OctalEscapeSequence= 172,
-    USP= 143,
-    RegularExpressionFirstChar= 177,
-    ANDASS= 105,
-    TYPEOF= 27,
-    IdentifierNameASCIIStart= 159,
-    BinaryDigit= 162,
-    QUE= 95,
-    OR= 90,
-    DEBUGGER= 38,
-    GT= 73,
-    PDEC= 125,
-    CALL= 114,
-    CharacterEscapeSequence= 170,
-    CARETASS= 132,
-    CATCH= 9,
-    FALSE= 6,
-    BinaryIntegerLiteral= 168,
-    EscapeSequence= 175,
-    LAND= 93,
-    MULASS= 100,
-    THROW= 25,
-    PINC= 126,
-    OctalIntegerLiteral= 167,
-    PROTECTED= 54,
-    DEC= 85,
-    CLASS= 36,
-    LBRACK= 67,
-    HexEscapeSequence= 173,
-    ORASS= 106,
-    SingleLineComment= 152,
-    NAMEDVALUE= 121,
-    LBRACE= 63,
-    GTE= 75,
-    FOR= 16,
-    RegularExpressionLiteral= 160,
-    SUB= 81,
-    FLOAT= 44,
-    ABSTRACT= 32,
-    AND= 89,
-    DecimalIntegerLiteral= 165,
-    HexDigit= 155,
-    LTE= 74,
-    LPAREN= 65,
-    IF= 18,
-    SUBASS= 99,
-    EXPR= 116,
-    BOOLEAN= 33,
-    SYNCHRONIZED= 59,
-    IN= 19,
-    IMPLEMENTS= 46,
-    OBJECT= 123,
-    CONTINUE= 10,
-    COMMA= 71,
-    FORITER= 117,
-    TRANSIENT= 61,
-    SHRASS= 103,
-    MODASS= 101,
-    PS= 148,
-    DOT= 69,
-    FACTORIAL= 128,
-    IdentifierPart= 158,
-    MultiLineComment= 151,
-    WITH= 31,
-    POWASS= 130,
-    ADD= 80,
-    BYTE= 34,
-    XOR= 133,
-    ZeroToThree= 171,
-    ITEM= 119,
-    VOLATILE= 62,
-    UnicodeEscapeSequence= 174,
+var IdentifierStartASCII= 156,
     SHUASS= 104,
-    DEFAULT= 11,
-    NSAME= 79,
-    TAB= 138,
-    SHORT= 56,
-    INSTANCEOF= 20,
-    SQUOTE= 137,
-    DecimalLiteral= 166,
-    TRUE= 5,
-    SAME= 78,
-    StringLiteral= 154,
-    COLON= 96,
-    PAREXPR= 124,
-    NEQ= 77,
-    ENUM= 40,
-    FINALLY= 15,
-    DecimalIntegerLiteralWithoutLeadingZero= 164,
-    HexIntegerLiteral= 169,
-    NBSP= 142,
-    SP= 141,
-    BLOCK= 111,
-    LineTerminator= 149,
-    NEG= 122,
-    ASSIGN= 97,
-    INTERFACE= 49,
-    DIV= 107,
-    SEMIC= 70,
-    CR= 146,
-    LONG= 50,
-    EXTENDS= 42,
-    PUBLIC= 55,
+    PS= 148,
+    VAR= 28,
+    THROW= 25,
+    EXPORT= 41,
+    MULASS= 100,
+    STATIC= 57,
     BSLASH= 135,
-    LF= 145;
+    INTERFACE= 49,
+    BREAK= 7,
+    BYTE= 34,
+    ELSE= 14,
+    SHRASS= 103,
+    ANDASS= 105,
+    IF= 18,
+    DecimalIntegerLiteralWithoutLeadingZero= 164,
+    ENUM= 40,
+    SUB= 81,
+    IN= 19,
+    SEMIC= 70,
+    LPAREN= 65,
+    DOT= 69,
+    FORITER= 117,
+    POWASS= 130,
+    FUNCTION= 17,
+    HexDigit= 155,
+    LOR= 94,
+    SUBASS= 99,
+    CASE= 8,
+    HexIntegerLiteral= 169,
+    ITEM= 119,
+    BinaryDigit= 162,
+    StringLiteral= 154,
+    LBRACK= 67,
+    POS= 127,
+    NBSP= 142,
+    CharacterEscapeSequence= 170,
+    PUBLIC= 55,
+    THROWS= 60,
+    POW= 129,
+    XOR= 133,
+    DQUOTE= 136,
+    LBRACE= 63,
+    SAME= 78,
+    CALL= 114,
+    GOTO= 45,
+    UnicodeEscapeSequence= 174,
+    DecimalDigit= 157,
+    CHAR= 35,
+    LABELLED= 120,
+    PINC= 126,
+    ASSIGN= 97,
+    IdentifierPart= 158,
+    IMPORT= 47,
+    DELETE= 12,
+    CATCH= 9,
+    DecimalLiteral= 166,
+    CARETASS= 132,
+    OctalEscapeSequence= 172,
+    DOUBLE= 39,
+    PROTECTED= 54,
+    SP= 141,
+    LONG= 50,
+    COMMA= 71,
+    OctalIntegerLiteral= 167,
+    OctalDigit= 161,
+    DIVASS= 108,
+    CEXPR= 115,
+    DEBUGGER= 38,
+    PRIVATE= 53,
+    CR= 146,
+    LineTerminator= 149,
+    CONTINUE= 10,
+    DIV= 107,
+    NEG= 122,
+    USP= 143,
+    TAB= 138,
+    PAREXPR= 124,
+    LF= 145,
+    NEQ= 77,
+    FACTORIAL= 128,
+    VOLATILE= 62,
+    INSTANCEOF= 20,
+    NEW= 21,
+    EXTENDS= 42,
+    ADD= 80,
+    ARRAY= 110,
+    RegularExpressionLiteral= 160,
+    LS= 147,
+    LT= 72,
+    ADDASS= 98,
+    DO= 13,
+    CLASS= 36,
+    FINALLY= 15,
+    Identifier= 153,
+    BinaryIntegerLiteral= 168,
+    CONST= 37,
+    PACKAGE= 52,
+    SHL= 86,
+    FORSTEP= 118,
+    TRY= 26,
+    SHR= 87,
+    BackslashSequence= 176,
+    SYNCHRONIZED= 59,
+    QUE= 95,
+    SHU= 88,
+    NULL= 4,
+    MUL= 82,
+    RegularExpressionFirstChar= 177,
+    FOR= 16,
+    BLOCK= 111,
+    TRUE= 5,
+    FINAL= 43,
+    SingleLineComment= 152,
+    RPAREN= 66,
+    HexEscapeSequence= 173,
+    EQ= 76,
+    OBJECT= 123,
+    CARET= 131,
+    BOOLEAN= 33,
+    DecimalIntegerLiteral= 165,
+    RBRACK= 68,
+    NOT= 91,
+    RBRACE= 64,
+    NAMEDVALUE= 121,
+    AND= 89,
+    PDEC= 125,
+    THIS= 24,
+    ZeroToThree= 171,
+    SWITCH= 23,
+    VOID= 29,
+    LTE= 74,
+    TRANSIENT= 61,
+    VT= 139,
+    INC= 84,
+    FF= 140,
+    FLOAT= 44,
+    NATIVE= 51,
+    ARGS= 109,
+    NSAME= 79,
+    LAND= 93,
+    IdentifierNameASCIIStart= 159,
+    ABSTRACT= 32,
+    INT= 48,
+    INV= 92,
+    RETURN= 22,
+    BYFIELD= 112,
+    EXPR= 116,
+    ExponentPart= 163,
+    SHLASS= 102,
+    SQUOTE= 137,
+    BYINDEX= 113,
+    EOF= -1,
+    MODASS= 101,
+    ORASS= 106,
+    SUPER= 58,
+    MOD= 83,
+    DEC= 85,
+    OR= 90,
+    EOL= 150,
+    MultiLineComment= 151,
+    EscapeSequence= 175,
+    IMPLEMENTS= 46,
+    COLON= 96,
+    GT= 73,
+    WhiteSpace= 144,
+    WITH= 31,
+    SHORT= 56,
+    XORASS= 134,
+    TYPEOF= 27,
+    RegularExpressionChar= 178,
+    GTE= 75,
+    FALSE= 6,
+    WHILE= 30,
+    DEFAULT= 11;
 
 // public instance methods/vars
 org.antlr.lang.extend(ECMAScript3ExtParser, org.antlr.runtime.Parser, {
@@ -506,7 +506,7 @@ org.antlr.lang.extend(ECMAScript3ExtParser, org.antlr.runtime.Parser, {
     },
 
     getTokenNames: function() { return ECMAScript3ExtParser.tokenNames; },
-    getGrammarFileName: function() { return "res/ECMAScript3Ext.g"; }
+    getGrammarFileName: function() { return "ECMAScript3Ext.g"; }
 });
 org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
@@ -521,7 +521,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:919:1: token : ( reservedWord | Identifier | punctuator | numericLiteral | StringLiteral );
+    // ECMAScript3Ext.g:919:1: token : ( reservedWord | Identifier | punctuator | numericLiteral | StringLiteral );
     // $ANTLR start "token"
     token: function() {
         var retval = new ECMAScript3ExtParser.token_return();
@@ -539,7 +539,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var StringLiteral5_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:920:2: ( reservedWord | Identifier | punctuator | numericLiteral | StringLiteral )
+            // ECMAScript3Ext.g:920:2: ( reservedWord | Identifier | punctuator | numericLiteral | StringLiteral )
             var alt1=5;
             switch ( this.input.LA(1) ) {
             case NULL:
@@ -676,7 +676,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt1) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:920:4: reservedWord
+                    // ECMAScript3Ext.g:920:4: reservedWord
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_reservedWord_in_token1843);
@@ -689,7 +689,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:921:4: Identifier
+                    // ECMAScript3Ext.g:921:4: Identifier
                     root_0 = this.adaptor.nil();
 
                     Identifier2=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_token1848); 
@@ -700,7 +700,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:922:4: punctuator
+                    // ECMAScript3Ext.g:922:4: punctuator
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_punctuator_in_token1853);
@@ -713,7 +713,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:923:4: numericLiteral
+                    // ECMAScript3Ext.g:923:4: numericLiteral
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_numericLiteral_in_token1858);
@@ -726,7 +726,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 5 :
-                    // res/ECMAScript3Ext.g:924:4: StringLiteral
+                    // ECMAScript3Ext.g:924:4: StringLiteral
                     root_0 = this.adaptor.nil();
 
                     StringLiteral5=this.match(this.input,StringLiteral,ECMAScript3ExtParser.FOLLOW_StringLiteral_in_token1863); 
@@ -769,7 +769,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:929:1: reservedWord : ( keyword | futureReservedWord | NULL | booleanLiteral );
+    // ECMAScript3Ext.g:929:1: reservedWord : ( keyword | futureReservedWord | NULL | booleanLiteral );
     // $ANTLR start "reservedWord"
     reservedWord: function() {
         var retval = new ECMAScript3ExtParser.reservedWord_return();
@@ -785,7 +785,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var NULL8_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:930:2: ( keyword | futureReservedWord | NULL | booleanLiteral )
+            // ECMAScript3Ext.g:930:2: ( keyword | futureReservedWord | NULL | booleanLiteral )
             var alt2=4;
             switch ( this.input.LA(1) ) {
             case BREAK:
@@ -864,7 +864,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt2) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:930:4: keyword
+                    // ECMAScript3Ext.g:930:4: keyword
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_keyword_in_reservedWord1876);
@@ -877,7 +877,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:931:4: futureReservedWord
+                    // ECMAScript3Ext.g:931:4: futureReservedWord
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_futureReservedWord_in_reservedWord1881);
@@ -890,7 +890,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:932:4: NULL
+                    // ECMAScript3Ext.g:932:4: NULL
                     root_0 = this.adaptor.nil();
 
                     NULL8=this.match(this.input,NULL,ECMAScript3ExtParser.FOLLOW_NULL_in_reservedWord1886); 
@@ -901,7 +901,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:933:4: booleanLiteral
+                    // ECMAScript3Ext.g:933:4: booleanLiteral
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_booleanLiteral_in_reservedWord1891);
@@ -946,7 +946,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:940:1: keyword : ( BREAK | CASE | CATCH | CONTINUE | DEFAULT | DELETE | DO | ELSE | FINALLY | FOR | FUNCTION | IF | IN | INSTANCEOF | NEW | RETURN | SWITCH | THIS | THROW | TRY | TYPEOF | VAR | VOID | WHILE | WITH );
+    // ECMAScript3Ext.g:940:1: keyword : ( BREAK | CASE | CATCH | CONTINUE | DEFAULT | DELETE | DO | ELSE | FINALLY | FOR | FUNCTION | IF | IN | INSTANCEOF | NEW | RETURN | SWITCH | THIS | THROW | TRY | TYPEOF | VAR | VOID | WHILE | WITH );
     // $ANTLR start "keyword"
     keyword: function() {
         var retval = new ECMAScript3ExtParser.keyword_return();
@@ -959,8 +959,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set10_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:941:2: ( BREAK | CASE | CATCH | CONTINUE | DEFAULT | DELETE | DO | ELSE | FINALLY | FOR | FUNCTION | IF | IN | INSTANCEOF | NEW | RETURN | SWITCH | THIS | THROW | TRY | TYPEOF | VAR | VOID | WHILE | WITH )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:941:2: ( BREAK | CASE | CATCH | CONTINUE | DEFAULT | DELETE | DO | ELSE | FINALLY | FOR | FUNCTION | IF | IN | INSTANCEOF | NEW | RETURN | SWITCH | THIS | THROW | TRY | TYPEOF | VAR | VOID | WHILE | WITH )
+            // ECMAScript3Ext.g:
             root_0 = this.adaptor.nil();
 
             set10=this.input.LT(1);
@@ -1008,7 +1008,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:972:1: futureReservedWord : ( ABSTRACT | BOOLEAN | BYTE | CHAR | CLASS | CONST | DEBUGGER | DOUBLE | ENUM | EXPORT | EXTENDS | FINAL | FLOAT | GOTO | IMPLEMENTS | IMPORT | INT | INTERFACE | LONG | NATIVE | PACKAGE | PRIVATE | PROTECTED | PUBLIC | SHORT | STATIC | SUPER | SYNCHRONIZED | THROWS | TRANSIENT | VOLATILE );
+    // ECMAScript3Ext.g:972:1: futureReservedWord : ( ABSTRACT | BOOLEAN | BYTE | CHAR | CLASS | CONST | DEBUGGER | DOUBLE | ENUM | EXPORT | EXTENDS | FINAL | FLOAT | GOTO | IMPLEMENTS | IMPORT | INT | INTERFACE | LONG | NATIVE | PACKAGE | PRIVATE | PROTECTED | PUBLIC | SHORT | STATIC | SUPER | SYNCHRONIZED | THROWS | TRANSIENT | VOLATILE );
     // $ANTLR start "futureReservedWord"
     futureReservedWord: function() {
         var retval = new ECMAScript3ExtParser.futureReservedWord_return();
@@ -1021,8 +1021,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set11_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:973:2: ( ABSTRACT | BOOLEAN | BYTE | CHAR | CLASS | CONST | DEBUGGER | DOUBLE | ENUM | EXPORT | EXTENDS | FINAL | FLOAT | GOTO | IMPLEMENTS | IMPORT | INT | INTERFACE | LONG | NATIVE | PACKAGE | PRIVATE | PROTECTED | PUBLIC | SHORT | STATIC | SUPER | SYNCHRONIZED | THROWS | TRANSIENT | VOLATILE )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:973:2: ( ABSTRACT | BOOLEAN | BYTE | CHAR | CLASS | CONST | DEBUGGER | DOUBLE | ENUM | EXPORT | EXTENDS | FINAL | FLOAT | GOTO | IMPLEMENTS | IMPORT | INT | INTERFACE | LONG | NATIVE | PACKAGE | PRIVATE | PROTECTED | PUBLIC | SHORT | STATIC | SUPER | SYNCHRONIZED | THROWS | TRANSIENT | VOLATILE )
+            // ECMAScript3Ext.g:
             root_0 = this.adaptor.nil();
 
             set11=this.input.LT(1);
@@ -1070,7 +1070,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1050:1: punctuator : ( LBRACE | RBRACE | LPAREN | RPAREN | LBRACK | RBRACK | DOT | SEMIC | COMMA | LT | GT | LTE | GTE | EQ | NEQ | SAME | NSAME | ADD | SUB | MUL | MOD | INC | DEC | SHL | SHR | SHU | AND | OR | XOR | NOT | INV | LAND | LOR | QUE | COLON | ASSIGN | ADDASS | SUBASS | MULASS | MODASS | SHLASS | SHRASS | SHUASS | ANDASS | ORASS | XORASS | DIV | DIVASS | POW | POWASS );
+    // ECMAScript3Ext.g:1050:1: punctuator : ( LBRACE | RBRACE | LPAREN | RPAREN | LBRACK | RBRACK | DOT | SEMIC | COMMA | LT | GT | LTE | GTE | EQ | NEQ | SAME | NSAME | ADD | SUB | MUL | MOD | INC | DEC | SHL | SHR | SHU | AND | OR | XOR | NOT | INV | LAND | LOR | QUE | COLON | ASSIGN | ADDASS | SUBASS | MULASS | MODASS | SHLASS | SHRASS | SHUASS | ANDASS | ORASS | XORASS | DIV | DIVASS | POW | POWASS );
     // $ANTLR start "punctuator"
     punctuator: function() {
         var retval = new ECMAScript3ExtParser.punctuator_return();
@@ -1083,8 +1083,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set12_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1051:2: ( LBRACE | RBRACE | LPAREN | RPAREN | LBRACK | RBRACK | DOT | SEMIC | COMMA | LT | GT | LTE | GTE | EQ | NEQ | SAME | NSAME | ADD | SUB | MUL | MOD | INC | DEC | SHL | SHR | SHU | AND | OR | XOR | NOT | INV | LAND | LOR | QUE | COLON | ASSIGN | ADDASS | SUBASS | MULASS | MODASS | SHLASS | SHRASS | SHUASS | ANDASS | ORASS | XORASS | DIV | DIVASS | POW | POWASS )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:1051:2: ( LBRACE | RBRACE | LPAREN | RPAREN | LBRACK | RBRACK | DOT | SEMIC | COMMA | LT | GT | LTE | GTE | EQ | NEQ | SAME | NSAME | ADD | SUB | MUL | MOD | INC | DEC | SHL | SHR | SHU | AND | OR | XOR | NOT | INV | LAND | LOR | QUE | COLON | ASSIGN | ADDASS | SUBASS | MULASS | MODASS | SHLASS | SHRASS | SHUASS | ANDASS | ORASS | XORASS | DIV | DIVASS | POW | POWASS )
+            // ECMAScript3Ext.g:
             root_0 = this.adaptor.nil();
 
             set12=this.input.LT(1);
@@ -1132,7 +1132,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1107:1: literal : ( NULL | booleanLiteral | numericLiteral | StringLiteral | RegularExpressionLiteral );
+    // ECMAScript3Ext.g:1107:1: literal : ( NULL | booleanLiteral | numericLiteral | StringLiteral | RegularExpressionLiteral );
     // $ANTLR start "literal"
     literal: function() {
         var retval = new ECMAScript3ExtParser.literal_return();
@@ -1151,7 +1151,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var RegularExpressionLiteral17_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1108:2: ( NULL | booleanLiteral | numericLiteral | StringLiteral | RegularExpressionLiteral )
+            // ECMAScript3Ext.g:1108:2: ( NULL | booleanLiteral | numericLiteral | StringLiteral | RegularExpressionLiteral )
             var alt3=5;
             switch ( this.input.LA(1) ) {
             case NULL:
@@ -1182,7 +1182,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt3) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1108:4: NULL
+                    // ECMAScript3Ext.g:1108:4: NULL
                     root_0 = this.adaptor.nil();
 
                     NULL13=this.match(this.input,NULL,ECMAScript3ExtParser.FOLLOW_NULL_in_literal2594); 
@@ -1193,7 +1193,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1109:4: booleanLiteral
+                    // ECMAScript3Ext.g:1109:4: booleanLiteral
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_booleanLiteral_in_literal2599);
@@ -1206,7 +1206,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1110:4: numericLiteral
+                    // ECMAScript3Ext.g:1110:4: numericLiteral
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_numericLiteral_in_literal2604);
@@ -1219,7 +1219,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:1111:4: StringLiteral
+                    // ECMAScript3Ext.g:1111:4: StringLiteral
                     root_0 = this.adaptor.nil();
 
                     StringLiteral16=this.match(this.input,StringLiteral,ECMAScript3ExtParser.FOLLOW_StringLiteral_in_literal2609); 
@@ -1230,7 +1230,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 5 :
-                    // res/ECMAScript3Ext.g:1112:4: RegularExpressionLiteral
+                    // ECMAScript3Ext.g:1112:4: RegularExpressionLiteral
                     root_0 = this.adaptor.nil();
 
                     RegularExpressionLiteral17=this.match(this.input,RegularExpressionLiteral,ECMAScript3ExtParser.FOLLOW_RegularExpressionLiteral_in_literal2614); 
@@ -1273,7 +1273,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1115:1: booleanLiteral : ( TRUE | FALSE );
+    // ECMAScript3Ext.g:1115:1: booleanLiteral : ( TRUE | FALSE );
     // $ANTLR start "booleanLiteral"
     booleanLiteral: function() {
         var retval = new ECMAScript3ExtParser.booleanLiteral_return();
@@ -1286,8 +1286,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set18_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1116:2: ( TRUE | FALSE )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:1116:2: ( TRUE | FALSE )
+            // ECMAScript3Ext.g:
             root_0 = this.adaptor.nil();
 
             set18=this.input.LT(1);
@@ -1335,7 +1335,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1174:1: numericLiteral : ( DecimalLiteral | OctalIntegerLiteral | BinaryIntegerLiteral | HexIntegerLiteral );
+    // ECMAScript3Ext.g:1174:1: numericLiteral : ( DecimalLiteral | OctalIntegerLiteral | BinaryIntegerLiteral | HexIntegerLiteral );
     // $ANTLR start "numericLiteral"
     numericLiteral: function() {
         var retval = new ECMAScript3ExtParser.numericLiteral_return();
@@ -1348,8 +1348,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set19_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1175:2: ( DecimalLiteral | OctalIntegerLiteral | BinaryIntegerLiteral | HexIntegerLiteral )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:1175:2: ( DecimalLiteral | OctalIntegerLiteral | BinaryIntegerLiteral | HexIntegerLiteral )
+            // ECMAScript3Ext.g:
             root_0 = this.adaptor.nil();
 
             set19=this.input.LT(1);
@@ -1397,7 +1397,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1263:1: primaryExpression : ( THIS | Identifier | literal | arrayLiteral | objectLiteral | lpar= LPAREN expression RPAREN -> ^( PAREXPR[$lpar, \"PAREXPR\"] expression ) );
+    // ECMAScript3Ext.g:1263:1: primaryExpression : ( THIS | Identifier | literal | arrayLiteral | objectLiteral | lpar= LPAREN expression RPAREN -> ^( PAREXPR[$lpar, \"PAREXPR\"] expression ) );
     // $ANTLR start "primaryExpression"
     primaryExpression: function() {
         var retval = new ECMAScript3ExtParser.primaryExpression_return();
@@ -1418,11 +1418,11 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var THIS20_tree=null;
         var Identifier21_tree=null;
         var RPAREN26_tree=null;
-        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
         var stream_LPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LPAREN");
+        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
         var stream_expression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule expression");
         try {
-            // res/ECMAScript3Ext.g:1264:2: ( THIS | Identifier | literal | arrayLiteral | objectLiteral | lpar= LPAREN expression RPAREN -> ^( PAREXPR[$lpar, \"PAREXPR\"] expression ) )
+            // ECMAScript3Ext.g:1264:2: ( THIS | Identifier | literal | arrayLiteral | objectLiteral | lpar= LPAREN expression RPAREN -> ^( PAREXPR[$lpar, \"PAREXPR\"] expression ) )
             var alt4=6;
             switch ( this.input.LA(1) ) {
             case THIS:
@@ -1460,7 +1460,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt4) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1264:4: THIS
+                    // ECMAScript3Ext.g:1264:4: THIS
                     root_0 = this.adaptor.nil();
 
                     THIS20=this.match(this.input,THIS,ECMAScript3ExtParser.FOLLOW_THIS_in_primaryExpression3294); 
@@ -1471,7 +1471,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1265:4: Identifier
+                    // ECMAScript3Ext.g:1265:4: Identifier
                     root_0 = this.adaptor.nil();
 
                     Identifier21=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_primaryExpression3299); 
@@ -1482,7 +1482,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1266:4: literal
+                    // ECMAScript3Ext.g:1266:4: literal
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_literal_in_primaryExpression3304);
@@ -1495,7 +1495,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:1267:4: arrayLiteral
+                    // ECMAScript3Ext.g:1267:4: arrayLiteral
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_arrayLiteral_in_primaryExpression3309);
@@ -1508,7 +1508,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 5 :
-                    // res/ECMAScript3Ext.g:1268:4: objectLiteral
+                    // ECMAScript3Ext.g:1268:4: objectLiteral
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_objectLiteral_in_primaryExpression3314);
@@ -1521,7 +1521,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 6 :
-                    // res/ECMAScript3Ext.g:1269:4: lpar= LPAREN expression RPAREN
+                    // ECMAScript3Ext.g:1269:4: lpar= LPAREN expression RPAREN
                     lpar=this.match(this.input,LPAREN,ECMAScript3ExtParser.FOLLOW_LPAREN_in_primaryExpression3321);  
                     stream_LPAREN.add(lpar);
 
@@ -1548,7 +1548,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     root_0 = this.adaptor.nil();
                     // 1269:34: -> ^( PAREXPR[$lpar, \"PAREXPR\"] expression )
                     {
-                        // res/ECMAScript3Ext.g:1269:37: ^( PAREXPR[$lpar, \"PAREXPR\"] expression )
+                        // ECMAScript3Ext.g:1269:37: ^( PAREXPR[$lpar, \"PAREXPR\"] expression )
                         {
                         var root_1 = this.adaptor.nil();
                         root_1 = this.adaptor.becomeRoot(this.adaptor.create(PAREXPR, lpar, "PAREXPR"), root_1);
@@ -1596,7 +1596,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1272:1: arrayLiteral : lb= LBRACK ( arrayItem )? ( COMMA ( arrayItem )? )* RBRACK -> ^( ARRAY[$lb, \"ARRAY\"] ( arrayItem )* ) ;
+    // ECMAScript3Ext.g:1272:1: arrayLiteral : lb= LBRACK ( arrayItem )? ( COMMA ( arrayItem )? )* RBRACK -> ^( ARRAY[$lb, \"ARRAY\"] ( arrayItem )* ) ;
     // $ANTLR start "arrayLiteral"
     arrayLiteral: function() {
         var retval = new ECMAScript3ExtParser.arrayLiteral_return();
@@ -1613,17 +1613,17 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var lb_tree=null;
         var COMMA28_tree=null;
         var RBRACK30_tree=null;
+        var stream_COMMA=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COMMA");
         var stream_RBRACK=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RBRACK");
         var stream_LBRACK=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LBRACK");
-        var stream_COMMA=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COMMA");
         var stream_arrayItem=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule arrayItem");
         try {
-            // res/ECMAScript3Ext.g:1273:2: (lb= LBRACK ( arrayItem )? ( COMMA ( arrayItem )? )* RBRACK -> ^( ARRAY[$lb, \"ARRAY\"] ( arrayItem )* ) )
-            // res/ECMAScript3Ext.g:1273:4: lb= LBRACK ( arrayItem )? ( COMMA ( arrayItem )? )* RBRACK
+            // ECMAScript3Ext.g:1273:2: (lb= LBRACK ( arrayItem )? ( COMMA ( arrayItem )? )* RBRACK -> ^( ARRAY[$lb, \"ARRAY\"] ( arrayItem )* ) )
+            // ECMAScript3Ext.g:1273:4: lb= LBRACK ( arrayItem )? ( COMMA ( arrayItem )? )* RBRACK
             lb=this.match(this.input,LBRACK,ECMAScript3ExtParser.FOLLOW_LBRACK_in_arrayLiteral3349);  
             stream_LBRACK.add(lb);
 
-            // res/ECMAScript3Ext.g:1273:14: ( arrayItem )?
+            // ECMAScript3Ext.g:1273:14: ( arrayItem )?
             var alt5=2;
             switch ( this.input.LA(1) ) {
                 case NULL:
@@ -1671,7 +1671,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt5) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1273:14: arrayItem
+                    // ECMAScript3Ext.g:1273:14: arrayItem
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_arrayItem_in_arrayLiteral3351);
                     arrayItem27=this.arrayItem();
 
@@ -1684,7 +1684,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             }
 
-            // res/ECMAScript3Ext.g:1273:25: ( COMMA ( arrayItem )? )*
+            // ECMAScript3Ext.g:1273:25: ( COMMA ( arrayItem )? )*
             loop7:
             do {
                 var alt7=2;
@@ -1697,11 +1697,11 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt7) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1273:26: COMMA ( arrayItem )?
+                    // ECMAScript3Ext.g:1273:26: COMMA ( arrayItem )?
                     COMMA28=this.match(this.input,COMMA,ECMAScript3ExtParser.FOLLOW_COMMA_in_arrayLiteral3355);  
                     stream_COMMA.add(COMMA28);
 
-                    // res/ECMAScript3Ext.g:1273:32: ( arrayItem )?
+                    // ECMAScript3Ext.g:1273:32: ( arrayItem )?
                     var alt6=2;
                     switch ( this.input.LA(1) ) {
                         case NULL:
@@ -1749,7 +1749,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     switch (alt6) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1273:32: arrayItem
+                            // ECMAScript3Ext.g:1273:32: arrayItem
                             this.pushFollow(ECMAScript3ExtParser.FOLLOW_arrayItem_in_arrayLiteral3357);
                             arrayItem29=this.arrayItem();
 
@@ -1788,12 +1788,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1274:2: -> ^( ARRAY[$lb, \"ARRAY\"] ( arrayItem )* )
             {
-                // res/ECMAScript3Ext.g:1274:5: ^( ARRAY[$lb, \"ARRAY\"] ( arrayItem )* )
+                // ECMAScript3Ext.g:1274:5: ^( ARRAY[$lb, \"ARRAY\"] ( arrayItem )* )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(ARRAY, lb, "ARRAY"), root_1);
 
-                // res/ECMAScript3Ext.g:1274:28: ( arrayItem )*
+                // ECMAScript3Ext.g:1274:28: ( arrayItem )*
                 while ( stream_arrayItem.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_arrayItem.nextTree());
 
@@ -1839,7 +1839,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1277:1: arrayItem : (expr= assignmentExpression | {...}?) -> ^( ITEM ( $expr)? ) ;
+    // ECMAScript3Ext.g:1277:1: arrayItem : (expr= assignmentExpression | {...}?) -> ^( ITEM ( $expr)? ) ;
     // $ANTLR start "arrayItem"
     arrayItem: function() {
         var retval = new ECMAScript3ExtParser.arrayItem_return();
@@ -1851,9 +1851,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
         var stream_assignmentExpression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule assignmentExpression");
         try {
-            // res/ECMAScript3Ext.g:1278:2: ( (expr= assignmentExpression | {...}?) -> ^( ITEM ( $expr)? ) )
-            // res/ECMAScript3Ext.g:1278:4: (expr= assignmentExpression | {...}?)
-            // res/ECMAScript3Ext.g:1278:4: (expr= assignmentExpression | {...}?)
+            // ECMAScript3Ext.g:1278:2: ( (expr= assignmentExpression | {...}?) -> ^( ITEM ( $expr)? ) )
+            // ECMAScript3Ext.g:1278:4: (expr= assignmentExpression | {...}?)
+            // ECMAScript3Ext.g:1278:4: (expr= assignmentExpression | {...}?)
             var alt8=2;
             var LA8_0 = this.input.LA(1);
 
@@ -1871,7 +1871,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt8) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1278:6: expr= assignmentExpression
+                    // ECMAScript3Ext.g:1278:6: expr= assignmentExpression
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_assignmentExpression_in_arrayItem3390);
                     expr=this.assignmentExpression();
 
@@ -1882,7 +1882,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1278:34: {...}?
+                    // ECMAScript3Ext.g:1278:34: {...}?
                     if ( !(( this.input.LA(1) == ECMAScript3ExtParser.COMMA )) ) {
                         throw new org.antlr.runtime.FailedPredicateException(this.input, "arrayItem", " this.input.LA(1) == ECMAScript3ExtParser.COMMA ");
                     }
@@ -1897,22 +1897,22 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             // AST REWRITE
             // elements: expr
             // token labels: 
-            // rule labels: retval, expr
+            // rule labels: expr, retval
             // token list labels: 
             // rule list labels: 
             retval.tree = root_0;
-            var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
             var stream_expr=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token expr",expr!=null?expr.tree:null);
+            var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = this.adaptor.nil();
             // 1279:2: -> ^( ITEM ( $expr)? )
             {
-                // res/ECMAScript3Ext.g:1279:5: ^( ITEM ( $expr)? )
+                // ECMAScript3Ext.g:1279:5: ^( ITEM ( $expr)? )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(ITEM, "ITEM"), root_1);
 
-                // res/ECMAScript3Ext.g:1279:13: ( $expr)?
+                // ECMAScript3Ext.g:1279:13: ( $expr)?
                 if ( stream_expr.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_expr.nextTree());
 
@@ -1958,7 +1958,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1282:1: objectLiteral : lb= LBRACE ( nameValuePair ( COMMA nameValuePair )* ( COMMA )? )? RBRACE -> ^( OBJECT[$lb, \"OBJECT\"] ( nameValuePair )* ) ;
+    // ECMAScript3Ext.g:1282:1: objectLiteral : lb= LBRACE ( nameValuePair ( COMMA nameValuePair )* ( COMMA )? )? RBRACE -> ^( OBJECT[$lb, \"OBJECT\"] ( nameValuePair )* ) ;
     // $ANTLR start "objectLiteral"
     objectLiteral: function() {
         var retval = new ECMAScript3ExtParser.objectLiteral_return();
@@ -1977,17 +1977,17 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var COMMA32_tree=null;
         var COMMA34_tree=null;
         var RBRACE35_tree=null;
-        var stream_RBRACE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RBRACE");
         var stream_COMMA=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COMMA");
+        var stream_RBRACE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RBRACE");
         var stream_LBRACE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LBRACE");
         var stream_nameValuePair=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule nameValuePair");
         try {
-            // res/ECMAScript3Ext.g:1283:2: (lb= LBRACE ( nameValuePair ( COMMA nameValuePair )* ( COMMA )? )? RBRACE -> ^( OBJECT[$lb, \"OBJECT\"] ( nameValuePair )* ) )
-            // res/ECMAScript3Ext.g:1283:4: lb= LBRACE ( nameValuePair ( COMMA nameValuePair )* ( COMMA )? )? RBRACE
+            // ECMAScript3Ext.g:1283:2: (lb= LBRACE ( nameValuePair ( COMMA nameValuePair )* ( COMMA )? )? RBRACE -> ^( OBJECT[$lb, \"OBJECT\"] ( nameValuePair )* ) )
+            // ECMAScript3Ext.g:1283:4: lb= LBRACE ( nameValuePair ( COMMA nameValuePair )* ( COMMA )? )? RBRACE
             lb=this.match(this.input,LBRACE,ECMAScript3ExtParser.FOLLOW_LBRACE_in_objectLiteral3422);  
             stream_LBRACE.add(lb);
 
-            // res/ECMAScript3Ext.g:1283:14: ( nameValuePair ( COMMA nameValuePair )* ( COMMA )? )?
+            // ECMAScript3Ext.g:1283:14: ( nameValuePair ( COMMA nameValuePair )* ( COMMA )? )?
             var alt11=2;
             var LA11_0 = this.input.LA(1);
 
@@ -1996,14 +1996,14 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt11) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1283:16: nameValuePair ( COMMA nameValuePair )* ( COMMA )?
+                    // ECMAScript3Ext.g:1283:16: nameValuePair ( COMMA nameValuePair )* ( COMMA )?
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_nameValuePair_in_objectLiteral3426);
                     nameValuePair31=this.nameValuePair();
 
                     this.state._fsp--;
 
                     stream_nameValuePair.add(nameValuePair31.getTree());
-                    // res/ECMAScript3Ext.g:1283:30: ( COMMA nameValuePair )*
+                    // ECMAScript3Ext.g:1283:30: ( COMMA nameValuePair )*
                     loop9:
                     do {
                         var alt9=2;
@@ -2022,7 +2022,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         switch (alt9) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1283:32: COMMA nameValuePair
+                            // ECMAScript3Ext.g:1283:32: COMMA nameValuePair
                             COMMA32=this.match(this.input,COMMA,ECMAScript3ExtParser.FOLLOW_COMMA_in_objectLiteral3430);  
                             stream_COMMA.add(COMMA32);
 
@@ -2041,7 +2041,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                         }
                     } while (true);
 
-                    // res/ECMAScript3Ext.g:1283:55: ( COMMA )?
+                    // ECMAScript3Ext.g:1283:55: ( COMMA )?
                     var alt10=2;
                     var LA10_0 = this.input.LA(1);
 
@@ -2050,7 +2050,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     }
                     switch (alt10) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1283:55: COMMA
+                            // ECMAScript3Ext.g:1283:55: COMMA
                             COMMA34=this.match(this.input,COMMA,ECMAScript3ExtParser.FOLLOW_COMMA_in_objectLiteral3437);  
                             stream_COMMA.add(COMMA34);
 
@@ -2083,12 +2083,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1284:2: -> ^( OBJECT[$lb, \"OBJECT\"] ( nameValuePair )* )
             {
-                // res/ECMAScript3Ext.g:1284:5: ^( OBJECT[$lb, \"OBJECT\"] ( nameValuePair )* )
+                // ECMAScript3Ext.g:1284:5: ^( OBJECT[$lb, \"OBJECT\"] ( nameValuePair )* )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(OBJECT, lb, "OBJECT"), root_1);
 
-                // res/ECMAScript3Ext.g:1284:30: ( nameValuePair )*
+                // ECMAScript3Ext.g:1284:30: ( nameValuePair )*
                 while ( stream_nameValuePair.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_nameValuePair.nextTree());
 
@@ -2134,7 +2134,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1287:1: nameValuePair : propertyName COLON assignmentExpression -> ^( NAMEDVALUE propertyName assignmentExpression ) ;
+    // ECMAScript3Ext.g:1287:1: nameValuePair : propertyName COLON assignmentExpression -> ^( NAMEDVALUE propertyName assignmentExpression ) ;
     // $ANTLR start "nameValuePair"
     nameValuePair: function() {
         var retval = new ECMAScript3ExtParser.nameValuePair_return();
@@ -2151,8 +2151,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var stream_propertyName=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule propertyName");
         var stream_assignmentExpression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule assignmentExpression");
         try {
-            // res/ECMAScript3Ext.g:1288:2: ( propertyName COLON assignmentExpression -> ^( NAMEDVALUE propertyName assignmentExpression ) )
-            // res/ECMAScript3Ext.g:1288:4: propertyName COLON assignmentExpression
+            // ECMAScript3Ext.g:1288:2: ( propertyName COLON assignmentExpression -> ^( NAMEDVALUE propertyName assignmentExpression ) )
+            // ECMAScript3Ext.g:1288:4: propertyName COLON assignmentExpression
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_propertyName_in_nameValuePair3467);
             propertyName36=this.propertyName();
 
@@ -2171,7 +2171,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
             // AST REWRITE
-            // elements: propertyName, assignmentExpression
+            // elements: assignmentExpression, propertyName
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2182,7 +2182,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1289:2: -> ^( NAMEDVALUE propertyName assignmentExpression )
             {
-                // res/ECMAScript3Ext.g:1289:5: ^( NAMEDVALUE propertyName assignmentExpression )
+                // ECMAScript3Ext.g:1289:5: ^( NAMEDVALUE propertyName assignmentExpression )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(NAMEDVALUE, "NAMEDVALUE"), root_1);
@@ -2229,7 +2229,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1292:1: propertyName : ( Identifier | StringLiteral | numericLiteral );
+    // ECMAScript3Ext.g:1292:1: propertyName : ( Identifier | StringLiteral | numericLiteral );
     // $ANTLR start "propertyName"
     propertyName: function() {
         var retval = new ECMAScript3ExtParser.propertyName_return();
@@ -2245,7 +2245,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var StringLiteral40_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1293:2: ( Identifier | StringLiteral | numericLiteral )
+            // ECMAScript3Ext.g:1293:2: ( Identifier | StringLiteral | numericLiteral )
             var alt12=3;
             switch ( this.input.LA(1) ) {
             case Identifier:
@@ -2269,7 +2269,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt12) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1293:4: Identifier
+                    // ECMAScript3Ext.g:1293:4: Identifier
                     root_0 = this.adaptor.nil();
 
                     Identifier39=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_propertyName3495); 
@@ -2280,7 +2280,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1294:4: StringLiteral
+                    // ECMAScript3Ext.g:1294:4: StringLiteral
                     root_0 = this.adaptor.nil();
 
                     StringLiteral40=this.match(this.input,StringLiteral,ECMAScript3ExtParser.FOLLOW_StringLiteral_in_propertyName3500); 
@@ -2291,7 +2291,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1295:4: numericLiteral
+                    // ECMAScript3Ext.g:1295:4: numericLiteral
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_numericLiteral_in_propertyName3505);
@@ -2336,7 +2336,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1307:1: memberExpression : ( primaryExpression | functionExpression | newExpression );
+    // ECMAScript3Ext.g:1307:1: memberExpression : ( primaryExpression | functionExpression | newExpression );
     // $ANTLR start "memberExpression"
     memberExpression: function() {
         var retval = new ECMAScript3ExtParser.memberExpression_return();
@@ -2350,7 +2350,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1308:2: ( primaryExpression | functionExpression | newExpression )
+            // ECMAScript3Ext.g:1308:2: ( primaryExpression | functionExpression | newExpression )
             var alt13=3;
             switch ( this.input.LA(1) ) {
             case NULL:
@@ -2384,7 +2384,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt13) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1308:4: primaryExpression
+                    // ECMAScript3Ext.g:1308:4: primaryExpression
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_primaryExpression_in_memberExpression3523);
@@ -2397,7 +2397,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1309:4: functionExpression
+                    // ECMAScript3Ext.g:1309:4: functionExpression
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_functionExpression_in_memberExpression3528);
@@ -2410,7 +2410,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1310:4: newExpression
+                    // ECMAScript3Ext.g:1310:4: newExpression
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_newExpression_in_memberExpression3533);
@@ -2455,7 +2455,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1313:1: newExpression : NEW memberExpression ;
+    // ECMAScript3Ext.g:1313:1: newExpression : NEW memberExpression ;
     // $ANTLR start "newExpression"
     newExpression: function() {
         var retval = new ECMAScript3ExtParser.newExpression_return();
@@ -2469,8 +2469,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var NEW45_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1314:2: ( NEW memberExpression )
-            // res/ECMAScript3Ext.g:1314:4: NEW memberExpression
+            // ECMAScript3Ext.g:1314:2: ( NEW memberExpression )
+            // ECMAScript3Ext.g:1314:4: NEW memberExpression
             root_0 = this.adaptor.nil();
 
             NEW45=this.match(this.input,NEW,ECMAScript3ExtParser.FOLLOW_NEW_in_newExpression3544); 
@@ -2517,7 +2517,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1318:1: arguments : LPAREN ( assignmentExpression ( COMMA assignmentExpression )* )? RPAREN -> ^( ARGS ( assignmentExpression )* ) ;
+    // ECMAScript3Ext.g:1318:1: arguments : LPAREN ( assignmentExpression ( COMMA assignmentExpression )* )? RPAREN -> ^( ARGS ( assignmentExpression )* ) ;
     // $ANTLR start "arguments"
     arguments: function() {
         var retval = new ECMAScript3ExtParser.arguments_return();
@@ -2534,17 +2534,17 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var LPAREN47_tree=null;
         var COMMA49_tree=null;
         var RPAREN51_tree=null;
-        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
         var stream_COMMA=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COMMA");
         var stream_LPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LPAREN");
+        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
         var stream_assignmentExpression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule assignmentExpression");
         try {
-            // res/ECMAScript3Ext.g:1319:2: ( LPAREN ( assignmentExpression ( COMMA assignmentExpression )* )? RPAREN -> ^( ARGS ( assignmentExpression )* ) )
-            // res/ECMAScript3Ext.g:1319:4: LPAREN ( assignmentExpression ( COMMA assignmentExpression )* )? RPAREN
+            // ECMAScript3Ext.g:1319:2: ( LPAREN ( assignmentExpression ( COMMA assignmentExpression )* )? RPAREN -> ^( ARGS ( assignmentExpression )* ) )
+            // ECMAScript3Ext.g:1319:4: LPAREN ( assignmentExpression ( COMMA assignmentExpression )* )? RPAREN
             LPAREN47=this.match(this.input,LPAREN,ECMAScript3ExtParser.FOLLOW_LPAREN_in_arguments3559);  
             stream_LPAREN.add(LPAREN47);
 
-            // res/ECMAScript3Ext.g:1319:11: ( assignmentExpression ( COMMA assignmentExpression )* )?
+            // ECMAScript3Ext.g:1319:11: ( assignmentExpression ( COMMA assignmentExpression )* )?
             var alt15=2;
             var LA15_0 = this.input.LA(1);
 
@@ -2553,14 +2553,14 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt15) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1319:13: assignmentExpression ( COMMA assignmentExpression )*
+                    // ECMAScript3Ext.g:1319:13: assignmentExpression ( COMMA assignmentExpression )*
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_assignmentExpression_in_arguments3563);
                     assignmentExpression48=this.assignmentExpression();
 
                     this.state._fsp--;
 
                     stream_assignmentExpression.add(assignmentExpression48.getTree());
-                    // res/ECMAScript3Ext.g:1319:34: ( COMMA assignmentExpression )*
+                    // ECMAScript3Ext.g:1319:34: ( COMMA assignmentExpression )*
                     loop14:
                     do {
                         var alt14=2;
@@ -2573,7 +2573,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         switch (alt14) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1319:36: COMMA assignmentExpression
+                            // ECMAScript3Ext.g:1319:36: COMMA assignmentExpression
                             COMMA49=this.match(this.input,COMMA,ECMAScript3ExtParser.FOLLOW_COMMA_in_arguments3567);  
                             stream_COMMA.add(COMMA49);
 
@@ -2615,12 +2615,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1320:2: -> ^( ARGS ( assignmentExpression )* )
             {
-                // res/ECMAScript3Ext.g:1320:5: ^( ARGS ( assignmentExpression )* )
+                // ECMAScript3Ext.g:1320:5: ^( ARGS ( assignmentExpression )* )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(ARGS, "ARGS"), root_1);
 
-                // res/ECMAScript3Ext.g:1320:13: ( assignmentExpression )*
+                // ECMAScript3Ext.g:1320:13: ( assignmentExpression )*
                 while ( stream_assignmentExpression.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_assignmentExpression.nextTree());
 
@@ -2666,7 +2666,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1323:1: leftHandSideExpression : ( memberExpression -> memberExpression ) ( arguments -> ^( CALL $leftHandSideExpression arguments ) | LBRACK expression RBRACK -> ^( BYINDEX $leftHandSideExpression expression ) | DOT Identifier -> ^( BYFIELD $leftHandSideExpression Identifier ) )* ;
+    // ECMAScript3Ext.g:1323:1: leftHandSideExpression : ( memberExpression -> memberExpression ) ( arguments -> ^( CALL $leftHandSideExpression arguments ) | LBRACK expression RBRACK -> ^( BYINDEX $leftHandSideExpression expression ) | DOT Identifier -> ^( BYFIELD $leftHandSideExpression Identifier ) )* ;
     // $ANTLR start "leftHandSideExpression"
     leftHandSideExpression: function() {
         var retval = new ECMAScript3ExtParser.leftHandSideExpression_return();
@@ -2687,17 +2687,17 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var DOT57_tree=null;
         var Identifier58_tree=null;
         var stream_RBRACK=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RBRACK");
+        var stream_Identifier=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token Identifier");
         var stream_LBRACK=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LBRACK");
         var stream_DOT=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token DOT");
-        var stream_Identifier=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token Identifier");
-        var stream_memberExpression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule memberExpression");
         var stream_expression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule expression");
         var stream_arguments=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule arguments");
+        var stream_memberExpression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule memberExpression");
         try {
-            // res/ECMAScript3Ext.g:1324:2: ( ( memberExpression -> memberExpression ) ( arguments -> ^( CALL $leftHandSideExpression arguments ) | LBRACK expression RBRACK -> ^( BYINDEX $leftHandSideExpression expression ) | DOT Identifier -> ^( BYFIELD $leftHandSideExpression Identifier ) )* )
-            // res/ECMAScript3Ext.g:1325:2: ( memberExpression -> memberExpression ) ( arguments -> ^( CALL $leftHandSideExpression arguments ) | LBRACK expression RBRACK -> ^( BYINDEX $leftHandSideExpression expression ) | DOT Identifier -> ^( BYFIELD $leftHandSideExpression Identifier ) )*
-            // res/ECMAScript3Ext.g:1325:2: ( memberExpression -> memberExpression )
-            // res/ECMAScript3Ext.g:1326:3: memberExpression
+            // ECMAScript3Ext.g:1324:2: ( ( memberExpression -> memberExpression ) ( arguments -> ^( CALL $leftHandSideExpression arguments ) | LBRACK expression RBRACK -> ^( BYINDEX $leftHandSideExpression expression ) | DOT Identifier -> ^( BYFIELD $leftHandSideExpression Identifier ) )* )
+            // ECMAScript3Ext.g:1325:2: ( memberExpression -> memberExpression ) ( arguments -> ^( CALL $leftHandSideExpression arguments ) | LBRACK expression RBRACK -> ^( BYINDEX $leftHandSideExpression expression ) | DOT Identifier -> ^( BYFIELD $leftHandSideExpression Identifier ) )*
+            // ECMAScript3Ext.g:1325:2: ( memberExpression -> memberExpression )
+            // ECMAScript3Ext.g:1326:3: memberExpression
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_memberExpression_in_leftHandSideExpression3605);
             memberExpression52=this.memberExpression();
 
@@ -2725,7 +2725,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             retval.tree = root_0;
 
 
-            // res/ECMAScript3Ext.g:1328:2: ( arguments -> ^( CALL $leftHandSideExpression arguments ) | LBRACK expression RBRACK -> ^( BYINDEX $leftHandSideExpression expression ) | DOT Identifier -> ^( BYFIELD $leftHandSideExpression Identifier ) )*
+            // ECMAScript3Ext.g:1328:2: ( arguments -> ^( CALL $leftHandSideExpression arguments ) | LBRACK expression RBRACK -> ^( BYINDEX $leftHandSideExpression expression ) | DOT Identifier -> ^( BYFIELD $leftHandSideExpression Identifier ) )*
             loop16:
             do {
                 var alt16=4;
@@ -2744,7 +2744,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt16) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1329:3: arguments
+                    // ECMAScript3Ext.g:1329:3: arguments
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_arguments_in_leftHandSideExpression3621);
                     arguments53=this.arguments();
 
@@ -2754,7 +2754,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
                     // AST REWRITE
-                    // elements: leftHandSideExpression, arguments
+                    // elements: arguments, leftHandSideExpression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2765,7 +2765,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     root_0 = this.adaptor.nil();
                     // 1329:15: -> ^( CALL $leftHandSideExpression arguments )
                     {
-                        // res/ECMAScript3Ext.g:1329:18: ^( CALL $leftHandSideExpression arguments )
+                        // ECMAScript3Ext.g:1329:18: ^( CALL $leftHandSideExpression arguments )
                         {
                         var root_1 = this.adaptor.nil();
                         root_1 = this.adaptor.becomeRoot(this.adaptor.create(CALL, "CALL"), root_1);
@@ -2782,7 +2782,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1330:5: LBRACK expression RBRACK
+                    // ECMAScript3Ext.g:1330:5: LBRACK expression RBRACK
                     LBRACK54=this.match(this.input,LBRACK,ECMAScript3ExtParser.FOLLOW_LBRACK_in_leftHandSideExpression3642);  
                     stream_LBRACK.add(LBRACK54);
 
@@ -2798,7 +2798,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
                     // AST REWRITE
-                    // elements: expression, leftHandSideExpression
+                    // elements: leftHandSideExpression, expression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2809,7 +2809,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     root_0 = this.adaptor.nil();
                     // 1330:30: -> ^( BYINDEX $leftHandSideExpression expression )
                     {
-                        // res/ECMAScript3Ext.g:1330:33: ^( BYINDEX $leftHandSideExpression expression )
+                        // ECMAScript3Ext.g:1330:33: ^( BYINDEX $leftHandSideExpression expression )
                         {
                         var root_1 = this.adaptor.nil();
                         root_1 = this.adaptor.becomeRoot(this.adaptor.create(BYINDEX, "BYINDEX"), root_1);
@@ -2826,7 +2826,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1331:5: DOT Identifier
+                    // ECMAScript3Ext.g:1331:5: DOT Identifier
                     DOT57=this.match(this.input,DOT,ECMAScript3ExtParser.FOLLOW_DOT_in_leftHandSideExpression3665);  
                     stream_DOT.add(DOT57);
 
@@ -2836,7 +2836,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
                     // AST REWRITE
-                    // elements: Identifier, leftHandSideExpression
+                    // elements: leftHandSideExpression, Identifier
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2847,7 +2847,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     root_0 = this.adaptor.nil();
                     // 1331:21: -> ^( BYFIELD $leftHandSideExpression Identifier )
                     {
-                        // res/ECMAScript3Ext.g:1331:24: ^( BYFIELD $leftHandSideExpression Identifier )
+                        // ECMAScript3Ext.g:1331:24: ^( BYFIELD $leftHandSideExpression Identifier )
                         {
                         var root_1 = this.adaptor.nil();
                         root_1 = this.adaptor.becomeRoot(this.adaptor.create(BYFIELD, "BYFIELD"), root_1);
@@ -2903,7 +2903,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1345:1: postfixExpression : leftHandSideExpression ( postfixOperator )? ;
+    // ECMAScript3Ext.g:1345:1: postfixExpression : leftHandSideExpression ( postfixOperator )? ;
     // $ANTLR start "postfixExpression"
     postfixExpression: function() {
         var retval = new ECMAScript3ExtParser.postfixExpression_return();
@@ -2916,8 +2916,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1346:2: ( leftHandSideExpression ( postfixOperator )? )
-            // res/ECMAScript3Ext.g:1346:4: leftHandSideExpression ( postfixOperator )?
+            // ECMAScript3Ext.g:1346:2: ( leftHandSideExpression ( postfixOperator )? )
+            // ECMAScript3Ext.g:1346:4: leftHandSideExpression ( postfixOperator )?
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_leftHandSideExpression_in_postfixExpression3702);
@@ -2927,7 +2927,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             this.adaptor.addChild(root_0, leftHandSideExpression59.getTree());
              if (this.input.LA(1) == INC || this.input.LA(1) == DEC || this.input.LA(1) == NOT) this.promoteEOL(null); 
-            // res/ECMAScript3Ext.g:1346:137: ( postfixOperator )?
+            // ECMAScript3Ext.g:1346:137: ( postfixOperator )?
             var alt17=2;
             var LA17_0 = this.input.LA(1);
 
@@ -2936,7 +2936,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt17) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1346:139: postfixOperator
+                    // ECMAScript3Ext.g:1346:139: postfixOperator
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_postfixOperator_in_postfixExpression3708);
                     postfixOperator60=this.postfixOperator();
 
@@ -2983,7 +2983,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1349:1: postfixOperator : (op= INC | op= DEC | op= NOT );
+    // ECMAScript3Ext.g:1349:1: postfixOperator : (op= INC | op= DEC | op= NOT );
     // $ANTLR start "postfixOperator"
     postfixOperator: function() {
         var retval = new ECMAScript3ExtParser.postfixOperator_return();
@@ -2996,7 +2996,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var op_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1350:2: (op= INC | op= DEC | op= NOT )
+            // ECMAScript3Ext.g:1350:2: (op= INC | op= DEC | op= NOT )
             var alt18=3;
             switch ( this.input.LA(1) ) {
             case INC:
@@ -3017,7 +3017,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt18) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1350:4: op= INC
+                    // ECMAScript3Ext.g:1350:4: op= INC
                     root_0 = this.adaptor.nil();
 
                     op=this.match(this.input,INC,ECMAScript3ExtParser.FOLLOW_INC_in_postfixOperator3725); 
@@ -3029,7 +3029,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1351:4: op= DEC
+                    // ECMAScript3Ext.g:1351:4: op= DEC
                     root_0 = this.adaptor.nil();
 
                     op=this.match(this.input,DEC,ECMAScript3ExtParser.FOLLOW_DEC_in_postfixOperator3734); 
@@ -3041,7 +3041,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1352:11: op= NOT
+                    // ECMAScript3Ext.g:1352:11: op= NOT
                     root_0 = this.adaptor.nil();
 
                     op=this.match(this.input,NOT,ECMAScript3ExtParser.FOLLOW_NOT_in_postfixOperator3750); 
@@ -3085,7 +3085,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1357:1: powOperator : ( POW | op= CARET );
+    // ECMAScript3Ext.g:1357:1: powOperator : ( POW | op= CARET );
     // $ANTLR start "powOperator"
     powOperator: function() {
         var retval = new ECMAScript3ExtParser.powOperator_return();
@@ -3100,7 +3100,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var POW61_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1358:9: ( POW | op= CARET )
+            // ECMAScript3Ext.g:1358:9: ( POW | op= CARET )
             var alt19=2;
             var LA19_0 = this.input.LA(1);
 
@@ -3118,7 +3118,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt19) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1358:11: POW
+                    // ECMAScript3Ext.g:1358:11: POW
                     root_0 = this.adaptor.nil();
 
                     POW61=this.match(this.input,POW,ECMAScript3ExtParser.FOLLOW_POW_in_powOperator3772); 
@@ -3129,7 +3129,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1359:11: op= CARET
+                    // ECMAScript3Ext.g:1359:11: op= CARET
                     root_0 = this.adaptor.nil();
 
                     op=this.match(this.input,CARET,ECMAScript3ExtParser.FOLLOW_CARET_in_powOperator3786); 
@@ -3173,7 +3173,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1363:1: powExpression : postfixExpression ( options {greedy=true; } : powOperator unaryExpression )? ;
+    // ECMAScript3Ext.g:1363:1: powExpression : postfixExpression ( options {greedy=true; } : powOperator unaryExpression )? ;
     // $ANTLR start "powExpression"
     powExpression: function() {
         var retval = new ECMAScript3ExtParser.powExpression_return();
@@ -3187,8 +3187,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1364:9: ( postfixExpression ( options {greedy=true; } : powOperator unaryExpression )? )
-            // res/ECMAScript3Ext.g:1364:11: postfixExpression ( options {greedy=true; } : powOperator unaryExpression )?
+            // ECMAScript3Ext.g:1364:9: ( postfixExpression ( options {greedy=true; } : powOperator unaryExpression )? )
+            // ECMAScript3Ext.g:1364:11: postfixExpression ( options {greedy=true; } : powOperator unaryExpression )?
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_postfixExpression_in_powExpression3814);
@@ -3197,7 +3197,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, postfixExpression62.getTree());
-            // res/ECMAScript3Ext.g:1364:29: ( options {greedy=true; } : powOperator unaryExpression )?
+            // ECMAScript3Ext.g:1364:29: ( options {greedy=true; } : powOperator unaryExpression )?
             var alt20=2;
             var LA20_0 = this.input.LA(1);
 
@@ -3206,7 +3206,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt20) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1364:54: powOperator unaryExpression
+                    // ECMAScript3Ext.g:1364:54: powOperator unaryExpression
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_powOperator_in_powExpression3825);
                     powOperator63=this.powOperator();
 
@@ -3259,7 +3259,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1373:1: unaryExpression : ( unaryOperator unaryExpression | powExpression );
+    // ECMAScript3Ext.g:1373:1: unaryExpression : ( unaryOperator unaryExpression | powExpression );
     // $ANTLR start "unaryExpression"
     unaryExpression: function() {
         var retval = new ECMAScript3ExtParser.unaryExpression_return();
@@ -3273,7 +3273,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1374:2: ( unaryOperator unaryExpression | powExpression )
+            // ECMAScript3Ext.g:1374:2: ( unaryOperator unaryExpression | powExpression )
             var alt21=2;
             var LA21_0 = this.input.LA(1);
 
@@ -3291,7 +3291,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt21) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1374:4: unaryOperator unaryExpression
+                    // ECMAScript3Ext.g:1374:4: unaryOperator unaryExpression
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_unaryOperator_in_unaryExpression3854);
@@ -3310,7 +3310,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1375:11: powExpression
+                    // ECMAScript3Ext.g:1375:11: powExpression
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_powExpression_in_unaryExpression3869);
@@ -3355,7 +3355,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1378:1: unaryOperator : ( DELETE | VOID | TYPEOF | INC | DEC | op= ADD | op= SUB | INV | NOT );
+    // ECMAScript3Ext.g:1378:1: unaryOperator : ( DELETE | VOID | TYPEOF | INC | DEC | op= ADD | op= SUB | INV | NOT );
     // $ANTLR start "unaryOperator"
     unaryOperator: function() {
         var retval = new ECMAScript3ExtParser.unaryOperator_return();
@@ -3382,7 +3382,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var NOT74_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1379:2: ( DELETE | VOID | TYPEOF | INC | DEC | op= ADD | op= SUB | INV | NOT )
+            // ECMAScript3Ext.g:1379:2: ( DELETE | VOID | TYPEOF | INC | DEC | op= ADD | op= SUB | INV | NOT )
             var alt22=9;
             switch ( this.input.LA(1) ) {
             case DELETE:
@@ -3421,7 +3421,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt22) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1379:4: DELETE
+                    // ECMAScript3Ext.g:1379:4: DELETE
                     root_0 = this.adaptor.nil();
 
                     DELETE68=this.match(this.input,DELETE,ECMAScript3ExtParser.FOLLOW_DELETE_in_unaryOperator3880); 
@@ -3432,7 +3432,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1380:4: VOID
+                    // ECMAScript3Ext.g:1380:4: VOID
                     root_0 = this.adaptor.nil();
 
                     VOID69=this.match(this.input,VOID,ECMAScript3ExtParser.FOLLOW_VOID_in_unaryOperator3885); 
@@ -3443,7 +3443,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1381:4: TYPEOF
+                    // ECMAScript3Ext.g:1381:4: TYPEOF
                     root_0 = this.adaptor.nil();
 
                     TYPEOF70=this.match(this.input,TYPEOF,ECMAScript3ExtParser.FOLLOW_TYPEOF_in_unaryOperator3890); 
@@ -3454,7 +3454,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:1382:4: INC
+                    // ECMAScript3Ext.g:1382:4: INC
                     root_0 = this.adaptor.nil();
 
                     INC71=this.match(this.input,INC,ECMAScript3ExtParser.FOLLOW_INC_in_unaryOperator3895); 
@@ -3465,7 +3465,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 5 :
-                    // res/ECMAScript3Ext.g:1383:4: DEC
+                    // ECMAScript3Ext.g:1383:4: DEC
                     root_0 = this.adaptor.nil();
 
                     DEC72=this.match(this.input,DEC,ECMAScript3ExtParser.FOLLOW_DEC_in_unaryOperator3900); 
@@ -3476,7 +3476,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 6 :
-                    // res/ECMAScript3Ext.g:1384:4: op= ADD
+                    // ECMAScript3Ext.g:1384:4: op= ADD
                     root_0 = this.adaptor.nil();
 
                     op=this.match(this.input,ADD,ECMAScript3ExtParser.FOLLOW_ADD_in_unaryOperator3907); 
@@ -3488,7 +3488,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 7 :
-                    // res/ECMAScript3Ext.g:1385:4: op= SUB
+                    // ECMAScript3Ext.g:1385:4: op= SUB
                     root_0 = this.adaptor.nil();
 
                     op=this.match(this.input,SUB,ECMAScript3ExtParser.FOLLOW_SUB_in_unaryOperator3916); 
@@ -3500,7 +3500,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 8 :
-                    // res/ECMAScript3Ext.g:1386:4: INV
+                    // ECMAScript3Ext.g:1386:4: INV
                     root_0 = this.adaptor.nil();
 
                     INV73=this.match(this.input,INV,ECMAScript3ExtParser.FOLLOW_INV_in_unaryOperator3923); 
@@ -3511,7 +3511,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 9 :
-                    // res/ECMAScript3Ext.g:1387:4: NOT
+                    // ECMAScript3Ext.g:1387:4: NOT
                     root_0 = this.adaptor.nil();
 
                     NOT74=this.match(this.input,NOT,ECMAScript3ExtParser.FOLLOW_NOT_in_unaryOperator3928); 
@@ -3554,7 +3554,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1394:1: multiplicativeExpression : unaryExpression ( ( MUL | DIV | MOD ) unaryExpression )* ;
+    // ECMAScript3Ext.g:1394:1: multiplicativeExpression : unaryExpression ( ( MUL | DIV | MOD ) unaryExpression )* ;
     // $ANTLR start "multiplicativeExpression"
     multiplicativeExpression: function() {
         var retval = new ECMAScript3ExtParser.multiplicativeExpression_return();
@@ -3569,8 +3569,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set76_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1395:2: ( unaryExpression ( ( MUL | DIV | MOD ) unaryExpression )* )
-            // res/ECMAScript3Ext.g:1395:4: unaryExpression ( ( MUL | DIV | MOD ) unaryExpression )*
+            // ECMAScript3Ext.g:1395:2: ( unaryExpression ( ( MUL | DIV | MOD ) unaryExpression )* )
+            // ECMAScript3Ext.g:1395:4: unaryExpression ( ( MUL | DIV | MOD ) unaryExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_unaryExpression_in_multiplicativeExpression3943);
@@ -3579,7 +3579,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, unaryExpression75.getTree());
-            // res/ECMAScript3Ext.g:1395:20: ( ( MUL | DIV | MOD ) unaryExpression )*
+            // ECMAScript3Ext.g:1395:20: ( ( MUL | DIV | MOD ) unaryExpression )*
             loop23:
             do {
                 var alt23=2;
@@ -3592,7 +3592,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt23) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1395:22: ( MUL | DIV | MOD ) unaryExpression
+                    // ECMAScript3Ext.g:1395:22: ( MUL | DIV | MOD ) unaryExpression
                     set76=null;
                     set76=this.input.LT(1);
                     if ( (this.input.LA(1)>=MUL && this.input.LA(1)<=MOD)||this.input.LA(1)==DIV ) {
@@ -3654,7 +3654,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1402:1: additiveExpression : multiplicativeExpression ( ( ADD | SUB ) multiplicativeExpression )* ;
+    // ECMAScript3Ext.g:1402:1: additiveExpression : multiplicativeExpression ( ( ADD | SUB ) multiplicativeExpression )* ;
     // $ANTLR start "additiveExpression"
     additiveExpression: function() {
         var retval = new ECMAScript3ExtParser.additiveExpression_return();
@@ -3669,8 +3669,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set79_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1403:2: ( multiplicativeExpression ( ( ADD | SUB ) multiplicativeExpression )* )
-            // res/ECMAScript3Ext.g:1403:4: multiplicativeExpression ( ( ADD | SUB ) multiplicativeExpression )*
+            // ECMAScript3Ext.g:1403:2: ( multiplicativeExpression ( ( ADD | SUB ) multiplicativeExpression )* )
+            // ECMAScript3Ext.g:1403:4: multiplicativeExpression ( ( ADD | SUB ) multiplicativeExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_multiplicativeExpression_in_additiveExpression3980);
@@ -3679,7 +3679,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, multiplicativeExpression78.getTree());
-            // res/ECMAScript3Ext.g:1403:29: ( ( ADD | SUB ) multiplicativeExpression )*
+            // ECMAScript3Ext.g:1403:29: ( ( ADD | SUB ) multiplicativeExpression )*
             loop24:
             do {
                 var alt24=2;
@@ -3692,7 +3692,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt24) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1403:31: ( ADD | SUB ) multiplicativeExpression
+                    // ECMAScript3Ext.g:1403:31: ( ADD | SUB ) multiplicativeExpression
                     set79=null;
                     set79=this.input.LT(1);
                     if ( (this.input.LA(1)>=ADD && this.input.LA(1)<=SUB) ) {
@@ -3754,7 +3754,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1410:1: shiftExpression : additiveExpression ( ( SHL | SHR | SHU ) additiveExpression )* ;
+    // ECMAScript3Ext.g:1410:1: shiftExpression : additiveExpression ( ( SHL | SHR | SHU ) additiveExpression )* ;
     // $ANTLR start "shiftExpression"
     shiftExpression: function() {
         var retval = new ECMAScript3ExtParser.shiftExpression_return();
@@ -3769,8 +3769,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set82_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1411:2: ( additiveExpression ( ( SHL | SHR | SHU ) additiveExpression )* )
-            // res/ECMAScript3Ext.g:1411:4: additiveExpression ( ( SHL | SHR | SHU ) additiveExpression )*
+            // ECMAScript3Ext.g:1411:2: ( additiveExpression ( ( SHL | SHR | SHU ) additiveExpression )* )
+            // ECMAScript3Ext.g:1411:4: additiveExpression ( ( SHL | SHR | SHU ) additiveExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_additiveExpression_in_shiftExpression4013);
@@ -3779,7 +3779,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, additiveExpression81.getTree());
-            // res/ECMAScript3Ext.g:1411:23: ( ( SHL | SHR | SHU ) additiveExpression )*
+            // ECMAScript3Ext.g:1411:23: ( ( SHL | SHR | SHU ) additiveExpression )*
             loop25:
             do {
                 var alt25=2;
@@ -3792,7 +3792,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt25) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1411:25: ( SHL | SHR | SHU ) additiveExpression
+                    // ECMAScript3Ext.g:1411:25: ( SHL | SHR | SHU ) additiveExpression
                     set82=null;
                     set82=this.input.LT(1);
                     if ( (this.input.LA(1)>=SHL && this.input.LA(1)<=SHU) ) {
@@ -3854,7 +3854,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1418:1: relationalExpression : shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression )* ;
+    // ECMAScript3Ext.g:1418:1: relationalExpression : shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression )* ;
     // $ANTLR start "relationalExpression"
     relationalExpression: function() {
         var retval = new ECMAScript3ExtParser.relationalExpression_return();
@@ -3869,8 +3869,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set85_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1419:2: ( shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression )* )
-            // res/ECMAScript3Ext.g:1419:4: shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression )*
+            // ECMAScript3Ext.g:1419:2: ( shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression )* )
+            // ECMAScript3Ext.g:1419:4: shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_shiftExpression_in_relationalExpression4050);
@@ -3879,7 +3879,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, shiftExpression84.getTree());
-            // res/ECMAScript3Ext.g:1419:20: ( ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression )*
+            // ECMAScript3Ext.g:1419:20: ( ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression )*
             loop26:
             do {
                 var alt26=2;
@@ -3892,7 +3892,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt26) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1419:22: ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression
+                    // ECMAScript3Ext.g:1419:22: ( LT | GT | LTE | GTE | INSTANCEOF | IN ) shiftExpression
                     set85=null;
                     set85=this.input.LT(1);
                     if ( (this.input.LA(1)>=IN && this.input.LA(1)<=INSTANCEOF)||(this.input.LA(1)>=LT && this.input.LA(1)<=GTE) ) {
@@ -3954,7 +3954,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1422:1: relationalExpressionNoIn : shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression )* ;
+    // ECMAScript3Ext.g:1422:1: relationalExpressionNoIn : shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression )* ;
     // $ANTLR start "relationalExpressionNoIn"
     relationalExpressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.relationalExpressionNoIn_return();
@@ -3969,8 +3969,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set88_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1423:2: ( shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression )* )
-            // res/ECMAScript3Ext.g:1423:4: shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression )*
+            // ECMAScript3Ext.g:1423:2: ( shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression )* )
+            // ECMAScript3Ext.g:1423:4: shiftExpression ( ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_shiftExpression_in_relationalExpressionNoIn4095);
@@ -3979,7 +3979,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, shiftExpression87.getTree());
-            // res/ECMAScript3Ext.g:1423:20: ( ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression )*
+            // ECMAScript3Ext.g:1423:20: ( ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression )*
             loop27:
             do {
                 var alt27=2;
@@ -3992,7 +3992,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt27) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1423:22: ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression
+                    // ECMAScript3Ext.g:1423:22: ( LT | GT | LTE | GTE | INSTANCEOF ) shiftExpression
                     set88=null;
                     set88=this.input.LT(1);
                     if ( this.input.LA(1)==INSTANCEOF||(this.input.LA(1)>=LT && this.input.LA(1)<=GTE) ) {
@@ -4054,7 +4054,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1430:1: equalityExpression : relationalExpression ( ( EQ | NEQ | SAME | NSAME ) relationalExpression )* ;
+    // ECMAScript3Ext.g:1430:1: equalityExpression : relationalExpression ( ( EQ | NEQ | SAME | NSAME ) relationalExpression )* ;
     // $ANTLR start "equalityExpression"
     equalityExpression: function() {
         var retval = new ECMAScript3ExtParser.equalityExpression_return();
@@ -4069,8 +4069,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set91_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1431:2: ( relationalExpression ( ( EQ | NEQ | SAME | NSAME ) relationalExpression )* )
-            // res/ECMAScript3Ext.g:1431:4: relationalExpression ( ( EQ | NEQ | SAME | NSAME ) relationalExpression )*
+            // ECMAScript3Ext.g:1431:2: ( relationalExpression ( ( EQ | NEQ | SAME | NSAME ) relationalExpression )* )
+            // ECMAScript3Ext.g:1431:4: relationalExpression ( ( EQ | NEQ | SAME | NSAME ) relationalExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_relationalExpression_in_equalityExpression4140);
@@ -4079,7 +4079,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, relationalExpression90.getTree());
-            // res/ECMAScript3Ext.g:1431:25: ( ( EQ | NEQ | SAME | NSAME ) relationalExpression )*
+            // ECMAScript3Ext.g:1431:25: ( ( EQ | NEQ | SAME | NSAME ) relationalExpression )*
             loop28:
             do {
                 var alt28=2;
@@ -4092,7 +4092,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt28) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1431:27: ( EQ | NEQ | SAME | NSAME ) relationalExpression
+                    // ECMAScript3Ext.g:1431:27: ( EQ | NEQ | SAME | NSAME ) relationalExpression
                     set91=null;
                     set91=this.input.LT(1);
                     if ( (this.input.LA(1)>=EQ && this.input.LA(1)<=NSAME) ) {
@@ -4154,7 +4154,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1434:1: equalityExpressionNoIn : relationalExpressionNoIn ( ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn )* ;
+    // ECMAScript3Ext.g:1434:1: equalityExpressionNoIn : relationalExpressionNoIn ( ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn )* ;
     // $ANTLR start "equalityExpressionNoIn"
     equalityExpressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.equalityExpressionNoIn_return();
@@ -4169,8 +4169,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set94_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1435:2: ( relationalExpressionNoIn ( ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn )* )
-            // res/ECMAScript3Ext.g:1435:4: relationalExpressionNoIn ( ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn )*
+            // ECMAScript3Ext.g:1435:2: ( relationalExpressionNoIn ( ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn )* )
+            // ECMAScript3Ext.g:1435:4: relationalExpressionNoIn ( ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_relationalExpressionNoIn_in_equalityExpressionNoIn4177);
@@ -4179,7 +4179,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, relationalExpressionNoIn93.getTree());
-            // res/ECMAScript3Ext.g:1435:29: ( ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn )*
+            // ECMAScript3Ext.g:1435:29: ( ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn )*
             loop29:
             do {
                 var alt29=2;
@@ -4192,7 +4192,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt29) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1435:31: ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn
+                    // ECMAScript3Ext.g:1435:31: ( EQ | NEQ | SAME | NSAME ) relationalExpressionNoIn
                     set94=null;
                     set94=this.input.LT(1);
                     if ( (this.input.LA(1)>=EQ && this.input.LA(1)<=NSAME) ) {
@@ -4254,7 +4254,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1442:1: bitwiseANDExpression : equalityExpression ( AND equalityExpression )* ;
+    // ECMAScript3Ext.g:1442:1: bitwiseANDExpression : equalityExpression ( AND equalityExpression )* ;
     // $ANTLR start "bitwiseANDExpression"
     bitwiseANDExpression: function() {
         var retval = new ECMAScript3ExtParser.bitwiseANDExpression_return();
@@ -4269,8 +4269,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var AND97_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1443:2: ( equalityExpression ( AND equalityExpression )* )
-            // res/ECMAScript3Ext.g:1443:4: equalityExpression ( AND equalityExpression )*
+            // ECMAScript3Ext.g:1443:2: ( equalityExpression ( AND equalityExpression )* )
+            // ECMAScript3Ext.g:1443:4: equalityExpression ( AND equalityExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_equalityExpression_in_bitwiseANDExpression4218);
@@ -4279,7 +4279,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, equalityExpression96.getTree());
-            // res/ECMAScript3Ext.g:1443:23: ( AND equalityExpression )*
+            // ECMAScript3Ext.g:1443:23: ( AND equalityExpression )*
             loop30:
             do {
                 var alt30=2;
@@ -4292,7 +4292,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt30) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1443:25: AND equalityExpression
+                    // ECMAScript3Ext.g:1443:25: AND equalityExpression
                     AND97=this.match(this.input,AND,ECMAScript3ExtParser.FOLLOW_AND_in_bitwiseANDExpression4222); 
                     AND97_tree = this.adaptor.create(AND97);
                     root_0 = this.adaptor.becomeRoot(AND97_tree, root_0);
@@ -4346,7 +4346,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1446:1: bitwiseANDExpressionNoIn : equalityExpressionNoIn ( AND equalityExpressionNoIn )* ;
+    // ECMAScript3Ext.g:1446:1: bitwiseANDExpressionNoIn : equalityExpressionNoIn ( AND equalityExpressionNoIn )* ;
     // $ANTLR start "bitwiseANDExpressionNoIn"
     bitwiseANDExpressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.bitwiseANDExpressionNoIn_return();
@@ -4361,8 +4361,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var AND100_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1447:2: ( equalityExpressionNoIn ( AND equalityExpressionNoIn )* )
-            // res/ECMAScript3Ext.g:1447:4: equalityExpressionNoIn ( AND equalityExpressionNoIn )*
+            // ECMAScript3Ext.g:1447:2: ( equalityExpressionNoIn ( AND equalityExpressionNoIn )* )
+            // ECMAScript3Ext.g:1447:4: equalityExpressionNoIn ( AND equalityExpressionNoIn )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_equalityExpressionNoIn_in_bitwiseANDExpressionNoIn4239);
@@ -4371,7 +4371,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, equalityExpressionNoIn99.getTree());
-            // res/ECMAScript3Ext.g:1447:27: ( AND equalityExpressionNoIn )*
+            // ECMAScript3Ext.g:1447:27: ( AND equalityExpressionNoIn )*
             loop31:
             do {
                 var alt31=2;
@@ -4384,7 +4384,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt31) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1447:29: AND equalityExpressionNoIn
+                    // ECMAScript3Ext.g:1447:29: AND equalityExpressionNoIn
                     AND100=this.match(this.input,AND,ECMAScript3ExtParser.FOLLOW_AND_in_bitwiseANDExpressionNoIn4243); 
                     AND100_tree = this.adaptor.create(AND100);
                     root_0 = this.adaptor.becomeRoot(AND100_tree, root_0);
@@ -4438,7 +4438,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1450:1: bitwiseXORExpression : bitwiseANDExpression ( XOR bitwiseANDExpression )* ;
+    // ECMAScript3Ext.g:1450:1: bitwiseXORExpression : bitwiseANDExpression ( XOR bitwiseANDExpression )* ;
     // $ANTLR start "bitwiseXORExpression"
     bitwiseXORExpression: function() {
         var retval = new ECMAScript3ExtParser.bitwiseXORExpression_return();
@@ -4453,8 +4453,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var XOR103_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1451:2: ( bitwiseANDExpression ( XOR bitwiseANDExpression )* )
-            // res/ECMAScript3Ext.g:1451:4: bitwiseANDExpression ( XOR bitwiseANDExpression )*
+            // ECMAScript3Ext.g:1451:2: ( bitwiseANDExpression ( XOR bitwiseANDExpression )* )
+            // ECMAScript3Ext.g:1451:4: bitwiseANDExpression ( XOR bitwiseANDExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_bitwiseANDExpression_in_bitwiseXORExpression4260);
@@ -4463,7 +4463,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, bitwiseANDExpression102.getTree());
-            // res/ECMAScript3Ext.g:1451:25: ( XOR bitwiseANDExpression )*
+            // ECMAScript3Ext.g:1451:25: ( XOR bitwiseANDExpression )*
             loop32:
             do {
                 var alt32=2;
@@ -4476,7 +4476,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt32) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1451:27: XOR bitwiseANDExpression
+                    // ECMAScript3Ext.g:1451:27: XOR bitwiseANDExpression
                     XOR103=this.match(this.input,XOR,ECMAScript3ExtParser.FOLLOW_XOR_in_bitwiseXORExpression4264); 
                     XOR103_tree = this.adaptor.create(XOR103);
                     root_0 = this.adaptor.becomeRoot(XOR103_tree, root_0);
@@ -4530,7 +4530,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1454:1: bitwiseXORExpressionNoIn : bitwiseANDExpressionNoIn ( XOR bitwiseANDExpressionNoIn )* ;
+    // ECMAScript3Ext.g:1454:1: bitwiseXORExpressionNoIn : bitwiseANDExpressionNoIn ( XOR bitwiseANDExpressionNoIn )* ;
     // $ANTLR start "bitwiseXORExpressionNoIn"
     bitwiseXORExpressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.bitwiseXORExpressionNoIn_return();
@@ -4545,8 +4545,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var XOR106_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1455:2: ( bitwiseANDExpressionNoIn ( XOR bitwiseANDExpressionNoIn )* )
-            // res/ECMAScript3Ext.g:1455:4: bitwiseANDExpressionNoIn ( XOR bitwiseANDExpressionNoIn )*
+            // ECMAScript3Ext.g:1455:2: ( bitwiseANDExpressionNoIn ( XOR bitwiseANDExpressionNoIn )* )
+            // ECMAScript3Ext.g:1455:4: bitwiseANDExpressionNoIn ( XOR bitwiseANDExpressionNoIn )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_bitwiseANDExpressionNoIn_in_bitwiseXORExpressionNoIn4281);
@@ -4555,7 +4555,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, bitwiseANDExpressionNoIn105.getTree());
-            // res/ECMAScript3Ext.g:1455:29: ( XOR bitwiseANDExpressionNoIn )*
+            // ECMAScript3Ext.g:1455:29: ( XOR bitwiseANDExpressionNoIn )*
             loop33:
             do {
                 var alt33=2;
@@ -4568,7 +4568,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt33) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1455:31: XOR bitwiseANDExpressionNoIn
+                    // ECMAScript3Ext.g:1455:31: XOR bitwiseANDExpressionNoIn
                     XOR106=this.match(this.input,XOR,ECMAScript3ExtParser.FOLLOW_XOR_in_bitwiseXORExpressionNoIn4285); 
                     XOR106_tree = this.adaptor.create(XOR106);
                     root_0 = this.adaptor.becomeRoot(XOR106_tree, root_0);
@@ -4622,7 +4622,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1458:1: bitwiseORExpression : bitwiseXORExpression ( OR bitwiseXORExpression )* ;
+    // ECMAScript3Ext.g:1458:1: bitwiseORExpression : bitwiseXORExpression ( OR bitwiseXORExpression )* ;
     // $ANTLR start "bitwiseORExpression"
     bitwiseORExpression: function() {
         var retval = new ECMAScript3ExtParser.bitwiseORExpression_return();
@@ -4637,8 +4637,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var OR109_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1459:2: ( bitwiseXORExpression ( OR bitwiseXORExpression )* )
-            // res/ECMAScript3Ext.g:1459:4: bitwiseXORExpression ( OR bitwiseXORExpression )*
+            // ECMAScript3Ext.g:1459:2: ( bitwiseXORExpression ( OR bitwiseXORExpression )* )
+            // ECMAScript3Ext.g:1459:4: bitwiseXORExpression ( OR bitwiseXORExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_bitwiseXORExpression_in_bitwiseORExpression4302);
@@ -4647,7 +4647,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, bitwiseXORExpression108.getTree());
-            // res/ECMAScript3Ext.g:1459:25: ( OR bitwiseXORExpression )*
+            // ECMAScript3Ext.g:1459:25: ( OR bitwiseXORExpression )*
             loop34:
             do {
                 var alt34=2;
@@ -4660,7 +4660,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt34) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1459:27: OR bitwiseXORExpression
+                    // ECMAScript3Ext.g:1459:27: OR bitwiseXORExpression
                     OR109=this.match(this.input,OR,ECMAScript3ExtParser.FOLLOW_OR_in_bitwiseORExpression4306); 
                     OR109_tree = this.adaptor.create(OR109);
                     root_0 = this.adaptor.becomeRoot(OR109_tree, root_0);
@@ -4714,7 +4714,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1462:1: bitwiseORExpressionNoIn : bitwiseXORExpressionNoIn ( OR bitwiseXORExpressionNoIn )* ;
+    // ECMAScript3Ext.g:1462:1: bitwiseORExpressionNoIn : bitwiseXORExpressionNoIn ( OR bitwiseXORExpressionNoIn )* ;
     // $ANTLR start "bitwiseORExpressionNoIn"
     bitwiseORExpressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.bitwiseORExpressionNoIn_return();
@@ -4729,8 +4729,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var OR112_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1463:2: ( bitwiseXORExpressionNoIn ( OR bitwiseXORExpressionNoIn )* )
-            // res/ECMAScript3Ext.g:1463:4: bitwiseXORExpressionNoIn ( OR bitwiseXORExpressionNoIn )*
+            // ECMAScript3Ext.g:1463:2: ( bitwiseXORExpressionNoIn ( OR bitwiseXORExpressionNoIn )* )
+            // ECMAScript3Ext.g:1463:4: bitwiseXORExpressionNoIn ( OR bitwiseXORExpressionNoIn )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_bitwiseXORExpressionNoIn_in_bitwiseORExpressionNoIn4323);
@@ -4739,7 +4739,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, bitwiseXORExpressionNoIn111.getTree());
-            // res/ECMAScript3Ext.g:1463:29: ( OR bitwiseXORExpressionNoIn )*
+            // ECMAScript3Ext.g:1463:29: ( OR bitwiseXORExpressionNoIn )*
             loop35:
             do {
                 var alt35=2;
@@ -4752,7 +4752,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt35) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1463:31: OR bitwiseXORExpressionNoIn
+                    // ECMAScript3Ext.g:1463:31: OR bitwiseXORExpressionNoIn
                     OR112=this.match(this.input,OR,ECMAScript3ExtParser.FOLLOW_OR_in_bitwiseORExpressionNoIn4327); 
                     OR112_tree = this.adaptor.create(OR112);
                     root_0 = this.adaptor.becomeRoot(OR112_tree, root_0);
@@ -4806,7 +4806,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1470:1: logicalANDExpression : bitwiseORExpression ( LAND bitwiseORExpression )* ;
+    // ECMAScript3Ext.g:1470:1: logicalANDExpression : bitwiseORExpression ( LAND bitwiseORExpression )* ;
     // $ANTLR start "logicalANDExpression"
     logicalANDExpression: function() {
         var retval = new ECMAScript3ExtParser.logicalANDExpression_return();
@@ -4821,8 +4821,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var LAND115_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1471:2: ( bitwiseORExpression ( LAND bitwiseORExpression )* )
-            // res/ECMAScript3Ext.g:1471:4: bitwiseORExpression ( LAND bitwiseORExpression )*
+            // ECMAScript3Ext.g:1471:2: ( bitwiseORExpression ( LAND bitwiseORExpression )* )
+            // ECMAScript3Ext.g:1471:4: bitwiseORExpression ( LAND bitwiseORExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_bitwiseORExpression_in_logicalANDExpression4348);
@@ -4831,7 +4831,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, bitwiseORExpression114.getTree());
-            // res/ECMAScript3Ext.g:1471:24: ( LAND bitwiseORExpression )*
+            // ECMAScript3Ext.g:1471:24: ( LAND bitwiseORExpression )*
             loop36:
             do {
                 var alt36=2;
@@ -4844,7 +4844,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt36) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1471:26: LAND bitwiseORExpression
+                    // ECMAScript3Ext.g:1471:26: LAND bitwiseORExpression
                     LAND115=this.match(this.input,LAND,ECMAScript3ExtParser.FOLLOW_LAND_in_logicalANDExpression4352); 
                     LAND115_tree = this.adaptor.create(LAND115);
                     root_0 = this.adaptor.becomeRoot(LAND115_tree, root_0);
@@ -4898,7 +4898,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1474:1: logicalANDExpressionNoIn : bitwiseORExpressionNoIn ( LAND bitwiseORExpressionNoIn )* ;
+    // ECMAScript3Ext.g:1474:1: logicalANDExpressionNoIn : bitwiseORExpressionNoIn ( LAND bitwiseORExpressionNoIn )* ;
     // $ANTLR start "logicalANDExpressionNoIn"
     logicalANDExpressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.logicalANDExpressionNoIn_return();
@@ -4913,8 +4913,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var LAND118_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1475:2: ( bitwiseORExpressionNoIn ( LAND bitwiseORExpressionNoIn )* )
-            // res/ECMAScript3Ext.g:1475:4: bitwiseORExpressionNoIn ( LAND bitwiseORExpressionNoIn )*
+            // ECMAScript3Ext.g:1475:2: ( bitwiseORExpressionNoIn ( LAND bitwiseORExpressionNoIn )* )
+            // ECMAScript3Ext.g:1475:4: bitwiseORExpressionNoIn ( LAND bitwiseORExpressionNoIn )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_bitwiseORExpressionNoIn_in_logicalANDExpressionNoIn4369);
@@ -4923,7 +4923,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, bitwiseORExpressionNoIn117.getTree());
-            // res/ECMAScript3Ext.g:1475:28: ( LAND bitwiseORExpressionNoIn )*
+            // ECMAScript3Ext.g:1475:28: ( LAND bitwiseORExpressionNoIn )*
             loop37:
             do {
                 var alt37=2;
@@ -4936,7 +4936,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt37) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1475:30: LAND bitwiseORExpressionNoIn
+                    // ECMAScript3Ext.g:1475:30: LAND bitwiseORExpressionNoIn
                     LAND118=this.match(this.input,LAND,ECMAScript3ExtParser.FOLLOW_LAND_in_logicalANDExpressionNoIn4373); 
                     LAND118_tree = this.adaptor.create(LAND118);
                     root_0 = this.adaptor.becomeRoot(LAND118_tree, root_0);
@@ -4990,7 +4990,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1478:1: logicalORExpression : logicalANDExpression ( LOR logicalANDExpression )* ;
+    // ECMAScript3Ext.g:1478:1: logicalORExpression : logicalANDExpression ( LOR logicalANDExpression )* ;
     // $ANTLR start "logicalORExpression"
     logicalORExpression: function() {
         var retval = new ECMAScript3ExtParser.logicalORExpression_return();
@@ -5005,8 +5005,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var LOR121_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1479:2: ( logicalANDExpression ( LOR logicalANDExpression )* )
-            // res/ECMAScript3Ext.g:1479:4: logicalANDExpression ( LOR logicalANDExpression )*
+            // ECMAScript3Ext.g:1479:2: ( logicalANDExpression ( LOR logicalANDExpression )* )
+            // ECMAScript3Ext.g:1479:4: logicalANDExpression ( LOR logicalANDExpression )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_logicalANDExpression_in_logicalORExpression4390);
@@ -5015,7 +5015,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, logicalANDExpression120.getTree());
-            // res/ECMAScript3Ext.g:1479:25: ( LOR logicalANDExpression )*
+            // ECMAScript3Ext.g:1479:25: ( LOR logicalANDExpression )*
             loop38:
             do {
                 var alt38=2;
@@ -5028,7 +5028,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt38) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1479:27: LOR logicalANDExpression
+                    // ECMAScript3Ext.g:1479:27: LOR logicalANDExpression
                     LOR121=this.match(this.input,LOR,ECMAScript3ExtParser.FOLLOW_LOR_in_logicalORExpression4394); 
                     LOR121_tree = this.adaptor.create(LOR121);
                     root_0 = this.adaptor.becomeRoot(LOR121_tree, root_0);
@@ -5082,7 +5082,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1482:1: logicalORExpressionNoIn : logicalANDExpressionNoIn ( LOR logicalANDExpressionNoIn )* ;
+    // ECMAScript3Ext.g:1482:1: logicalORExpressionNoIn : logicalANDExpressionNoIn ( LOR logicalANDExpressionNoIn )* ;
     // $ANTLR start "logicalORExpressionNoIn"
     logicalORExpressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.logicalORExpressionNoIn_return();
@@ -5097,8 +5097,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var LOR124_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1483:2: ( logicalANDExpressionNoIn ( LOR logicalANDExpressionNoIn )* )
-            // res/ECMAScript3Ext.g:1483:4: logicalANDExpressionNoIn ( LOR logicalANDExpressionNoIn )*
+            // ECMAScript3Ext.g:1483:2: ( logicalANDExpressionNoIn ( LOR logicalANDExpressionNoIn )* )
+            // ECMAScript3Ext.g:1483:4: logicalANDExpressionNoIn ( LOR logicalANDExpressionNoIn )*
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_logicalANDExpressionNoIn_in_logicalORExpressionNoIn4411);
@@ -5107,7 +5107,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, logicalANDExpressionNoIn123.getTree());
-            // res/ECMAScript3Ext.g:1483:29: ( LOR logicalANDExpressionNoIn )*
+            // ECMAScript3Ext.g:1483:29: ( LOR logicalANDExpressionNoIn )*
             loop39:
             do {
                 var alt39=2;
@@ -5120,7 +5120,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt39) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1483:31: LOR logicalANDExpressionNoIn
+                    // ECMAScript3Ext.g:1483:31: LOR logicalANDExpressionNoIn
                     LOR124=this.match(this.input,LOR,ECMAScript3ExtParser.FOLLOW_LOR_in_logicalORExpressionNoIn4415); 
                     LOR124_tree = this.adaptor.create(LOR124);
                     root_0 = this.adaptor.becomeRoot(LOR124_tree, root_0);
@@ -5174,7 +5174,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1490:1: conditionalExpression : logicalORExpression ( QUE assignmentExpression COLON assignmentExpression )? ;
+    // ECMAScript3Ext.g:1490:1: conditionalExpression : logicalORExpression ( QUE assignmentExpression COLON assignmentExpression )? ;
     // $ANTLR start "conditionalExpression"
     conditionalExpression: function() {
         var retval = new ECMAScript3ExtParser.conditionalExpression_return();
@@ -5192,8 +5192,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var COLON129_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1491:2: ( logicalORExpression ( QUE assignmentExpression COLON assignmentExpression )? )
-            // res/ECMAScript3Ext.g:1491:4: logicalORExpression ( QUE assignmentExpression COLON assignmentExpression )?
+            // ECMAScript3Ext.g:1491:2: ( logicalORExpression ( QUE assignmentExpression COLON assignmentExpression )? )
+            // ECMAScript3Ext.g:1491:4: logicalORExpression ( QUE assignmentExpression COLON assignmentExpression )?
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_logicalORExpression_in_conditionalExpression4436);
@@ -5202,7 +5202,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, logicalORExpression126.getTree());
-            // res/ECMAScript3Ext.g:1491:24: ( QUE assignmentExpression COLON assignmentExpression )?
+            // ECMAScript3Ext.g:1491:24: ( QUE assignmentExpression COLON assignmentExpression )?
             var alt40=2;
             var LA40_0 = this.input.LA(1);
 
@@ -5211,7 +5211,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt40) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1491:26: QUE assignmentExpression COLON assignmentExpression
+                    // ECMAScript3Ext.g:1491:26: QUE assignmentExpression COLON assignmentExpression
                     QUE127=this.match(this.input,QUE,ECMAScript3ExtParser.FOLLOW_QUE_in_conditionalExpression4440); 
                     QUE127_tree = this.adaptor.create(QUE127);
                     root_0 = this.adaptor.becomeRoot(QUE127_tree, root_0);
@@ -5269,7 +5269,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1494:1: conditionalExpressionNoIn : logicalORExpressionNoIn ( QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn )? ;
+    // ECMAScript3Ext.g:1494:1: conditionalExpressionNoIn : logicalORExpressionNoIn ( QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn )? ;
     // $ANTLR start "conditionalExpressionNoIn"
     conditionalExpressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.conditionalExpressionNoIn_return();
@@ -5287,8 +5287,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var COLON134_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1495:2: ( logicalORExpressionNoIn ( QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn )? )
-            // res/ECMAScript3Ext.g:1495:4: logicalORExpressionNoIn ( QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn )?
+            // ECMAScript3Ext.g:1495:2: ( logicalORExpressionNoIn ( QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn )? )
+            // ECMAScript3Ext.g:1495:4: logicalORExpressionNoIn ( QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn )?
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_logicalORExpressionNoIn_in_conditionalExpressionNoIn4462);
@@ -5297,7 +5297,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, logicalORExpressionNoIn131.getTree());
-            // res/ECMAScript3Ext.g:1495:28: ( QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn )?
+            // ECMAScript3Ext.g:1495:28: ( QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn )?
             var alt41=2;
             var LA41_0 = this.input.LA(1);
 
@@ -5306,7 +5306,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt41) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1495:30: QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn
+                    // ECMAScript3Ext.g:1495:30: QUE assignmentExpressionNoIn COLON assignmentExpressionNoIn
                     QUE132=this.match(this.input,QUE,ECMAScript3ExtParser.FOLLOW_QUE_in_conditionalExpressionNoIn4466); 
                     QUE132_tree = this.adaptor.create(QUE132);
                     root_0 = this.adaptor.becomeRoot(QUE132_tree, root_0);
@@ -5364,7 +5364,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1525:1: assignmentExpression : lhs= conditionalExpression ({...}? assignmentOperator assignmentExpression )? ;
+    // ECMAScript3Ext.g:1525:1: assignmentExpression : lhs= conditionalExpression ({...}? assignmentOperator assignmentExpression )? ;
     // $ANTLR start "assignmentExpression"
     assignmentExpression: function() {
         var retval = new ECMAScript3ExtParser.assignmentExpression_return();
@@ -5381,8 +5381,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         	var isLhs = [];
 
         try {
-            // res/ECMAScript3Ext.g:1530:2: (lhs= conditionalExpression ({...}? assignmentOperator assignmentExpression )? )
-            // res/ECMAScript3Ext.g:1530:4: lhs= conditionalExpression ({...}? assignmentOperator assignmentExpression )?
+            // ECMAScript3Ext.g:1530:2: (lhs= conditionalExpression ({...}? assignmentOperator assignmentExpression )? )
+            // ECMAScript3Ext.g:1530:4: lhs= conditionalExpression ({...}? assignmentOperator assignmentExpression )?
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_conditionalExpression_in_assignmentExpression4501);
@@ -5391,7 +5391,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, lhs.getTree());
-            // res/ECMAScript3Ext.g:1531:2: ({...}? assignmentOperator assignmentExpression )?
+            // ECMAScript3Ext.g:1531:2: ({...}? assignmentOperator assignmentExpression )?
             var alt42=2;
             var LA42_0 = this.input.LA(1);
 
@@ -5404,7 +5404,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt42) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1531:4: {...}? assignmentOperator assignmentExpression
+                    // ECMAScript3Ext.g:1531:4: {...}? assignmentOperator assignmentExpression
                     if ( !(( this.isLeftHandSideAssign(lhs, isLhs) )) ) {
                         throw new org.antlr.runtime.FailedPredicateException(this.input, "assignmentExpression", " this.isLeftHandSideAssign(lhs, isLhs) ");
                     }
@@ -5460,7 +5460,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1534:1: assignmentOperator : ( ASSIGN | POWASS | CARETASS | MULASS | DIVASS | MODASS | ADDASS | SUBASS | SHLASS | SHRASS | SHUASS | ANDASS | XORASS | ORASS );
+    // ECMAScript3Ext.g:1534:1: assignmentOperator : ( ASSIGN | POWASS | CARETASS | MULASS | DIVASS | MODASS | ADDASS | SUBASS | SHLASS | SHRASS | SHUASS | ANDASS | XORASS | ORASS );
     // $ANTLR start "assignmentOperator"
     assignmentOperator: function() {
         var retval = new ECMAScript3ExtParser.assignmentOperator_return();
@@ -5473,8 +5473,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var set138_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1535:2: ( ASSIGN | POWASS | CARETASS | MULASS | DIVASS | MODASS | ADDASS | SUBASS | SHLASS | SHRASS | SHUASS | ANDASS | XORASS | ORASS )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:1535:2: ( ASSIGN | POWASS | CARETASS | MULASS | DIVASS | MODASS | ADDASS | SUBASS | SHLASS | SHRASS | SHUASS | ANDASS | XORASS | ORASS )
+            // ECMAScript3Ext.g:
             root_0 = this.adaptor.nil();
 
             set138=this.input.LT(1);
@@ -5522,7 +5522,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1538:1: assignmentExpressionNoIn : lhs= conditionalExpressionNoIn ({...}? assignmentOperator assignmentExpressionNoIn )? ;
+    // ECMAScript3Ext.g:1538:1: assignmentExpressionNoIn : lhs= conditionalExpressionNoIn ({...}? assignmentOperator assignmentExpressionNoIn )? ;
     // $ANTLR start "assignmentExpressionNoIn"
     assignmentExpressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.assignmentExpressionNoIn_return();
@@ -5539,8 +5539,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         	var isLhs = [];
 
         try {
-            // res/ECMAScript3Ext.g:1543:2: (lhs= conditionalExpressionNoIn ({...}? assignmentOperator assignmentExpressionNoIn )? )
-            // res/ECMAScript3Ext.g:1543:4: lhs= conditionalExpressionNoIn ({...}? assignmentOperator assignmentExpressionNoIn )?
+            // ECMAScript3Ext.g:1543:2: (lhs= conditionalExpressionNoIn ({...}? assignmentOperator assignmentExpressionNoIn )? )
+            // ECMAScript3Ext.g:1543:4: lhs= conditionalExpressionNoIn ({...}? assignmentOperator assignmentExpressionNoIn )?
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_conditionalExpressionNoIn_in_assignmentExpressionNoIn4595);
@@ -5549,7 +5549,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, lhs.getTree());
-            // res/ECMAScript3Ext.g:1544:2: ({...}? assignmentOperator assignmentExpressionNoIn )?
+            // ECMAScript3Ext.g:1544:2: ({...}? assignmentOperator assignmentExpressionNoIn )?
             var alt43=2;
             var LA43_0 = this.input.LA(1);
 
@@ -5562,7 +5562,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt43) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1544:4: {...}? assignmentOperator assignmentExpressionNoIn
+                    // ECMAScript3Ext.g:1544:4: {...}? assignmentOperator assignmentExpressionNoIn
                     if ( !(( this.isLeftHandSideAssign(lhs, isLhs) )) ) {
                         throw new org.antlr.runtime.FailedPredicateException(this.input, "assignmentExpressionNoIn", " this.isLeftHandSideAssign(lhs, isLhs) ");
                     }
@@ -5618,7 +5618,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1551:1: expression : exprs+= assignmentExpression ( COMMA exprs+= assignmentExpression )* -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ ) -> $exprs;
+    // ECMAScript3Ext.g:1551:1: expression : exprs+= assignmentExpression ( COMMA exprs+= assignmentExpression )* -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ ) -> $exprs;
     // $ANTLR start "expression"
     expression: function() {
         var retval = new ECMAScript3ExtParser.expression_return();
@@ -5633,8 +5633,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var stream_COMMA=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COMMA");
         var stream_assignmentExpression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule assignmentExpression");
         try {
-            // res/ECMAScript3Ext.g:1552:2: (exprs+= assignmentExpression ( COMMA exprs+= assignmentExpression )* -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ ) -> $exprs)
-            // res/ECMAScript3Ext.g:1552:4: exprs+= assignmentExpression ( COMMA exprs+= assignmentExpression )*
+            // ECMAScript3Ext.g:1552:2: (exprs+= assignmentExpression ( COMMA exprs+= assignmentExpression )* -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ ) -> $exprs)
+            // ECMAScript3Ext.g:1552:4: exprs+= assignmentExpression ( COMMA exprs+= assignmentExpression )*
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_assignmentExpression_in_expression4625);
             exprs=this.assignmentExpression();
 
@@ -5644,7 +5644,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             if (org.antlr.lang.isNull(list_exprs)) list_exprs = [];
             list_exprs.push(exprs.getTree());
 
-            // res/ECMAScript3Ext.g:1552:32: ( COMMA exprs+= assignmentExpression )*
+            // ECMAScript3Ext.g:1552:32: ( COMMA exprs+= assignmentExpression )*
             loop44:
             do {
                 var alt44=2;
@@ -5657,7 +5657,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt44) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1552:34: COMMA exprs+= assignmentExpression
+                    // ECMAScript3Ext.g:1552:34: COMMA exprs+= assignmentExpression
                     COMMA141=this.match(this.input,COMMA,ECMAScript3ExtParser.FOLLOW_COMMA_in_expression4629);  
                     stream_COMMA.add(COMMA141);
 
@@ -5693,7 +5693,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1553:2: -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ )
             if ( list_exprs.length > 1 ) {
-                // res/ECMAScript3Ext.g:1553:28: ^( CEXPR ( $exprs)+ )
+                // ECMAScript3Ext.g:1553:28: ^( CEXPR ( $exprs)+ )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(CEXPR, "CEXPR"), root_1);
@@ -5751,7 +5751,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1557:1: expressionNoIn : exprs+= assignmentExpressionNoIn ( COMMA exprs+= assignmentExpressionNoIn )* -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ ) -> $exprs;
+    // ECMAScript3Ext.g:1557:1: expressionNoIn : exprs+= assignmentExpressionNoIn ( COMMA exprs+= assignmentExpressionNoIn )* -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ ) -> $exprs;
     // $ANTLR start "expressionNoIn"
     expressionNoIn: function() {
         var retval = new ECMAScript3ExtParser.expressionNoIn_return();
@@ -5766,8 +5766,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var stream_COMMA=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COMMA");
         var stream_assignmentExpressionNoIn=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule assignmentExpressionNoIn");
         try {
-            // res/ECMAScript3Ext.g:1558:2: (exprs+= assignmentExpressionNoIn ( COMMA exprs+= assignmentExpressionNoIn )* -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ ) -> $exprs)
-            // res/ECMAScript3Ext.g:1558:4: exprs+= assignmentExpressionNoIn ( COMMA exprs+= assignmentExpressionNoIn )*
+            // ECMAScript3Ext.g:1558:2: (exprs+= assignmentExpressionNoIn ( COMMA exprs+= assignmentExpressionNoIn )* -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ ) -> $exprs)
+            // ECMAScript3Ext.g:1558:4: exprs+= assignmentExpressionNoIn ( COMMA exprs+= assignmentExpressionNoIn )*
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_assignmentExpressionNoIn_in_expressionNoIn4670);
             exprs=this.assignmentExpressionNoIn();
 
@@ -5777,7 +5777,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             if (org.antlr.lang.isNull(list_exprs)) list_exprs = [];
             list_exprs.push(exprs.getTree());
 
-            // res/ECMAScript3Ext.g:1558:36: ( COMMA exprs+= assignmentExpressionNoIn )*
+            // ECMAScript3Ext.g:1558:36: ( COMMA exprs+= assignmentExpressionNoIn )*
             loop45:
             do {
                 var alt45=2;
@@ -5790,7 +5790,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt45) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1558:38: COMMA exprs+= assignmentExpressionNoIn
+                    // ECMAScript3Ext.g:1558:38: COMMA exprs+= assignmentExpressionNoIn
                     COMMA142=this.match(this.input,COMMA,ECMAScript3ExtParser.FOLLOW_COMMA_in_expressionNoIn4674);  
                     stream_COMMA.add(COMMA142);
 
@@ -5826,7 +5826,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1559:2: -> { $exprs.length > 1 }? ^( CEXPR ( $exprs)+ )
             if ( list_exprs.length > 1 ) {
-                // res/ECMAScript3Ext.g:1559:28: ^( CEXPR ( $exprs)+ )
+                // ECMAScript3Ext.g:1559:28: ^( CEXPR ( $exprs)+ )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(CEXPR, "CEXPR"), root_1);
@@ -5884,7 +5884,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1585:1: semic : ( SEMIC | EOF | RBRACE | EOL | MultiLineComment );
+    // ECMAScript3Ext.g:1585:1: semic : ( SEMIC | EOF | RBRACE | EOL | MultiLineComment );
     // $ANTLR start "semic"
     semic: function() {
         var retval = new ECMAScript3ExtParser.semic_return();
@@ -5911,7 +5911,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         	this.promoteEOL(retval);
 
         try {
-            // res/ECMAScript3Ext.g:1593:2: ( SEMIC | EOF | RBRACE | EOL | MultiLineComment )
+            // ECMAScript3Ext.g:1593:2: ( SEMIC | EOF | RBRACE | EOL | MultiLineComment )
             var alt46=5;
             switch ( this.input.LA(1) ) {
             case SEMIC:
@@ -5938,7 +5938,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt46) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1593:4: SEMIC
+                    // ECMAScript3Ext.g:1593:4: SEMIC
                     root_0 = this.adaptor.nil();
 
                     SEMIC143=this.match(this.input,SEMIC,ECMAScript3ExtParser.FOLLOW_SEMIC_in_semic4728); 
@@ -5949,7 +5949,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1594:4: EOF
+                    // ECMAScript3Ext.g:1594:4: EOF
                     root_0 = this.adaptor.nil();
 
                     EOF144=this.match(this.input,EOF,ECMAScript3ExtParser.FOLLOW_EOF_in_semic4733); 
@@ -5960,7 +5960,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1595:4: RBRACE
+                    // ECMAScript3Ext.g:1595:4: RBRACE
                     root_0 = this.adaptor.nil();
 
                     RBRACE145=this.match(this.input,RBRACE,ECMAScript3ExtParser.FOLLOW_RBRACE_in_semic4738); 
@@ -5972,7 +5972,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:1596:4: EOL
+                    // ECMAScript3Ext.g:1596:4: EOL
                     root_0 = this.adaptor.nil();
 
                     EOL146=this.match(this.input,EOL,ECMAScript3ExtParser.FOLLOW_EOL_in_semic4745); 
@@ -5983,7 +5983,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 5 :
-                    // res/ECMAScript3Ext.g:1596:10: MultiLineComment
+                    // ECMAScript3Ext.g:1596:10: MultiLineComment
                     root_0 = this.adaptor.nil();
 
                     MultiLineComment147=this.match(this.input,MultiLineComment,ECMAScript3ExtParser.FOLLOW_MultiLineComment_in_semic4749); 
@@ -6026,7 +6026,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1604:1: statement options {k=1; } : ({...}? block | statementTail );
+    // ECMAScript3Ext.g:1604:1: statement options {k=1; } : ({...}? block | statementTail );
     // $ANTLR start "statement"
     statement: function() {
         var retval = new ECMAScript3ExtParser.statement_return();
@@ -6039,12 +6039,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1609:2: ({...}? block | statementTail )
+            // ECMAScript3Ext.g:1609:2: ({...}? block | statementTail )
             var alt47=2;
             alt47 = this.dfa47.predict(this.input);
             switch (alt47) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1609:4: {...}? block
+                    // ECMAScript3Ext.g:1609:4: {...}? block
                     root_0 = this.adaptor.nil();
 
                     if ( !(( this.input.LA(1) == ECMAScript3ExtParser.LBRACE )) ) {
@@ -6060,7 +6060,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1610:4: statementTail
+                    // ECMAScript3Ext.g:1610:4: statementTail
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_statementTail_in_statement4783);
@@ -6105,7 +6105,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1613:1: statementTail : ( variableStatement | emptyStatement | expressionStatement | ifStatement | iterationStatement | continueStatement | breakStatement | returnStatement | withStatement | labelledStatement | switchStatement | throwStatement | tryStatement );
+    // ECMAScript3Ext.g:1613:1: statementTail : ( variableStatement | emptyStatement | expressionStatement | ifStatement | iterationStatement | continueStatement | breakStatement | returnStatement | withStatement | labelledStatement | switchStatement | throwStatement | tryStatement );
     // $ANTLR start "statementTail"
     statementTail: function() {
         var retval = new ECMAScript3ExtParser.statementTail_return();
@@ -6129,12 +6129,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1614:2: ( variableStatement | emptyStatement | expressionStatement | ifStatement | iterationStatement | continueStatement | breakStatement | returnStatement | withStatement | labelledStatement | switchStatement | throwStatement | tryStatement )
+            // ECMAScript3Ext.g:1614:2: ( variableStatement | emptyStatement | expressionStatement | ifStatement | iterationStatement | continueStatement | breakStatement | returnStatement | withStatement | labelledStatement | switchStatement | throwStatement | tryStatement )
             var alt48=13;
             alt48 = this.dfa48.predict(this.input);
             switch (alt48) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1614:4: variableStatement
+                    // ECMAScript3Ext.g:1614:4: variableStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_variableStatement_in_statementTail4794);
@@ -6147,7 +6147,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1615:4: emptyStatement
+                    // ECMAScript3Ext.g:1615:4: emptyStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_emptyStatement_in_statementTail4799);
@@ -6160,7 +6160,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1616:4: expressionStatement
+                    // ECMAScript3Ext.g:1616:4: expressionStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_expressionStatement_in_statementTail4804);
@@ -6173,7 +6173,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:1617:4: ifStatement
+                    // ECMAScript3Ext.g:1617:4: ifStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_ifStatement_in_statementTail4809);
@@ -6186,7 +6186,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 5 :
-                    // res/ECMAScript3Ext.g:1618:4: iterationStatement
+                    // ECMAScript3Ext.g:1618:4: iterationStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_iterationStatement_in_statementTail4814);
@@ -6199,7 +6199,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 6 :
-                    // res/ECMAScript3Ext.g:1619:4: continueStatement
+                    // ECMAScript3Ext.g:1619:4: continueStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_continueStatement_in_statementTail4819);
@@ -6212,7 +6212,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 7 :
-                    // res/ECMAScript3Ext.g:1620:4: breakStatement
+                    // ECMAScript3Ext.g:1620:4: breakStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_breakStatement_in_statementTail4824);
@@ -6225,7 +6225,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 8 :
-                    // res/ECMAScript3Ext.g:1621:4: returnStatement
+                    // ECMAScript3Ext.g:1621:4: returnStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_returnStatement_in_statementTail4829);
@@ -6238,7 +6238,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 9 :
-                    // res/ECMAScript3Ext.g:1622:4: withStatement
+                    // ECMAScript3Ext.g:1622:4: withStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_withStatement_in_statementTail4834);
@@ -6251,7 +6251,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 10 :
-                    // res/ECMAScript3Ext.g:1623:4: labelledStatement
+                    // ECMAScript3Ext.g:1623:4: labelledStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_labelledStatement_in_statementTail4839);
@@ -6264,7 +6264,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 11 :
-                    // res/ECMAScript3Ext.g:1624:4: switchStatement
+                    // ECMAScript3Ext.g:1624:4: switchStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_switchStatement_in_statementTail4844);
@@ -6277,7 +6277,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 12 :
-                    // res/ECMAScript3Ext.g:1625:4: throwStatement
+                    // ECMAScript3Ext.g:1625:4: throwStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_throwStatement_in_statementTail4849);
@@ -6290,7 +6290,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 13 :
-                    // res/ECMAScript3Ext.g:1626:4: tryStatement
+                    // ECMAScript3Ext.g:1626:4: tryStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_tryStatement_in_statementTail4854);
@@ -6335,7 +6335,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1632:1: block : lb= LBRACE ( sourceElement )* RBRACE -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* ) ;
+    // ECMAScript3Ext.g:1632:1: block : lb= LBRACE ( sourceElement )* RBRACE -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* ) ;
     // $ANTLR start "block"
     block: function() {
         var retval = new ECMAScript3ExtParser.block_return();
@@ -6353,12 +6353,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var stream_LBRACE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LBRACE");
         var stream_sourceElement=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule sourceElement");
         try {
-            // res/ECMAScript3Ext.g:1633:2: (lb= LBRACE ( sourceElement )* RBRACE -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* ) )
-            // res/ECMAScript3Ext.g:1633:4: lb= LBRACE ( sourceElement )* RBRACE
+            // ECMAScript3Ext.g:1633:2: (lb= LBRACE ( sourceElement )* RBRACE -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* ) )
+            // ECMAScript3Ext.g:1633:4: lb= LBRACE ( sourceElement )* RBRACE
             lb=this.match(this.input,LBRACE,ECMAScript3ExtParser.FOLLOW_LBRACE_in_block4870);  
             stream_LBRACE.add(lb);
 
-            // res/ECMAScript3Ext.g:1633:14: ( sourceElement )*
+            // ECMAScript3Ext.g:1633:14: ( sourceElement )*
             loop49:
             do {
                 var alt49=2;
@@ -6371,7 +6371,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt49) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1633:14: sourceElement
+                    // ECMAScript3Ext.g:1633:14: sourceElement
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_sourceElement_in_block4872);
                     sourceElement163=this.sourceElement();
 
@@ -6404,12 +6404,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1634:2: -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* )
             {
-                // res/ECMAScript3Ext.g:1634:5: ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* )
+                // ECMAScript3Ext.g:1634:5: ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(BLOCK, lb, "BLOCK"), root_1);
 
-                // res/ECMAScript3Ext.g:1634:28: ( sourceElement )*
+                // ECMAScript3Ext.g:1634:28: ( sourceElement )*
                 while ( stream_sourceElement.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_sourceElement.nextTree());
 
@@ -6455,7 +6455,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1641:1: variableStatement : VAR variableDeclaration ( COMMA variableDeclaration )* semic -> ^( VAR ( variableDeclaration )+ ) ;
+    // ECMAScript3Ext.g:1641:1: variableStatement : VAR variableDeclaration ( COMMA variableDeclaration )* semic -> ^( VAR ( variableDeclaration )+ ) ;
     // $ANTLR start "variableStatement"
     variableStatement: function() {
         var retval = new ECMAScript3ExtParser.variableStatement_return();
@@ -6471,13 +6471,13 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
         var VAR165_tree=null;
         var COMMA167_tree=null;
-        var stream_VAR=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token VAR");
         var stream_COMMA=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COMMA");
-        var stream_variableDeclaration=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule variableDeclaration");
+        var stream_VAR=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token VAR");
         var stream_semic=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule semic");
+        var stream_variableDeclaration=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule variableDeclaration");
         try {
-            // res/ECMAScript3Ext.g:1642:2: ( VAR variableDeclaration ( COMMA variableDeclaration )* semic -> ^( VAR ( variableDeclaration )+ ) )
-            // res/ECMAScript3Ext.g:1642:4: VAR variableDeclaration ( COMMA variableDeclaration )* semic
+            // ECMAScript3Ext.g:1642:2: ( VAR variableDeclaration ( COMMA variableDeclaration )* semic -> ^( VAR ( variableDeclaration )+ ) )
+            // ECMAScript3Ext.g:1642:4: VAR variableDeclaration ( COMMA variableDeclaration )* semic
             VAR165=this.match(this.input,VAR,ECMAScript3ExtParser.FOLLOW_VAR_in_variableStatement4903);  
             stream_VAR.add(VAR165);
 
@@ -6487,7 +6487,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             stream_variableDeclaration.add(variableDeclaration166.getTree());
-            // res/ECMAScript3Ext.g:1642:28: ( COMMA variableDeclaration )*
+            // ECMAScript3Ext.g:1642:28: ( COMMA variableDeclaration )*
             loop50:
             do {
                 var alt50=2;
@@ -6500,7 +6500,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt50) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1642:30: COMMA variableDeclaration
+                    // ECMAScript3Ext.g:1642:30: COMMA variableDeclaration
                     COMMA167=this.match(this.input,COMMA,ECMAScript3ExtParser.FOLLOW_COMMA_in_variableStatement4909);  
                     stream_COMMA.add(COMMA167);
 
@@ -6528,7 +6528,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
             // AST REWRITE
-            // elements: variableDeclaration, VAR
+            // elements: VAR, variableDeclaration
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -6539,7 +6539,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1643:2: -> ^( VAR ( variableDeclaration )+ )
             {
-                // res/ECMAScript3Ext.g:1643:5: ^( VAR ( variableDeclaration )+ )
+                // ECMAScript3Ext.g:1643:5: ^( VAR ( variableDeclaration )+ )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(stream_VAR.nextNode(), root_1);
@@ -6592,7 +6592,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1646:1: variableDeclaration : Identifier ( ASSIGN assignmentExpression )? ;
+    // ECMAScript3Ext.g:1646:1: variableDeclaration : Identifier ( ASSIGN assignmentExpression )? ;
     // $ANTLR start "variableDeclaration"
     variableDeclaration: function() {
         var retval = new ECMAScript3ExtParser.variableDeclaration_return();
@@ -6608,15 +6608,15 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var ASSIGN171_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1647:2: ( Identifier ( ASSIGN assignmentExpression )? )
-            // res/ECMAScript3Ext.g:1647:4: Identifier ( ASSIGN assignmentExpression )?
+            // ECMAScript3Ext.g:1647:2: ( Identifier ( ASSIGN assignmentExpression )? )
+            // ECMAScript3Ext.g:1647:4: Identifier ( ASSIGN assignmentExpression )?
             root_0 = this.adaptor.nil();
 
             Identifier170=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_variableDeclaration4939); 
             Identifier170_tree = this.adaptor.create(Identifier170);
             this.adaptor.addChild(root_0, Identifier170_tree);
 
-            // res/ECMAScript3Ext.g:1647:15: ( ASSIGN assignmentExpression )?
+            // ECMAScript3Ext.g:1647:15: ( ASSIGN assignmentExpression )?
             var alt51=2;
             var LA51_0 = this.input.LA(1);
 
@@ -6625,7 +6625,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt51) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1647:17: ASSIGN assignmentExpression
+                    // ECMAScript3Ext.g:1647:17: ASSIGN assignmentExpression
                     ASSIGN171=this.match(this.input,ASSIGN,ECMAScript3ExtParser.FOLLOW_ASSIGN_in_variableDeclaration4943); 
                     ASSIGN171_tree = this.adaptor.create(ASSIGN171);
                     root_0 = this.adaptor.becomeRoot(ASSIGN171_tree, root_0);
@@ -6676,7 +6676,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1650:1: variableDeclarationNoIn : Identifier ( ASSIGN assignmentExpressionNoIn )? ;
+    // ECMAScript3Ext.g:1650:1: variableDeclarationNoIn : Identifier ( ASSIGN assignmentExpressionNoIn )? ;
     // $ANTLR start "variableDeclarationNoIn"
     variableDeclarationNoIn: function() {
         var retval = new ECMAScript3ExtParser.variableDeclarationNoIn_return();
@@ -6692,15 +6692,15 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var ASSIGN174_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1651:2: ( Identifier ( ASSIGN assignmentExpressionNoIn )? )
-            // res/ECMAScript3Ext.g:1651:4: Identifier ( ASSIGN assignmentExpressionNoIn )?
+            // ECMAScript3Ext.g:1651:2: ( Identifier ( ASSIGN assignmentExpressionNoIn )? )
+            // ECMAScript3Ext.g:1651:4: Identifier ( ASSIGN assignmentExpressionNoIn )?
             root_0 = this.adaptor.nil();
 
             Identifier173=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_variableDeclarationNoIn4960); 
             Identifier173_tree = this.adaptor.create(Identifier173);
             this.adaptor.addChild(root_0, Identifier173_tree);
 
-            // res/ECMAScript3Ext.g:1651:15: ( ASSIGN assignmentExpressionNoIn )?
+            // ECMAScript3Ext.g:1651:15: ( ASSIGN assignmentExpressionNoIn )?
             var alt52=2;
             var LA52_0 = this.input.LA(1);
 
@@ -6709,7 +6709,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt52) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1651:17: ASSIGN assignmentExpressionNoIn
+                    // ECMAScript3Ext.g:1651:17: ASSIGN assignmentExpressionNoIn
                     ASSIGN174=this.match(this.input,ASSIGN,ECMAScript3ExtParser.FOLLOW_ASSIGN_in_variableDeclarationNoIn4964); 
                     ASSIGN174_tree = this.adaptor.create(ASSIGN174);
                     root_0 = this.adaptor.becomeRoot(ASSIGN174_tree, root_0);
@@ -6760,7 +6760,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1658:1: emptyStatement : SEMIC ;
+    // ECMAScript3Ext.g:1658:1: emptyStatement : SEMIC ;
     // $ANTLR start "emptyStatement"
     emptyStatement: function() {
         var retval = new ECMAScript3ExtParser.emptyStatement_return();
@@ -6773,8 +6773,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var SEMIC176_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1659:2: ( SEMIC )
-            // res/ECMAScript3Ext.g:1659:4: SEMIC
+            // ECMAScript3Ext.g:1659:2: ( SEMIC )
+            // ECMAScript3Ext.g:1659:4: SEMIC
             root_0 = this.adaptor.nil();
 
             SEMIC176=this.match(this.input,SEMIC,ECMAScript3ExtParser.FOLLOW_SEMIC_in_emptyStatement4985); 
@@ -6815,7 +6815,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1672:1: expressionStatement : expression semic ;
+    // ECMAScript3Ext.g:1672:1: expressionStatement : expression semic ;
     // $ANTLR start "expressionStatement"
     expressionStatement: function() {
         var retval = new ECMAScript3ExtParser.expressionStatement_return();
@@ -6828,8 +6828,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1673:2: ( expression semic )
-            // res/ECMAScript3Ext.g:1673:4: expression semic
+            // ECMAScript3Ext.g:1673:2: ( expression semic )
+            // ECMAScript3Ext.g:1673:4: expression semic
             root_0 = this.adaptor.nil();
 
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_expression_in_expressionStatement5002);
@@ -6877,7 +6877,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1680:1: ifStatement : IF LPAREN expression RPAREN statement ({...}? ELSE statement )? -> ^( IF expression ( statement )+ ) ;
+    // ECMAScript3Ext.g:1680:1: ifStatement : IF LPAREN expression RPAREN statement ({...}? ELSE statement )? -> ^( IF expression ( statement )+ ) ;
     // $ANTLR start "ifStatement"
     ifStatement: function() {
         var retval = new ECMAScript3ExtParser.ifStatement_return();
@@ -6897,15 +6897,15 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var LPAREN180_tree=null;
         var RPAREN182_tree=null;
         var ELSE184_tree=null;
-        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
         var stream_LPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LPAREN");
-        var stream_IF=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token IF");
         var stream_ELSE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token ELSE");
+        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
+        var stream_IF=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token IF");
         var stream_expression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule expression");
         var stream_statement=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule statement");
         try {
-            // res/ECMAScript3Ext.g:1682:2: ( IF LPAREN expression RPAREN statement ({...}? ELSE statement )? -> ^( IF expression ( statement )+ ) )
-            // res/ECMAScript3Ext.g:1682:4: IF LPAREN expression RPAREN statement ({...}? ELSE statement )?
+            // ECMAScript3Ext.g:1682:2: ( IF LPAREN expression RPAREN statement ({...}? ELSE statement )? -> ^( IF expression ( statement )+ ) )
+            // ECMAScript3Ext.g:1682:4: IF LPAREN expression RPAREN statement ({...}? ELSE statement )?
             IF179=this.match(this.input,IF,ECMAScript3ExtParser.FOLLOW_IF_in_ifStatement5021);  
             stream_IF.add(IF179);
 
@@ -6927,7 +6927,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             stream_statement.add(statement183.getTree());
-            // res/ECMAScript3Ext.g:1682:42: ({...}? ELSE statement )?
+            // ECMAScript3Ext.g:1682:42: ({...}? ELSE statement )?
             var alt53=2;
             var LA53_0 = this.input.LA(1);
 
@@ -6940,7 +6940,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt53) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1682:44: {...}? ELSE statement
+                    // ECMAScript3Ext.g:1682:44: {...}? ELSE statement
                     if ( !(( this.input.LA(1) == ECMAScript3ExtParser.ELSE )) ) {
                         throw new org.antlr.runtime.FailedPredicateException(this.input, "ifStatement", " this.input.LA(1) == ECMAScript3ExtParser.ELSE ");
                     }
@@ -6962,7 +6962,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
             // AST REWRITE
-            // elements: expression, statement, IF
+            // elements: IF, statement, expression
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -6973,7 +6973,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1683:2: -> ^( IF expression ( statement )+ )
             {
-                // res/ECMAScript3Ext.g:1683:5: ^( IF expression ( statement )+ )
+                // ECMAScript3Ext.g:1683:5: ^( IF expression ( statement )+ )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(stream_IF.nextNode(), root_1);
@@ -7027,7 +7027,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1690:1: iterationStatement : ( doStatement | whileStatement | forStatement );
+    // ECMAScript3Ext.g:1690:1: iterationStatement : ( doStatement | whileStatement | forStatement );
     // $ANTLR start "iterationStatement"
     iterationStatement: function() {
         var retval = new ECMAScript3ExtParser.iterationStatement_return();
@@ -7041,7 +7041,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1691:2: ( doStatement | whileStatement | forStatement )
+            // ECMAScript3Ext.g:1691:2: ( doStatement | whileStatement | forStatement )
             var alt54=3;
             switch ( this.input.LA(1) ) {
             case DO:
@@ -7062,7 +7062,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt54) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1691:4: doStatement
+                    // ECMAScript3Ext.g:1691:4: doStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_doStatement_in_iterationStatement5069);
@@ -7075,7 +7075,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1692:4: whileStatement
+                    // ECMAScript3Ext.g:1692:4: whileStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_whileStatement_in_iterationStatement5074);
@@ -7088,7 +7088,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1693:4: forStatement
+                    // ECMAScript3Ext.g:1693:4: forStatement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_forStatement_in_iterationStatement5079);
@@ -7133,7 +7133,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1696:1: doStatement : DO statement WHILE LPAREN expression RPAREN semic -> ^( DO statement expression ) ;
+    // ECMAScript3Ext.g:1696:1: doStatement : DO statement WHILE LPAREN expression RPAREN semic -> ^( DO statement expression ) ;
     // $ANTLR start "doStatement"
     doStatement: function() {
         var retval = new ECMAScript3ExtParser.doStatement_return();
@@ -7153,16 +7153,16 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var WHILE191_tree=null;
         var LPAREN192_tree=null;
         var RPAREN194_tree=null;
+        var stream_LPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LPAREN");
+        var stream_WHILE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token WHILE");
         var stream_DO=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token DO");
         var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
-        var stream_WHILE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token WHILE");
-        var stream_LPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LPAREN");
-        var stream_statement=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule statement");
-        var stream_expression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule expression");
         var stream_semic=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule semic");
+        var stream_expression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule expression");
+        var stream_statement=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule statement");
         try {
-            // res/ECMAScript3Ext.g:1697:2: ( DO statement WHILE LPAREN expression RPAREN semic -> ^( DO statement expression ) )
-            // res/ECMAScript3Ext.g:1697:4: DO statement WHILE LPAREN expression RPAREN semic
+            // ECMAScript3Ext.g:1697:2: ( DO statement WHILE LPAREN expression RPAREN semic -> ^( DO statement expression ) )
+            // ECMAScript3Ext.g:1697:4: DO statement WHILE LPAREN expression RPAREN semic
             DO189=this.match(this.input,DO,ECMAScript3ExtParser.FOLLOW_DO_in_doStatement5090);  
             stream_DO.add(DO189);
 
@@ -7196,7 +7196,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
             // AST REWRITE
-            // elements: expression, statement, DO
+            // elements: expression, DO, statement
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7207,7 +7207,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1698:2: -> ^( DO statement expression )
             {
-                // res/ECMAScript3Ext.g:1698:5: ^( DO statement expression )
+                // ECMAScript3Ext.g:1698:5: ^( DO statement expression )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(stream_DO.nextNode(), root_1);
@@ -7254,7 +7254,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1701:1: whileStatement : WHILE LPAREN expression RPAREN statement ;
+    // ECMAScript3Ext.g:1701:1: whileStatement : WHILE LPAREN expression RPAREN statement ;
     // $ANTLR start "whileStatement"
     whileStatement: function() {
         var retval = new ECMAScript3ExtParser.whileStatement_return();
@@ -7273,8 +7273,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var RPAREN199_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1702:2: ( WHILE LPAREN expression RPAREN statement )
-            // res/ECMAScript3Ext.g:1702:4: WHILE LPAREN expression RPAREN statement
+            // ECMAScript3Ext.g:1702:2: ( WHILE LPAREN expression RPAREN statement )
+            // ECMAScript3Ext.g:1702:4: WHILE LPAREN expression RPAREN statement
             root_0 = this.adaptor.nil();
 
             WHILE196=this.match(this.input,WHILE,ECMAScript3ExtParser.FOLLOW_WHILE_in_whileStatement5126); 
@@ -7329,7 +7329,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1746:1: forStatement : FOR LPAREN forControl RPAREN statement ;
+    // ECMAScript3Ext.g:1746:1: forStatement : FOR LPAREN forControl RPAREN statement ;
     // $ANTLR start "forStatement"
     forStatement: function() {
         var retval = new ECMAScript3ExtParser.forStatement_return();
@@ -7348,8 +7348,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var RPAREN204_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1747:2: ( FOR LPAREN forControl RPAREN statement )
-            // res/ECMAScript3Ext.g:1747:4: FOR LPAREN forControl RPAREN statement
+            // ECMAScript3Ext.g:1747:2: ( FOR LPAREN forControl RPAREN statement )
+            // ECMAScript3Ext.g:1747:4: FOR LPAREN forControl RPAREN statement
             root_0 = this.adaptor.nil();
 
             FOR201=this.match(this.input,FOR,ECMAScript3ExtParser.FOLLOW_FOR_in_forStatement5150); 
@@ -7404,7 +7404,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1750:1: forControl : ( forControlVar | forControlExpression | forControlSemic );
+    // ECMAScript3Ext.g:1750:1: forControl : ( forControlVar | forControlExpression | forControlSemic );
     // $ANTLR start "forControl"
     forControl: function() {
         var retval = new ECMAScript3ExtParser.forControl_return();
@@ -7418,7 +7418,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1751:2: ( forControlVar | forControlExpression | forControlSemic )
+            // ECMAScript3Ext.g:1751:2: ( forControlVar | forControlExpression | forControlSemic )
             var alt55=3;
             switch ( this.input.LA(1) ) {
             case VAR:
@@ -7463,7 +7463,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             switch (alt55) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1751:4: forControlVar
+                    // ECMAScript3Ext.g:1751:4: forControlVar
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_forControlVar_in_forControl5172);
@@ -7476,7 +7476,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1752:4: forControlExpression
+                    // ECMAScript3Ext.g:1752:4: forControlExpression
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_forControlExpression_in_forControl5177);
@@ -7489,7 +7489,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1753:4: forControlSemic
+                    // ECMAScript3Ext.g:1753:4: forControlSemic
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_forControlSemic_in_forControl5182);
@@ -7534,7 +7534,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1756:1: forControlVar : VAR variableDeclarationNoIn ( ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ) ) ;
+    // ECMAScript3Ext.g:1756:1: forControlVar : VAR variableDeclarationNoIn ( ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ) ) ;
     // $ANTLR start "forControlVar"
     forControlVar: function() {
         var retval = new ECMAScript3ExtParser.forControlVar_return();
@@ -7558,15 +7558,15 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var COMMA213_tree=null;
         var SEMIC215_tree=null;
         var SEMIC216_tree=null;
-        var stream_VAR=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token VAR");
-        var stream_IN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token IN");
-        var stream_SEMIC=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token SEMIC");
         var stream_COMMA=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COMMA");
+        var stream_IN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token IN");
+        var stream_VAR=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token VAR");
+        var stream_SEMIC=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token SEMIC");
         var stream_expression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule expression");
         var stream_variableDeclarationNoIn=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule variableDeclarationNoIn");
         try {
-            // res/ECMAScript3Ext.g:1757:2: ( VAR variableDeclarationNoIn ( ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ) ) )
-            // res/ECMAScript3Ext.g:1757:4: VAR variableDeclarationNoIn ( ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ) )
+            // ECMAScript3Ext.g:1757:2: ( VAR variableDeclarationNoIn ( ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ) ) )
+            // ECMAScript3Ext.g:1757:4: VAR variableDeclarationNoIn ( ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ) )
             VAR209=this.match(this.input,VAR,ECMAScript3ExtParser.FOLLOW_VAR_in_forControlVar5193);  
             stream_VAR.add(VAR209);
 
@@ -7576,7 +7576,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             stream_variableDeclarationNoIn.add(variableDeclarationNoIn210.getTree());
-            // res/ECMAScript3Ext.g:1758:2: ( ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ) )
+            // ECMAScript3Ext.g:1758:2: ( ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) ) | ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ) )
             var alt59=2;
             var LA59_0 = this.input.LA(1);
 
@@ -7594,9 +7594,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt59) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1759:3: ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) )
-                    // res/ECMAScript3Ext.g:1759:3: ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) )
-                    // res/ECMAScript3Ext.g:1760:4: IN expression
+                    // ECMAScript3Ext.g:1759:3: ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) )
+                    // ECMAScript3Ext.g:1759:3: ( IN expression -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) ) )
+                    // ECMAScript3Ext.g:1760:4: IN expression
                     IN211=this.match(this.input,IN,ECMAScript3ExtParser.FOLLOW_IN_in_forControlVar5207);  
                     stream_IN.add(IN211);
 
@@ -7609,7 +7609,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
                     // AST REWRITE
-                    // elements: variableDeclarationNoIn, expression, VAR
+                    // elements: expression, variableDeclarationNoIn, VAR
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -7620,12 +7620,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     root_0 = this.adaptor.nil();
                     // 1761:4: -> ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) )
                     {
-                        // res/ECMAScript3Ext.g:1761:7: ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) )
+                        // ECMAScript3Ext.g:1761:7: ^( FORITER ^( VAR variableDeclarationNoIn ) ^( EXPR expression ) )
                         {
                         var root_1 = this.adaptor.nil();
                         root_1 = this.adaptor.becomeRoot(this.adaptor.create(FORITER, "FORITER"), root_1);
 
-                        // res/ECMAScript3Ext.g:1761:18: ^( VAR variableDeclarationNoIn )
+                        // ECMAScript3Ext.g:1761:18: ^( VAR variableDeclarationNoIn )
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(stream_VAR.nextNode(), root_2);
@@ -7634,7 +7634,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         this.adaptor.addChild(root_1, root_2);
                         }
-                        // res/ECMAScript3Ext.g:1761:51: ^( EXPR expression )
+                        // ECMAScript3Ext.g:1761:51: ^( EXPR expression )
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
@@ -7656,10 +7656,10 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1764:3: ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) )
-                    // res/ECMAScript3Ext.g:1764:3: ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) )
-                    // res/ECMAScript3Ext.g:1765:4: ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )?
-                    // res/ECMAScript3Ext.g:1765:4: ( COMMA variableDeclarationNoIn )*
+                    // ECMAScript3Ext.g:1764:3: ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) )
+                    // ECMAScript3Ext.g:1764:3: ( ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) )
+                    // ECMAScript3Ext.g:1765:4: ( COMMA variableDeclarationNoIn )* SEMIC (ex1= expression )? SEMIC (ex2= expression )?
+                    // ECMAScript3Ext.g:1765:4: ( COMMA variableDeclarationNoIn )*
                     loop56:
                     do {
                         var alt56=2;
@@ -7672,7 +7672,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         switch (alt56) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1765:6: COMMA variableDeclarationNoIn
+                            // ECMAScript3Ext.g:1765:6: COMMA variableDeclarationNoIn
                             COMMA213=this.match(this.input,COMMA,ECMAScript3ExtParser.FOLLOW_COMMA_in_forControlVar5255);  
                             stream_COMMA.add(COMMA213);
 
@@ -7694,7 +7694,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     SEMIC215=this.match(this.input,SEMIC,ECMAScript3ExtParser.FOLLOW_SEMIC_in_forControlVar5262);  
                     stream_SEMIC.add(SEMIC215);
 
-                    // res/ECMAScript3Ext.g:1765:48: (ex1= expression )?
+                    // ECMAScript3Ext.g:1765:48: (ex1= expression )?
                     var alt57=2;
                     var LA57_0 = this.input.LA(1);
 
@@ -7703,7 +7703,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     }
                     switch (alt57) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1765:48: ex1= expression
+                            // ECMAScript3Ext.g:1765:48: ex1= expression
                             this.pushFollow(ECMAScript3ExtParser.FOLLOW_expression_in_forControlVar5266);
                             ex1=this.expression();
 
@@ -7719,7 +7719,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     SEMIC216=this.match(this.input,SEMIC,ECMAScript3ExtParser.FOLLOW_SEMIC_in_forControlVar5269);  
                     stream_SEMIC.add(SEMIC216);
 
-                    // res/ECMAScript3Ext.g:1765:70: (ex2= expression )?
+                    // ECMAScript3Ext.g:1765:70: (ex2= expression )?
                     var alt58=2;
                     var LA58_0 = this.input.LA(1);
 
@@ -7728,7 +7728,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     }
                     switch (alt58) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1765:70: ex2= expression
+                            // ECMAScript3Ext.g:1765:70: ex2= expression
                             this.pushFollow(ECMAScript3ExtParser.FOLLOW_expression_in_forControlVar5273);
                             ex2=this.expression();
 
@@ -7744,25 +7744,25 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
                     // AST REWRITE
-                    // elements: variableDeclarationNoIn, ex2, VAR, ex1
+                    // elements: ex1, VAR, variableDeclarationNoIn, ex2
                     // token labels: 
-                    // rule labels: retval, ex2, ex1
+                    // rule labels: ex2, retval, ex1
                     // token list labels: 
                     // rule list labels: 
                     retval.tree = root_0;
-                    var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
                     var stream_ex2=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token ex2",ex2!=null?ex2.tree:null);
+                    var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
                     var stream_ex1=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token ex1",ex1!=null?ex1.tree:null);
 
                     root_0 = this.adaptor.nil();
                     // 1766:4: -> ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) )
                     {
-                        // res/ECMAScript3Ext.g:1766:7: ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) )
+                        // ECMAScript3Ext.g:1766:7: ^( FORSTEP ^( VAR ( variableDeclarationNoIn )+ ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) )
                         {
                         var root_1 = this.adaptor.nil();
                         root_1 = this.adaptor.becomeRoot(this.adaptor.create(FORSTEP, "FORSTEP"), root_1);
 
-                        // res/ECMAScript3Ext.g:1766:18: ^( VAR ( variableDeclarationNoIn )+ )
+                        // ECMAScript3Ext.g:1766:18: ^( VAR ( variableDeclarationNoIn )+ )
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(stream_VAR.nextNode(), root_2);
@@ -7778,12 +7778,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         this.adaptor.addChild(root_1, root_2);
                         }
-                        // res/ECMAScript3Ext.g:1766:52: ^( EXPR ( $ex1)? )
+                        // ECMAScript3Ext.g:1766:52: ^( EXPR ( $ex1)? )
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
 
-                        // res/ECMAScript3Ext.g:1766:60: ( $ex1)?
+                        // ECMAScript3Ext.g:1766:60: ( $ex1)?
                         if ( stream_ex1.hasNext() ) {
                             this.adaptor.addChild(root_2, stream_ex1.nextTree());
 
@@ -7792,12 +7792,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         this.adaptor.addChild(root_1, root_2);
                         }
-                        // res/ECMAScript3Ext.g:1766:68: ^( EXPR ( $ex2)? )
+                        // ECMAScript3Ext.g:1766:68: ^( EXPR ( $ex2)? )
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
 
-                        // res/ECMAScript3Ext.g:1766:76: ( $ex2)?
+                        // ECMAScript3Ext.g:1766:76: ( $ex2)?
                         if ( stream_ex2.hasNext() ) {
                             this.adaptor.addChild(root_2, stream_ex2.nextTree());
 
@@ -7855,7 +7855,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1771:1: forControlExpression : ex1= expressionNoIn ({...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) ) ) ;
+    // ECMAScript3Ext.g:1771:1: forControlExpression : ex1= expressionNoIn ({...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) ) ) ;
     // $ANTLR start "forControlExpression"
     forControlExpression: function() {
         var retval = new ECMAScript3ExtParser.forControlExpression_return();
@@ -7881,15 +7881,15 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         	var isLhs = [];
 
         try {
-            // res/ECMAScript3Ext.g:1776:2: (ex1= expressionNoIn ({...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) ) ) )
-            // res/ECMAScript3Ext.g:1776:4: ex1= expressionNoIn ({...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) ) )
+            // ECMAScript3Ext.g:1776:2: (ex1= expressionNoIn ({...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) ) ) )
+            // ECMAScript3Ext.g:1776:4: ex1= expressionNoIn ({...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) ) )
             this.pushFollow(ECMAScript3ExtParser.FOLLOW_expressionNoIn_in_forControlExpression5339);
             ex1=this.expressionNoIn();
 
             this.state._fsp--;
 
             stream_expressionNoIn.add(ex1.getTree());
-            // res/ECMAScript3Ext.g:1777:2: ({...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) ) )
+            // ECMAScript3Ext.g:1777:2: ({...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) ) | ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) ) )
             var alt62=2;
             var LA62_0 = this.input.LA(1);
 
@@ -7907,12 +7907,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt62) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1778:3: {...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) )
+                    // ECMAScript3Ext.g:1778:3: {...}? ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) )
                     if ( !(( this.isLeftHandSideIn(ex1, isLhs) )) ) {
                         throw new org.antlr.runtime.FailedPredicateException(this.input, "forControlExpression", " this.isLeftHandSideIn(ex1, isLhs) ");
                     }
-                    // res/ECMAScript3Ext.g:1778:42: ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) )
-                    // res/ECMAScript3Ext.g:1779:4: IN ex2= expression
+                    // ECMAScript3Ext.g:1778:42: ( IN ex2= expression -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) ) )
+                    // ECMAScript3Ext.g:1779:4: IN ex2= expression
                     IN217=this.match(this.input,IN,ECMAScript3ExtParser.FOLLOW_IN_in_forControlExpression5353);  
                     stream_IN.add(IN217);
 
@@ -7927,23 +7927,23 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     // AST REWRITE
                     // elements: ex1, ex2
                     // token labels: 
-                    // rule labels: retval, ex2, ex1
+                    // rule labels: ex2, retval, ex1
                     // token list labels: 
                     // rule list labels: 
                     retval.tree = root_0;
-                    var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
                     var stream_ex2=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token ex2",ex2!=null?ex2.tree:null);
+                    var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
                     var stream_ex1=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token ex1",ex1!=null?ex1.tree:null);
 
                     root_0 = this.adaptor.nil();
                     // 1780:4: -> ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) )
                     {
-                        // res/ECMAScript3Ext.g:1780:7: ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) )
+                        // ECMAScript3Ext.g:1780:7: ^( FORITER ^( EXPR $ex1) ^( EXPR $ex2) )
                         {
                         var root_1 = this.adaptor.nil();
                         root_1 = this.adaptor.becomeRoot(this.adaptor.create(FORITER, "FORITER"), root_1);
 
-                        // res/ECMAScript3Ext.g:1780:18: ^( EXPR $ex1)
+                        // ECMAScript3Ext.g:1780:18: ^( EXPR $ex1)
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
@@ -7952,7 +7952,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         this.adaptor.addChild(root_1, root_2);
                         }
-                        // res/ECMAScript3Ext.g:1780:33: ^( EXPR $ex2)
+                        // ECMAScript3Ext.g:1780:33: ^( EXPR $ex2)
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
@@ -7974,13 +7974,13 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1783:3: ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) )
-                    // res/ECMAScript3Ext.g:1783:3: ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) )
-                    // res/ECMAScript3Ext.g:1784:4: SEMIC (ex2= expression )? SEMIC (ex3= expression )?
+                    // ECMAScript3Ext.g:1783:3: ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) )
+                    // ECMAScript3Ext.g:1783:3: ( SEMIC (ex2= expression )? SEMIC (ex3= expression )? -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) ) )
+                    // ECMAScript3Ext.g:1784:4: SEMIC (ex2= expression )? SEMIC (ex3= expression )?
                     SEMIC218=this.match(this.input,SEMIC,ECMAScript3ExtParser.FOLLOW_SEMIC_in_forControlExpression5403);  
                     stream_SEMIC.add(SEMIC218);
 
-                    // res/ECMAScript3Ext.g:1784:13: (ex2= expression )?
+                    // ECMAScript3Ext.g:1784:13: (ex2= expression )?
                     var alt60=2;
                     var LA60_0 = this.input.LA(1);
 
@@ -7989,7 +7989,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     }
                     switch (alt60) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1784:13: ex2= expression
+                            // ECMAScript3Ext.g:1784:13: ex2= expression
                             this.pushFollow(ECMAScript3ExtParser.FOLLOW_expression_in_forControlExpression5407);
                             ex2=this.expression();
 
@@ -8005,7 +8005,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     SEMIC219=this.match(this.input,SEMIC,ECMAScript3ExtParser.FOLLOW_SEMIC_in_forControlExpression5410);  
                     stream_SEMIC.add(SEMIC219);
 
-                    // res/ECMAScript3Ext.g:1784:35: (ex3= expression )?
+                    // ECMAScript3Ext.g:1784:35: (ex3= expression )?
                     var alt61=2;
                     var LA61_0 = this.input.LA(1);
 
@@ -8014,7 +8014,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     }
                     switch (alt61) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1784:35: ex3= expression
+                            // ECMAScript3Ext.g:1784:35: ex3= expression
                             this.pushFollow(ECMAScript3ExtParser.FOLLOW_expression_in_forControlExpression5414);
                             ex3=this.expression();
 
@@ -8030,26 +8030,26 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
                     // AST REWRITE
-                    // elements: ex1, ex3, ex2
+                    // elements: ex1, ex2, ex3
                     // token labels: 
-                    // rule labels: retval, ex3, ex2, ex1
+                    // rule labels: ex3, ex2, retval, ex1
                     // token list labels: 
                     // rule list labels: 
                     retval.tree = root_0;
-                    var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
                     var stream_ex3=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token ex3",ex3!=null?ex3.tree:null);
                     var stream_ex2=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token ex2",ex2!=null?ex2.tree:null);
+                    var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
                     var stream_ex1=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token ex1",ex1!=null?ex1.tree:null);
 
                     root_0 = this.adaptor.nil();
                     // 1785:4: -> ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) )
                     {
-                        // res/ECMAScript3Ext.g:1785:7: ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) )
+                        // ECMAScript3Ext.g:1785:7: ^( FORSTEP ^( EXPR $ex1) ^( EXPR ( $ex2)? ) ^( EXPR ( $ex3)? ) )
                         {
                         var root_1 = this.adaptor.nil();
                         root_1 = this.adaptor.becomeRoot(this.adaptor.create(FORSTEP, "FORSTEP"), root_1);
 
-                        // res/ECMAScript3Ext.g:1785:18: ^( EXPR $ex1)
+                        // ECMAScript3Ext.g:1785:18: ^( EXPR $ex1)
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
@@ -8058,12 +8058,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         this.adaptor.addChild(root_1, root_2);
                         }
-                        // res/ECMAScript3Ext.g:1785:33: ^( EXPR ( $ex2)? )
+                        // ECMAScript3Ext.g:1785:33: ^( EXPR ( $ex2)? )
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
 
-                        // res/ECMAScript3Ext.g:1785:41: ( $ex2)?
+                        // ECMAScript3Ext.g:1785:41: ( $ex2)?
                         if ( stream_ex2.hasNext() ) {
                             this.adaptor.addChild(root_2, stream_ex2.nextTree());
 
@@ -8072,12 +8072,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         this.adaptor.addChild(root_1, root_2);
                         }
-                        // res/ECMAScript3Ext.g:1785:49: ^( EXPR ( $ex3)? )
+                        // ECMAScript3Ext.g:1785:49: ^( EXPR ( $ex3)? )
                         {
                         var root_2 = this.adaptor.nil();
                         root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
 
-                        // res/ECMAScript3Ext.g:1785:57: ( $ex3)?
+                        // ECMAScript3Ext.g:1785:57: ( $ex3)?
                         if ( stream_ex3.hasNext() ) {
                             this.adaptor.addChild(root_2, stream_ex3.nextTree());
 
@@ -8135,7 +8135,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1790:1: forControlSemic : SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( EXPR ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ;
+    // ECMAScript3Ext.g:1790:1: forControlSemic : SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( EXPR ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) ;
     // $ANTLR start "forControlSemic"
     forControlSemic: function() {
         var retval = new ECMAScript3ExtParser.forControlSemic_return();
@@ -8153,12 +8153,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var stream_SEMIC=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token SEMIC");
         var stream_expression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule expression");
         try {
-            // res/ECMAScript3Ext.g:1791:2: ( SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( EXPR ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) )
-            // res/ECMAScript3Ext.g:1791:4: SEMIC (ex1= expression )? SEMIC (ex2= expression )?
+            // ECMAScript3Ext.g:1791:2: ( SEMIC (ex1= expression )? SEMIC (ex2= expression )? -> ^( FORSTEP ^( EXPR ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) ) )
+            // ECMAScript3Ext.g:1791:4: SEMIC (ex1= expression )? SEMIC (ex2= expression )?
             SEMIC220=this.match(this.input,SEMIC,ECMAScript3ExtParser.FOLLOW_SEMIC_in_forControlSemic5473);  
             stream_SEMIC.add(SEMIC220);
 
-            // res/ECMAScript3Ext.g:1791:13: (ex1= expression )?
+            // ECMAScript3Ext.g:1791:13: (ex1= expression )?
             var alt63=2;
             var LA63_0 = this.input.LA(1);
 
@@ -8167,7 +8167,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt63) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1791:13: ex1= expression
+                    // ECMAScript3Ext.g:1791:13: ex1= expression
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_expression_in_forControlSemic5477);
                     ex1=this.expression();
 
@@ -8183,7 +8183,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             SEMIC221=this.match(this.input,SEMIC,ECMAScript3ExtParser.FOLLOW_SEMIC_in_forControlSemic5480);  
             stream_SEMIC.add(SEMIC221);
 
-            // res/ECMAScript3Ext.g:1791:35: (ex2= expression )?
+            // ECMAScript3Ext.g:1791:35: (ex2= expression )?
             var alt64=2;
             var LA64_0 = this.input.LA(1);
 
@@ -8192,7 +8192,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt64) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1791:35: ex2= expression
+                    // ECMAScript3Ext.g:1791:35: ex2= expression
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_expression_in_forControlSemic5484);
                     ex2=this.expression();
 
@@ -8210,35 +8210,35 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             // AST REWRITE
             // elements: ex2, ex1
             // token labels: 
-            // rule labels: retval, ex2, ex1
+            // rule labels: ex2, retval, ex1
             // token list labels: 
             // rule list labels: 
             retval.tree = root_0;
-            var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
             var stream_ex2=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token ex2",ex2!=null?ex2.tree:null);
+            var stream_retval=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token retval",retval!=null?retval.tree:null);
             var stream_ex1=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"token ex1",ex1!=null?ex1.tree:null);
 
             root_0 = this.adaptor.nil();
             // 1792:2: -> ^( FORSTEP ^( EXPR ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) )
             {
-                // res/ECMAScript3Ext.g:1792:5: ^( FORSTEP ^( EXPR ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) )
+                // ECMAScript3Ext.g:1792:5: ^( FORSTEP ^( EXPR ) ^( EXPR ( $ex1)? ) ^( EXPR ( $ex2)? ) )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(FORSTEP, "FORSTEP"), root_1);
 
-                // res/ECMAScript3Ext.g:1792:16: ^( EXPR )
+                // ECMAScript3Ext.g:1792:16: ^( EXPR )
                 {
                 var root_2 = this.adaptor.nil();
                 root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
 
                 this.adaptor.addChild(root_1, root_2);
                 }
-                // res/ECMAScript3Ext.g:1792:26: ^( EXPR ( $ex1)? )
+                // ECMAScript3Ext.g:1792:26: ^( EXPR ( $ex1)? )
                 {
                 var root_2 = this.adaptor.nil();
                 root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
 
-                // res/ECMAScript3Ext.g:1792:34: ( $ex1)?
+                // ECMAScript3Ext.g:1792:34: ( $ex1)?
                 if ( stream_ex1.hasNext() ) {
                     this.adaptor.addChild(root_2, stream_ex1.nextTree());
 
@@ -8247,12 +8247,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 this.adaptor.addChild(root_1, root_2);
                 }
-                // res/ECMAScript3Ext.g:1792:42: ^( EXPR ( $ex2)? )
+                // ECMAScript3Ext.g:1792:42: ^( EXPR ( $ex2)? )
                 {
                 var root_2 = this.adaptor.nil();
                 root_2 = this.adaptor.becomeRoot(this.adaptor.create(EXPR, "EXPR"), root_2);
 
-                // res/ECMAScript3Ext.g:1792:50: ( $ex2)?
+                // ECMAScript3Ext.g:1792:50: ( $ex2)?
                 if ( stream_ex2.hasNext() ) {
                     this.adaptor.addChild(root_2, stream_ex2.nextTree());
 
@@ -8301,7 +8301,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1804:1: continueStatement : CONTINUE ( Identifier )? semic ;
+    // ECMAScript3Ext.g:1804:1: continueStatement : CONTINUE ( Identifier )? semic ;
     // $ANTLR start "continueStatement"
     continueStatement: function() {
         var retval = new ECMAScript3ExtParser.continueStatement_return();
@@ -8317,8 +8317,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var Identifier223_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1805:2: ( CONTINUE ( Identifier )? semic )
-            // res/ECMAScript3Ext.g:1805:4: CONTINUE ( Identifier )? semic
+            // ECMAScript3Ext.g:1805:2: ( CONTINUE ( Identifier )? semic )
+            // ECMAScript3Ext.g:1805:4: CONTINUE ( Identifier )? semic
             root_0 = this.adaptor.nil();
 
             CONTINUE222=this.match(this.input,CONTINUE,ECMAScript3ExtParser.FOLLOW_CONTINUE_in_continueStatement5537); 
@@ -8326,7 +8326,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.becomeRoot(CONTINUE222_tree, root_0);
 
              if (this.input.LA(1) == ECMAScript3ExtLexer.Identifier) this.promoteEOL(null); 
-            // res/ECMAScript3Ext.g:1805:97: ( Identifier )?
+            // ECMAScript3Ext.g:1805:97: ( Identifier )?
             var alt65=2;
             var LA65_0 = this.input.LA(1);
 
@@ -8335,7 +8335,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt65) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1805:97: Identifier
+                    // ECMAScript3Ext.g:1805:97: Identifier
                     Identifier223=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_continueStatement5542); 
                     Identifier223_tree = this.adaptor.create(Identifier223);
                     this.adaptor.addChild(root_0, Identifier223_tree);
@@ -8385,7 +8385,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1817:1: breakStatement : BREAK ( Identifier )? semic ;
+    // ECMAScript3Ext.g:1817:1: breakStatement : BREAK ( Identifier )? semic ;
     // $ANTLR start "breakStatement"
     breakStatement: function() {
         var retval = new ECMAScript3ExtParser.breakStatement_return();
@@ -8401,8 +8401,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var Identifier226_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1818:2: ( BREAK ( Identifier )? semic )
-            // res/ECMAScript3Ext.g:1818:4: BREAK ( Identifier )? semic
+            // ECMAScript3Ext.g:1818:2: ( BREAK ( Identifier )? semic )
+            // ECMAScript3Ext.g:1818:4: BREAK ( Identifier )? semic
             root_0 = this.adaptor.nil();
 
             BREAK225=this.match(this.input,BREAK,ECMAScript3ExtParser.FOLLOW_BREAK_in_breakStatement5563); 
@@ -8410,7 +8410,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.becomeRoot(BREAK225_tree, root_0);
 
              if (this.input.LA(1) == ECMAScript3ExtLexer.Identifier) this.promoteEOL(null); 
-            // res/ECMAScript3Ext.g:1818:94: ( Identifier )?
+            // ECMAScript3Ext.g:1818:94: ( Identifier )?
             var alt66=2;
             var LA66_0 = this.input.LA(1);
 
@@ -8419,7 +8419,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt66) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1818:94: Identifier
+                    // ECMAScript3Ext.g:1818:94: Identifier
                     Identifier226=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_breakStatement5568); 
                     Identifier226_tree = this.adaptor.create(Identifier226);
                     this.adaptor.addChild(root_0, Identifier226_tree);
@@ -8469,7 +8469,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1838:1: returnStatement : RETURN ( expression )? semic ;
+    // ECMAScript3Ext.g:1838:1: returnStatement : RETURN ( expression )? semic ;
     // $ANTLR start "returnStatement"
     returnStatement: function() {
         var retval = new ECMAScript3ExtParser.returnStatement_return();
@@ -8484,8 +8484,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var RETURN228_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1839:2: ( RETURN ( expression )? semic )
-            // res/ECMAScript3Ext.g:1839:4: RETURN ( expression )? semic
+            // ECMAScript3Ext.g:1839:2: ( RETURN ( expression )? semic )
+            // ECMAScript3Ext.g:1839:4: RETURN ( expression )? semic
             root_0 = this.adaptor.nil();
 
             RETURN228=this.match(this.input,RETURN,ECMAScript3ExtParser.FOLLOW_RETURN_in_returnStatement5589); 
@@ -8493,7 +8493,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.becomeRoot(RETURN228_tree, root_0);
 
              this.promoteEOL(null); 
-            // res/ECMAScript3Ext.g:1839:39: ( expression )?
+            // ECMAScript3Ext.g:1839:39: ( expression )?
             var alt67=2;
             var LA67_0 = this.input.LA(1);
 
@@ -8502,7 +8502,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt67) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1839:39: expression
+                    // ECMAScript3Ext.g:1839:39: expression
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_expression_in_returnStatement5594);
                     expression229=this.expression();
 
@@ -8554,7 +8554,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1846:1: withStatement : WITH LPAREN expression RPAREN statement ;
+    // ECMAScript3Ext.g:1846:1: withStatement : WITH LPAREN expression RPAREN statement ;
     // $ANTLR start "withStatement"
     withStatement: function() {
         var retval = new ECMAScript3ExtParser.withStatement_return();
@@ -8573,8 +8573,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var RPAREN234_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1847:2: ( WITH LPAREN expression RPAREN statement )
-            // res/ECMAScript3Ext.g:1847:4: WITH LPAREN expression RPAREN statement
+            // ECMAScript3Ext.g:1847:2: ( WITH LPAREN expression RPAREN statement )
+            // ECMAScript3Ext.g:1847:4: WITH LPAREN expression RPAREN statement
             root_0 = this.adaptor.nil();
 
             WITH231=this.match(this.input,WITH,ECMAScript3ExtParser.FOLLOW_WITH_in_withStatement5613); 
@@ -8629,7 +8629,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1854:1: switchStatement : SWITCH LPAREN expression RPAREN LBRACE ({...}? => defaultClause | caseClause )* RBRACE -> ^( SWITCH expression ( defaultClause )? ( caseClause )* ) ;
+    // ECMAScript3Ext.g:1854:1: switchStatement : SWITCH LPAREN expression RPAREN LBRACE ({...}? => defaultClause | caseClause )* RBRACE -> ^( SWITCH expression ( defaultClause )? ( caseClause )* ) ;
     // $ANTLR start "switchStatement"
     switchStatement: function() {
         var retval = new ECMAScript3ExtParser.switchStatement_return();
@@ -8651,20 +8651,20 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var RPAREN239_tree=null;
         var LBRACE240_tree=null;
         var RBRACE243_tree=null;
-        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
         var stream_RBRACE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RBRACE");
-        var stream_SWITCH=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token SWITCH");
         var stream_LPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LPAREN");
+        var stream_SWITCH=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token SWITCH");
+        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
         var stream_LBRACE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LBRACE");
         var stream_expression=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule expression");
-        var stream_caseClause=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule caseClause");
         var stream_defaultClause=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule defaultClause");
+        var stream_caseClause=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule caseClause");
 
         	var defaultClauseCount = 0;
 
         try {
-            // res/ECMAScript3Ext.g:1859:2: ( SWITCH LPAREN expression RPAREN LBRACE ({...}? => defaultClause | caseClause )* RBRACE -> ^( SWITCH expression ( defaultClause )? ( caseClause )* ) )
-            // res/ECMAScript3Ext.g:1859:4: SWITCH LPAREN expression RPAREN LBRACE ({...}? => defaultClause | caseClause )* RBRACE
+            // ECMAScript3Ext.g:1859:2: ( SWITCH LPAREN expression RPAREN LBRACE ({...}? => defaultClause | caseClause )* RBRACE -> ^( SWITCH expression ( defaultClause )? ( caseClause )* ) )
+            // ECMAScript3Ext.g:1859:4: SWITCH LPAREN expression RPAREN LBRACE ({...}? => defaultClause | caseClause )* RBRACE
             SWITCH236=this.match(this.input,SWITCH,ECMAScript3ExtParser.FOLLOW_SWITCH_in_switchStatement5644);  
             stream_SWITCH.add(SWITCH236);
 
@@ -8683,7 +8683,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             LBRACE240=this.match(this.input,LBRACE,ECMAScript3ExtParser.FOLLOW_LBRACE_in_switchStatement5652);  
             stream_LBRACE.add(LBRACE240);
 
-            // res/ECMAScript3Ext.g:1859:43: ({...}? => defaultClause | caseClause )*
+            // ECMAScript3Ext.g:1859:43: ({...}? => defaultClause | caseClause )*
             loop68:
             do {
                 var alt68=3;
@@ -8699,7 +8699,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt68) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1859:45: {...}? => defaultClause
+                    // ECMAScript3Ext.g:1859:45: {...}? => defaultClause
                     if ( !(( defaultClauseCount == 0 )) ) {
                         throw new org.antlr.runtime.FailedPredicateException(this.input, "switchStatement", " defaultClauseCount == 0 ");
                     }
@@ -8714,7 +8714,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1859:118: caseClause
+                    // ECMAScript3Ext.g:1859:118: caseClause
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_caseClause_in_switchStatement5665);
                     caseClause242=this.caseClause();
 
@@ -8736,7 +8736,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
             // AST REWRITE
-            // elements: caseClause, defaultClause, SWITCH, expression
+            // elements: caseClause, SWITCH, expression, defaultClause
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -8747,19 +8747,19 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1860:2: -> ^( SWITCH expression ( defaultClause )? ( caseClause )* )
             {
-                // res/ECMAScript3Ext.g:1860:5: ^( SWITCH expression ( defaultClause )? ( caseClause )* )
+                // ECMAScript3Ext.g:1860:5: ^( SWITCH expression ( defaultClause )? ( caseClause )* )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(stream_SWITCH.nextNode(), root_1);
 
                 this.adaptor.addChild(root_1, stream_expression.nextTree());
-                // res/ECMAScript3Ext.g:1860:26: ( defaultClause )?
+                // ECMAScript3Ext.g:1860:26: ( defaultClause )?
                 if ( stream_defaultClause.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_defaultClause.nextTree());
 
                 }
                 stream_defaultClause.reset();
-                // res/ECMAScript3Ext.g:1860:41: ( caseClause )*
+                // ECMAScript3Ext.g:1860:41: ( caseClause )*
                 while ( stream_caseClause.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_caseClause.nextTree());
 
@@ -8805,7 +8805,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1863:1: caseClause : CASE expression COLON ( statement )* ;
+    // ECMAScript3Ext.g:1863:1: caseClause : CASE expression COLON ( statement )* ;
     // $ANTLR start "caseClause"
     caseClause: function() {
         var retval = new ECMAScript3ExtParser.caseClause_return();
@@ -8822,8 +8822,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var COLON246_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1864:2: ( CASE expression COLON ( statement )* )
-            // res/ECMAScript3Ext.g:1864:4: CASE expression COLON ( statement )*
+            // ECMAScript3Ext.g:1864:2: ( CASE expression COLON ( statement )* )
+            // ECMAScript3Ext.g:1864:4: CASE expression COLON ( statement )*
             root_0 = this.adaptor.nil();
 
             CASE244=this.match(this.input,CASE,ECMAScript3ExtParser.FOLLOW_CASE_in_caseClause5698); 
@@ -8837,7 +8837,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
             this.adaptor.addChild(root_0, expression245.getTree());
             COLON246=this.match(this.input,COLON,ECMAScript3ExtParser.FOLLOW_COLON_in_caseClause5703); 
-            // res/ECMAScript3Ext.g:1864:28: ( statement )*
+            // ECMAScript3Ext.g:1864:28: ( statement )*
             loop69:
             do {
                 var alt69=2;
@@ -8850,7 +8850,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt69) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1864:28: statement
+                    // ECMAScript3Ext.g:1864:28: statement
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_statement_in_caseClause5706);
                     statement247=this.statement();
 
@@ -8900,7 +8900,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1867:1: defaultClause : DEFAULT COLON ( statement )* ;
+    // ECMAScript3Ext.g:1867:1: defaultClause : DEFAULT COLON ( statement )* ;
     // $ANTLR start "defaultClause"
     defaultClause: function() {
         var retval = new ECMAScript3ExtParser.defaultClause_return();
@@ -8916,8 +8916,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var COLON249_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1868:2: ( DEFAULT COLON ( statement )* )
-            // res/ECMAScript3Ext.g:1868:4: DEFAULT COLON ( statement )*
+            // ECMAScript3Ext.g:1868:2: ( DEFAULT COLON ( statement )* )
+            // ECMAScript3Ext.g:1868:4: DEFAULT COLON ( statement )*
             root_0 = this.adaptor.nil();
 
             DEFAULT248=this.match(this.input,DEFAULT,ECMAScript3ExtParser.FOLLOW_DEFAULT_in_defaultClause5718); 
@@ -8925,7 +8925,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.becomeRoot(DEFAULT248_tree, root_0);
 
             COLON249=this.match(this.input,COLON,ECMAScript3ExtParser.FOLLOW_COLON_in_defaultClause5721); 
-            // res/ECMAScript3Ext.g:1868:20: ( statement )*
+            // ECMAScript3Ext.g:1868:20: ( statement )*
             loop70:
             do {
                 var alt70=2;
@@ -8938,7 +8938,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt70) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1868:20: statement
+                    // ECMAScript3Ext.g:1868:20: statement
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_statement_in_defaultClause5724);
                     statement250=this.statement();
 
@@ -8988,7 +8988,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1875:1: labelledStatement : Identifier COLON statement -> ^( LABELLED Identifier statement ) ;
+    // ECMAScript3Ext.g:1875:1: labelledStatement : Identifier COLON statement -> ^( LABELLED Identifier statement ) ;
     // $ANTLR start "labelledStatement"
     labelledStatement: function() {
         var retval = new ECMAScript3ExtParser.labelledStatement_return();
@@ -9002,12 +9002,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
         var Identifier251_tree=null;
         var COLON252_tree=null;
-        var stream_COLON=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COLON");
         var stream_Identifier=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token Identifier");
+        var stream_COLON=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COLON");
         var stream_statement=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule statement");
         try {
-            // res/ECMAScript3Ext.g:1876:2: ( Identifier COLON statement -> ^( LABELLED Identifier statement ) )
-            // res/ECMAScript3Ext.g:1876:4: Identifier COLON statement
+            // ECMAScript3Ext.g:1876:2: ( Identifier COLON statement -> ^( LABELLED Identifier statement ) )
+            // ECMAScript3Ext.g:1876:4: Identifier COLON statement
             Identifier251=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_labelledStatement5740);  
             stream_Identifier.add(Identifier251);
 
@@ -9023,7 +9023,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
             // AST REWRITE
-            // elements: Identifier, statement
+            // elements: statement, Identifier
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -9034,7 +9034,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1877:2: -> ^( LABELLED Identifier statement )
             {
-                // res/ECMAScript3Ext.g:1877:5: ^( LABELLED Identifier statement )
+                // ECMAScript3Ext.g:1877:5: ^( LABELLED Identifier statement )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(LABELLED, "LABELLED"), root_1);
@@ -9081,7 +9081,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1899:1: throwStatement : THROW expression semic ;
+    // ECMAScript3Ext.g:1899:1: throwStatement : THROW expression semic ;
     // $ANTLR start "throwStatement"
     throwStatement: function() {
         var retval = new ECMAScript3ExtParser.throwStatement_return();
@@ -9096,8 +9096,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var THROW254_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1900:2: ( THROW expression semic )
-            // res/ECMAScript3Ext.g:1900:4: THROW expression semic
+            // ECMAScript3Ext.g:1900:2: ( THROW expression semic )
+            // ECMAScript3Ext.g:1900:4: THROW expression semic
             root_0 = this.adaptor.nil();
 
             THROW254=this.match(this.input,THROW,ECMAScript3ExtParser.FOLLOW_THROW_in_throwStatement5774); 
@@ -9150,7 +9150,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1907:1: tryStatement : TRY block ( catchClause ( finallyClause )? | finallyClause ) ;
+    // ECMAScript3Ext.g:1907:1: tryStatement : TRY block ( catchClause ( finallyClause )? | finallyClause ) ;
     // $ANTLR start "tryStatement"
     tryStatement: function() {
         var retval = new ECMAScript3ExtParser.tryStatement_return();
@@ -9167,8 +9167,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var TRY257_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1908:2: ( TRY block ( catchClause ( finallyClause )? | finallyClause ) )
-            // res/ECMAScript3Ext.g:1908:4: TRY block ( catchClause ( finallyClause )? | finallyClause )
+            // ECMAScript3Ext.g:1908:2: ( TRY block ( catchClause ( finallyClause )? | finallyClause ) )
+            // ECMAScript3Ext.g:1908:4: TRY block ( catchClause ( finallyClause )? | finallyClause )
             root_0 = this.adaptor.nil();
 
             TRY257=this.match(this.input,TRY,ECMAScript3ExtParser.FOLLOW_TRY_in_tryStatement5797); 
@@ -9181,7 +9181,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             this.state._fsp--;
 
             this.adaptor.addChild(root_0, block258.getTree());
-            // res/ECMAScript3Ext.g:1908:15: ( catchClause ( finallyClause )? | finallyClause )
+            // ECMAScript3Ext.g:1908:15: ( catchClause ( finallyClause )? | finallyClause )
             var alt72=2;
             var LA72_0 = this.input.LA(1);
 
@@ -9199,14 +9199,14 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt72) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1908:17: catchClause ( finallyClause )?
+                    // ECMAScript3Ext.g:1908:17: catchClause ( finallyClause )?
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_catchClause_in_tryStatement5804);
                     catchClause259=this.catchClause();
 
                     this.state._fsp--;
 
                     this.adaptor.addChild(root_0, catchClause259.getTree());
-                    // res/ECMAScript3Ext.g:1908:29: ( finallyClause )?
+                    // ECMAScript3Ext.g:1908:29: ( finallyClause )?
                     var alt71=2;
                     var LA71_0 = this.input.LA(1);
 
@@ -9215,7 +9215,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
                     }
                     switch (alt71) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1908:29: finallyClause
+                            // ECMAScript3Ext.g:1908:29: finallyClause
                             this.pushFollow(ECMAScript3ExtParser.FOLLOW_finallyClause_in_tryStatement5806);
                             finallyClause260=this.finallyClause();
 
@@ -9232,7 +9232,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1908:46: finallyClause
+                    // ECMAScript3Ext.g:1908:46: finallyClause
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_finallyClause_in_tryStatement5811);
                     finallyClause261=this.finallyClause();
 
@@ -9279,7 +9279,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1911:1: catchClause : CATCH LPAREN Identifier RPAREN block ;
+    // ECMAScript3Ext.g:1911:1: catchClause : CATCH LPAREN Identifier RPAREN block ;
     // $ANTLR start "catchClause"
     catchClause: function() {
         var retval = new ECMAScript3ExtParser.catchClause_return();
@@ -9299,8 +9299,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var RPAREN265_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1912:2: ( CATCH LPAREN Identifier RPAREN block )
-            // res/ECMAScript3Ext.g:1912:4: CATCH LPAREN Identifier RPAREN block
+            // ECMAScript3Ext.g:1912:2: ( CATCH LPAREN Identifier RPAREN block )
+            // ECMAScript3Ext.g:1912:4: CATCH LPAREN Identifier RPAREN block
             root_0 = this.adaptor.nil();
 
             CATCH262=this.match(this.input,CATCH,ECMAScript3ExtParser.FOLLOW_CATCH_in_catchClause5824); 
@@ -9353,7 +9353,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1915:1: finallyClause : FINALLY block ;
+    // ECMAScript3Ext.g:1915:1: finallyClause : FINALLY block ;
     // $ANTLR start "finallyClause"
     finallyClause: function() {
         var retval = new ECMAScript3ExtParser.finallyClause_return();
@@ -9367,8 +9367,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var FINALLY267_tree=null;
 
         try {
-            // res/ECMAScript3Ext.g:1916:2: ( FINALLY block )
-            // res/ECMAScript3Ext.g:1916:4: FINALLY block
+            // ECMAScript3Ext.g:1916:2: ( FINALLY block )
+            // ECMAScript3Ext.g:1916:4: FINALLY block
             root_0 = this.adaptor.nil();
 
             FINALLY267=this.match(this.input,FINALLY,ECMAScript3ExtParser.FOLLOW_FINALLY_in_finallyClause5846); 
@@ -9415,7 +9415,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1929:1: functionDeclaration : FUNCTION name= Identifier formalParameterList functionBody -> ^( FUNCTION $name formalParameterList functionBody ) ;
+    // ECMAScript3Ext.g:1929:1: functionDeclaration : FUNCTION name= Identifier formalParameterList functionBody -> ^( FUNCTION $name formalParameterList functionBody ) ;
     // $ANTLR start "functionDeclaration"
     functionDeclaration: function() {
         var retval = new ECMAScript3ExtParser.functionDeclaration_return();
@@ -9430,13 +9430,13 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
         var name_tree=null;
         var FUNCTION269_tree=null;
-        var stream_FUNCTION=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token FUNCTION");
         var stream_Identifier=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token Identifier");
+        var stream_FUNCTION=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token FUNCTION");
         var stream_functionBody=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule functionBody");
         var stream_formalParameterList=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule formalParameterList");
         try {
-            // res/ECMAScript3Ext.g:1930:2: ( FUNCTION name= Identifier formalParameterList functionBody -> ^( FUNCTION $name formalParameterList functionBody ) )
-            // res/ECMAScript3Ext.g:1930:4: FUNCTION name= Identifier formalParameterList functionBody
+            // ECMAScript3Ext.g:1930:2: ( FUNCTION name= Identifier formalParameterList functionBody -> ^( FUNCTION $name formalParameterList functionBody ) )
+            // ECMAScript3Ext.g:1930:4: FUNCTION name= Identifier formalParameterList functionBody
             FUNCTION269=this.match(this.input,FUNCTION,ECMAScript3ExtParser.FOLLOW_FUNCTION_in_functionDeclaration5870);  
             stream_FUNCTION.add(FUNCTION269);
 
@@ -9458,7 +9458,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
             // AST REWRITE
-            // elements: FUNCTION, functionBody, name, formalParameterList
+            // elements: name, functionBody, FUNCTION, formalParameterList
             // token labels: name
             // rule labels: retval
             // token list labels: 
@@ -9470,7 +9470,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1931:2: -> ^( FUNCTION $name formalParameterList functionBody )
             {
-                // res/ECMAScript3Ext.g:1931:5: ^( FUNCTION $name formalParameterList functionBody )
+                // ECMAScript3Ext.g:1931:5: ^( FUNCTION $name formalParameterList functionBody )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(stream_FUNCTION.nextNode(), root_1);
@@ -9518,7 +9518,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1934:1: functionExpression : FUNCTION (name= Identifier )? formalParameterList functionBody -> ^( FUNCTION ( $name)? formalParameterList functionBody ) ;
+    // ECMAScript3Ext.g:1934:1: functionExpression : FUNCTION (name= Identifier )? formalParameterList functionBody -> ^( FUNCTION ( $name)? formalParameterList functionBody ) ;
     // $ANTLR start "functionExpression"
     functionExpression: function() {
         var retval = new ECMAScript3ExtParser.functionExpression_return();
@@ -9533,17 +9533,17 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
         var name_tree=null;
         var FUNCTION272_tree=null;
-        var stream_FUNCTION=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token FUNCTION");
         var stream_Identifier=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token Identifier");
+        var stream_FUNCTION=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token FUNCTION");
         var stream_functionBody=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule functionBody");
         var stream_formalParameterList=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule formalParameterList");
         try {
-            // res/ECMAScript3Ext.g:1935:2: ( FUNCTION (name= Identifier )? formalParameterList functionBody -> ^( FUNCTION ( $name)? formalParameterList functionBody ) )
-            // res/ECMAScript3Ext.g:1935:4: FUNCTION (name= Identifier )? formalParameterList functionBody
+            // ECMAScript3Ext.g:1935:2: ( FUNCTION (name= Identifier )? formalParameterList functionBody -> ^( FUNCTION ( $name)? formalParameterList functionBody ) )
+            // ECMAScript3Ext.g:1935:4: FUNCTION (name= Identifier )? formalParameterList functionBody
             FUNCTION272=this.match(this.input,FUNCTION,ECMAScript3ExtParser.FOLLOW_FUNCTION_in_functionExpression5905);  
             stream_FUNCTION.add(FUNCTION272);
 
-            // res/ECMAScript3Ext.g:1935:17: (name= Identifier )?
+            // ECMAScript3Ext.g:1935:17: (name= Identifier )?
             var alt73=2;
             var LA73_0 = this.input.LA(1);
 
@@ -9552,7 +9552,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt73) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1935:17: name= Identifier
+                    // ECMAScript3Ext.g:1935:17: name= Identifier
                     name=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_functionExpression5909);  
                     stream_Identifier.add(name);
 
@@ -9577,7 +9577,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
             // AST REWRITE
-            // elements: FUNCTION, formalParameterList, name, functionBody
+            // elements: formalParameterList, name, FUNCTION, functionBody
             // token labels: name
             // rule labels: retval
             // token list labels: 
@@ -9589,12 +9589,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1936:2: -> ^( FUNCTION ( $name)? formalParameterList functionBody )
             {
-                // res/ECMAScript3Ext.g:1936:5: ^( FUNCTION ( $name)? formalParameterList functionBody )
+                // ECMAScript3Ext.g:1936:5: ^( FUNCTION ( $name)? formalParameterList functionBody )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(stream_FUNCTION.nextNode(), root_1);
 
-                // res/ECMAScript3Ext.g:1936:17: ( $name)?
+                // ECMAScript3Ext.g:1936:17: ( $name)?
                 if ( stream_name.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_name.nextNode());
 
@@ -9642,7 +9642,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1939:1: formalParameterList : LPAREN ( Identifier ( COMMA Identifier )* )? RPAREN -> ^( ARGS ( Identifier )* ) ;
+    // ECMAScript3Ext.g:1939:1: formalParameterList : LPAREN ( Identifier ( COMMA Identifier )* )? RPAREN -> ^( ARGS ( Identifier )* ) ;
     // $ANTLR start "formalParameterList"
     formalParameterList: function() {
         var retval = new ECMAScript3ExtParser.formalParameterList_return();
@@ -9661,18 +9661,18 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var COMMA277_tree=null;
         var Identifier278_tree=null;
         var RPAREN279_tree=null;
-        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
         var stream_COMMA=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token COMMA");
         var stream_Identifier=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token Identifier");
         var stream_LPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LPAREN");
+        var stream_RPAREN=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token RPAREN");
 
         try {
-            // res/ECMAScript3Ext.g:1940:2: ( LPAREN ( Identifier ( COMMA Identifier )* )? RPAREN -> ^( ARGS ( Identifier )* ) )
-            // res/ECMAScript3Ext.g:1940:4: LPAREN ( Identifier ( COMMA Identifier )* )? RPAREN
+            // ECMAScript3Ext.g:1940:2: ( LPAREN ( Identifier ( COMMA Identifier )* )? RPAREN -> ^( ARGS ( Identifier )* ) )
+            // ECMAScript3Ext.g:1940:4: LPAREN ( Identifier ( COMMA Identifier )* )? RPAREN
             LPAREN275=this.match(this.input,LPAREN,ECMAScript3ExtParser.FOLLOW_LPAREN_in_formalParameterList5942);  
             stream_LPAREN.add(LPAREN275);
 
-            // res/ECMAScript3Ext.g:1940:11: ( Identifier ( COMMA Identifier )* )?
+            // ECMAScript3Ext.g:1940:11: ( Identifier ( COMMA Identifier )* )?
             var alt75=2;
             var LA75_0 = this.input.LA(1);
 
@@ -9681,11 +9681,11 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             }
             switch (alt75) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1940:13: Identifier ( COMMA Identifier )*
+                    // ECMAScript3Ext.g:1940:13: Identifier ( COMMA Identifier )*
                     Identifier276=this.match(this.input,Identifier,ECMAScript3ExtParser.FOLLOW_Identifier_in_formalParameterList5946);  
                     stream_Identifier.add(Identifier276);
 
-                    // res/ECMAScript3Ext.g:1940:24: ( COMMA Identifier )*
+                    // ECMAScript3Ext.g:1940:24: ( COMMA Identifier )*
                     loop74:
                     do {
                         var alt74=2;
@@ -9698,7 +9698,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                         switch (alt74) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1940:26: COMMA Identifier
+                            // ECMAScript3Ext.g:1940:26: COMMA Identifier
                             COMMA277=this.match(this.input,COMMA,ECMAScript3ExtParser.FOLLOW_COMMA_in_formalParameterList5950);  
                             stream_COMMA.add(COMMA277);
 
@@ -9737,12 +9737,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1941:2: -> ^( ARGS ( Identifier )* )
             {
-                // res/ECMAScript3Ext.g:1941:5: ^( ARGS ( Identifier )* )
+                // ECMAScript3Ext.g:1941:5: ^( ARGS ( Identifier )* )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(ARGS, "ARGS"), root_1);
 
-                // res/ECMAScript3Ext.g:1941:13: ( Identifier )*
+                // ECMAScript3Ext.g:1941:13: ( Identifier )*
                 while ( stream_Identifier.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_Identifier.nextNode());
 
@@ -9788,7 +9788,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1944:1: functionBody : lb= LBRACE ( sourceElement )* RBRACE -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* ) ;
+    // ECMAScript3Ext.g:1944:1: functionBody : lb= LBRACE ( sourceElement )* RBRACE -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* ) ;
     // $ANTLR start "functionBody"
     functionBody: function() {
         var retval = new ECMAScript3ExtParser.functionBody_return();
@@ -9806,12 +9806,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         var stream_LBRACE=new org.antlr.runtime.tree.RewriteRuleTokenStream(this.adaptor,"token LBRACE");
         var stream_sourceElement=new org.antlr.runtime.tree.RewriteRuleSubtreeStream(this.adaptor,"rule sourceElement");
         try {
-            // res/ECMAScript3Ext.g:1945:2: (lb= LBRACE ( sourceElement )* RBRACE -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* ) )
-            // res/ECMAScript3Ext.g:1945:4: lb= LBRACE ( sourceElement )* RBRACE
+            // ECMAScript3Ext.g:1945:2: (lb= LBRACE ( sourceElement )* RBRACE -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* ) )
+            // ECMAScript3Ext.g:1945:4: lb= LBRACE ( sourceElement )* RBRACE
             lb=this.match(this.input,LBRACE,ECMAScript3ExtParser.FOLLOW_LBRACE_in_functionBody5985);  
             stream_LBRACE.add(lb);
 
-            // res/ECMAScript3Ext.g:1945:14: ( sourceElement )*
+            // ECMAScript3Ext.g:1945:14: ( sourceElement )*
             loop76:
             do {
                 var alt76=2;
@@ -9824,7 +9824,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt76) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1945:14: sourceElement
+                    // ECMAScript3Ext.g:1945:14: sourceElement
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_sourceElement_in_functionBody5987);
                     sourceElement280=this.sourceElement();
 
@@ -9857,12 +9857,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
             root_0 = this.adaptor.nil();
             // 1946:2: -> ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* )
             {
-                // res/ECMAScript3Ext.g:1946:5: ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* )
+                // ECMAScript3Ext.g:1946:5: ^( BLOCK[$lb, \"BLOCK\"] ( sourceElement )* )
                 {
                 var root_1 = this.adaptor.nil();
                 root_1 = this.adaptor.becomeRoot(this.adaptor.create(BLOCK, lb, "BLOCK"), root_1);
 
-                // res/ECMAScript3Ext.g:1946:28: ( sourceElement )*
+                // ECMAScript3Ext.g:1946:28: ( sourceElement )*
                 while ( stream_sourceElement.hasNext() ) {
                     this.adaptor.addChild(root_1, stream_sourceElement.nextTree());
 
@@ -9908,7 +9908,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1953:1: program : ( sourceElement )* ;
+    // ECMAScript3Ext.g:1953:1: program : ( sourceElement )* ;
     // $ANTLR start "program"
     program: function() {
         var retval = new ECMAScript3ExtParser.program_return();
@@ -9920,11 +9920,11 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1954:2: ( ( sourceElement )* )
-            // res/ECMAScript3Ext.g:1954:4: ( sourceElement )*
+            // ECMAScript3Ext.g:1954:2: ( ( sourceElement )* )
+            // ECMAScript3Ext.g:1954:4: ( sourceElement )*
             root_0 = this.adaptor.nil();
 
-            // res/ECMAScript3Ext.g:1954:4: ( sourceElement )*
+            // ECMAScript3Ext.g:1954:4: ( sourceElement )*
             loop77:
             do {
                 var alt77=2;
@@ -9937,7 +9937,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                 switch (alt77) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1954:4: sourceElement
+                    // ECMAScript3Ext.g:1954:4: sourceElement
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_sourceElement_in_program6018);
                     sourceElement282=this.sourceElement();
 
@@ -9987,7 +9987,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
         return;
     })(),
 
-    // res/ECMAScript3Ext.g:1962:1: sourceElement options {k=1; } : ({...}? functionDeclaration | statement );
+    // ECMAScript3Ext.g:1962:1: sourceElement options {k=1; } : ({...}? functionDeclaration | statement );
     // $ANTLR start "sourceElement"
     sourceElement: function() {
         var retval = new ECMAScript3ExtParser.sourceElement_return();
@@ -10000,12 +10000,12 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
 
         try {
-            // res/ECMAScript3Ext.g:1967:2: ({...}? functionDeclaration | statement )
+            // ECMAScript3Ext.g:1967:2: ({...}? functionDeclaration | statement )
             var alt78=2;
             alt78 = this.dfa78.predict(this.input);
             switch (alt78) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1967:4: {...}? functionDeclaration
+                    // ECMAScript3Ext.g:1967:4: {...}? functionDeclaration
                     root_0 = this.adaptor.nil();
 
                     if ( !(( this.input.LA(1) == ECMAScript3ExtLexer.FUNCTION )) ) {
@@ -10021,7 +10021,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtParser.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1968:4: statement
+                    // ECMAScript3Ext.g:1968:4: statement
                     root_0 = this.adaptor.nil();
 
                     this.pushFollow(ECMAScript3ExtParser.FOLLOW_statement_in_sourceElement6052);

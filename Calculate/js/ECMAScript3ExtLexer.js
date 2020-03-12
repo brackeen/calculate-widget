@@ -1,4 +1,4 @@
-// $ANTLR 3.1.2 res/ECMAScript3Ext.g 2010-04-13 19:03:28
+// $ANTLR 3.1.2 ECMAScript3Ext.g 2020-03-12 06:06:18
 
 var ECMAScript3ExtLexer = function(input, state) {
 // alternate constructor @todo
@@ -524,365 +524,365 @@ var ECMAScript3ExtLexer = function(input, state) {
 };
 
 org.antlr.lang.augmentObject(ECMAScript3ExtLexer, {
-    PACKAGE: 52,
-    FUNCTION: 17,
-    LOR: 94,
-    VT: 139,
-    SHR: 87,
-    RegularExpressionChar: 178,
-    LT: 72,
-    WHILE: 30,
-    MOD: 83,
-    SHL: 86,
-    CONST: 37,
-    BackslashSequence: 176,
-    LS: 147,
-    CASE: 8,
-    CHAR: 35,
-    NEW: 21,
-    DO: 13,
-    DQUOTE: 136,
-    NOT: 91,
-    DecimalDigit: 157,
-    BYFIELD: 112,
-    EOF: -1,
-    BREAK: 7,
-    CEXPR: 115,
-    DIVASS: 108,
-    Identifier: 153,
-    BYINDEX: 113,
-    INC: 84,
-    RPAREN: 66,
-    FINAL: 43,
-    FORSTEP: 118,
-    IMPORT: 47,
-    EOL: 150,
-    POW: 129,
-    POS: 127,
-    CARET: 131,
-    OctalDigit: 161,
-    RETURN: 22,
-    THIS: 24,
-    ARGS: 109,
-    ExponentPart: 163,
-    DOUBLE: 39,
-    WhiteSpace: 144,
-    VAR: 28,
-    EXPORT: 41,
-    VOID: 29,
-    LABELLED: 120,
-    SUPER: 58,
-    GOTO: 45,
-    EQ: 76,
-    XORASS: 134,
-    ADDASS: 98,
-    ARRAY: 110,
-    SHU: 88,
-    RBRACK: 68,
-    RBRACE: 64,
-    PRIVATE: 53,
-    STATIC: 57,
-    INV: 92,
-    SWITCH: 23,
-    NULL: 4,
-    ELSE: 14,
-    NATIVE: 51,
-    THROWS: 60,
-    INT: 48,
-    DELETE: 12,
-    MUL: 82,
     IdentifierStartASCII: 156,
-    TRY: 26,
-    FF: 140,
-    SHLASS: 102,
-    OctalEscapeSequence: 172,
-    USP: 143,
-    RegularExpressionFirstChar: 177,
-    ANDASS: 105,
-    TYPEOF: 27,
-    IdentifierNameASCIIStart: 159,
-    BinaryDigit: 162,
-    QUE: 95,
-    OR: 90,
-    DEBUGGER: 38,
-    GT: 73,
-    PDEC: 125,
-    CALL: 114,
-    CharacterEscapeSequence: 170,
-    CARETASS: 132,
-    CATCH: 9,
-    FALSE: 6,
-    BinaryIntegerLiteral: 168,
-    LAND: 93,
-    EscapeSequence: 175,
-    THROW: 25,
-    MULASS: 100,
-    PINC: 126,
-    DEC: 85,
-    PROTECTED: 54,
-    OctalIntegerLiteral: 167,
-    CLASS: 36,
-    LBRACK: 67,
-    ORASS: 106,
-    HexEscapeSequence: 173,
-    NAMEDVALUE: 121,
-    SingleLineComment: 152,
-    GTE: 75,
-    LBRACE: 63,
-    FOR: 16,
-    SUB: 81,
-    RegularExpressionLiteral: 160,
-    FLOAT: 44,
-    ABSTRACT: 32,
-    AND: 89,
-    DecimalIntegerLiteral: 165,
-    LTE: 74,
-    HexDigit: 155,
-    LPAREN: 65,
-    IF: 18,
-    SUBASS: 99,
-    SYNCHRONIZED: 59,
-    BOOLEAN: 33,
-    EXPR: 116,
-    IN: 19,
-    IMPLEMENTS: 46,
-    CONTINUE: 10,
-    OBJECT: 123,
-    COMMA: 71,
-    TRANSIENT: 61,
-    FORITER: 117,
-    MODASS: 101,
-    SHRASS: 103,
-    PS: 148,
-    DOT: 69,
-    FACTORIAL: 128,
-    MultiLineComment: 151,
-    IdentifierPart: 158,
-    WITH: 31,
-    ADD: 80,
-    POWASS: 130,
-    BYTE: 34,
-    XOR: 133,
-    ZeroToThree: 171,
-    VOLATILE: 62,
-    ITEM: 119,
-    UnicodeEscapeSequence: 174,
-    NSAME: 79,
-    DEFAULT: 11,
     SHUASS: 104,
-    TAB: 138,
-    SHORT: 56,
-    INSTANCEOF: 20,
-    SQUOTE: 137,
-    DecimalLiteral: 166,
-    TRUE: 5,
-    SAME: 78,
-    COLON: 96,
-    StringLiteral: 154,
-    NEQ: 77,
-    PAREXPR: 124,
-    ENUM: 40,
-    FINALLY: 15,
-    DecimalIntegerLiteralWithoutLeadingZero: 164,
-    NBSP: 142,
-    HexIntegerLiteral: 169,
-    SP: 141,
-    BLOCK: 111,
-    NEG: 122,
-    LineTerminator: 149,
-    ASSIGN: 97,
-    INTERFACE: 49,
-    DIV: 107,
-    SEMIC: 70,
-    LONG: 50,
-    CR: 146,
-    PUBLIC: 55,
-    EXTENDS: 42,
+    PS: 148,
+    VAR: 28,
+    THROW: 25,
+    EXPORT: 41,
+    MULASS: 100,
+    STATIC: 57,
     BSLASH: 135,
-    LF: 145
+    INTERFACE: 49,
+    BREAK: 7,
+    BYTE: 34,
+    ELSE: 14,
+    SHRASS: 103,
+    ANDASS: 105,
+    IF: 18,
+    DecimalIntegerLiteralWithoutLeadingZero: 164,
+    ENUM: 40,
+    SUB: 81,
+    IN: 19,
+    SEMIC: 70,
+    LPAREN: 65,
+    DOT: 69,
+    FORITER: 117,
+    POWASS: 130,
+    FUNCTION: 17,
+    HexDigit: 155,
+    LOR: 94,
+    SUBASS: 99,
+    CASE: 8,
+    HexIntegerLiteral: 169,
+    ITEM: 119,
+    BinaryDigit: 162,
+    StringLiteral: 154,
+    LBRACK: 67,
+    POS: 127,
+    NBSP: 142,
+    CharacterEscapeSequence: 170,
+    PUBLIC: 55,
+    THROWS: 60,
+    POW: 129,
+    XOR: 133,
+    DQUOTE: 136,
+    LBRACE: 63,
+    SAME: 78,
+    CALL: 114,
+    GOTO: 45,
+    UnicodeEscapeSequence: 174,
+    DecimalDigit: 157,
+    CHAR: 35,
+    LABELLED: 120,
+    PINC: 126,
+    ASSIGN: 97,
+    IdentifierPart: 158,
+    IMPORT: 47,
+    DELETE: 12,
+    CATCH: 9,
+    DecimalLiteral: 166,
+    CARETASS: 132,
+    OctalEscapeSequence: 172,
+    DOUBLE: 39,
+    PROTECTED: 54,
+    SP: 141,
+    LONG: 50,
+    COMMA: 71,
+    OctalIntegerLiteral: 167,
+    OctalDigit: 161,
+    DIVASS: 108,
+    CEXPR: 115,
+    DEBUGGER: 38,
+    PRIVATE: 53,
+    CR: 146,
+    LineTerminator: 149,
+    CONTINUE: 10,
+    DIV: 107,
+    NEG: 122,
+    USP: 143,
+    TAB: 138,
+    PAREXPR: 124,
+    LF: 145,
+    NEQ: 77,
+    FACTORIAL: 128,
+    VOLATILE: 62,
+    INSTANCEOF: 20,
+    NEW: 21,
+    EXTENDS: 42,
+    ADD: 80,
+    ARRAY: 110,
+    RegularExpressionLiteral: 160,
+    LS: 147,
+    LT: 72,
+    ADDASS: 98,
+    DO: 13,
+    CLASS: 36,
+    FINALLY: 15,
+    Identifier: 153,
+    BinaryIntegerLiteral: 168,
+    CONST: 37,
+    PACKAGE: 52,
+    SHL: 86,
+    FORSTEP: 118,
+    TRY: 26,
+    SHR: 87,
+    BackslashSequence: 176,
+    SYNCHRONIZED: 59,
+    QUE: 95,
+    SHU: 88,
+    NULL: 4,
+    MUL: 82,
+    RegularExpressionFirstChar: 177,
+    FOR: 16,
+    BLOCK: 111,
+    TRUE: 5,
+    FINAL: 43,
+    SingleLineComment: 152,
+    RPAREN: 66,
+    HexEscapeSequence: 173,
+    EQ: 76,
+    OBJECT: 123,
+    CARET: 131,
+    BOOLEAN: 33,
+    DecimalIntegerLiteral: 165,
+    RBRACK: 68,
+    NOT: 91,
+    RBRACE: 64,
+    NAMEDVALUE: 121,
+    AND: 89,
+    PDEC: 125,
+    THIS: 24,
+    ZeroToThree: 171,
+    SWITCH: 23,
+    VOID: 29,
+    LTE: 74,
+    TRANSIENT: 61,
+    VT: 139,
+    INC: 84,
+    FF: 140,
+    FLOAT: 44,
+    NATIVE: 51,
+    ARGS: 109,
+    NSAME: 79,
+    LAND: 93,
+    IdentifierNameASCIIStart: 159,
+    ABSTRACT: 32,
+    INT: 48,
+    INV: 92,
+    RETURN: 22,
+    BYFIELD: 112,
+    EXPR: 116,
+    ExponentPart: 163,
+    SHLASS: 102,
+    SQUOTE: 137,
+    BYINDEX: 113,
+    EOF: -1,
+    MODASS: 101,
+    ORASS: 106,
+    SUPER: 58,
+    MOD: 83,
+    DEC: 85,
+    OR: 90,
+    EOL: 150,
+    MultiLineComment: 151,
+    EscapeSequence: 175,
+    IMPLEMENTS: 46,
+    COLON: 96,
+    GT: 73,
+    WhiteSpace: 144,
+    WITH: 31,
+    SHORT: 56,
+    XORASS: 134,
+    TYPEOF: 27,
+    RegularExpressionChar: 178,
+    GTE: 75,
+    FALSE: 6,
+    WHILE: 30,
+    DEFAULT: 11
 });
 
 (function(){
 var HIDDEN = org.antlr.runtime.Token.HIDDEN_CHANNEL,
     EOF = org.antlr.runtime.Token.EOF;
 org.antlr.lang.extend(ECMAScript3ExtLexer, org.antlr.runtime.Lexer, {
-    PACKAGE : 52,
-    FUNCTION : 17,
-    LOR : 94,
-    VT : 139,
-    SHR : 87,
-    RegularExpressionChar : 178,
-    LT : 72,
-    WHILE : 30,
-    MOD : 83,
-    SHL : 86,
-    CONST : 37,
-    BackslashSequence : 176,
-    LS : 147,
-    CASE : 8,
-    CHAR : 35,
-    NEW : 21,
-    DO : 13,
-    DQUOTE : 136,
-    NOT : 91,
-    DecimalDigit : 157,
-    BYFIELD : 112,
-    EOF : -1,
-    BREAK : 7,
-    CEXPR : 115,
-    DIVASS : 108,
-    Identifier : 153,
-    BYINDEX : 113,
-    INC : 84,
-    RPAREN : 66,
-    FINAL : 43,
-    FORSTEP : 118,
-    IMPORT : 47,
-    EOL : 150,
-    POW : 129,
-    POS : 127,
-    CARET : 131,
-    OctalDigit : 161,
-    RETURN : 22,
-    THIS : 24,
-    ARGS : 109,
-    ExponentPart : 163,
-    DOUBLE : 39,
-    WhiteSpace : 144,
-    VAR : 28,
-    EXPORT : 41,
-    VOID : 29,
-    LABELLED : 120,
-    SUPER : 58,
-    GOTO : 45,
-    EQ : 76,
-    XORASS : 134,
-    ADDASS : 98,
-    ARRAY : 110,
-    SHU : 88,
-    RBRACK : 68,
-    RBRACE : 64,
-    PRIVATE : 53,
-    STATIC : 57,
-    INV : 92,
-    SWITCH : 23,
-    NULL : 4,
-    ELSE : 14,
-    NATIVE : 51,
-    THROWS : 60,
-    INT : 48,
-    DELETE : 12,
-    MUL : 82,
     IdentifierStartASCII : 156,
-    TRY : 26,
-    FF : 140,
-    SHLASS : 102,
-    OctalEscapeSequence : 172,
-    USP : 143,
-    RegularExpressionFirstChar : 177,
-    ANDASS : 105,
-    TYPEOF : 27,
-    IdentifierNameASCIIStart : 159,
-    BinaryDigit : 162,
-    QUE : 95,
-    OR : 90,
-    DEBUGGER : 38,
-    GT : 73,
-    PDEC : 125,
-    CALL : 114,
-    CharacterEscapeSequence : 170,
-    CARETASS : 132,
-    CATCH : 9,
-    FALSE : 6,
-    BinaryIntegerLiteral : 168,
-    LAND : 93,
-    EscapeSequence : 175,
-    THROW : 25,
-    MULASS : 100,
-    PINC : 126,
-    DEC : 85,
-    PROTECTED : 54,
-    OctalIntegerLiteral : 167,
-    CLASS : 36,
-    LBRACK : 67,
-    ORASS : 106,
-    HexEscapeSequence : 173,
-    NAMEDVALUE : 121,
-    SingleLineComment : 152,
-    GTE : 75,
-    LBRACE : 63,
-    FOR : 16,
-    SUB : 81,
-    RegularExpressionLiteral : 160,
-    FLOAT : 44,
-    ABSTRACT : 32,
-    AND : 89,
-    DecimalIntegerLiteral : 165,
-    LTE : 74,
-    HexDigit : 155,
-    LPAREN : 65,
-    IF : 18,
-    SUBASS : 99,
-    SYNCHRONIZED : 59,
-    BOOLEAN : 33,
-    EXPR : 116,
-    IN : 19,
-    IMPLEMENTS : 46,
-    CONTINUE : 10,
-    OBJECT : 123,
-    COMMA : 71,
-    TRANSIENT : 61,
-    FORITER : 117,
-    MODASS : 101,
-    SHRASS : 103,
-    PS : 148,
-    DOT : 69,
-    FACTORIAL : 128,
-    MultiLineComment : 151,
-    IdentifierPart : 158,
-    WITH : 31,
-    ADD : 80,
-    POWASS : 130,
-    BYTE : 34,
-    XOR : 133,
-    ZeroToThree : 171,
-    VOLATILE : 62,
-    ITEM : 119,
-    UnicodeEscapeSequence : 174,
-    NSAME : 79,
-    DEFAULT : 11,
     SHUASS : 104,
-    TAB : 138,
-    SHORT : 56,
-    INSTANCEOF : 20,
-    SQUOTE : 137,
-    DecimalLiteral : 166,
-    TRUE : 5,
-    SAME : 78,
-    COLON : 96,
-    StringLiteral : 154,
-    NEQ : 77,
-    PAREXPR : 124,
-    ENUM : 40,
-    FINALLY : 15,
-    DecimalIntegerLiteralWithoutLeadingZero : 164,
-    NBSP : 142,
-    HexIntegerLiteral : 169,
-    SP : 141,
-    BLOCK : 111,
-    NEG : 122,
-    LineTerminator : 149,
-    ASSIGN : 97,
-    INTERFACE : 49,
-    DIV : 107,
-    SEMIC : 70,
-    LONG : 50,
-    CR : 146,
-    PUBLIC : 55,
-    EXTENDS : 42,
+    PS : 148,
+    VAR : 28,
+    THROW : 25,
+    EXPORT : 41,
+    MULASS : 100,
+    STATIC : 57,
     BSLASH : 135,
+    INTERFACE : 49,
+    BREAK : 7,
+    BYTE : 34,
+    ELSE : 14,
+    SHRASS : 103,
+    ANDASS : 105,
+    IF : 18,
+    DecimalIntegerLiteralWithoutLeadingZero : 164,
+    ENUM : 40,
+    SUB : 81,
+    IN : 19,
+    SEMIC : 70,
+    LPAREN : 65,
+    DOT : 69,
+    FORITER : 117,
+    POWASS : 130,
+    FUNCTION : 17,
+    HexDigit : 155,
+    LOR : 94,
+    SUBASS : 99,
+    CASE : 8,
+    HexIntegerLiteral : 169,
+    ITEM : 119,
+    BinaryDigit : 162,
+    StringLiteral : 154,
+    LBRACK : 67,
+    POS : 127,
+    NBSP : 142,
+    CharacterEscapeSequence : 170,
+    PUBLIC : 55,
+    THROWS : 60,
+    POW : 129,
+    XOR : 133,
+    DQUOTE : 136,
+    LBRACE : 63,
+    SAME : 78,
+    CALL : 114,
+    GOTO : 45,
+    UnicodeEscapeSequence : 174,
+    DecimalDigit : 157,
+    CHAR : 35,
+    LABELLED : 120,
+    PINC : 126,
+    ASSIGN : 97,
+    IdentifierPart : 158,
+    IMPORT : 47,
+    DELETE : 12,
+    CATCH : 9,
+    DecimalLiteral : 166,
+    CARETASS : 132,
+    OctalEscapeSequence : 172,
+    DOUBLE : 39,
+    PROTECTED : 54,
+    SP : 141,
+    LONG : 50,
+    COMMA : 71,
+    OctalIntegerLiteral : 167,
+    OctalDigit : 161,
+    DIVASS : 108,
+    CEXPR : 115,
+    DEBUGGER : 38,
+    PRIVATE : 53,
+    CR : 146,
+    LineTerminator : 149,
+    CONTINUE : 10,
+    DIV : 107,
+    NEG : 122,
+    USP : 143,
+    TAB : 138,
+    PAREXPR : 124,
     LF : 145,
-    getGrammarFileName: function() { return "res/ECMAScript3Ext.g"; }
+    NEQ : 77,
+    FACTORIAL : 128,
+    VOLATILE : 62,
+    INSTANCEOF : 20,
+    NEW : 21,
+    EXTENDS : 42,
+    ADD : 80,
+    ARRAY : 110,
+    RegularExpressionLiteral : 160,
+    LS : 147,
+    LT : 72,
+    ADDASS : 98,
+    DO : 13,
+    CLASS : 36,
+    FINALLY : 15,
+    Identifier : 153,
+    BinaryIntegerLiteral : 168,
+    CONST : 37,
+    PACKAGE : 52,
+    SHL : 86,
+    FORSTEP : 118,
+    TRY : 26,
+    SHR : 87,
+    BackslashSequence : 176,
+    SYNCHRONIZED : 59,
+    QUE : 95,
+    SHU : 88,
+    NULL : 4,
+    MUL : 82,
+    RegularExpressionFirstChar : 177,
+    FOR : 16,
+    BLOCK : 111,
+    TRUE : 5,
+    FINAL : 43,
+    SingleLineComment : 152,
+    RPAREN : 66,
+    HexEscapeSequence : 173,
+    EQ : 76,
+    OBJECT : 123,
+    CARET : 131,
+    BOOLEAN : 33,
+    DecimalIntegerLiteral : 165,
+    RBRACK : 68,
+    NOT : 91,
+    RBRACE : 64,
+    NAMEDVALUE : 121,
+    AND : 89,
+    PDEC : 125,
+    THIS : 24,
+    ZeroToThree : 171,
+    SWITCH : 23,
+    VOID : 29,
+    LTE : 74,
+    TRANSIENT : 61,
+    VT : 139,
+    INC : 84,
+    FF : 140,
+    FLOAT : 44,
+    NATIVE : 51,
+    ARGS : 109,
+    NSAME : 79,
+    LAND : 93,
+    IdentifierNameASCIIStart : 159,
+    ABSTRACT : 32,
+    INT : 48,
+    INV : 92,
+    RETURN : 22,
+    BYFIELD : 112,
+    EXPR : 116,
+    ExponentPart : 163,
+    SHLASS : 102,
+    SQUOTE : 137,
+    BYINDEX : 113,
+    EOF : -1,
+    MODASS : 101,
+    ORASS : 106,
+    SUPER : 58,
+    MOD : 83,
+    DEC : 85,
+    OR : 90,
+    EOL : 150,
+    MultiLineComment : 151,
+    EscapeSequence : 175,
+    IMPLEMENTS : 46,
+    COLON : 96,
+    GT : 73,
+    WhiteSpace : 144,
+    WITH : 31,
+    SHORT : 56,
+    XORASS : 134,
+    TYPEOF : 27,
+    RegularExpressionChar : 178,
+    GTE : 75,
+    FALSE : 6,
+    WHILE : 30,
+    DEFAULT : 11,
+    getGrammarFileName: function() { return "ECMAScript3Ext.g"; }
 });
 org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start NULL
@@ -890,8 +890,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.NULL;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:513:6: ( 'null' )
-            // res/ECMAScript3Ext.g:513:8: 'null'
+            // ECMAScript3Ext.g:513:6: ( 'null' )
+            // ECMAScript3Ext.g:513:8: 'null'
             this.match("null"); 
 
 
@@ -910,8 +910,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.TRUE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:514:6: ( 'true' )
-            // res/ECMAScript3Ext.g:514:8: 'true'
+            // ECMAScript3Ext.g:514:6: ( 'true' )
+            // ECMAScript3Ext.g:514:8: 'true'
             this.match("true"); 
 
 
@@ -930,8 +930,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.FALSE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:515:7: ( 'false' )
-            // res/ECMAScript3Ext.g:515:9: 'false'
+            // ECMAScript3Ext.g:515:7: ( 'false' )
+            // ECMAScript3Ext.g:515:9: 'false'
             this.match("false"); 
 
 
@@ -950,8 +950,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.BREAK;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:516:7: ( 'break' )
-            // res/ECMAScript3Ext.g:516:9: 'break'
+            // ECMAScript3Ext.g:516:7: ( 'break' )
+            // ECMAScript3Ext.g:516:9: 'break'
             this.match("break"); 
 
 
@@ -970,8 +970,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.CASE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:517:6: ( 'case' )
-            // res/ECMAScript3Ext.g:517:8: 'case'
+            // ECMAScript3Ext.g:517:6: ( 'case' )
+            // ECMAScript3Ext.g:517:8: 'case'
             this.match("case"); 
 
 
@@ -990,8 +990,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.CATCH;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:518:7: ( 'catch' )
-            // res/ECMAScript3Ext.g:518:9: 'catch'
+            // ECMAScript3Ext.g:518:7: ( 'catch' )
+            // ECMAScript3Ext.g:518:9: 'catch'
             this.match("catch"); 
 
 
@@ -1010,8 +1010,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.CONTINUE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:519:10: ( 'continue' )
-            // res/ECMAScript3Ext.g:519:12: 'continue'
+            // ECMAScript3Ext.g:519:10: ( 'continue' )
+            // ECMAScript3Ext.g:519:12: 'continue'
             this.match("continue"); 
 
 
@@ -1030,8 +1030,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DEFAULT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:520:9: ( 'default' )
-            // res/ECMAScript3Ext.g:520:11: 'default'
+            // ECMAScript3Ext.g:520:9: ( 'default' )
+            // ECMAScript3Ext.g:520:11: 'default'
             this.match("default"); 
 
 
@@ -1050,8 +1050,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DELETE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:521:8: ( 'delete' )
-            // res/ECMAScript3Ext.g:521:10: 'delete'
+            // ECMAScript3Ext.g:521:8: ( 'delete' )
+            // ECMAScript3Ext.g:521:10: 'delete'
             this.match("delete"); 
 
 
@@ -1070,8 +1070,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DO;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:522:4: ( 'do' )
-            // res/ECMAScript3Ext.g:522:6: 'do'
+            // ECMAScript3Ext.g:522:4: ( 'do' )
+            // ECMAScript3Ext.g:522:6: 'do'
             this.match("do"); 
 
 
@@ -1090,8 +1090,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.ELSE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:523:6: ( 'else' )
-            // res/ECMAScript3Ext.g:523:8: 'else'
+            // ECMAScript3Ext.g:523:6: ( 'else' )
+            // ECMAScript3Ext.g:523:8: 'else'
             this.match("else"); 
 
 
@@ -1110,8 +1110,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.FINALLY;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:524:9: ( 'finally' )
-            // res/ECMAScript3Ext.g:524:11: 'finally'
+            // ECMAScript3Ext.g:524:9: ( 'finally' )
+            // ECMAScript3Ext.g:524:11: 'finally'
             this.match("finally"); 
 
 
@@ -1130,8 +1130,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.FOR;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:525:5: ( 'for' )
-            // res/ECMAScript3Ext.g:525:7: 'for'
+            // ECMAScript3Ext.g:525:5: ( 'for' )
+            // ECMAScript3Ext.g:525:7: 'for'
             this.match("for"); 
 
 
@@ -1150,8 +1150,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.FUNCTION;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:526:10: ( 'function' )
-            // res/ECMAScript3Ext.g:526:12: 'function'
+            // ECMAScript3Ext.g:526:10: ( 'function' )
+            // ECMAScript3Ext.g:526:12: 'function'
             this.match("function"); 
 
 
@@ -1170,8 +1170,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.IF;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:527:4: ( 'if' )
-            // res/ECMAScript3Ext.g:527:6: 'if'
+            // ECMAScript3Ext.g:527:4: ( 'if' )
+            // ECMAScript3Ext.g:527:6: 'if'
             this.match("if"); 
 
 
@@ -1190,8 +1190,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.IN;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:528:4: ( 'in' )
-            // res/ECMAScript3Ext.g:528:6: 'in'
+            // ECMAScript3Ext.g:528:4: ( 'in' )
+            // ECMAScript3Ext.g:528:6: 'in'
             this.match("in"); 
 
 
@@ -1210,8 +1210,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.INSTANCEOF;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:529:12: ( 'instanceof' )
-            // res/ECMAScript3Ext.g:529:14: 'instanceof'
+            // ECMAScript3Ext.g:529:12: ( 'instanceof' )
+            // ECMAScript3Ext.g:529:14: 'instanceof'
             this.match("instanceof"); 
 
 
@@ -1230,8 +1230,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.NEW;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:530:5: ( 'new' )
-            // res/ECMAScript3Ext.g:530:7: 'new'
+            // ECMAScript3Ext.g:530:5: ( 'new' )
+            // ECMAScript3Ext.g:530:7: 'new'
             this.match("new"); 
 
 
@@ -1250,8 +1250,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.RETURN;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:531:8: ( 'return' )
-            // res/ECMAScript3Ext.g:531:10: 'return'
+            // ECMAScript3Ext.g:531:8: ( 'return' )
+            // ECMAScript3Ext.g:531:10: 'return'
             this.match("return"); 
 
 
@@ -1270,8 +1270,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SWITCH;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:532:8: ( 'switch' )
-            // res/ECMAScript3Ext.g:532:10: 'switch'
+            // ECMAScript3Ext.g:532:8: ( 'switch' )
+            // ECMAScript3Ext.g:532:10: 'switch'
             this.match("switch"); 
 
 
@@ -1290,8 +1290,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.THIS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:533:6: ( 'this' )
-            // res/ECMAScript3Ext.g:533:8: 'this'
+            // ECMAScript3Ext.g:533:6: ( 'this' )
+            // ECMAScript3Ext.g:533:8: 'this'
             this.match("this"); 
 
 
@@ -1310,8 +1310,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.THROW;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:534:7: ( 'throw' )
-            // res/ECMAScript3Ext.g:534:9: 'throw'
+            // ECMAScript3Ext.g:534:7: ( 'throw' )
+            // ECMAScript3Ext.g:534:9: 'throw'
             this.match("throw"); 
 
 
@@ -1330,8 +1330,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.TRY;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:535:5: ( 'try' )
-            // res/ECMAScript3Ext.g:535:7: 'try'
+            // ECMAScript3Ext.g:535:5: ( 'try' )
+            // ECMAScript3Ext.g:535:7: 'try'
             this.match("try"); 
 
 
@@ -1350,8 +1350,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.TYPEOF;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:536:8: ( 'typeof' )
-            // res/ECMAScript3Ext.g:536:10: 'typeof'
+            // ECMAScript3Ext.g:536:8: ( 'typeof' )
+            // ECMAScript3Ext.g:536:10: 'typeof'
             this.match("typeof"); 
 
 
@@ -1370,8 +1370,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.VAR;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:537:5: ( 'var' )
-            // res/ECMAScript3Ext.g:537:7: 'var'
+            // ECMAScript3Ext.g:537:5: ( 'var' )
+            // ECMAScript3Ext.g:537:7: 'var'
             this.match("var"); 
 
 
@@ -1390,8 +1390,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.VOID;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:538:6: ( 'void' )
-            // res/ECMAScript3Ext.g:538:8: 'void'
+            // ECMAScript3Ext.g:538:6: ( 'void' )
+            // ECMAScript3Ext.g:538:8: 'void'
             this.match("void"); 
 
 
@@ -1410,8 +1410,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.WHILE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:539:7: ( 'while' )
-            // res/ECMAScript3Ext.g:539:9: 'while'
+            // ECMAScript3Ext.g:539:7: ( 'while' )
+            // ECMAScript3Ext.g:539:9: 'while'
             this.match("while"); 
 
 
@@ -1430,8 +1430,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.WITH;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:540:6: ( 'with' )
-            // res/ECMAScript3Ext.g:540:8: 'with'
+            // ECMAScript3Ext.g:540:6: ( 'with' )
+            // ECMAScript3Ext.g:540:8: 'with'
             this.match("with"); 
 
 
@@ -1450,8 +1450,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.ABSTRACT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:541:10: ( 'abstract' )
-            // res/ECMAScript3Ext.g:541:12: 'abstract'
+            // ECMAScript3Ext.g:541:10: ( 'abstract' )
+            // ECMAScript3Ext.g:541:12: 'abstract'
             this.match("abstract"); 
 
 
@@ -1470,8 +1470,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.BOOLEAN;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:542:9: ( 'boolean' )
-            // res/ECMAScript3Ext.g:542:11: 'boolean'
+            // ECMAScript3Ext.g:542:9: ( 'boolean' )
+            // ECMAScript3Ext.g:542:11: 'boolean'
             this.match("boolean"); 
 
 
@@ -1490,8 +1490,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.BYTE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:543:6: ( 'byte' )
-            // res/ECMAScript3Ext.g:543:8: 'byte'
+            // ECMAScript3Ext.g:543:6: ( 'byte' )
+            // ECMAScript3Ext.g:543:8: 'byte'
             this.match("byte"); 
 
 
@@ -1510,8 +1510,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.CHAR;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:544:6: ( 'char' )
-            // res/ECMAScript3Ext.g:544:8: 'char'
+            // ECMAScript3Ext.g:544:6: ( 'char' )
+            // ECMAScript3Ext.g:544:8: 'char'
             this.match("char"); 
 
 
@@ -1530,8 +1530,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.CLASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:545:7: ( 'class' )
-            // res/ECMAScript3Ext.g:545:9: 'class'
+            // ECMAScript3Ext.g:545:7: ( 'class' )
+            // ECMAScript3Ext.g:545:9: 'class'
             this.match("class"); 
 
 
@@ -1550,8 +1550,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.CONST;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:546:7: ( 'const' )
-            // res/ECMAScript3Ext.g:546:9: 'const'
+            // ECMAScript3Ext.g:546:7: ( 'const' )
+            // ECMAScript3Ext.g:546:9: 'const'
             this.match("const"); 
 
 
@@ -1570,8 +1570,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DEBUGGER;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:547:10: ( 'debugger' )
-            // res/ECMAScript3Ext.g:547:12: 'debugger'
+            // ECMAScript3Ext.g:547:10: ( 'debugger' )
+            // ECMAScript3Ext.g:547:12: 'debugger'
             this.match("debugger"); 
 
 
@@ -1590,8 +1590,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DOUBLE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:548:8: ( 'double' )
-            // res/ECMAScript3Ext.g:548:10: 'double'
+            // ECMAScript3Ext.g:548:8: ( 'double' )
+            // ECMAScript3Ext.g:548:10: 'double'
             this.match("double"); 
 
 
@@ -1610,8 +1610,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.ENUM;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:549:6: ( 'enum' )
-            // res/ECMAScript3Ext.g:549:8: 'enum'
+            // ECMAScript3Ext.g:549:6: ( 'enum' )
+            // ECMAScript3Ext.g:549:8: 'enum'
             this.match("enum"); 
 
 
@@ -1630,8 +1630,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.EXPORT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:550:8: ( 'export' )
-            // res/ECMAScript3Ext.g:550:10: 'export'
+            // ECMAScript3Ext.g:550:8: ( 'export' )
+            // ECMAScript3Ext.g:550:10: 'export'
             this.match("export"); 
 
 
@@ -1650,8 +1650,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.EXTENDS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:551:9: ( 'extends' )
-            // res/ECMAScript3Ext.g:551:11: 'extends'
+            // ECMAScript3Ext.g:551:9: ( 'extends' )
+            // ECMAScript3Ext.g:551:11: 'extends'
             this.match("extends"); 
 
 
@@ -1670,8 +1670,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.FINAL;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:552:7: ( 'final' )
-            // res/ECMAScript3Ext.g:552:9: 'final'
+            // ECMAScript3Ext.g:552:7: ( 'final' )
+            // ECMAScript3Ext.g:552:9: 'final'
             this.match("final"); 
 
 
@@ -1690,8 +1690,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.FLOAT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:553:7: ( 'float' )
-            // res/ECMAScript3Ext.g:553:9: 'float'
+            // ECMAScript3Ext.g:553:7: ( 'float' )
+            // ECMAScript3Ext.g:553:9: 'float'
             this.match("float"); 
 
 
@@ -1710,8 +1710,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.GOTO;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:554:6: ( 'goto' )
-            // res/ECMAScript3Ext.g:554:8: 'goto'
+            // ECMAScript3Ext.g:554:6: ( 'goto' )
+            // ECMAScript3Ext.g:554:8: 'goto'
             this.match("goto"); 
 
 
@@ -1730,8 +1730,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.IMPLEMENTS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:555:12: ( 'implements' )
-            // res/ECMAScript3Ext.g:555:14: 'implements'
+            // ECMAScript3Ext.g:555:12: ( 'implements' )
+            // ECMAScript3Ext.g:555:14: 'implements'
             this.match("implements"); 
 
 
@@ -1750,8 +1750,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.IMPORT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:556:8: ( 'import' )
-            // res/ECMAScript3Ext.g:556:10: 'import'
+            // ECMAScript3Ext.g:556:8: ( 'import' )
+            // ECMAScript3Ext.g:556:10: 'import'
             this.match("import"); 
 
 
@@ -1770,8 +1770,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.INT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:557:5: ( 'int' )
-            // res/ECMAScript3Ext.g:557:7: 'int'
+            // ECMAScript3Ext.g:557:5: ( 'int' )
+            // ECMAScript3Ext.g:557:7: 'int'
             this.match("int"); 
 
 
@@ -1790,8 +1790,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.INTERFACE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:558:11: ( 'interface' )
-            // res/ECMAScript3Ext.g:558:13: 'interface'
+            // ECMAScript3Ext.g:558:11: ( 'interface' )
+            // ECMAScript3Ext.g:558:13: 'interface'
             this.match("interface"); 
 
 
@@ -1810,8 +1810,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.LONG;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:559:6: ( 'long' )
-            // res/ECMAScript3Ext.g:559:8: 'long'
+            // ECMAScript3Ext.g:559:6: ( 'long' )
+            // ECMAScript3Ext.g:559:8: 'long'
             this.match("long"); 
 
 
@@ -1830,8 +1830,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.NATIVE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:560:8: ( 'native' )
-            // res/ECMAScript3Ext.g:560:10: 'native'
+            // ECMAScript3Ext.g:560:8: ( 'native' )
+            // ECMAScript3Ext.g:560:10: 'native'
             this.match("native"); 
 
 
@@ -1850,8 +1850,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.PACKAGE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:561:9: ( 'package' )
-            // res/ECMAScript3Ext.g:561:11: 'package'
+            // ECMAScript3Ext.g:561:9: ( 'package' )
+            // ECMAScript3Ext.g:561:11: 'package'
             this.match("package"); 
 
 
@@ -1870,8 +1870,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.PRIVATE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:562:9: ( 'private' )
-            // res/ECMAScript3Ext.g:562:11: 'private'
+            // ECMAScript3Ext.g:562:9: ( 'private' )
+            // ECMAScript3Ext.g:562:11: 'private'
             this.match("private"); 
 
 
@@ -1890,8 +1890,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.PROTECTED;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:563:11: ( 'protected' )
-            // res/ECMAScript3Ext.g:563:13: 'protected'
+            // ECMAScript3Ext.g:563:11: ( 'protected' )
+            // ECMAScript3Ext.g:563:13: 'protected'
             this.match("protected"); 
 
 
@@ -1910,8 +1910,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.PUBLIC;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:564:8: ( 'public' )
-            // res/ECMAScript3Ext.g:564:10: 'public'
+            // ECMAScript3Ext.g:564:8: ( 'public' )
+            // ECMAScript3Ext.g:564:10: 'public'
             this.match("public"); 
 
 
@@ -1930,8 +1930,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SHORT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:565:7: ( 'short' )
-            // res/ECMAScript3Ext.g:565:9: 'short'
+            // ECMAScript3Ext.g:565:7: ( 'short' )
+            // ECMAScript3Ext.g:565:9: 'short'
             this.match("short"); 
 
 
@@ -1950,8 +1950,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.STATIC;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:566:8: ( 'static' )
-            // res/ECMAScript3Ext.g:566:10: 'static'
+            // ECMAScript3Ext.g:566:8: ( 'static' )
+            // ECMAScript3Ext.g:566:10: 'static'
             this.match("static"); 
 
 
@@ -1970,8 +1970,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SUPER;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:567:7: ( 'super' )
-            // res/ECMAScript3Ext.g:567:9: 'super'
+            // ECMAScript3Ext.g:567:7: ( 'super' )
+            // ECMAScript3Ext.g:567:9: 'super'
             this.match("super"); 
 
 
@@ -1990,8 +1990,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SYNCHRONIZED;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:568:14: ( 'synchronized' )
-            // res/ECMAScript3Ext.g:568:16: 'synchronized'
+            // ECMAScript3Ext.g:568:14: ( 'synchronized' )
+            // ECMAScript3Ext.g:568:16: 'synchronized'
             this.match("synchronized"); 
 
 
@@ -2010,8 +2010,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.THROWS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:569:8: ( 'throws' )
-            // res/ECMAScript3Ext.g:569:10: 'throws'
+            // ECMAScript3Ext.g:569:8: ( 'throws' )
+            // ECMAScript3Ext.g:569:10: 'throws'
             this.match("throws"); 
 
 
@@ -2030,8 +2030,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.TRANSIENT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:570:11: ( 'transient' )
-            // res/ECMAScript3Ext.g:570:13: 'transient'
+            // ECMAScript3Ext.g:570:11: ( 'transient' )
+            // ECMAScript3Ext.g:570:13: 'transient'
             this.match("transient"); 
 
 
@@ -2050,8 +2050,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.VOLATILE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:571:10: ( 'volatile' )
-            // res/ECMAScript3Ext.g:571:12: 'volatile'
+            // ECMAScript3Ext.g:571:10: ( 'volatile' )
+            // ECMAScript3Ext.g:571:12: 'volatile'
             this.match("volatile"); 
 
 
@@ -2070,8 +2070,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.LBRACE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:572:8: ( '{' )
-            // res/ECMAScript3Ext.g:572:10: '{'
+            // ECMAScript3Ext.g:572:8: ( '{' )
+            // ECMAScript3Ext.g:572:10: '{'
             this.match('{'); 
 
 
@@ -2089,8 +2089,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.RBRACE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:573:8: ( '}' )
-            // res/ECMAScript3Ext.g:573:10: '}'
+            // ECMAScript3Ext.g:573:8: ( '}' )
+            // ECMAScript3Ext.g:573:10: '}'
             this.match('}'); 
 
 
@@ -2108,8 +2108,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.LPAREN;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:574:8: ( '(' )
-            // res/ECMAScript3Ext.g:574:10: '('
+            // ECMAScript3Ext.g:574:8: ( '(' )
+            // ECMAScript3Ext.g:574:10: '('
             this.match('('); 
 
 
@@ -2127,8 +2127,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.RPAREN;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:575:8: ( ')' )
-            // res/ECMAScript3Ext.g:575:10: ')'
+            // ECMAScript3Ext.g:575:8: ( ')' )
+            // ECMAScript3Ext.g:575:10: ')'
             this.match(')'); 
 
 
@@ -2146,8 +2146,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.LBRACK;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:576:8: ( '[' )
-            // res/ECMAScript3Ext.g:576:10: '['
+            // ECMAScript3Ext.g:576:8: ( '[' )
+            // ECMAScript3Ext.g:576:10: '['
             this.match('['); 
 
 
@@ -2165,8 +2165,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.RBRACK;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:577:8: ( ']' )
-            // res/ECMAScript3Ext.g:577:10: ']'
+            // ECMAScript3Ext.g:577:8: ( ']' )
+            // ECMAScript3Ext.g:577:10: ']'
             this.match(']'); 
 
 
@@ -2184,8 +2184,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DOT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:578:5: ( '.' )
-            // res/ECMAScript3Ext.g:578:7: '.'
+            // ECMAScript3Ext.g:578:5: ( '.' )
+            // ECMAScript3Ext.g:578:7: '.'
             this.match('.'); 
 
 
@@ -2203,8 +2203,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SEMIC;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:579:7: ( ';' )
-            // res/ECMAScript3Ext.g:579:9: ';'
+            // ECMAScript3Ext.g:579:7: ( ';' )
+            // ECMAScript3Ext.g:579:9: ';'
             this.match(';'); 
 
 
@@ -2222,8 +2222,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.COMMA;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:580:7: ( ',' )
-            // res/ECMAScript3Ext.g:580:9: ','
+            // ECMAScript3Ext.g:580:7: ( ',' )
+            // ECMAScript3Ext.g:580:9: ','
             this.match(','); 
 
 
@@ -2241,8 +2241,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.LT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:581:4: ( '<' )
-            // res/ECMAScript3Ext.g:581:6: '<'
+            // ECMAScript3Ext.g:581:4: ( '<' )
+            // ECMAScript3Ext.g:581:6: '<'
             this.match('<'); 
 
 
@@ -2260,8 +2260,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.GT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:582:4: ( '>' )
-            // res/ECMAScript3Ext.g:582:6: '>'
+            // ECMAScript3Ext.g:582:4: ( '>' )
+            // ECMAScript3Ext.g:582:6: '>'
             this.match('>'); 
 
 
@@ -2279,8 +2279,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.LTE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:583:5: ( '<=' )
-            // res/ECMAScript3Ext.g:583:7: '<='
+            // ECMAScript3Ext.g:583:5: ( '<=' )
+            // ECMAScript3Ext.g:583:7: '<='
             this.match("<="); 
 
 
@@ -2299,8 +2299,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.GTE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:584:5: ( '>=' )
-            // res/ECMAScript3Ext.g:584:7: '>='
+            // ECMAScript3Ext.g:584:5: ( '>=' )
+            // ECMAScript3Ext.g:584:7: '>='
             this.match(">="); 
 
 
@@ -2319,8 +2319,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.EQ;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:585:4: ( '==' )
-            // res/ECMAScript3Ext.g:585:6: '=='
+            // ECMAScript3Ext.g:585:4: ( '==' )
+            // ECMAScript3Ext.g:585:6: '=='
             this.match("=="); 
 
 
@@ -2339,8 +2339,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.NEQ;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:586:5: ( '!=' )
-            // res/ECMAScript3Ext.g:586:7: '!='
+            // ECMAScript3Ext.g:586:5: ( '!=' )
+            // ECMAScript3Ext.g:586:7: '!='
             this.match("!="); 
 
 
@@ -2359,8 +2359,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SAME;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:587:6: ( '===' )
-            // res/ECMAScript3Ext.g:587:8: '==='
+            // ECMAScript3Ext.g:587:6: ( '===' )
+            // ECMAScript3Ext.g:587:8: '==='
             this.match("==="); 
 
 
@@ -2379,8 +2379,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.NSAME;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:588:7: ( '!==' )
-            // res/ECMAScript3Ext.g:588:9: '!=='
+            // ECMAScript3Ext.g:588:7: ( '!==' )
+            // ECMAScript3Ext.g:588:9: '!=='
             this.match("!=="); 
 
 
@@ -2399,8 +2399,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.ADD;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:589:5: ( '+' )
-            // res/ECMAScript3Ext.g:589:7: '+'
+            // ECMAScript3Ext.g:589:5: ( '+' )
+            // ECMAScript3Ext.g:589:7: '+'
             this.match('+'); 
 
 
@@ -2418,8 +2418,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SUB;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:590:5: ( '-' )
-            // res/ECMAScript3Ext.g:590:7: '-'
+            // ECMAScript3Ext.g:590:5: ( '-' )
+            // ECMAScript3Ext.g:590:7: '-'
             this.match('-'); 
 
 
@@ -2437,8 +2437,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.MUL;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:591:5: ( '*' )
-            // res/ECMAScript3Ext.g:591:7: '*'
+            // ECMAScript3Ext.g:591:5: ( '*' )
+            // ECMAScript3Ext.g:591:7: '*'
             this.match('*'); 
 
 
@@ -2456,8 +2456,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.MOD;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:592:5: ( '%' )
-            // res/ECMAScript3Ext.g:592:7: '%'
+            // ECMAScript3Ext.g:592:5: ( '%' )
+            // ECMAScript3Ext.g:592:7: '%'
             this.match('%'); 
 
 
@@ -2475,8 +2475,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.INC;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:593:5: ( '++' )
-            // res/ECMAScript3Ext.g:593:7: '++'
+            // ECMAScript3Ext.g:593:5: ( '++' )
+            // ECMAScript3Ext.g:593:7: '++'
             this.match("++"); 
 
 
@@ -2495,8 +2495,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DEC;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:594:5: ( '--' )
-            // res/ECMAScript3Ext.g:594:7: '--'
+            // ECMAScript3Ext.g:594:5: ( '--' )
+            // ECMAScript3Ext.g:594:7: '--'
             this.match("--"); 
 
 
@@ -2515,8 +2515,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SHL;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:595:5: ( '<<' )
-            // res/ECMAScript3Ext.g:595:7: '<<'
+            // ECMAScript3Ext.g:595:5: ( '<<' )
+            // ECMAScript3Ext.g:595:7: '<<'
             this.match("<<"); 
 
 
@@ -2535,8 +2535,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SHR;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:596:5: ( '>>' )
-            // res/ECMAScript3Ext.g:596:7: '>>'
+            // ECMAScript3Ext.g:596:5: ( '>>' )
+            // ECMAScript3Ext.g:596:7: '>>'
             this.match(">>"); 
 
 
@@ -2555,8 +2555,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SHU;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:597:5: ( '>>>' )
-            // res/ECMAScript3Ext.g:597:7: '>>>'
+            // ECMAScript3Ext.g:597:5: ( '>>>' )
+            // ECMAScript3Ext.g:597:7: '>>>'
             this.match(">>>"); 
 
 
@@ -2575,8 +2575,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.AND;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:598:5: ( '&' )
-            // res/ECMAScript3Ext.g:598:7: '&'
+            // ECMAScript3Ext.g:598:5: ( '&' )
+            // ECMAScript3Ext.g:598:7: '&'
             this.match('&'); 
 
 
@@ -2594,8 +2594,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.OR;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:599:4: ( '|' )
-            // res/ECMAScript3Ext.g:599:6: '|'
+            // ECMAScript3Ext.g:599:4: ( '|' )
+            // ECMAScript3Ext.g:599:6: '|'
             this.match('|'); 
 
 
@@ -2613,8 +2613,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.NOT;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:600:5: ( '!' )
-            // res/ECMAScript3Ext.g:600:7: '!'
+            // ECMAScript3Ext.g:600:5: ( '!' )
+            // ECMAScript3Ext.g:600:7: '!'
             this.match('!'); 
 
 
@@ -2632,8 +2632,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.INV;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:601:5: ( '~' )
-            // res/ECMAScript3Ext.g:601:7: '~'
+            // ECMAScript3Ext.g:601:5: ( '~' )
+            // ECMAScript3Ext.g:601:7: '~'
             this.match('~'); 
 
 
@@ -2651,8 +2651,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.LAND;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:602:6: ( '&&' )
-            // res/ECMAScript3Ext.g:602:8: '&&'
+            // ECMAScript3Ext.g:602:6: ( '&&' )
+            // ECMAScript3Ext.g:602:8: '&&'
             this.match("&&"); 
 
 
@@ -2671,8 +2671,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.LOR;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:603:5: ( '||' )
-            // res/ECMAScript3Ext.g:603:7: '||'
+            // ECMAScript3Ext.g:603:5: ( '||' )
+            // ECMAScript3Ext.g:603:7: '||'
             this.match("||"); 
 
 
@@ -2691,8 +2691,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.QUE;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:604:5: ( '?' )
-            // res/ECMAScript3Ext.g:604:7: '?'
+            // ECMAScript3Ext.g:604:5: ( '?' )
+            // ECMAScript3Ext.g:604:7: '?'
             this.match('?'); 
 
 
@@ -2710,8 +2710,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.COLON;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:605:7: ( ':' )
-            // res/ECMAScript3Ext.g:605:9: ':'
+            // ECMAScript3Ext.g:605:7: ( ':' )
+            // ECMAScript3Ext.g:605:9: ':'
             this.match(':'); 
 
 
@@ -2729,8 +2729,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.ASSIGN;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:606:8: ( '=' )
-            // res/ECMAScript3Ext.g:606:10: '='
+            // ECMAScript3Ext.g:606:8: ( '=' )
+            // ECMAScript3Ext.g:606:10: '='
             this.match('='); 
 
 
@@ -2748,8 +2748,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.ADDASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:607:8: ( '+=' )
-            // res/ECMAScript3Ext.g:607:10: '+='
+            // ECMAScript3Ext.g:607:8: ( '+=' )
+            // ECMAScript3Ext.g:607:10: '+='
             this.match("+="); 
 
 
@@ -2768,8 +2768,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SUBASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:608:8: ( '-=' )
-            // res/ECMAScript3Ext.g:608:10: '-='
+            // ECMAScript3Ext.g:608:8: ( '-=' )
+            // ECMAScript3Ext.g:608:10: '-='
             this.match("-="); 
 
 
@@ -2788,8 +2788,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.MULASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:609:8: ( '*=' )
-            // res/ECMAScript3Ext.g:609:10: '*='
+            // ECMAScript3Ext.g:609:8: ( '*=' )
+            // ECMAScript3Ext.g:609:10: '*='
             this.match("*="); 
 
 
@@ -2808,8 +2808,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.MODASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:610:8: ( '%=' )
-            // res/ECMAScript3Ext.g:610:10: '%='
+            // ECMAScript3Ext.g:610:8: ( '%=' )
+            // ECMAScript3Ext.g:610:10: '%='
             this.match("%="); 
 
 
@@ -2828,8 +2828,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SHLASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:611:8: ( '<<=' )
-            // res/ECMAScript3Ext.g:611:10: '<<='
+            // ECMAScript3Ext.g:611:8: ( '<<=' )
+            // ECMAScript3Ext.g:611:10: '<<='
             this.match("<<="); 
 
 
@@ -2848,8 +2848,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SHRASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:612:8: ( '>>=' )
-            // res/ECMAScript3Ext.g:612:10: '>>='
+            // ECMAScript3Ext.g:612:8: ( '>>=' )
+            // ECMAScript3Ext.g:612:10: '>>='
             this.match(">>="); 
 
 
@@ -2868,8 +2868,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SHUASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:613:8: ( '>>>=' )
-            // res/ECMAScript3Ext.g:613:10: '>>>='
+            // ECMAScript3Ext.g:613:8: ( '>>>=' )
+            // ECMAScript3Ext.g:613:10: '>>>='
             this.match(">>>="); 
 
 
@@ -2888,8 +2888,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.ANDASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:614:8: ( '&=' )
-            // res/ECMAScript3Ext.g:614:10: '&='
+            // ECMAScript3Ext.g:614:8: ( '&=' )
+            // ECMAScript3Ext.g:614:10: '&='
             this.match("&="); 
 
 
@@ -2908,8 +2908,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.ORASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:615:7: ( '|=' )
-            // res/ECMAScript3Ext.g:615:9: '|='
+            // ECMAScript3Ext.g:615:7: ( '|=' )
+            // ECMAScript3Ext.g:615:9: '|='
             this.match("|="); 
 
 
@@ -2928,8 +2928,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DIV;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:616:5: ( '/' )
-            // res/ECMAScript3Ext.g:616:7: '/'
+            // ECMAScript3Ext.g:616:5: ( '/' )
+            // ECMAScript3Ext.g:616:7: '/'
             this.match('/'); 
 
 
@@ -2947,8 +2947,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DIVASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:617:8: ( '/=' )
-            // res/ECMAScript3Ext.g:617:10: '/='
+            // ECMAScript3Ext.g:617:8: ( '/=' )
+            // ECMAScript3Ext.g:617:10: '/='
             this.match("/="); 
 
 
@@ -2967,8 +2967,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.POW;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:618:5: ( '**' )
-            // res/ECMAScript3Ext.g:618:7: '**'
+            // ECMAScript3Ext.g:618:5: ( '**' )
+            // ECMAScript3Ext.g:618:7: '**'
             this.match("**"); 
 
 
@@ -2987,8 +2987,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.POWASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:619:8: ( '**=' )
-            // res/ECMAScript3Ext.g:619:10: '**='
+            // ECMAScript3Ext.g:619:8: ( '**=' )
+            // ECMAScript3Ext.g:619:10: '**='
             this.match("**="); 
 
 
@@ -3007,8 +3007,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.CARET;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:620:7: ( '^' )
-            // res/ECMAScript3Ext.g:620:9: '^'
+            // ECMAScript3Ext.g:620:7: ( '^' )
+            // ECMAScript3Ext.g:620:9: '^'
             this.match('^'); 
 
 
@@ -3026,8 +3026,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.CARETASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:621:10: ( '^=' )
-            // res/ECMAScript3Ext.g:621:12: '^='
+            // ECMAScript3Ext.g:621:10: ( '^=' )
+            // ECMAScript3Ext.g:621:12: '^='
             this.match("^="); 
 
 
@@ -3046,8 +3046,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.XOR;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:622:5: ( '><' )
-            // res/ECMAScript3Ext.g:622:7: '><'
+            // ECMAScript3Ext.g:622:5: ( '><' )
+            // ECMAScript3Ext.g:622:7: '><'
             this.match("><"); 
 
 
@@ -3066,8 +3066,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.XORASS;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:623:8: ( '><=' )
-            // res/ECMAScript3Ext.g:623:10: '><='
+            // ECMAScript3Ext.g:623:8: ( '><=' )
+            // ECMAScript3Ext.g:623:10: '><='
             this.match("><="); 
 
 
@@ -3084,8 +3084,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start BSLASH
     mBSLASH: function()  {
         try {
-            // res/ECMAScript3Ext.g:820:2: ( '\\\\' )
-            // res/ECMAScript3Ext.g:820:4: '\\\\'
+            // ECMAScript3Ext.g:820:2: ( '\\\\' )
+            // ECMAScript3Ext.g:820:4: '\\\\'
             this.match('\\'); 
 
 
@@ -3099,8 +3099,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start DQUOTE
     mDQUOTE: function()  {
         try {
-            // res/ECMAScript3Ext.g:824:2: ( '\"' )
-            // res/ECMAScript3Ext.g:824:4: '\"'
+            // ECMAScript3Ext.g:824:2: ( '\"' )
+            // ECMAScript3Ext.g:824:4: '\"'
             this.match('\"'); 
 
 
@@ -3114,8 +3114,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start SQUOTE
     mSQUOTE: function()  {
         try {
-            // res/ECMAScript3Ext.g:828:2: ( '\\'' )
-            // res/ECMAScript3Ext.g:828:4: '\\''
+            // ECMAScript3Ext.g:828:2: ( '\\'' )
+            // ECMAScript3Ext.g:828:4: '\\''
             this.match('\''); 
 
 
@@ -3129,8 +3129,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start TAB
     mTAB: function()  {
         try {
-            // res/ECMAScript3Ext.g:834:2: ( '\\u0009' )
-            // res/ECMAScript3Ext.g:834:4: '\\u0009'
+            // ECMAScript3Ext.g:834:2: ( '\\u0009' )
+            // ECMAScript3Ext.g:834:4: '\\u0009'
             this.match('\t'); 
 
 
@@ -3144,8 +3144,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start VT
     mVT: function()  {
         try {
-            // res/ECMAScript3Ext.g:838:2: ( '\\u000b' )
-            // res/ECMAScript3Ext.g:838:4: '\\u000b'
+            // ECMAScript3Ext.g:838:2: ( '\\u000b' )
+            // ECMAScript3Ext.g:838:4: '\\u000b'
             this.match('\u000B'); 
 
 
@@ -3159,8 +3159,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start FF
     mFF: function()  {
         try {
-            // res/ECMAScript3Ext.g:842:2: ( '\\u000c' )
-            // res/ECMAScript3Ext.g:842:4: '\\u000c'
+            // ECMAScript3Ext.g:842:2: ( '\\u000c' )
+            // ECMAScript3Ext.g:842:4: '\\u000c'
             this.match('\f'); 
 
 
@@ -3174,8 +3174,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start SP
     mSP: function()  {
         try {
-            // res/ECMAScript3Ext.g:846:2: ( '\\u0020' )
-            // res/ECMAScript3Ext.g:846:4: '\\u0020'
+            // ECMAScript3Ext.g:846:2: ( '\\u0020' )
+            // ECMAScript3Ext.g:846:4: '\\u0020'
             this.match(' '); 
 
 
@@ -3189,8 +3189,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start NBSP
     mNBSP: function()  {
         try {
-            // res/ECMAScript3Ext.g:850:2: ( '\\u00a0' )
-            // res/ECMAScript3Ext.g:850:4: '\\u00a0'
+            // ECMAScript3Ext.g:850:2: ( '\\u00a0' )
+            // ECMAScript3Ext.g:850:4: '\\u00a0'
             this.match('\u00A0'); 
 
 
@@ -3204,8 +3204,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start USP
     mUSP: function()  {
         try {
-            // res/ECMAScript3Ext.g:854:2: ( '\\u1680' | '\\u180E' | '\\u2000' | '\\u2001' | '\\u2002' | '\\u2003' | '\\u2004' | '\\u2005' | '\\u2006' | '\\u2007' | '\\u2008' | '\\u2009' | '\\u200A' | '\\u202F' | '\\u205F' | '\\u3000' )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:854:2: ( '\\u1680' | '\\u180E' | '\\u2000' | '\\u2001' | '\\u2002' | '\\u2003' | '\\u2004' | '\\u2005' | '\\u2006' | '\\u2007' | '\\u2008' | '\\u2009' | '\\u200A' | '\\u202F' | '\\u205F' | '\\u3000' )
+            // ECMAScript3Ext.g:
             if ( this.input.LA(1)=='\u1680'||this.input.LA(1)=='\u180E'||(this.input.LA(1)>='\u2000' && this.input.LA(1)<='\u200A')||this.input.LA(1)=='\u202F'||this.input.LA(1)=='\u205F'||this.input.LA(1)=='\u3000' ) {
                 this.input.consume();
 
@@ -3229,9 +3229,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.WhiteSpace;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:873:2: ( ( TAB | VT | FF | SP | NBSP | USP )+ )
-            // res/ECMAScript3Ext.g:873:4: ( TAB | VT | FF | SP | NBSP | USP )+
-            // res/ECMAScript3Ext.g:873:4: ( TAB | VT | FF | SP | NBSP | USP )+
+            // ECMAScript3Ext.g:873:2: ( ( TAB | VT | FF | SP | NBSP | USP )+ )
+            // ECMAScript3Ext.g:873:4: ( TAB | VT | FF | SP | NBSP | USP )+
+            // ECMAScript3Ext.g:873:4: ( TAB | VT | FF | SP | NBSP | USP )+
             var cnt1=0;
             loop1:
             do {
@@ -3245,7 +3245,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt1) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:
+                    // ECMAScript3Ext.g:
                     if ( this.input.LA(1)=='\t'||(this.input.LA(1)>='\u000B' && this.input.LA(1)<='\f')||this.input.LA(1)==' '||this.input.LA(1)=='\u00A0'||this.input.LA(1)=='\u1680'||this.input.LA(1)=='\u180E'||(this.input.LA(1)>='\u2000' && this.input.LA(1)<='\u200A')||this.input.LA(1)=='\u202F'||this.input.LA(1)=='\u205F'||this.input.LA(1)=='\u3000' ) {
                         this.input.consume();
 
@@ -3284,8 +3284,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start LF
     mLF: function()  {
         try {
-            // res/ECMAScript3Ext.g:881:2: ( '\\n' )
-            // res/ECMAScript3Ext.g:881:4: '\\n'
+            // ECMAScript3Ext.g:881:2: ( '\\n' )
+            // ECMAScript3Ext.g:881:4: '\\n'
             this.match('\n'); 
 
 
@@ -3299,8 +3299,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start CR
     mCR: function()  {
         try {
-            // res/ECMAScript3Ext.g:885:2: ( '\\r' )
-            // res/ECMAScript3Ext.g:885:4: '\\r'
+            // ECMAScript3Ext.g:885:2: ( '\\r' )
+            // ECMAScript3Ext.g:885:4: '\\r'
             this.match('\r'); 
 
 
@@ -3314,8 +3314,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start LS
     mLS: function()  {
         try {
-            // res/ECMAScript3Ext.g:889:2: ( '\\u2028' )
-            // res/ECMAScript3Ext.g:889:4: '\\u2028'
+            // ECMAScript3Ext.g:889:2: ( '\\u2028' )
+            // ECMAScript3Ext.g:889:4: '\\u2028'
             this.match('\u2028'); 
 
 
@@ -3329,8 +3329,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start PS
     mPS: function()  {
         try {
-            // res/ECMAScript3Ext.g:893:2: ( '\\u2029' )
-            // res/ECMAScript3Ext.g:893:4: '\\u2029'
+            // ECMAScript3Ext.g:893:2: ( '\\u2029' )
+            // ECMAScript3Ext.g:893:4: '\\u2029'
             this.match('\u2029'); 
 
 
@@ -3344,8 +3344,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start LineTerminator
     mLineTerminator: function()  {
         try {
-            // res/ECMAScript3Ext.g:897:2: ( CR | LF | LS | PS )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:897:2: ( CR | LF | LS | PS )
+            // ECMAScript3Ext.g:
             if ( this.input.LA(1)=='\n'||this.input.LA(1)=='\r'||(this.input.LA(1)>='\u2028' && this.input.LA(1)<='\u2029') ) {
                 this.input.consume();
 
@@ -3369,9 +3369,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.EOL;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:901:2: ( ( ( CR ( LF )? ) | LF | LS | PS ) )
-            // res/ECMAScript3Ext.g:901:4: ( ( CR ( LF )? ) | LF | LS | PS )
-            // res/ECMAScript3Ext.g:901:4: ( ( CR ( LF )? ) | LF | LS | PS )
+            // ECMAScript3Ext.g:901:2: ( ( ( CR ( LF )? ) | LF | LS | PS ) )
+            // ECMAScript3Ext.g:901:4: ( ( CR ( LF )? ) | LF | LS | PS )
+            // ECMAScript3Ext.g:901:4: ( ( CR ( LF )? ) | LF | LS | PS )
             var alt3=4;
             switch ( this.input.LA(1) ) {
             case '\r':
@@ -3395,11 +3395,11 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
             switch (alt3) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:901:6: ( CR ( LF )? )
-                    // res/ECMAScript3Ext.g:901:6: ( CR ( LF )? )
-                    // res/ECMAScript3Ext.g:901:8: CR ( LF )?
+                    // ECMAScript3Ext.g:901:6: ( CR ( LF )? )
+                    // ECMAScript3Ext.g:901:6: ( CR ( LF )? )
+                    // ECMAScript3Ext.g:901:8: CR ( LF )?
                     this.mCR(); 
-                    // res/ECMAScript3Ext.g:901:11: ( LF )?
+                    // ECMAScript3Ext.g:901:11: ( LF )?
                     var alt2=2;
                     var LA2_0 = this.input.LA(1);
 
@@ -3408,7 +3408,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
                     }
                     switch (alt2) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:901:11: LF
+                            // ECMAScript3Ext.g:901:11: LF
                             this.mLF(); 
 
 
@@ -3423,19 +3423,19 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:901:19: LF
+                    // ECMAScript3Ext.g:901:19: LF
                     this.mLF(); 
 
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:901:24: LS
+                    // ECMAScript3Ext.g:901:24: LS
                     this.mLS(); 
 
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:901:29: PS
+                    // ECMAScript3Ext.g:901:29: PS
                     this.mPS(); 
 
 
@@ -3460,11 +3460,11 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.MultiLineComment;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:908:2: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // res/ECMAScript3Ext.g:908:4: '/*' ( options {greedy=false; } : . )* '*/'
+            // ECMAScript3Ext.g:908:2: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ECMAScript3Ext.g:908:4: '/*' ( options {greedy=false; } : . )* '*/'
             this.match("/*"); 
 
-            // res/ECMAScript3Ext.g:908:9: ( options {greedy=false; } : . )*
+            // ECMAScript3Ext.g:908:9: ( options {greedy=false; } : . )*
             loop4:
             do {
                 var alt4=2;
@@ -3489,7 +3489,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt4) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:908:41: .
+                    // ECMAScript3Ext.g:908:41: .
                     this.matchAny(); 
 
 
@@ -3519,11 +3519,11 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.SingleLineComment;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:912:2: ( '//' (~ ( LineTerminator ) )* )
-            // res/ECMAScript3Ext.g:912:4: '//' (~ ( LineTerminator ) )*
+            // ECMAScript3Ext.g:912:2: ( '//' (~ ( LineTerminator ) )* )
+            // ECMAScript3Ext.g:912:4: '//' (~ ( LineTerminator ) )*
             this.match("//"); 
 
-            // res/ECMAScript3Ext.g:912:9: (~ ( LineTerminator ) )*
+            // ECMAScript3Ext.g:912:9: (~ ( LineTerminator ) )*
             loop5:
             do {
                 var alt5=2;
@@ -3536,7 +3536,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt5) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:912:11: ~ ( LineTerminator )
+                    // ECMAScript3Ext.g:912:11: ~ ( LineTerminator )
                     if ( (this.input.LA(1)>='\u0000' && this.input.LA(1)<='\t')||(this.input.LA(1)>='\u000B' && this.input.LA(1)<='\f')||(this.input.LA(1)>='\u000E' && this.input.LA(1)<='\u2027')||(this.input.LA(1)>='\u202A' && this.input.LA(1)<='\uFFFF') ) {
                         this.input.consume();
 
@@ -3570,7 +3570,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start IdentifierStartASCII
     mIdentifierStartASCII: function()  {
         try {
-            // res/ECMAScript3Ext.g:1013:2: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | BSLASH 'u' HexDigit HexDigit HexDigit HexDigit )
+            // ECMAScript3Ext.g:1013:2: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | BSLASH 'u' HexDigit HexDigit HexDigit HexDigit )
             var alt6=5;
             switch ( this.input.LA(1) ) {
             case 'a':
@@ -3647,31 +3647,31 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
             switch (alt6) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1013:4: 'a' .. 'z'
+                    // ECMAScript3Ext.g:1013:4: 'a' .. 'z'
                     this.matchRange('a','z'); 
 
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1013:15: 'A' .. 'Z'
+                    // ECMAScript3Ext.g:1013:15: 'A' .. 'Z'
                     this.matchRange('A','Z'); 
 
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1014:4: '$'
+                    // ECMAScript3Ext.g:1014:4: '$'
                     this.match('$'); 
 
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:1015:4: '_'
+                    // ECMAScript3Ext.g:1015:4: '_'
                     this.match('_'); 
 
 
                     break;
                 case 5 :
-                    // res/ECMAScript3Ext.g:1016:4: BSLASH 'u' HexDigit HexDigit HexDigit HexDigit
+                    // ECMAScript3Ext.g:1016:4: BSLASH 'u' HexDigit HexDigit HexDigit HexDigit
                     this.mBSLASH(); 
                     this.match('u'); 
                     this.mHexDigit(); 
@@ -3692,7 +3692,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start IdentifierPart
     mIdentifierPart: function()  {
         try {
-            // res/ECMAScript3Ext.g:1024:2: ( DecimalDigit | IdentifierStartASCII | {...}?)
+            // ECMAScript3Ext.g:1024:2: ( DecimalDigit | IdentifierStartASCII | {...}?)
             var alt7=3;
             switch ( this.input.LA(1) ) {
             case '0':
@@ -3769,19 +3769,19 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
             switch (alt7) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1024:4: DecimalDigit
+                    // ECMAScript3Ext.g:1024:4: DecimalDigit
                     this.mDecimalDigit(); 
 
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1025:4: IdentifierStartASCII
+                    // ECMAScript3Ext.g:1025:4: IdentifierStartASCII
                     this.mIdentifierStartASCII(); 
 
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1026:4: {...}?
+                    // ECMAScript3Ext.g:1026:4: {...}?
                     if ( !(( this.isIdentifierPartUnicode(this.input.LA(1)) )) ) {
                         throw new org.antlr.runtime.FailedPredicateException(this.input, "IdentifierPart", " this.isIdentifierPartUnicode(this.input.LA(1)) ");
                     }
@@ -3800,10 +3800,10 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start IdentifierNameASCIIStart
     mIdentifierNameASCIIStart: function()  {
         try {
-            // res/ECMAScript3Ext.g:1030:2: ( IdentifierStartASCII ( IdentifierPart )* )
-            // res/ECMAScript3Ext.g:1030:4: IdentifierStartASCII ( IdentifierPart )*
+            // ECMAScript3Ext.g:1030:2: ( IdentifierStartASCII ( IdentifierPart )* )
+            // ECMAScript3Ext.g:1030:4: IdentifierStartASCII ( IdentifierPart )*
             this.mIdentifierStartASCII(); 
-            // res/ECMAScript3Ext.g:1030:25: ( IdentifierPart )*
+            // ECMAScript3Ext.g:1030:25: ( IdentifierPart )*
             loop8:
             do {
                 var alt8=2;
@@ -3819,7 +3819,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt8) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1030:25: IdentifierPart
+                    // ECMAScript3Ext.g:1030:25: IdentifierPart
                     this.mIdentifierPart(); 
 
 
@@ -3844,7 +3844,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.Identifier;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:1042:2: ( IdentifierNameASCIIStart | )
+            // ECMAScript3Ext.g:1042:2: ( IdentifierNameASCIIStart | )
             var alt9=2;
             var LA9_0 = this.input.LA(1);
 
@@ -3855,13 +3855,13 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
                 alt9=2;}
             switch (alt9) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1042:4: IdentifierNameASCIIStart
+                    // ECMAScript3Ext.g:1042:4: IdentifierNameASCIIStart
                     this.mIdentifierNameASCIIStart(); 
 
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1043:4: 
+                    // ECMAScript3Ext.g:1043:4: 
                      this.consumeIdentifierUnicodeStart(); 
 
 
@@ -3879,8 +3879,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start DecimalDigit
     mDecimalDigit: function()  {
         try {
-            // res/ECMAScript3Ext.g:1128:2: ( '0' .. '9' )
-            // res/ECMAScript3Ext.g:1128:4: '0' .. '9'
+            // ECMAScript3Ext.g:1128:2: ( '0' .. '9' )
+            // ECMAScript3Ext.g:1128:4: '0' .. '9'
             this.matchRange('0','9'); 
 
 
@@ -3894,8 +3894,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start HexDigit
     mHexDigit: function()  {
         try {
-            // res/ECMAScript3Ext.g:1132:2: ( DecimalDigit | 'a' .. 'f' | 'A' .. 'F' )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:1132:2: ( DecimalDigit | 'a' .. 'f' | 'A' .. 'F' )
+            // ECMAScript3Ext.g:
             if ( (this.input.LA(1)>='0' && this.input.LA(1)<='9')||(this.input.LA(1)>='A' && this.input.LA(1)<='F')||(this.input.LA(1)>='a' && this.input.LA(1)<='f') ) {
                 this.input.consume();
 
@@ -3917,8 +3917,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start OctalDigit
     mOctalDigit: function()  {
         try {
-            // res/ECMAScript3Ext.g:1136:2: ( '0' .. '7' )
-            // res/ECMAScript3Ext.g:1136:4: '0' .. '7'
+            // ECMAScript3Ext.g:1136:2: ( '0' .. '7' )
+            // ECMAScript3Ext.g:1136:4: '0' .. '7'
             this.matchRange('0','7'); 
 
 
@@ -3932,8 +3932,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start BinaryDigit
     mBinaryDigit: function()  {
         try {
-            // res/ECMAScript3Ext.g:1140:2: ( '0' | '1' )
-            // res/ECMAScript3Ext.g:
+            // ECMAScript3Ext.g:1140:2: ( '0' | '1' )
+            // ECMAScript3Ext.g:
             if ( (this.input.LA(1)>='0' && this.input.LA(1)<='1') ) {
                 this.input.consume();
 
@@ -3955,8 +3955,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start ExponentPart
     mExponentPart: function()  {
         try {
-            // res/ECMAScript3Ext.g:1144:2: ( ( 'e' | 'E' ) ( '+' | '-' )? ( DecimalDigit )+ )
-            // res/ECMAScript3Ext.g:1144:4: ( 'e' | 'E' ) ( '+' | '-' )? ( DecimalDigit )+
+            // ECMAScript3Ext.g:1144:2: ( ( 'e' | 'E' ) ( '+' | '-' )? ( DecimalDigit )+ )
+            // ECMAScript3Ext.g:1144:4: ( 'e' | 'E' ) ( '+' | '-' )? ( DecimalDigit )+
             if ( this.input.LA(1)=='E'||this.input.LA(1)=='e' ) {
                 this.input.consume();
 
@@ -3966,7 +3966,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
                 this.recover(mse);
                 throw mse;}
 
-            // res/ECMAScript3Ext.g:1144:18: ( '+' | '-' )?
+            // ECMAScript3Ext.g:1144:18: ( '+' | '-' )?
             var alt10=2;
             var LA10_0 = this.input.LA(1);
 
@@ -3975,7 +3975,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt10) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:
+                    // ECMAScript3Ext.g:
                     if ( this.input.LA(1)=='+'||this.input.LA(1)=='-' ) {
                         this.input.consume();
 
@@ -3991,7 +3991,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
             }
 
-            // res/ECMAScript3Ext.g:1144:33: ( DecimalDigit )+
+            // ECMAScript3Ext.g:1144:33: ( DecimalDigit )+
             var cnt11=0;
             loop11:
             do {
@@ -4005,7 +4005,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt11) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1144:33: DecimalDigit
+                    // ECMAScript3Ext.g:1144:33: DecimalDigit
                     this.mDecimalDigit(); 
 
 
@@ -4033,7 +4033,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start DecimalIntegerLiteralWithoutLeadingZero
     mDecimalIntegerLiteralWithoutLeadingZero: function()  {
         try {
-            // res/ECMAScript3Ext.g:1148:2: ( '0' | '1' .. '9' ( DecimalDigit )* )
+            // ECMAScript3Ext.g:1148:2: ( '0' | '1' .. '9' ( DecimalDigit )* )
             var alt13=2;
             var LA13_0 = this.input.LA(1);
 
@@ -4051,15 +4051,15 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt13) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1148:4: '0'
+                    // ECMAScript3Ext.g:1148:4: '0'
                     this.match('0'); 
 
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1149:4: '1' .. '9' ( DecimalDigit )*
+                    // ECMAScript3Ext.g:1149:4: '1' .. '9' ( DecimalDigit )*
                     this.matchRange('1','9'); 
-                    // res/ECMAScript3Ext.g:1149:13: ( DecimalDigit )*
+                    // ECMAScript3Ext.g:1149:13: ( DecimalDigit )*
                     loop12:
                     do {
                         var alt12=2;
@@ -4072,7 +4072,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                         switch (alt12) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1149:13: DecimalDigit
+                            // ECMAScript3Ext.g:1149:13: DecimalDigit
                             this.mDecimalDigit(); 
 
 
@@ -4097,9 +4097,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start DecimalIntegerLiteral
     mDecimalIntegerLiteral: function()  {
         try {
-            // res/ECMAScript3Ext.g:1153:2: ( ( DecimalDigit )+ )
-            // res/ECMAScript3Ext.g:1153:4: ( DecimalDigit )+
-            // res/ECMAScript3Ext.g:1153:4: ( DecimalDigit )+
+            // ECMAScript3Ext.g:1153:2: ( ( DecimalDigit )+ )
+            // ECMAScript3Ext.g:1153:4: ( DecimalDigit )+
+            // ECMAScript3Ext.g:1153:4: ( DecimalDigit )+
             var cnt14=0;
             loop14:
             do {
@@ -4113,7 +4113,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt14) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1153:4: DecimalDigit
+                    // ECMAScript3Ext.g:1153:4: DecimalDigit
                     this.mDecimalDigit(); 
 
 
@@ -4143,15 +4143,15 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.DecimalLiteral;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:1157:2: ( DecimalIntegerLiteral '.' ( DecimalDigit )* ( ExponentPart )? | '.' ( DecimalDigit )+ ( ExponentPart )? | DecimalIntegerLiteral ( ExponentPart )? )
+            // ECMAScript3Ext.g:1157:2: ( DecimalIntegerLiteral '.' ( DecimalDigit )* ( ExponentPart )? | '.' ( DecimalDigit )+ ( ExponentPart )? | DecimalIntegerLiteral ( ExponentPart )? )
             var alt20=3;
             alt20 = this.dfa20.predict(this.input);
             switch (alt20) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1157:4: DecimalIntegerLiteral '.' ( DecimalDigit )* ( ExponentPart )?
+                    // ECMAScript3Ext.g:1157:4: DecimalIntegerLiteral '.' ( DecimalDigit )* ( ExponentPart )?
                     this.mDecimalIntegerLiteral(); 
                     this.match('.'); 
-                    // res/ECMAScript3Ext.g:1157:30: ( DecimalDigit )*
+                    // ECMAScript3Ext.g:1157:30: ( DecimalDigit )*
                     loop15:
                     do {
                         var alt15=2;
@@ -4164,7 +4164,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                         switch (alt15) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1157:30: DecimalDigit
+                            // ECMAScript3Ext.g:1157:30: DecimalDigit
                             this.mDecimalDigit(); 
 
 
@@ -4175,7 +4175,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
                         }
                     } while (true);
 
-                    // res/ECMAScript3Ext.g:1157:44: ( ExponentPart )?
+                    // ECMAScript3Ext.g:1157:44: ( ExponentPart )?
                     var alt16=2;
                     var LA16_0 = this.input.LA(1);
 
@@ -4184,7 +4184,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
                     }
                     switch (alt16) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1157:44: ExponentPart
+                            // ECMAScript3Ext.g:1157:44: ExponentPart
                             this.mExponentPart(); 
 
 
@@ -4196,9 +4196,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1158:4: '.' ( DecimalDigit )+ ( ExponentPart )?
+                    // ECMAScript3Ext.g:1158:4: '.' ( DecimalDigit )+ ( ExponentPart )?
                     this.match('.'); 
-                    // res/ECMAScript3Ext.g:1158:8: ( DecimalDigit )+
+                    // ECMAScript3Ext.g:1158:8: ( DecimalDigit )+
                     var cnt17=0;
                     loop17:
                     do {
@@ -4212,7 +4212,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                         switch (alt17) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1158:8: DecimalDigit
+                            // ECMAScript3Ext.g:1158:8: DecimalDigit
                             this.mDecimalDigit(); 
 
 
@@ -4228,7 +4228,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
                         cnt17++;
                     } while (true);
 
-                    // res/ECMAScript3Ext.g:1158:22: ( ExponentPart )?
+                    // ECMAScript3Ext.g:1158:22: ( ExponentPart )?
                     var alt18=2;
                     var LA18_0 = this.input.LA(1);
 
@@ -4237,7 +4237,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
                     }
                     switch (alt18) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1158:22: ExponentPart
+                            // ECMAScript3Ext.g:1158:22: ExponentPart
                             this.mExponentPart(); 
 
 
@@ -4249,9 +4249,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1159:4: DecimalIntegerLiteral ( ExponentPart )?
+                    // ECMAScript3Ext.g:1159:4: DecimalIntegerLiteral ( ExponentPart )?
                     this.mDecimalIntegerLiteral(); 
-                    // res/ECMAScript3Ext.g:1159:26: ( ExponentPart )?
+                    // ECMAScript3Ext.g:1159:26: ( ExponentPart )?
                     var alt19=2;
                     var LA19_0 = this.input.LA(1);
 
@@ -4260,7 +4260,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
                     }
                     switch (alt19) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1159:26: ExponentPart
+                            // ECMAScript3Ext.g:1159:26: ExponentPart
                             this.mExponentPart(); 
 
 
@@ -4286,9 +4286,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.OctalIntegerLiteral;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:1163:2: ( ( '0o' | '0O' ) ( OctalDigit )+ )
-            // res/ECMAScript3Ext.g:1163:4: ( '0o' | '0O' ) ( OctalDigit )+
-            // res/ECMAScript3Ext.g:1163:4: ( '0o' | '0O' )
+            // ECMAScript3Ext.g:1163:2: ( ( '0o' | '0O' ) ( OctalDigit )+ )
+            // ECMAScript3Ext.g:1163:4: ( '0o' | '0O' ) ( OctalDigit )+
+            // ECMAScript3Ext.g:1163:4: ( '0o' | '0O' )
             var alt21=2;
             var LA21_0 = this.input.LA(1);
 
@@ -4316,14 +4316,14 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt21) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1163:6: '0o'
+                    // ECMAScript3Ext.g:1163:6: '0o'
                     this.match("0o"); 
 
 
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1163:13: '0O'
+                    // ECMAScript3Ext.g:1163:13: '0O'
                     this.match("0O"); 
 
 
@@ -4332,7 +4332,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
             }
 
-            // res/ECMAScript3Ext.g:1163:20: ( OctalDigit )+
+            // ECMAScript3Ext.g:1163:20: ( OctalDigit )+
             var cnt22=0;
             loop22:
             do {
@@ -4346,7 +4346,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt22) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1163:20: OctalDigit
+                    // ECMAScript3Ext.g:1163:20: OctalDigit
                     this.mOctalDigit(); 
 
 
@@ -4378,9 +4378,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.BinaryIntegerLiteral;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:1167:2: ( ( '0b' | '0B' ) ( BinaryDigit )+ )
-            // res/ECMAScript3Ext.g:1167:4: ( '0b' | '0B' ) ( BinaryDigit )+
-            // res/ECMAScript3Ext.g:1167:4: ( '0b' | '0B' )
+            // ECMAScript3Ext.g:1167:2: ( ( '0b' | '0B' ) ( BinaryDigit )+ )
+            // ECMAScript3Ext.g:1167:4: ( '0b' | '0B' ) ( BinaryDigit )+
+            // ECMAScript3Ext.g:1167:4: ( '0b' | '0B' )
             var alt23=2;
             var LA23_0 = this.input.LA(1);
 
@@ -4408,14 +4408,14 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt23) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1167:6: '0b'
+                    // ECMAScript3Ext.g:1167:6: '0b'
                     this.match("0b"); 
 
 
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1167:13: '0B'
+                    // ECMAScript3Ext.g:1167:13: '0B'
                     this.match("0B"); 
 
 
@@ -4424,7 +4424,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
             }
 
-            // res/ECMAScript3Ext.g:1167:20: ( BinaryDigit )+
+            // ECMAScript3Ext.g:1167:20: ( BinaryDigit )+
             var cnt24=0;
             loop24:
             do {
@@ -4438,7 +4438,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt24) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1167:20: BinaryDigit
+                    // ECMAScript3Ext.g:1167:20: BinaryDigit
                     this.mBinaryDigit(); 
 
 
@@ -4470,9 +4470,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.HexIntegerLiteral;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:1171:2: ( ( '0x' | '0X' ) ( HexDigit )+ )
-            // res/ECMAScript3Ext.g:1171:4: ( '0x' | '0X' ) ( HexDigit )+
-            // res/ECMAScript3Ext.g:1171:4: ( '0x' | '0X' )
+            // ECMAScript3Ext.g:1171:2: ( ( '0x' | '0X' ) ( HexDigit )+ )
+            // ECMAScript3Ext.g:1171:4: ( '0x' | '0X' ) ( HexDigit )+
+            // ECMAScript3Ext.g:1171:4: ( '0x' | '0X' )
             var alt25=2;
             var LA25_0 = this.input.LA(1);
 
@@ -4500,14 +4500,14 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt25) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1171:6: '0x'
+                    // ECMAScript3Ext.g:1171:6: '0x'
                     this.match("0x"); 
 
 
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1171:13: '0X'
+                    // ECMAScript3Ext.g:1171:13: '0X'
                     this.match("0X"); 
 
 
@@ -4516,7 +4516,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
             }
 
-            // res/ECMAScript3Ext.g:1171:20: ( HexDigit )+
+            // ECMAScript3Ext.g:1171:20: ( HexDigit )+
             var cnt26=0;
             loop26:
             do {
@@ -4530,7 +4530,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt26) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1171:20: HexDigit
+                    // ECMAScript3Ext.g:1171:20: HexDigit
                     this.mHexDigit(); 
 
 
@@ -4560,8 +4560,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start CharacterEscapeSequence
     mCharacterEscapeSequence: function()  {
         try {
-            // res/ECMAScript3Ext.g:1191:2: (~ ( DecimalDigit | 'x' | 'u' | LineTerminator ) )
-            // res/ECMAScript3Ext.g:1191:4: ~ ( DecimalDigit | 'x' | 'u' | LineTerminator )
+            // ECMAScript3Ext.g:1191:2: (~ ( DecimalDigit | 'x' | 'u' | LineTerminator ) )
+            // ECMAScript3Ext.g:1191:4: ~ ( DecimalDigit | 'x' | 'u' | LineTerminator )
             if ( (this.input.LA(1)>='\u0000' && this.input.LA(1)<='\t')||(this.input.LA(1)>='\u000B' && this.input.LA(1)<='\f')||(this.input.LA(1)>='\u000E' && this.input.LA(1)<='/')||(this.input.LA(1)>=':' && this.input.LA(1)<='t')||(this.input.LA(1)>='v' && this.input.LA(1)<='w')||(this.input.LA(1)>='y' && this.input.LA(1)<='\u2027')||(this.input.LA(1)>='\u202A' && this.input.LA(1)<='\uFFFF') ) {
                 this.input.consume();
 
@@ -4583,8 +4583,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start ZeroToThree
     mZeroToThree: function()  {
         try {
-            // res/ECMAScript3Ext.g:1195:2: ( '0' .. '3' )
-            // res/ECMAScript3Ext.g:1195:4: '0' .. '3'
+            // ECMAScript3Ext.g:1195:2: ( '0' .. '3' )
+            // ECMAScript3Ext.g:1195:4: '0' .. '3'
             this.matchRange('0','3'); 
 
 
@@ -4598,7 +4598,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start OctalEscapeSequence
     mOctalEscapeSequence: function()  {
         try {
-            // res/ECMAScript3Ext.g:1199:2: ( OctalDigit | ZeroToThree OctalDigit | '4' .. '7' OctalDigit | ZeroToThree OctalDigit OctalDigit )
+            // ECMAScript3Ext.g:1199:2: ( OctalDigit | ZeroToThree OctalDigit | '4' .. '7' OctalDigit | ZeroToThree OctalDigit OctalDigit )
             var alt27=4;
             var LA27_0 = this.input.LA(1);
 
@@ -4634,27 +4634,27 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt27) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1199:4: OctalDigit
+                    // ECMAScript3Ext.g:1199:4: OctalDigit
                     this.mOctalDigit(); 
 
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1200:4: ZeroToThree OctalDigit
+                    // ECMAScript3Ext.g:1200:4: ZeroToThree OctalDigit
                     this.mZeroToThree(); 
                     this.mOctalDigit(); 
 
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1201:4: '4' .. '7' OctalDigit
+                    // ECMAScript3Ext.g:1201:4: '4' .. '7' OctalDigit
                     this.matchRange('4','7'); 
                     this.mOctalDigit(); 
 
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:1202:4: ZeroToThree OctalDigit OctalDigit
+                    // ECMAScript3Ext.g:1202:4: ZeroToThree OctalDigit OctalDigit
                     this.mZeroToThree(); 
                     this.mOctalDigit(); 
                     this.mOctalDigit(); 
@@ -4672,8 +4672,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start HexEscapeSequence
     mHexEscapeSequence: function()  {
         try {
-            // res/ECMAScript3Ext.g:1206:2: ( 'x' HexDigit HexDigit )
-            // res/ECMAScript3Ext.g:1206:4: 'x' HexDigit HexDigit
+            // ECMAScript3Ext.g:1206:2: ( 'x' HexDigit HexDigit )
+            // ECMAScript3Ext.g:1206:4: 'x' HexDigit HexDigit
             this.match('x'); 
             this.mHexDigit(); 
             this.mHexDigit(); 
@@ -4689,8 +4689,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start UnicodeEscapeSequence
     mUnicodeEscapeSequence: function()  {
         try {
-            // res/ECMAScript3Ext.g:1210:2: ( 'u' HexDigit HexDigit HexDigit HexDigit )
-            // res/ECMAScript3Ext.g:1210:4: 'u' HexDigit HexDigit HexDigit HexDigit
+            // ECMAScript3Ext.g:1210:2: ( 'u' HexDigit HexDigit HexDigit HexDigit )
+            // ECMAScript3Ext.g:1210:4: 'u' HexDigit HexDigit HexDigit HexDigit
             this.match('u'); 
             this.mHexDigit(); 
             this.mHexDigit(); 
@@ -4708,10 +4708,10 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start EscapeSequence
     mEscapeSequence: function()  {
         try {
-            // res/ECMAScript3Ext.g:1214:2: ( BSLASH ( CharacterEscapeSequence | OctalEscapeSequence | HexEscapeSequence | UnicodeEscapeSequence ) )
-            // res/ECMAScript3Ext.g:1215:2: BSLASH ( CharacterEscapeSequence | OctalEscapeSequence | HexEscapeSequence | UnicodeEscapeSequence )
+            // ECMAScript3Ext.g:1214:2: ( BSLASH ( CharacterEscapeSequence | OctalEscapeSequence | HexEscapeSequence | UnicodeEscapeSequence ) )
+            // ECMAScript3Ext.g:1215:2: BSLASH ( CharacterEscapeSequence | OctalEscapeSequence | HexEscapeSequence | UnicodeEscapeSequence )
             this.mBSLASH(); 
-            // res/ECMAScript3Ext.g:1216:2: ( CharacterEscapeSequence | OctalEscapeSequence | HexEscapeSequence | UnicodeEscapeSequence )
+            // ECMAScript3Ext.g:1216:2: ( CharacterEscapeSequence | OctalEscapeSequence | HexEscapeSequence | UnicodeEscapeSequence )
             var alt28=4;
             var LA28_0 = this.input.LA(1);
 
@@ -4735,25 +4735,25 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt28) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1217:3: CharacterEscapeSequence
+                    // ECMAScript3Ext.g:1217:3: CharacterEscapeSequence
                     this.mCharacterEscapeSequence(); 
 
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1218:5: OctalEscapeSequence
+                    // ECMAScript3Ext.g:1218:5: OctalEscapeSequence
                     this.mOctalEscapeSequence(); 
 
 
                     break;
                 case 3 :
-                    // res/ECMAScript3Ext.g:1219:5: HexEscapeSequence
+                    // ECMAScript3Ext.g:1219:5: HexEscapeSequence
                     this.mHexEscapeSequence(); 
 
 
                     break;
                 case 4 :
-                    // res/ECMAScript3Ext.g:1220:5: UnicodeEscapeSequence
+                    // ECMAScript3Ext.g:1220:5: UnicodeEscapeSequence
                     this.mUnicodeEscapeSequence(); 
 
 
@@ -4775,7 +4775,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.StringLiteral;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:1225:2: ( SQUOTE (~ ( SQUOTE | BSLASH | LineTerminator ) | EscapeSequence )* SQUOTE | DQUOTE (~ ( DQUOTE | BSLASH | LineTerminator ) | EscapeSequence )* DQUOTE )
+            // ECMAScript3Ext.g:1225:2: ( SQUOTE (~ ( SQUOTE | BSLASH | LineTerminator ) | EscapeSequence )* SQUOTE | DQUOTE (~ ( DQUOTE | BSLASH | LineTerminator ) | EscapeSequence )* DQUOTE )
             var alt31=2;
             var LA31_0 = this.input.LA(1);
 
@@ -4793,9 +4793,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt31) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1225:4: SQUOTE (~ ( SQUOTE | BSLASH | LineTerminator ) | EscapeSequence )* SQUOTE
+                    // ECMAScript3Ext.g:1225:4: SQUOTE (~ ( SQUOTE | BSLASH | LineTerminator ) | EscapeSequence )* SQUOTE
                     this.mSQUOTE(); 
-                    // res/ECMAScript3Ext.g:1225:11: (~ ( SQUOTE | BSLASH | LineTerminator ) | EscapeSequence )*
+                    // ECMAScript3Ext.g:1225:11: (~ ( SQUOTE | BSLASH | LineTerminator ) | EscapeSequence )*
                     loop29:
                     do {
                         var alt29=3;
@@ -4811,7 +4811,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                         switch (alt29) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1225:13: ~ ( SQUOTE | BSLASH | LineTerminator )
+                            // ECMAScript3Ext.g:1225:13: ~ ( SQUOTE | BSLASH | LineTerminator )
                             if ( (this.input.LA(1)>='\u0000' && this.input.LA(1)<='\t')||(this.input.LA(1)>='\u000B' && this.input.LA(1)<='\f')||(this.input.LA(1)>='\u000E' && this.input.LA(1)<='&')||(this.input.LA(1)>='(' && this.input.LA(1)<='[')||(this.input.LA(1)>=']' && this.input.LA(1)<='\u2027')||(this.input.LA(1)>='\u202A' && this.input.LA(1)<='\uFFFF') ) {
                                 this.input.consume();
 
@@ -4825,7 +4825,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                             break;
                         case 2 :
-                            // res/ECMAScript3Ext.g:1225:53: EscapeSequence
+                            // ECMAScript3Ext.g:1225:53: EscapeSequence
                             this.mEscapeSequence(); 
 
 
@@ -4841,9 +4841,9 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1226:4: DQUOTE (~ ( DQUOTE | BSLASH | LineTerminator ) | EscapeSequence )* DQUOTE
+                    // ECMAScript3Ext.g:1226:4: DQUOTE (~ ( DQUOTE | BSLASH | LineTerminator ) | EscapeSequence )* DQUOTE
                     this.mDQUOTE(); 
-                    // res/ECMAScript3Ext.g:1226:11: (~ ( DQUOTE | BSLASH | LineTerminator ) | EscapeSequence )*
+                    // ECMAScript3Ext.g:1226:11: (~ ( DQUOTE | BSLASH | LineTerminator ) | EscapeSequence )*
                     loop30:
                     do {
                         var alt30=3;
@@ -4859,7 +4859,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                         switch (alt30) {
                         case 1 :
-                            // res/ECMAScript3Ext.g:1226:13: ~ ( DQUOTE | BSLASH | LineTerminator )
+                            // ECMAScript3Ext.g:1226:13: ~ ( DQUOTE | BSLASH | LineTerminator )
                             if ( (this.input.LA(1)>='\u0000' && this.input.LA(1)<='\t')||(this.input.LA(1)>='\u000B' && this.input.LA(1)<='\f')||(this.input.LA(1)>='\u000E' && this.input.LA(1)<='!')||(this.input.LA(1)>='#' && this.input.LA(1)<='[')||(this.input.LA(1)>=']' && this.input.LA(1)<='\u2027')||(this.input.LA(1)>='\u202A' && this.input.LA(1)<='\uFFFF') ) {
                                 this.input.consume();
 
@@ -4873,7 +4873,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                             break;
                         case 2 :
-                            // res/ECMAScript3Ext.g:1226:53: EscapeSequence
+                            // ECMAScript3Ext.g:1226:53: EscapeSequence
                             this.mEscapeSequence(); 
 
 
@@ -4901,8 +4901,8 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start BackslashSequence
     mBackslashSequence: function()  {
         try {
-            // res/ECMAScript3Ext.g:1234:2: ( BSLASH ~ ( LineTerminator ) )
-            // res/ECMAScript3Ext.g:1234:4: BSLASH ~ ( LineTerminator )
+            // ECMAScript3Ext.g:1234:2: ( BSLASH ~ ( LineTerminator ) )
+            // ECMAScript3Ext.g:1234:4: BSLASH ~ ( LineTerminator )
             this.mBSLASH(); 
             if ( (this.input.LA(1)>='\u0000' && this.input.LA(1)<='\t')||(this.input.LA(1)>='\u000B' && this.input.LA(1)<='\f')||(this.input.LA(1)>='\u000E' && this.input.LA(1)<='\u2027')||(this.input.LA(1)>='\u202A' && this.input.LA(1)<='\uFFFF') ) {
                 this.input.consume();
@@ -4925,7 +4925,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start RegularExpressionFirstChar
     mRegularExpressionFirstChar: function()  {
         try {
-            // res/ECMAScript3Ext.g:1238:2: (~ ( LineTerminator | MUL | BSLASH | DIV ) | BackslashSequence )
+            // ECMAScript3Ext.g:1238:2: (~ ( LineTerminator | MUL | BSLASH | DIV ) | BackslashSequence )
             var alt32=2;
             var LA32_0 = this.input.LA(1);
 
@@ -4943,7 +4943,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt32) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1238:4: ~ ( LineTerminator | MUL | BSLASH | DIV )
+                    // ECMAScript3Ext.g:1238:4: ~ ( LineTerminator | MUL | BSLASH | DIV )
                     if ( (this.input.LA(1)>='\u0000' && this.input.LA(1)<='\t')||(this.input.LA(1)>='\u000B' && this.input.LA(1)<='\f')||(this.input.LA(1)>='\u000E' && this.input.LA(1)<=')')||(this.input.LA(1)>='+' && this.input.LA(1)<='.')||(this.input.LA(1)>='0' && this.input.LA(1)<='[')||(this.input.LA(1)>=']' && this.input.LA(1)<='\u2027')||(this.input.LA(1)>='\u202A' && this.input.LA(1)<='\uFFFF') ) {
                         this.input.consume();
 
@@ -4957,7 +4957,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1239:4: BackslashSequence
+                    // ECMAScript3Ext.g:1239:4: BackslashSequence
                     this.mBackslashSequence(); 
 
 
@@ -4973,7 +4973,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR start RegularExpressionChar
     mRegularExpressionChar: function()  {
         try {
-            // res/ECMAScript3Ext.g:1243:2: (~ ( LineTerminator | BSLASH | DIV ) | BackslashSequence )
+            // ECMAScript3Ext.g:1243:2: (~ ( LineTerminator | BSLASH | DIV ) | BackslashSequence )
             var alt33=2;
             var LA33_0 = this.input.LA(1);
 
@@ -4991,7 +4991,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             }
             switch (alt33) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1243:4: ~ ( LineTerminator | BSLASH | DIV )
+                    // ECMAScript3Ext.g:1243:4: ~ ( LineTerminator | BSLASH | DIV )
                     if ( (this.input.LA(1)>='\u0000' && this.input.LA(1)<='\t')||(this.input.LA(1)>='\u000B' && this.input.LA(1)<='\f')||(this.input.LA(1)>='\u000E' && this.input.LA(1)<='.')||(this.input.LA(1)>='0' && this.input.LA(1)<='[')||(this.input.LA(1)>=']' && this.input.LA(1)<='\u2027')||(this.input.LA(1)>='\u202A' && this.input.LA(1)<='\uFFFF') ) {
                         this.input.consume();
 
@@ -5005,7 +5005,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                     break;
                 case 2 :
-                    // res/ECMAScript3Ext.g:1244:4: BackslashSequence
+                    // ECMAScript3Ext.g:1244:4: BackslashSequence
                     this.mBackslashSequence(); 
 
 
@@ -5023,14 +5023,14 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
         try {
             var _type = this.RegularExpressionLiteral;
             var _channel = org.antlr.runtime.BaseRecognizer.DEFAULT_TOKEN_CHANNEL;
-            // res/ECMAScript3Ext.g:1248:2: ({...}? => DIV RegularExpressionFirstChar ( RegularExpressionChar )* DIV ( IdentifierPart )* )
-            // res/ECMAScript3Ext.g:1248:4: {...}? => DIV RegularExpressionFirstChar ( RegularExpressionChar )* DIV ( IdentifierPart )*
+            // ECMAScript3Ext.g:1248:2: ({...}? => DIV RegularExpressionFirstChar ( RegularExpressionChar )* DIV ( IdentifierPart )* )
+            // ECMAScript3Ext.g:1248:4: {...}? => DIV RegularExpressionFirstChar ( RegularExpressionChar )* DIV ( IdentifierPart )*
             if ( !(( this.areRegularExpressionsEnabled() )) ) {
                 throw new org.antlr.runtime.FailedPredicateException(this.input, "RegularExpressionLiteral", " this.areRegularExpressionsEnabled() ");
             }
             this.mDIV(); 
             this.mRegularExpressionFirstChar(); 
-            // res/ECMAScript3Ext.g:1248:78: ( RegularExpressionChar )*
+            // ECMAScript3Ext.g:1248:78: ( RegularExpressionChar )*
             loop34:
             do {
                 var alt34=2;
@@ -5043,7 +5043,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt34) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1248:78: RegularExpressionChar
+                    // ECMAScript3Ext.g:1248:78: RegularExpressionChar
                     this.mRegularExpressionChar(); 
 
 
@@ -5055,7 +5055,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
             } while (true);
 
             this.mDIV(); 
-            // res/ECMAScript3Ext.g:1248:105: ( IdentifierPart )*
+            // ECMAScript3Ext.g:1248:105: ( IdentifierPart )*
             loop35:
             do {
                 var alt35=2;
@@ -5071,7 +5071,7 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
 
                 switch (alt35) {
                 case 1 :
-                    // res/ECMAScript3Ext.g:1248:105: IdentifierPart
+                    // ECMAScript3Ext.g:1248:105: IdentifierPart
                     this.mIdentifierPart(); 
 
 
@@ -5094,738 +5094,738 @@ org.antlr.lang.augmentObject(ECMAScript3ExtLexer.prototype, {
     // $ANTLR end "RegularExpressionLiteral",
 
     mTokens: function() {
-        // res/ECMAScript3Ext.g:1:8: ( NULL | TRUE | FALSE | BREAK | CASE | CATCH | CONTINUE | DEFAULT | DELETE | DO | ELSE | FINALLY | FOR | FUNCTION | IF | IN | INSTANCEOF | NEW | RETURN | SWITCH | THIS | THROW | TRY | TYPEOF | VAR | VOID | WHILE | WITH | ABSTRACT | BOOLEAN | BYTE | CHAR | CLASS | CONST | DEBUGGER | DOUBLE | ENUM | EXPORT | EXTENDS | FINAL | FLOAT | GOTO | IMPLEMENTS | IMPORT | INT | INTERFACE | LONG | NATIVE | PACKAGE | PRIVATE | PROTECTED | PUBLIC | SHORT | STATIC | SUPER | SYNCHRONIZED | THROWS | TRANSIENT | VOLATILE | LBRACE | RBRACE | LPAREN | RPAREN | LBRACK | RBRACK | DOT | SEMIC | COMMA | LT | GT | LTE | GTE | EQ | NEQ | SAME | NSAME | ADD | SUB | MUL | MOD | INC | DEC | SHL | SHR | SHU | AND | OR | NOT | INV | LAND | LOR | QUE | COLON | ASSIGN | ADDASS | SUBASS | MULASS | MODASS | SHLASS | SHRASS | SHUASS | ANDASS | ORASS | DIV | DIVASS | POW | POWASS | CARET | CARETASS | XOR | XORASS | WhiteSpace | EOL | MultiLineComment | SingleLineComment | Identifier | DecimalLiteral | OctalIntegerLiteral | BinaryIntegerLiteral | HexIntegerLiteral | StringLiteral | RegularExpressionLiteral )
+        // ECMAScript3Ext.g:1:8: ( NULL | TRUE | FALSE | BREAK | CASE | CATCH | CONTINUE | DEFAULT | DELETE | DO | ELSE | FINALLY | FOR | FUNCTION | IF | IN | INSTANCEOF | NEW | RETURN | SWITCH | THIS | THROW | TRY | TYPEOF | VAR | VOID | WHILE | WITH | ABSTRACT | BOOLEAN | BYTE | CHAR | CLASS | CONST | DEBUGGER | DOUBLE | ENUM | EXPORT | EXTENDS | FINAL | FLOAT | GOTO | IMPLEMENTS | IMPORT | INT | INTERFACE | LONG | NATIVE | PACKAGE | PRIVATE | PROTECTED | PUBLIC | SHORT | STATIC | SUPER | SYNCHRONIZED | THROWS | TRANSIENT | VOLATILE | LBRACE | RBRACE | LPAREN | RPAREN | LBRACK | RBRACK | DOT | SEMIC | COMMA | LT | GT | LTE | GTE | EQ | NEQ | SAME | NSAME | ADD | SUB | MUL | MOD | INC | DEC | SHL | SHR | SHU | AND | OR | NOT | INV | LAND | LOR | QUE | COLON | ASSIGN | ADDASS | SUBASS | MULASS | MODASS | SHLASS | SHRASS | SHUASS | ANDASS | ORASS | DIV | DIVASS | POW | POWASS | CARET | CARETASS | XOR | XORASS | WhiteSpace | EOL | MultiLineComment | SingleLineComment | Identifier | DecimalLiteral | OctalIntegerLiteral | BinaryIntegerLiteral | HexIntegerLiteral | StringLiteral | RegularExpressionLiteral )
         var alt36=122;
         alt36 = this.dfa36.predict(this.input);
         switch (alt36) {
             case 1 :
-                // res/ECMAScript3Ext.g:1:10: NULL
+                // ECMAScript3Ext.g:1:10: NULL
                 this.mNULL(); 
 
 
                 break;
             case 2 :
-                // res/ECMAScript3Ext.g:1:15: TRUE
+                // ECMAScript3Ext.g:1:15: TRUE
                 this.mTRUE(); 
 
 
                 break;
             case 3 :
-                // res/ECMAScript3Ext.g:1:20: FALSE
+                // ECMAScript3Ext.g:1:20: FALSE
                 this.mFALSE(); 
 
 
                 break;
             case 4 :
-                // res/ECMAScript3Ext.g:1:26: BREAK
+                // ECMAScript3Ext.g:1:26: BREAK
                 this.mBREAK(); 
 
 
                 break;
             case 5 :
-                // res/ECMAScript3Ext.g:1:32: CASE
+                // ECMAScript3Ext.g:1:32: CASE
                 this.mCASE(); 
 
 
                 break;
             case 6 :
-                // res/ECMAScript3Ext.g:1:37: CATCH
+                // ECMAScript3Ext.g:1:37: CATCH
                 this.mCATCH(); 
 
 
                 break;
             case 7 :
-                // res/ECMAScript3Ext.g:1:43: CONTINUE
+                // ECMAScript3Ext.g:1:43: CONTINUE
                 this.mCONTINUE(); 
 
 
                 break;
             case 8 :
-                // res/ECMAScript3Ext.g:1:52: DEFAULT
+                // ECMAScript3Ext.g:1:52: DEFAULT
                 this.mDEFAULT(); 
 
 
                 break;
             case 9 :
-                // res/ECMAScript3Ext.g:1:60: DELETE
+                // ECMAScript3Ext.g:1:60: DELETE
                 this.mDELETE(); 
 
 
                 break;
             case 10 :
-                // res/ECMAScript3Ext.g:1:67: DO
+                // ECMAScript3Ext.g:1:67: DO
                 this.mDO(); 
 
 
                 break;
             case 11 :
-                // res/ECMAScript3Ext.g:1:70: ELSE
+                // ECMAScript3Ext.g:1:70: ELSE
                 this.mELSE(); 
 
 
                 break;
             case 12 :
-                // res/ECMAScript3Ext.g:1:75: FINALLY
+                // ECMAScript3Ext.g:1:75: FINALLY
                 this.mFINALLY(); 
 
 
                 break;
             case 13 :
-                // res/ECMAScript3Ext.g:1:83: FOR
+                // ECMAScript3Ext.g:1:83: FOR
                 this.mFOR(); 
 
 
                 break;
             case 14 :
-                // res/ECMAScript3Ext.g:1:87: FUNCTION
+                // ECMAScript3Ext.g:1:87: FUNCTION
                 this.mFUNCTION(); 
 
 
                 break;
             case 15 :
-                // res/ECMAScript3Ext.g:1:96: IF
+                // ECMAScript3Ext.g:1:96: IF
                 this.mIF(); 
 
 
                 break;
             case 16 :
-                // res/ECMAScript3Ext.g:1:99: IN
+                // ECMAScript3Ext.g:1:99: IN
                 this.mIN(); 
 
 
                 break;
             case 17 :
-                // res/ECMAScript3Ext.g:1:102: INSTANCEOF
+                // ECMAScript3Ext.g:1:102: INSTANCEOF
                 this.mINSTANCEOF(); 
 
 
                 break;
             case 18 :
-                // res/ECMAScript3Ext.g:1:113: NEW
+                // ECMAScript3Ext.g:1:113: NEW
                 this.mNEW(); 
 
 
                 break;
             case 19 :
-                // res/ECMAScript3Ext.g:1:117: RETURN
+                // ECMAScript3Ext.g:1:117: RETURN
                 this.mRETURN(); 
 
 
                 break;
             case 20 :
-                // res/ECMAScript3Ext.g:1:124: SWITCH
+                // ECMAScript3Ext.g:1:124: SWITCH
                 this.mSWITCH(); 
 
 
                 break;
             case 21 :
-                // res/ECMAScript3Ext.g:1:131: THIS
+                // ECMAScript3Ext.g:1:131: THIS
                 this.mTHIS(); 
 
 
                 break;
             case 22 :
-                // res/ECMAScript3Ext.g:1:136: THROW
+                // ECMAScript3Ext.g:1:136: THROW
                 this.mTHROW(); 
 
 
                 break;
             case 23 :
-                // res/ECMAScript3Ext.g:1:142: TRY
+                // ECMAScript3Ext.g:1:142: TRY
                 this.mTRY(); 
 
 
                 break;
             case 24 :
-                // res/ECMAScript3Ext.g:1:146: TYPEOF
+                // ECMAScript3Ext.g:1:146: TYPEOF
                 this.mTYPEOF(); 
 
 
                 break;
             case 25 :
-                // res/ECMAScript3Ext.g:1:153: VAR
+                // ECMAScript3Ext.g:1:153: VAR
                 this.mVAR(); 
 
 
                 break;
             case 26 :
-                // res/ECMAScript3Ext.g:1:157: VOID
+                // ECMAScript3Ext.g:1:157: VOID
                 this.mVOID(); 
 
 
                 break;
             case 27 :
-                // res/ECMAScript3Ext.g:1:162: WHILE
+                // ECMAScript3Ext.g:1:162: WHILE
                 this.mWHILE(); 
 
 
                 break;
             case 28 :
-                // res/ECMAScript3Ext.g:1:168: WITH
+                // ECMAScript3Ext.g:1:168: WITH
                 this.mWITH(); 
 
 
                 break;
             case 29 :
-                // res/ECMAScript3Ext.g:1:173: ABSTRACT
+                // ECMAScript3Ext.g:1:173: ABSTRACT
                 this.mABSTRACT(); 
 
 
                 break;
             case 30 :
-                // res/ECMAScript3Ext.g:1:182: BOOLEAN
+                // ECMAScript3Ext.g:1:182: BOOLEAN
                 this.mBOOLEAN(); 
 
 
                 break;
             case 31 :
-                // res/ECMAScript3Ext.g:1:190: BYTE
+                // ECMAScript3Ext.g:1:190: BYTE
                 this.mBYTE(); 
 
 
                 break;
             case 32 :
-                // res/ECMAScript3Ext.g:1:195: CHAR
+                // ECMAScript3Ext.g:1:195: CHAR
                 this.mCHAR(); 
 
 
                 break;
             case 33 :
-                // res/ECMAScript3Ext.g:1:200: CLASS
+                // ECMAScript3Ext.g:1:200: CLASS
                 this.mCLASS(); 
 
 
                 break;
             case 34 :
-                // res/ECMAScript3Ext.g:1:206: CONST
+                // ECMAScript3Ext.g:1:206: CONST
                 this.mCONST(); 
 
 
                 break;
             case 35 :
-                // res/ECMAScript3Ext.g:1:212: DEBUGGER
+                // ECMAScript3Ext.g:1:212: DEBUGGER
                 this.mDEBUGGER(); 
 
 
                 break;
             case 36 :
-                // res/ECMAScript3Ext.g:1:221: DOUBLE
+                // ECMAScript3Ext.g:1:221: DOUBLE
                 this.mDOUBLE(); 
 
 
                 break;
             case 37 :
-                // res/ECMAScript3Ext.g:1:228: ENUM
+                // ECMAScript3Ext.g:1:228: ENUM
                 this.mENUM(); 
 
 
                 break;
             case 38 :
-                // res/ECMAScript3Ext.g:1:233: EXPORT
+                // ECMAScript3Ext.g:1:233: EXPORT
                 this.mEXPORT(); 
 
 
                 break;
             case 39 :
-                // res/ECMAScript3Ext.g:1:240: EXTENDS
+                // ECMAScript3Ext.g:1:240: EXTENDS
                 this.mEXTENDS(); 
 
 
                 break;
             case 40 :
-                // res/ECMAScript3Ext.g:1:248: FINAL
+                // ECMAScript3Ext.g:1:248: FINAL
                 this.mFINAL(); 
 
 
                 break;
             case 41 :
-                // res/ECMAScript3Ext.g:1:254: FLOAT
+                // ECMAScript3Ext.g:1:254: FLOAT
                 this.mFLOAT(); 
 
 
                 break;
             case 42 :
-                // res/ECMAScript3Ext.g:1:260: GOTO
+                // ECMAScript3Ext.g:1:260: GOTO
                 this.mGOTO(); 
 
 
                 break;
             case 43 :
-                // res/ECMAScript3Ext.g:1:265: IMPLEMENTS
+                // ECMAScript3Ext.g:1:265: IMPLEMENTS
                 this.mIMPLEMENTS(); 
 
 
                 break;
             case 44 :
-                // res/ECMAScript3Ext.g:1:276: IMPORT
+                // ECMAScript3Ext.g:1:276: IMPORT
                 this.mIMPORT(); 
 
 
                 break;
             case 45 :
-                // res/ECMAScript3Ext.g:1:283: INT
+                // ECMAScript3Ext.g:1:283: INT
                 this.mINT(); 
 
 
                 break;
             case 46 :
-                // res/ECMAScript3Ext.g:1:287: INTERFACE
+                // ECMAScript3Ext.g:1:287: INTERFACE
                 this.mINTERFACE(); 
 
 
                 break;
             case 47 :
-                // res/ECMAScript3Ext.g:1:297: LONG
+                // ECMAScript3Ext.g:1:297: LONG
                 this.mLONG(); 
 
 
                 break;
             case 48 :
-                // res/ECMAScript3Ext.g:1:302: NATIVE
+                // ECMAScript3Ext.g:1:302: NATIVE
                 this.mNATIVE(); 
 
 
                 break;
             case 49 :
-                // res/ECMAScript3Ext.g:1:309: PACKAGE
+                // ECMAScript3Ext.g:1:309: PACKAGE
                 this.mPACKAGE(); 
 
 
                 break;
             case 50 :
-                // res/ECMAScript3Ext.g:1:317: PRIVATE
+                // ECMAScript3Ext.g:1:317: PRIVATE
                 this.mPRIVATE(); 
 
 
                 break;
             case 51 :
-                // res/ECMAScript3Ext.g:1:325: PROTECTED
+                // ECMAScript3Ext.g:1:325: PROTECTED
                 this.mPROTECTED(); 
 
 
                 break;
             case 52 :
-                // res/ECMAScript3Ext.g:1:335: PUBLIC
+                // ECMAScript3Ext.g:1:335: PUBLIC
                 this.mPUBLIC(); 
 
 
                 break;
             case 53 :
-                // res/ECMAScript3Ext.g:1:342: SHORT
+                // ECMAScript3Ext.g:1:342: SHORT
                 this.mSHORT(); 
 
 
                 break;
             case 54 :
-                // res/ECMAScript3Ext.g:1:348: STATIC
+                // ECMAScript3Ext.g:1:348: STATIC
                 this.mSTATIC(); 
 
 
                 break;
             case 55 :
-                // res/ECMAScript3Ext.g:1:355: SUPER
+                // ECMAScript3Ext.g:1:355: SUPER
                 this.mSUPER(); 
 
 
                 break;
             case 56 :
-                // res/ECMAScript3Ext.g:1:361: SYNCHRONIZED
+                // ECMAScript3Ext.g:1:361: SYNCHRONIZED
                 this.mSYNCHRONIZED(); 
 
 
                 break;
             case 57 :
-                // res/ECMAScript3Ext.g:1:374: THROWS
+                // ECMAScript3Ext.g:1:374: THROWS
                 this.mTHROWS(); 
 
 
                 break;
             case 58 :
-                // res/ECMAScript3Ext.g:1:381: TRANSIENT
+                // ECMAScript3Ext.g:1:381: TRANSIENT
                 this.mTRANSIENT(); 
 
 
                 break;
             case 59 :
-                // res/ECMAScript3Ext.g:1:391: VOLATILE
+                // ECMAScript3Ext.g:1:391: VOLATILE
                 this.mVOLATILE(); 
 
 
                 break;
             case 60 :
-                // res/ECMAScript3Ext.g:1:400: LBRACE
+                // ECMAScript3Ext.g:1:400: LBRACE
                 this.mLBRACE(); 
 
 
                 break;
             case 61 :
-                // res/ECMAScript3Ext.g:1:407: RBRACE
+                // ECMAScript3Ext.g:1:407: RBRACE
                 this.mRBRACE(); 
 
 
                 break;
             case 62 :
-                // res/ECMAScript3Ext.g:1:414: LPAREN
+                // ECMAScript3Ext.g:1:414: LPAREN
                 this.mLPAREN(); 
 
 
                 break;
             case 63 :
-                // res/ECMAScript3Ext.g:1:421: RPAREN
+                // ECMAScript3Ext.g:1:421: RPAREN
                 this.mRPAREN(); 
 
 
                 break;
             case 64 :
-                // res/ECMAScript3Ext.g:1:428: LBRACK
+                // ECMAScript3Ext.g:1:428: LBRACK
                 this.mLBRACK(); 
 
 
                 break;
             case 65 :
-                // res/ECMAScript3Ext.g:1:435: RBRACK
+                // ECMAScript3Ext.g:1:435: RBRACK
                 this.mRBRACK(); 
 
 
                 break;
             case 66 :
-                // res/ECMAScript3Ext.g:1:442: DOT
+                // ECMAScript3Ext.g:1:442: DOT
                 this.mDOT(); 
 
 
                 break;
             case 67 :
-                // res/ECMAScript3Ext.g:1:446: SEMIC
+                // ECMAScript3Ext.g:1:446: SEMIC
                 this.mSEMIC(); 
 
 
                 break;
             case 68 :
-                // res/ECMAScript3Ext.g:1:452: COMMA
+                // ECMAScript3Ext.g:1:452: COMMA
                 this.mCOMMA(); 
 
 
                 break;
             case 69 :
-                // res/ECMAScript3Ext.g:1:458: LT
+                // ECMAScript3Ext.g:1:458: LT
                 this.mLT(); 
 
 
                 break;
             case 70 :
-                // res/ECMAScript3Ext.g:1:461: GT
+                // ECMAScript3Ext.g:1:461: GT
                 this.mGT(); 
 
 
                 break;
             case 71 :
-                // res/ECMAScript3Ext.g:1:464: LTE
+                // ECMAScript3Ext.g:1:464: LTE
                 this.mLTE(); 
 
 
                 break;
             case 72 :
-                // res/ECMAScript3Ext.g:1:468: GTE
+                // ECMAScript3Ext.g:1:468: GTE
                 this.mGTE(); 
 
 
                 break;
             case 73 :
-                // res/ECMAScript3Ext.g:1:472: EQ
+                // ECMAScript3Ext.g:1:472: EQ
                 this.mEQ(); 
 
 
                 break;
             case 74 :
-                // res/ECMAScript3Ext.g:1:475: NEQ
+                // ECMAScript3Ext.g:1:475: NEQ
                 this.mNEQ(); 
 
 
                 break;
             case 75 :
-                // res/ECMAScript3Ext.g:1:479: SAME
+                // ECMAScript3Ext.g:1:479: SAME
                 this.mSAME(); 
 
 
                 break;
             case 76 :
-                // res/ECMAScript3Ext.g:1:484: NSAME
+                // ECMAScript3Ext.g:1:484: NSAME
                 this.mNSAME(); 
 
 
                 break;
             case 77 :
-                // res/ECMAScript3Ext.g:1:490: ADD
+                // ECMAScript3Ext.g:1:490: ADD
                 this.mADD(); 
 
 
                 break;
             case 78 :
-                // res/ECMAScript3Ext.g:1:494: SUB
+                // ECMAScript3Ext.g:1:494: SUB
                 this.mSUB(); 
 
 
                 break;
             case 79 :
-                // res/ECMAScript3Ext.g:1:498: MUL
+                // ECMAScript3Ext.g:1:498: MUL
                 this.mMUL(); 
 
 
                 break;
             case 80 :
-                // res/ECMAScript3Ext.g:1:502: MOD
+                // ECMAScript3Ext.g:1:502: MOD
                 this.mMOD(); 
 
 
                 break;
             case 81 :
-                // res/ECMAScript3Ext.g:1:506: INC
+                // ECMAScript3Ext.g:1:506: INC
                 this.mINC(); 
 
 
                 break;
             case 82 :
-                // res/ECMAScript3Ext.g:1:510: DEC
+                // ECMAScript3Ext.g:1:510: DEC
                 this.mDEC(); 
 
 
                 break;
             case 83 :
-                // res/ECMAScript3Ext.g:1:514: SHL
+                // ECMAScript3Ext.g:1:514: SHL
                 this.mSHL(); 
 
 
                 break;
             case 84 :
-                // res/ECMAScript3Ext.g:1:518: SHR
+                // ECMAScript3Ext.g:1:518: SHR
                 this.mSHR(); 
 
 
                 break;
             case 85 :
-                // res/ECMAScript3Ext.g:1:522: SHU
+                // ECMAScript3Ext.g:1:522: SHU
                 this.mSHU(); 
 
 
                 break;
             case 86 :
-                // res/ECMAScript3Ext.g:1:526: AND
+                // ECMAScript3Ext.g:1:526: AND
                 this.mAND(); 
 
 
                 break;
             case 87 :
-                // res/ECMAScript3Ext.g:1:530: OR
+                // ECMAScript3Ext.g:1:530: OR
                 this.mOR(); 
 
 
                 break;
             case 88 :
-                // res/ECMAScript3Ext.g:1:533: NOT
+                // ECMAScript3Ext.g:1:533: NOT
                 this.mNOT(); 
 
 
                 break;
             case 89 :
-                // res/ECMAScript3Ext.g:1:537: INV
+                // ECMAScript3Ext.g:1:537: INV
                 this.mINV(); 
 
 
                 break;
             case 90 :
-                // res/ECMAScript3Ext.g:1:541: LAND
+                // ECMAScript3Ext.g:1:541: LAND
                 this.mLAND(); 
 
 
                 break;
             case 91 :
-                // res/ECMAScript3Ext.g:1:546: LOR
+                // ECMAScript3Ext.g:1:546: LOR
                 this.mLOR(); 
 
 
                 break;
             case 92 :
-                // res/ECMAScript3Ext.g:1:550: QUE
+                // ECMAScript3Ext.g:1:550: QUE
                 this.mQUE(); 
 
 
                 break;
             case 93 :
-                // res/ECMAScript3Ext.g:1:554: COLON
+                // ECMAScript3Ext.g:1:554: COLON
                 this.mCOLON(); 
 
 
                 break;
             case 94 :
-                // res/ECMAScript3Ext.g:1:560: ASSIGN
+                // ECMAScript3Ext.g:1:560: ASSIGN
                 this.mASSIGN(); 
 
 
                 break;
             case 95 :
-                // res/ECMAScript3Ext.g:1:567: ADDASS
+                // ECMAScript3Ext.g:1:567: ADDASS
                 this.mADDASS(); 
 
 
                 break;
             case 96 :
-                // res/ECMAScript3Ext.g:1:574: SUBASS
+                // ECMAScript3Ext.g:1:574: SUBASS
                 this.mSUBASS(); 
 
 
                 break;
             case 97 :
-                // res/ECMAScript3Ext.g:1:581: MULASS
+                // ECMAScript3Ext.g:1:581: MULASS
                 this.mMULASS(); 
 
 
                 break;
             case 98 :
-                // res/ECMAScript3Ext.g:1:588: MODASS
+                // ECMAScript3Ext.g:1:588: MODASS
                 this.mMODASS(); 
 
 
                 break;
             case 99 :
-                // res/ECMAScript3Ext.g:1:595: SHLASS
+                // ECMAScript3Ext.g:1:595: SHLASS
                 this.mSHLASS(); 
 
 
                 break;
             case 100 :
-                // res/ECMAScript3Ext.g:1:602: SHRASS
+                // ECMAScript3Ext.g:1:602: SHRASS
                 this.mSHRASS(); 
 
 
                 break;
             case 101 :
-                // res/ECMAScript3Ext.g:1:609: SHUASS
+                // ECMAScript3Ext.g:1:609: SHUASS
                 this.mSHUASS(); 
 
 
                 break;
             case 102 :
-                // res/ECMAScript3Ext.g:1:616: ANDASS
+                // ECMAScript3Ext.g:1:616: ANDASS
                 this.mANDASS(); 
 
 
                 break;
             case 103 :
-                // res/ECMAScript3Ext.g:1:623: ORASS
+                // ECMAScript3Ext.g:1:623: ORASS
                 this.mORASS(); 
 
 
                 break;
             case 104 :
-                // res/ECMAScript3Ext.g:1:629: DIV
+                // ECMAScript3Ext.g:1:629: DIV
                 this.mDIV(); 
 
 
                 break;
             case 105 :
-                // res/ECMAScript3Ext.g:1:633: DIVASS
+                // ECMAScript3Ext.g:1:633: DIVASS
                 this.mDIVASS(); 
 
 
                 break;
             case 106 :
-                // res/ECMAScript3Ext.g:1:640: POW
+                // ECMAScript3Ext.g:1:640: POW
                 this.mPOW(); 
 
 
                 break;
             case 107 :
-                // res/ECMAScript3Ext.g:1:644: POWASS
+                // ECMAScript3Ext.g:1:644: POWASS
                 this.mPOWASS(); 
 
 
                 break;
             case 108 :
-                // res/ECMAScript3Ext.g:1:651: CARET
+                // ECMAScript3Ext.g:1:651: CARET
                 this.mCARET(); 
 
 
                 break;
             case 109 :
-                // res/ECMAScript3Ext.g:1:657: CARETASS
+                // ECMAScript3Ext.g:1:657: CARETASS
                 this.mCARETASS(); 
 
 
                 break;
             case 110 :
-                // res/ECMAScript3Ext.g:1:666: XOR
+                // ECMAScript3Ext.g:1:666: XOR
                 this.mXOR(); 
 
 
                 break;
             case 111 :
-                // res/ECMAScript3Ext.g:1:670: XORASS
+                // ECMAScript3Ext.g:1:670: XORASS
                 this.mXORASS(); 
 
 
                 break;
             case 112 :
-                // res/ECMAScript3Ext.g:1:677: WhiteSpace
+                // ECMAScript3Ext.g:1:677: WhiteSpace
                 this.mWhiteSpace(); 
 
 
                 break;
             case 113 :
-                // res/ECMAScript3Ext.g:1:688: EOL
+                // ECMAScript3Ext.g:1:688: EOL
                 this.mEOL(); 
 
 
                 break;
             case 114 :
-                // res/ECMAScript3Ext.g:1:692: MultiLineComment
+                // ECMAScript3Ext.g:1:692: MultiLineComment
                 this.mMultiLineComment(); 
 
 
                 break;
             case 115 :
-                // res/ECMAScript3Ext.g:1:709: SingleLineComment
+                // ECMAScript3Ext.g:1:709: SingleLineComment
                 this.mSingleLineComment(); 
 
 
                 break;
             case 116 :
-                // res/ECMAScript3Ext.g:1:727: Identifier
+                // ECMAScript3Ext.g:1:727: Identifier
                 this.mIdentifier(); 
 
 
                 break;
             case 117 :
-                // res/ECMAScript3Ext.g:1:738: DecimalLiteral
+                // ECMAScript3Ext.g:1:738: DecimalLiteral
                 this.mDecimalLiteral(); 
 
 
                 break;
             case 118 :
-                // res/ECMAScript3Ext.g:1:753: OctalIntegerLiteral
+                // ECMAScript3Ext.g:1:753: OctalIntegerLiteral
                 this.mOctalIntegerLiteral(); 
 
 
                 break;
             case 119 :
-                // res/ECMAScript3Ext.g:1:773: BinaryIntegerLiteral
+                // ECMAScript3Ext.g:1:773: BinaryIntegerLiteral
                 this.mBinaryIntegerLiteral(); 
 
 
                 break;
             case 120 :
-                // res/ECMAScript3Ext.g:1:794: HexIntegerLiteral
+                // ECMAScript3Ext.g:1:794: HexIntegerLiteral
                 this.mHexIntegerLiteral(); 
 
 
                 break;
             case 121 :
-                // res/ECMAScript3Ext.g:1:812: StringLiteral
+                // ECMAScript3Ext.g:1:812: StringLiteral
                 this.mStringLiteral(); 
 
 
                 break;
             case 122 :
-                // res/ECMAScript3Ext.g:1:826: RegularExpressionLiteral
+                // ECMAScript3Ext.g:1:826: RegularExpressionLiteral
                 this.mRegularExpressionLiteral(); 
 
 

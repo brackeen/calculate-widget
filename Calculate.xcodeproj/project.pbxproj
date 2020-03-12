@@ -32,6 +32,7 @@
 		E30E62FF2417EE45002EF546 /* FPError.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = FPError.js; sourceTree = "<group>"; };
 		E30E63002417EE45002EF546 /* Calc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Calc.js; sourceTree = "<group>"; };
 		E30E631324190F49002EF546 /* container-migration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "container-migration.plist"; sourceTree = "<group>"; };
+		E3198E6C241A73CD00A167C7 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		E321A0A72417C3A900D40474 /* Calculate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E321A0AA2417C3A900D40474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E321A0AC2417C3A900D40474 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				E30E62F72417E64A002EF546 /* README.md */,
+				E3198E6C241A73CD00A167C7 /* CHANGELOG.md */,
 				E30E62F82417EE45002EF546 /* js */,
 				E321A0A92417C3A900D40474 /* Calculate */,
 				E321A0A82417C3A900D40474 /* Products */,

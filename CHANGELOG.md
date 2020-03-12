@@ -1,11 +1,11 @@
-Version 1.2.2
+# Version 1.2.2 (December 17, 2015)
 - Minor update for Mac OS X 10.11 El Capitan (Use system font).
 
-Version 1.2.1
+# Version 1.2.1 (October 18, 2014)
 - Floating-point precision display tweaks.
 - Updates for Mac OS X 10.10 Yosemite (Use Helvetica Neue instead of Lucida Grande, other tweaks).
 
-Version 1.2
+# Version 1.2 (June 24, 2014)
 - Fixed floating-point precision for simple addition, subtraction, and 
   multiplication. For example, "0.1+0.2" is now "0.3" instead of 
   "0.30000000000000004".
@@ -15,7 +15,7 @@ Version 1.2
 - Minor bug fixes
 - Requires Safari 5 (Tested on Mac OS X Lion with Safari 5).
 
-Version 1.1.5 (Apr 15, 2010)
+# Version 1.1.5 (Apr 15, 2010)
 - Added power operator ^. Example: 2^8 == 256 (If you're a programmer, for xor use >< instead of ^)
 - Added factorial operator !. Example: 5! == 120
 - Added binary input. Example: '0b11011'
@@ -29,24 +29,24 @@ Version 1.1.5 (Apr 15, 2010)
 - Fixed persistence bug: object literals containing name-value pairs whose name
   wasn't an identifier
 
-Version 1.1.4 (Nov 25, 2008)
+# Version 1.1.4 (Nov 25, 2008)
 - Widget dimensions now persistent between sessions.
 - Object literals can now be used. For example: point = { x:0, y:6 }
 - Toolbar: Use C instead of X
 
-Version 1.1.3 (May 3, 2008)
+# Version 1.1.3 (May 3, 2008)
 - Fixed focus big introduced in 1.1.2
 
-Version 1.1.2 (May 1, 2008)
+# Version 1.1.2 (May 1, 2008)
 - Numpad: The clear key clears the input area
 - Numpad (International keyboards): the comma on the numpad is inserted as a period
   (tested on Safari 3.1, Leopard)
 - Code cleanup based on latest version of jslint
 
-Version 1.1.1 (Apr 2, 2008)
+# Version 1.1.1 (Apr 2, 2008)
 - Fixes for autocompletion when Safari 3.1 is installed.
 
-Version 1.1.0 (Feb 28, 2008)
+# Version 1.1.0 (Feb 28, 2008)
 - Added autocompletion of variables and functions names using the Tab key.
   For example, 1/an<TAB> autocompletes to 1/answer
 - Added several new functions (log2, log10, and many trig & hyperbolic functions)
@@ -55,8 +55,11 @@ Version 1.1.0 (Feb 28, 2008)
 - Added several shortcut keys.
 - Code cleanup based on Dustin Diaz's JavaScript work.
 
-Version 1.0.1 (October 31, 2007)
+# Version 1.0.1 (October 31, 2007)
 - Default text is now "1+1" instead of "Enter an expression"
 - Pi symbol is now set (type option-P to enter the pi character - Leopard only)
 - Fixed minor layout issues in Leopard
 - Widget now has a "back" with a "check version" link
+
+# Version 1.0.0 (April 27, 2007)
+- Initial release.

@@ -114,7 +114,7 @@ public class Calculate {
         evalulateScript("ECMAScript3ExtParser")
         evalulateScript("ECMAScript3ExtEmitter")
         evalulateScript("Util")
-        evalulateScript("Calc")
+        evalulateScript("Calculate")
                 
         migrateWidgetPreferences()
         loadPreferences()

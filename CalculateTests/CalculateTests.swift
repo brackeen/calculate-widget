@@ -19,8 +19,30 @@ class CalculateTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    private func calc(_ expression: String) {
+        _ = Calculate.shared.calc(expression, addToHistory: false)
+    }
+    
     private func testExpression(_ expression: String) -> Bool {
         return Calculate.shared.calc(expression, addToHistory: false) == "true"
+    }
+    
+    func testThis() {
+        XCTAssert(testExpression("this == globalThis"))
+    }
+    
+    func testAns() {
+        calc("42")
+        XCTAssert(testExpression("ans == 42"))
+    }
+    
+    func testConstants() {
+        XCTAssert(testExpression("(delete pi) == false"))
+        XCTAssert(testExpression("pi = 42; pi == π"))
+        XCTAssert(testExpression("testvar = Infinity; Infinity = 42; testvar == Infinity"))
+        XCTAssert(testExpression("testvar = undefined; undefined = 42; testvar == undefined"))
+        XCTAssert(testExpression("testvar = NaN; NaN = 42; isNaN(testvar)"))
+        XCTAssert(testExpression("delete testvar"))
     }
     
     func testExtensions() {

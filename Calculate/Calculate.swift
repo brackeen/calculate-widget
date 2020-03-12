@@ -35,7 +35,7 @@ public class Calculate {
         }
         inputHistoryIndex = inputHistory.count
         
-        let result = context.objectForKeyedSubscript("CalcWidget")?
+        let result = context.objectForKeyedSubscript("Calculate")?
             .objectForKeyedSubscript("Calc")?
             .objectForKeyedSubscript("calc")?
             .call(withArguments: [expression])
@@ -43,7 +43,7 @@ public class Calculate {
     }
     
     public func getUserVariables() -> [String] {
-        return context.objectForKeyedSubscript("CalcWidget")?
+        return context.objectForKeyedSubscript("Calculate")?
             .objectForKeyedSubscript("Calc")?
             .objectForKeyedSubscript("getUserVars")?
             .call(withArguments: [])?.toArray() as? [String] ?? []
@@ -73,7 +73,7 @@ public class Calculate {
     }
     
     public func getCompletions(prefix: String) -> [String] {
-        guard let possibleCompletions = context.objectForKeyedSubscript("CalcWidget")?
+        guard let possibleCompletions = context.objectForKeyedSubscript("Calculate")?
             .objectForKeyedSubscript("Calc")?
             .objectForKeyedSubscript("getPossibleCompletions")?
             .call(withArguments: [])?.toArray() as? [String] else {
@@ -88,7 +88,7 @@ public class Calculate {
     public func save() {
         if memoryNeedsSaving {
             memoryNeedsSaving = false
-            if let memory = context.objectForKeyedSubscript("CalcWidget")?
+            if let memory = context.objectForKeyedSubscript("Calculate")?
                 .objectForKeyedSubscript("Calc")?
                 .objectForKeyedSubscript("getMemory")?
                 .call(withArguments: [])?.toString() {
@@ -145,7 +145,7 @@ public class Calculate {
         angleMode = AngleMode(rawValue: UserDefaults.standard.integer(forKey: angleModeKey)) ?? .radians
         
         if let memory = UserDefaults.standard.string(forKey: memoryKey) {
-            context.objectForKeyedSubscript("CalcWidget")?
+            context.objectForKeyedSubscript("Calculate")?
                 .objectForKeyedSubscript("Calc")?
                 .objectForKeyedSubscript("applyExpression")?
                 .call(withArguments: [memory])
@@ -155,7 +155,7 @@ public class Calculate {
     private func updateAngleMode() {
         UserDefaults.standard.set(angleMode.rawValue, forKey: angleModeKey)
         
-        context.objectForKeyedSubscript("CalcWidget")?
+        context.objectForKeyedSubscript("Calculate")?
             .objectForKeyedSubscript("Calc")?
             .objectForKeyedSubscript("setAngleMode")?
             .call(withArguments: [angleMode.rawValue])

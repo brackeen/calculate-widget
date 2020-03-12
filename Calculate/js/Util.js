@@ -1,8 +1,8 @@
-if (typeof CalcWidget === "undefined" || !CalcWidget) {
-    var CalcWidget = {};
+if (typeof Calculate === "undefined" || !Calculate) {
+    var Calculate = {};
 }
 
-CalcWidget.valueToString = function(value) {
+Calculate.valueToString = function(value) {
     if (value === undefined) {
         value = "undefined";
     }
@@ -16,7 +16,7 @@ CalcWidget.valueToString = function(value) {
         value = Math.fixPrecision(value).toString();
     }
     else if (value instanceof Array) {
-        value = CalcWidget.arrayToString(value);
+        value = Calculate.arrayToString(value);
     }
     else if (typeof value === "string") {
         value = "\"" + value + "\"";
@@ -25,7 +25,7 @@ CalcWidget.valueToString = function(value) {
         value = value.toString();
     }
     else if (value.toString() === "[object Object]") {
-        value = CalcWidget.objectToString(value);
+        value = Calculate.objectToString(value);
     }
     else {
         value = "\"" + value.toString() + "\"";
@@ -33,10 +33,10 @@ CalcWidget.valueToString = function(value) {
     return value;
 };
 
-CalcWidget.arrayToString = function(a) {
+Calculate.arrayToString = function(a) {
     var s = "";
     for (var i = 0; i < a.length; i++) {
-        s += CalcWidget.valueToString(a[i]);
+        s += Calculate.valueToString(a[i]);
         if (i < a.length - 1) {
             s += ",";
         }
@@ -44,12 +44,12 @@ CalcWidget.arrayToString = function(a) {
     return "[" + s + "]";
 };
 
-CalcWidget.objectToString = function(obj) {
+Calculate.objectToString = function(obj) {
     var s = "";
     for (var i in obj) {
         if (obj.hasOwnProperty(i)) {
             if (obj[i] !== undefined) {
-                var value = CalcWidget.valueToString(obj[i]);
+                var value = Calculate.valueToString(obj[i]);
                 s += "\"" + i + "\": " + value + ", ";
             }
         }

@@ -1,13 +1,13 @@
-if (typeof CalcWidget === "undefined" || !CalcWidget) {
-    var CalcWidget = {};
+if (typeof Calculate === "undefined" || !Calculate) {
+    var Calculate = {};
 }
 
-CalcWidget.angleScale = 1
+Calculate.angleScale = 1
 
-CalcWidget.evaluate = function(__input__, ans) {
-    // Wrap in anonymous function so "this" is the global object, not CalcWidget
+Calculate.evaluate = function(__input__, ans) {
+    // Wrap in anonymous function so "this" is the global object, not Calculate
     return function() {
-       with (CalcWidget.Math) {
+       with (Calculate.Math) {
            return eval(__input__)
        }
     }();
@@ -16,7 +16,7 @@ CalcWidget.evaluate = function(__input__, ans) {
 /**
     Math functions.
 */
-CalcWidget.Math = Object.freeze({
+Calculate.Math = Object.freeze({
     // Constants
     \u03c0:   Math.PI,
     pi:       Math.PI,
@@ -50,35 +50,35 @@ CalcWidget.Math = Object.freeze({
     log2:     function(x) {return Math.log(x) / Math.log(2);},
 
     // Trig
-    cos:      function(x) {x *= CalcWidget.angleScale;return Math.cos(x);},
-    sin:      function(x) {x *= CalcWidget.angleScale;return Math.sin(x);},
-    tan:      function(x) {x *= CalcWidget.angleScale;return Math.tan(x);},
-    cot:      function(x) {x *= CalcWidget.angleScale;return 1/Math.tan(x);},
-    sec:      function(x) {x *= CalcWidget.angleScale;return 1/Math.cos(x);},
-    csc:      function(x) {x *= CalcWidget.angleScale;return 1/Math.sin(x);},
+    cos:      function(x) {x *= Calculate.angleScale;return Math.cos(x);},
+    sin:      function(x) {x *= Calculate.angleScale;return Math.sin(x);},
+    tan:      function(x) {x *= Calculate.angleScale;return Math.tan(x);},
+    cot:      function(x) {x *= Calculate.angleScale;return 1/Math.tan(x);},
+    sec:      function(x) {x *= Calculate.angleScale;return 1/Math.cos(x);},
+    csc:      function(x) {x *= Calculate.angleScale;return 1/Math.sin(x);},
 
-    acos:     function(x) {return Math.acos(x) / CalcWidget.angleScale;},
-    asin:     function(x) {return Math.asin(x) / CalcWidget.angleScale;},
-    atan:     function(x) {return Math.atan(x) / CalcWidget.angleScale;},
-    atan2:    function(x,y) {return Math.atan2(x,y) / CalcWidget.angleScale;},
-    acot:     function(x) {return Math.atan(1/x) / CalcWidget.angleScale;},
-    asec:     function(x) {return Math.acos(1/x) / CalcWidget.angleScale;},
-    acsc:     function(x) {return Math.asin(1/x) / CalcWidget.angleScale;},
+    acos:     function(x) {return Math.acos(x) / Calculate.angleScale;},
+    asin:     function(x) {return Math.asin(x) / Calculate.angleScale;},
+    atan:     function(x) {return Math.atan(x) / Calculate.angleScale;},
+    atan2:    function(x,y) {return Math.atan2(x,y) / Calculate.angleScale;},
+    acot:     function(x) {return Math.atan(1/x) / Calculate.angleScale;},
+    asec:     function(x) {return Math.acos(1/x) / Calculate.angleScale;},
+    acsc:     function(x) {return Math.asin(1/x) / Calculate.angleScale;},
 
     // Hyperbolic functions
-    sinh:     function(x) {x *= CalcWidget.angleScale;return (Math.exp(x)-Math.exp(-x))/2;},
-    cosh:     function(x) {x *= CalcWidget.angleScale;return (Math.exp(x)+Math.exp(-x))/2;},
-    tanh:     function(x) {x *= CalcWidget.angleScale;return this.sinh(x) / this.cosh(x);},
-    coth:     function(x) {x *= CalcWidget.angleScale;return 1 / this.tanh(x);},
-    sech:     function(x) {x *= CalcWidget.angleScale;return 1 / this.cosh(x);},
-    csch:     function(x) {x *= CalcWidget.angleScale;return 1 / this.sinh(x);},
+    sinh:     function(x) {x *= Calculate.angleScale;return (Math.exp(x)-Math.exp(-x))/2;},
+    cosh:     function(x) {x *= Calculate.angleScale;return (Math.exp(x)+Math.exp(-x))/2;},
+    tanh:     function(x) {x *= Calculate.angleScale;return this.sinh(x) / this.cosh(x);},
+    coth:     function(x) {x *= Calculate.angleScale;return 1 / this.tanh(x);},
+    sech:     function(x) {x *= Calculate.angleScale;return 1 / this.cosh(x);},
+    csch:     function(x) {x *= Calculate.angleScale;return 1 / this.sinh(x);},
 
-    asinh:    function(x) {return Math.log(x+Math.sqrt(x*x+1)) / CalcWidget.angleScale;},
-    acosh:    function(x) {return Math.log(x+Math.sqrt(x*x-1)) / CalcWidget.angleScale;},
-    atanh:    function(x) {return 0.5*Math.log((1+x)/(1-x)) / CalcWidget.angleScale;},
-    acoth:    function(x) {return 0.5*Math.log((x+1)/(x-1)) / CalcWidget.angleScale;},
-    asech:    function(x) {return Math.log(1/x+Math.sqrt(1/(x*x)+1)) / CalcWidget.angleScale;},
-    acsch:    function(x) {return Math.log(1/x+Math.sqrt(1/(x*x)-1)) / CalcWidget.angleScale;},
+    asinh:    function(x) {return Math.log(x+Math.sqrt(x*x+1)) / Calculate.angleScale;},
+    acosh:    function(x) {return Math.log(x+Math.sqrt(x*x-1)) / Calculate.angleScale;},
+    atanh:    function(x) {return 0.5*Math.log((1+x)/(1-x)) / Calculate.angleScale;},
+    acoth:    function(x) {return 0.5*Math.log((x+1)/(x-1)) / Calculate.angleScale;},
+    asech:    function(x) {return Math.log(1/x+Math.sqrt(1/(x*x)+1)) / Calculate.angleScale;},
+    acsch:    function(x) {return Math.log(1/x+Math.sqrt(1/(x*x)-1)) / Calculate.angleScale;},
     
     factorial: function(n) {
         // Factorial based on code from http://www.univie.ac.at/future.media/moe/JavaCalc/jcintro.html
@@ -125,7 +125,7 @@ CalcWidget.Math = Object.freeze({
     }
 });
 
-CalcWidget.Calc = (function() {
+Calculate.Calc = (function() {
 
     // Private
 
@@ -176,7 +176,7 @@ CalcWidget.Calc = (function() {
         },
 
         getMemory: function() {
-            var userVars = CalcWidget.Calc.getUserVars();
+            var userVars = Calculate.Calc.getUserVars();
             var memory = "";
             for (var i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
@@ -184,7 +184,7 @@ CalcWidget.Calc = (function() {
                     if (globalThis[name] !== undefined) {
                         var value = globalThis[name];
                         if (typeof globalThis[name] !== "function") {
-                            value = CalcWidget.valueToString(globalThis[name]);
+                            value = Calculate.valueToString(globalThis[name]);
                         }
 
                         memory += name + "=" + value + ";";
@@ -199,7 +199,7 @@ CalcWidget.Calc = (function() {
             lastAnswer = 0;
             lastError = false;
 
-            var userVars = CalcWidget.Calc.getUserVars();
+            var userVars = Calculate.Calc.getUserVars();
             for (var i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
                     var name = userVars[i];
@@ -214,8 +214,8 @@ CalcWidget.Calc = (function() {
         },
         
         getPossibleCompletions: function() {
-            var possibleCompletions = CalcWidget.Calc.getUserVars();
-            for (var i in CalcWidget.Math) {
+            var possibleCompletions = Calculate.Calc.getUserVars();
+            for (var i in Calculate.Math) {
                 if (i.charAt(0) !== '_') {
                     possibleCompletions.push(i);
                 }
@@ -225,13 +225,13 @@ CalcWidget.Calc = (function() {
         },
         
         setAngleMode: function(v) {
-            CalcWidget.angleScale = (v !== 1) ? 1 : (Math.PI / 180);
+            Calculate.angleScale = (v !== 1) ? 1 : (Math.PI / 180);
         },
         
         applyExpression: function(expression) {
             if (typeof expression === "string") {
                 try {
-                    CalcWidget.evaluate(expression, 0);
+                    Calculate.evaluate(expression, 0);
                 } catch (ex) {
                     // Do something?
                 }
@@ -257,20 +257,20 @@ CalcWidget.Calc = (function() {
                     var emitter = new ECMAScript3ExtEmitter();
                     emitter.includeWhitespace = false;
                     expression = emitter.emit(t);
-                    //CalcWidget.log("Converted to: " + expression);
+                    //Calculate.log("Converted to: " + expression);
                 }
             } catch (e) {
-                //CalcWidget.log("ANTLR error: " + e.toString());
+                //Calculate.log("ANTLR error: " + e.toString());
             }
         
             try {
-                answer = CalcWidget.evaluate(expression, lastAnswer);
+                answer = Calculate.evaluate(expression, lastAnswer);
                 if (typeof answer === "function") {
                     lastAnswer = answer;
                     answer = "Function defined";
                 } else {
                     lastAnswer = answer;
-                    answer = CalcWidget.valueToString(answer);
+                    answer = Calculate.valueToString(answer);
                 }
             } catch (ex) {
                 answer = ex;

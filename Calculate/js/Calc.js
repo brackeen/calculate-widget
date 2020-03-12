@@ -132,53 +132,48 @@ CalcWidget.Math = {
     acoth:    function(x) {return 0.5*Math.log((x+1)/(x-1)) / CalcWidget.Math._angle;},
     asech:    function(x) {return Math.log(1/x+Math.sqrt(1/(x*x)+1)) / CalcWidget.Math._angle;},
     acsch:    function(x) {return Math.log(1/x+Math.sqrt(1/(x*x)-1)) / CalcWidget.Math._angle;},
-
-    // Factorial
-    // Based on code from http://www.univie.ac.at/future.media/moe/JavaCalc/jcintro.html
-    $loggamma: function(x) {
-        var v = 1;
-        while (x < 8) {
-            v*=x;
-            x++;
-        }
-        var w = 1/(x*x);
-        return ((((((((-3617/122400)*w + 7/1092)*w
-            -691/360360)*w + 5/5940)*w
-            -1/1680)*w + 1/1260)*w
-            -1/360)*w + 1/12)/x + 0.5 * Math.log(2*Math.PI) -
-            Math.log(v)-x+(x-0.5)*Math.log(x);
-    },
-
-    $gamma: function(x) {
-        if (x <= 0) {
-            if (Math.abs(x) - Math.floor(Math.abs(x)) === 0) {
-                return Infinity;
-            }
-            else {
-                return Math.PI / (Math.sin(Math.PI*x) * Math.exp(this.$loggamma(1-x)));
-            }
-        }
-        else {
-            return Math.exp(this.$loggamma(x));
-        }
-    },
-
+    
     factorial: function(n) {
+        // Factorial based on code from http://www.univie.ac.at/future.media/moe/JavaCalc/jcintro.html
+        
+        function loggamma(x) {
+            var v = 1;
+            while (x < 8) {
+                v*=x;
+                x++;
+            }
+            var w = 1/(x*x);
+            return ((((((((-3617/122400)*w + 7/1092)*w
+                -691/360360)*w + 5/5940)*w
+                -1/1680)*w + 1/1260)*w
+                -1/360)*w + 1/12)/x + 0.5 * Math.log(2*Math.PI) -
+                Math.log(v)-x+(x-0.5)*Math.log(x);
+        }
+        
+        function gamma(x) {
+            if (x <= 0) {
+                if (Math.abs(x) - Math.floor(Math.abs(x)) === 0) {
+                    return Infinity;
+                } else {
+                    return Math.PI / (Math.sin(Math.PI*x) * Math.exp(loggamma(1-x)));
+                }
+            } else {
+                return Math.exp(loggamma(x));
+            }
+        }
+        
         if (n < 0) {
-            return this.$gamma(n+1);
-        }
-        else if (n === 0 || n === 1) {
+            return gamma(n+1);
+        } else if (n === 0 || n === 1) {
             return 1;
-        }
-        else if (Math.abs(n) - Math.floor(Math.abs(n)) === 0) {
+        } else if (Math.abs(n) - Math.floor(Math.abs(n)) === 0) {
             var result = 1;
             for (var i = 2; i <= n; i++) {
                 result *= i;
             }
             return result;
-        }
-        else {
-            return this.$gamma(n+1);
+        } else {
+            return gamma(n+1);
         }
     }
 };

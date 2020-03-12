@@ -125,7 +125,7 @@ Calculate.Math = Object.freeze({
     }
 });
 
-Calculate.Calc = (function() {
+Object.assign(Calculate, (function() {
 
     // Private
 
@@ -134,17 +134,12 @@ Calculate.Calc = (function() {
 
     var knownMembers = [];
 
-    function init() {
-        // List of known variables at startup. Other variables will be considered "user variables"
-        for (var i in globalThis) {
-            if (globalThis.hasOwnProperty(i)) {
-                knownMembers.push(i);
-            }
+    // List of known variables at startup. Other variables will be considered "user variables"
+    for (let i in globalThis) {
+        if (globalThis.hasOwnProperty(i)) {
+            knownMembers.push(i);
         }
     }
-
-    // Constructor
-    init();
 
     // Public methods
 
@@ -176,7 +171,7 @@ Calculate.Calc = (function() {
         },
 
         getMemory: function() {
-            var userVars = Calculate.Calc.getUserVars();
+            var userVars = Calculate.getUserVars();
             var memory = "";
             for (var i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
@@ -199,7 +194,7 @@ Calculate.Calc = (function() {
             lastAnswer = 0;
             lastError = false;
 
-            var userVars = Calculate.Calc.getUserVars();
+            var userVars = Calculate.getUserVars();
             for (var i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
                     var name = userVars[i];
@@ -214,7 +209,7 @@ Calculate.Calc = (function() {
         },
         
         getPossibleCompletions: function() {
-            var possibleCompletions = Calculate.Calc.getUserVars();
+            var possibleCompletions = Calculate.getUserVars();
             for (var i in Calculate.Math) {
                 if (i.charAt(0) !== '_') {
                     possibleCompletions.push(i);
@@ -285,4 +280,4 @@ Calculate.Calc = (function() {
             return lastError;
         }
     };
-})();
+})());

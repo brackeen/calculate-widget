@@ -14,13 +14,13 @@ Calculate.valueToString = function(value) {
     } else if (value instanceof Array) {
         return Calculate.arrayToString(value);
     } else if (typeof value === "string") {
-        return "\"" + value + "\"";
+        return '"' + value + '"';
     } else if (typeof value === "function") {
         return value.toString();
     } else if (value.toString() === "[object Object]") {
         return Calculate.objectToString(value);
     } else {
-        return "\"" + value.toString() + "\"";
+        return '"' + value.toString() + '"';
     }
 };
 
@@ -41,42 +41,41 @@ Calculate.objectToString = function(obj) {
         if (obj.hasOwnProperty(i)) {
             if (obj[i] !== undefined) {
                 var value = Calculate.valueToString(obj[i]);
-                s += "\"" + i + "\": " + value + ", ";
+                s += '"' + i + '": ' + value + ", ";
             }
         }
     }
     // Remove trailing comma
-    if (s.charAt(s.length-2) === ',') {
-        s = s.substring(0, s.length-2);
+    if (s.charAt(s.length - 2) === ",") {
+        s = s.substring(0, s.length - 2);
     }
     return "{" + s + "}";
 };
 
 Calculate.fixPrecision = function(n) {
-    
     function isNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
 
     function getSignificantDigits(n) {
-        var s = Math.abs(n).toString().split("e")[0].split('.');
-        
+        var s = Math.abs(n).toString().split("e")[0].split(".");
+
         // String before decimal. Remove leading zeroes
-        var a = s[0].replace(/^0+/, '');
+        var a = s[0].replace(/^0+/, "");
         // String after decimal. Remove trailing zeroes
-        var b = s.length === 1 ? "" : s[1].replace(/0*$/, '');
-        
+        var b = s.length === 1 ? "" : s[1].replace(/0*$/, "");
+
         if (b.length === 0) {
             // Remove trailing zeroes
-            return a.replace(/0*$/, '').length;
+            return a.replace(/0*$/, "").length;
         } else if (a.length === 0) {
             // Remove leading zeroes
-            return b.replace(/^0+/, '').length;
+            return b.replace(/^0+/, "").length;
         } else {
             return a.length + b.length;
         }
     }
-    
+
     if (isNumber(n)) {
         var p = getSignificantDigits(n);
         // If the number has at least 13 significant digits, reduce to 9 significant digits.

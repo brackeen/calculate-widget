@@ -12,7 +12,6 @@
 		E30E63032417EE45002EF546 /* ECMAScript3ExtLexer.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FB2417EE45002EF546 /* ECMAScript3ExtLexer.js */; };
 		E30E63052417EE45002EF546 /* ECMAScript3ExtEmitter.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FD2417EE45002EF546 /* ECMAScript3ExtEmitter.js */; };
 		E30E63062417EE45002EF546 /* antlr3-all.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FE2417EE45002EF546 /* antlr3-all.js */; };
-		E30E63072417EE45002EF546 /* FPError.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FF2417EE45002EF546 /* FPError.js */; };
 		E30E63082417EE45002EF546 /* Calc.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E63002417EE45002EF546 /* Calc.js */; };
 		E30E631424190F49002EF546 /* container-migration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E30E631324190F49002EF546 /* container-migration.plist */; };
 		E3198E74241A7A7C00A167C7 /* CalculateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3198E73241A7A7C00A167C7 /* CalculateTests.swift */; };
@@ -40,7 +39,6 @@
 		E30E62FB2417EE45002EF546 /* ECMAScript3ExtLexer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtLexer.js; sourceTree = "<group>"; };
 		E30E62FD2417EE45002EF546 /* ECMAScript3ExtEmitter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtEmitter.js; sourceTree = "<group>"; };
 		E30E62FE2417EE45002EF546 /* antlr3-all.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "antlr3-all.js"; sourceTree = "<group>"; };
-		E30E62FF2417EE45002EF546 /* FPError.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = FPError.js; sourceTree = "<group>"; };
 		E30E63002417EE45002EF546 /* Calc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Calc.js; sourceTree = "<group>"; };
 		E30E631324190F49002EF546 /* container-migration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "container-migration.plist"; sourceTree = "<group>"; };
 		E3198E6C241A73CD00A167C7 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				E30E62FD2417EE45002EF546 /* ECMAScript3ExtEmitter.js */,
 				E30E62FB2417EE45002EF546 /* ECMAScript3ExtLexer.js */,
 				E30E62F92417EE45002EF546 /* ECMAScript3ExtParser.js */,
-				E30E62FF2417EE45002EF546 /* FPError.js */,
 				E30E62FA2417EE45002EF546 /* Util.js */,
 			);
 			name = js;
@@ -224,7 +221,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E30E63032417EE45002EF546 /* ECMAScript3ExtLexer.js in Resources */,
-				E30E63072417EE45002EF546 /* FPError.js in Resources */,
 				E30E63022417EE45002EF546 /* Util.js in Resources */,
 				E30E63062417EE45002EF546 /* antlr3-all.js in Resources */,
 				E321A0AF2417C3AA00D40474 /* Assets.xcassets in Resources */,

@@ -548,7 +548,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         case ECMAScript3ExtParser.DIV:
         case ECMAScript3ExtParser.MOD:
             requiredChildren = 2;
-            this.out.print("Math.fixPrecision(");
+            this.out.print("Calculate.fixPrecision(");
             this.printBinaryOperator(node);
             this.out.print(")");
             break;
@@ -556,7 +556,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         case ECMAScript3ExtParser.ADDASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.fixPrecision(");
+            this.out.print(" = Calculate.fixPrecision(");
             this.print(child1);
             this.out.print(" + ");
             this.print(child2);
@@ -566,7 +566,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         case ECMAScript3ExtParser.SUBASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.fixPrecision(");
+            this.out.print(" = Calculate.fixPrecision(");
             this.print(child1);
             this.out.print(" - ");
             this.print(child2);
@@ -576,7 +576,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         case ECMAScript3ExtParser.MULASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.fixPrecision(");
+            this.out.print(" = Calculate.fixPrecision(");
             this.print(child1);
             this.out.print(" * ");
             this.print(child2);
@@ -586,7 +586,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         case ECMAScript3ExtParser.DIVASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.fixPrecision(");
+            this.out.print(" = Calculate.fixPrecision(");
             this.print(child1);
             this.out.print(" / ");
             this.print(child2);
@@ -596,7 +596,7 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
         case ECMAScript3ExtParser.MODASS:
             requiredChildren = 2;
             this.print(child1);
-            this.out.print(" = Math.fixPrecision(");
+            this.out.print(" = Calculate.fixPrecision(");
             this.print(child1);
             this.out.print(" % ");
             this.print(child2);

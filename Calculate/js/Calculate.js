@@ -2,6 +2,10 @@ if (typeof Calculate === "undefined" || !Calculate) {
     var Calculate = {};
 }
 
+org.antlr.runtime.BaseRecognizer.prototype.emitErrorMessage = function(message) {
+    Calculate.log(message)
+}
+
 Calculate.angleScale = 1;
 
 Calculate.evaluate = function(__input__, ans) {
@@ -143,6 +147,10 @@ Object.assign(Calculate, (function() {
     // Public methods
 
     return {
+        log: function(message) {
+            // Overwritten by native code
+        },
+
         getLastAnswer: function() {
             return lastAnswer;
         },

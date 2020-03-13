@@ -118,6 +118,7 @@ public class Calculate {
                 
         migrateWidgetPreferences()
         loadPreferences()
+        setLogFunction()
     }
     
     private func evalulateScript(_ name: String) {
@@ -160,6 +161,13 @@ public class Calculate {
                 }
             }
         }
+    }
+    
+    private func setLogFunction() {
+        let logFunction: @convention(block) (String) -> Void = { message in
+            print(message)
+        }
+        context.objectForKeyedSubscript("Calculate")?.setObject(logFunction, forKeyedSubscript: ("log" as NSString))
     }
     
     private func updateAngleMode() {

@@ -84,12 +84,12 @@ Calculate.Math = Object.freeze({
         // Factorial based on code from http://www.univie.ac.at/future.media/moe/JavaCalc/jcintro.html
 
         function loggamma(x) {
-            var v = 1;
+            let v = 1;
             while (x < 8) {
                 v *= x;
                 x++;
             }
-            var w = 1 / (x * x);
+            let w = 1 / (x * x);
             return ((((((((-3617 / 122400) * w + 7 / 1092) * w
                 -691 / 360360) * w + 5 / 5940) * w
                 -1 / 1680) * w + 1 / 1260) * w
@@ -114,8 +114,8 @@ Calculate.Math = Object.freeze({
         } else if (n === 0 || n === 1) {
             return 1;
         } else if (Math.abs(n) - Math.floor(Math.abs(n)) === 0) {
-            var result = 1;
-            for (var i = 2; i <= n; i++) {
+            let result = 1;
+            for (let i = 2; i <= n; i++) {
                 result *= i;
             }
             return result;
@@ -134,7 +134,7 @@ Object.assign(Calculate, (function() {
     var knownMembers = [];
 
     // List of known variables at startup. Other variables will be considered "user variables"
-    for (let i in globalThis) {
+    for (const i in globalThis) {
         if (globalThis.hasOwnProperty(i)) {
             knownMembers.push(i);
         }
@@ -150,10 +150,10 @@ Object.assign(Calculate, (function() {
         getUserVars: function() {
             var userVars = [];
 
-            for (var i in globalThis) {
+            for (const i in globalThis) {
                 if (globalThis.hasOwnProperty(i)) {
                     var isKnown = false;
-                    for (var j in knownMembers) {
+                    for (const j in knownMembers) {
                         if (i === knownMembers[j]) {
                             isKnown = true;
                             break;
@@ -168,23 +168,19 @@ Object.assign(Calculate, (function() {
             return userVars;
         },
 
-        getMemory: function() {
-            var userVars = Calculate.getUserVars();
-            var memory = "";
-            for (var i in userVars) {
+        // Returns an array of tuples, like: [[name, value], [name, value]]
+        getMemoryVars: function() {
+            const userVars = Calculate.getUserVars();
+            let memory = [];
+            for (const i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
-                    var name = userVars[i];
-                    if (globalThis[name] !== undefined) {
-                        var value = globalThis[name];
-                        if (typeof globalThis[name] !== "function") {
-                            value = Calculate.valueToString(globalThis[name]);
-                        }
-
-                        memory += name + "=" + value + ";";
+                    const name = userVars[i];
+                    const value = globalThis[name];
+                    if (!Calculate.isNativeFunction(value)) {
+                        memory.push([name, Calculate.valueToString(value)])
                     }
                 }
             }
-            memory = memory.replace(/\n/g, " ");
             return memory;
         },
 
@@ -192,12 +188,12 @@ Object.assign(Calculate, (function() {
             lastAnswer = 0;
             lastError = false;
 
-            var userVars = Calculate.getUserVars();
-            for (var i in userVars) {
+            const userVars = Calculate.getUserVars();
+            for (const i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
-                    var name = userVars[i];
+                    const name = userVars[i];
                     try {
-                        eval("delete " + name);
+                        delete name;
                     } catch (ex) {
                         // Ignore
                     }
@@ -206,9 +202,11 @@ Object.assign(Calculate, (function() {
         },
 
         getPossibleCompletions: function() {
-            var possibleCompletions = Calculate.getUserVars();
-            for (var i in Calculate.Math) {
-                possibleCompletions.push(i);
+            const possibleCompletions = Calculate.getUserVars();
+            for (const i in Calculate.Math) {
+                if (Calculate.Math.hasOwnProperty(i)) {
+                    possibleCompletions.push(i);
+                }
             }
             possibleCompletions.push("ans");
             return possibleCompletions;
@@ -218,42 +216,34 @@ Object.assign(Calculate, (function() {
             Calculate.angleScale = (v !== 1) ? 1 : (Math.PI / 180);
         },
 
-        applyExpression: function(expression) {
-            if (typeof expression === "string") {
-                try {
-                    Calculate.evaluate(expression, 0);
-                } catch (ex) {
-                    // Do something?
-                }
+        applyMemoryVar: function(name, value) {
+            if (typeof name === "string" && typeof value == "string") {
+                Calculate.evaluate(name + "=" + value, 0);
             }
         },
 
         calc: function(expression) {
-            var answer;
+            let answer;
             lastError = false;
 
             // Apply conversions.
             // a! -> factorial(a)
             // a^b -> pow(a,b)
             try {
-                var input = new org.antlr.runtime.ANTLRStringStream(expression);
-                var lexer = new ECMAScript3ExtLexer(input);
-                var tokens = new org.antlr.runtime.CommonTokenStream(lexer);
-                var parser = new ECMAScript3ExtParser(tokens);
-                var t = parser.program().getTree();
-                var n = lexer.getNumberOfSyntaxErrors() + parser.getNumberOfSyntaxErrors();
+                const input = new org.antlr.runtime.ANTLRStringStream(expression);
+                const lexer = new ECMAScript3ExtLexer(input);
+                const tokens = new org.antlr.runtime.CommonTokenStream(lexer);
+                const parser = new ECMAScript3ExtParser(tokens);
+                const t = parser.program().getTree();
+                const n = lexer.getNumberOfSyntaxErrors() + parser.getNumberOfSyntaxErrors();
 
                 if (t != null && n == 0) {
-                    var emitter = new ECMAScript3ExtEmitter();
+                    const emitter = new ECMAScript3ExtEmitter();
                     emitter.includeWhitespace = false;
                     expression = emitter.emit(t);
                     //Calculate.log("Converted to: " + expression);
                 }
-            } catch (e) {
-                //Calculate.log("ANTLR error: " + e.toString());
-            }
 
-            try {
                 answer = Calculate.evaluate(expression, lastAnswer);
                 if (typeof answer === "function") {
                     lastAnswer = answer;

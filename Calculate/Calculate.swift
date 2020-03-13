@@ -86,8 +86,8 @@ public class Calculate {
         if memoryNeedsSaving {
             memoryNeedsSaving = false
             if let memory = context.objectForKeyedSubscript("Calculate")?
-                .objectForKeyedSubscript("getMemory")?
-                .call(withArguments: [])?.toString() {
+                .objectForKeyedSubscript("getMemoryVars")?
+                .call(withArguments: [])?.toArray() as? [[String]] {
                 UserDefaults.standard.set(memory, forKey: memoryKey)
             }
         }
@@ -130,19 +130,33 @@ public class Calculate {
         }
 
         context.exceptionHandler = { context, exception in
+            #warning("TODO: Add to output window")
             let exceptionString = exception?.toString() ?? ""
             print("Error loading \(name).js: \(exceptionString)")
         }
         context.evaluateScript(source, withSourceURL: url)
+        context.exceptionHandler = nil
     }
     
     private func loadPreferences() {
         angleMode = AngleMode(rawValue: UserDefaults.standard.integer(forKey: angleModeKey)) ?? .radians
         
-        if let memory = UserDefaults.standard.string(forKey: memoryKey) {
-            context.objectForKeyedSubscript("Calculate")?
-                .objectForKeyedSubscript("applyExpression")?
-                .call(withArguments: [memory])
+        if let memory = UserDefaults.standard.array(forKey: memoryKey) as? [[String]] {
+            for tuple in memory {
+                if tuple.count == 2 {
+                    let name = tuple[0]
+                    let value = tuple[1]
+                    context.exceptionHandler = { context, exception in
+                        #warning("TODO: Add to output window")
+                        let exceptionString = exception?.toString() ?? ""
+                        print("Error loading \"\(name)\": \(exceptionString)")
+                    }
+                    context.objectForKeyedSubscript("Calculate")?
+                        .objectForKeyedSubscript("applyMemoryVar")?
+                        .call(withArguments: [name, value])
+                    context.exceptionHandler = nil
+                }
+            }
         }
     }
     

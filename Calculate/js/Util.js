@@ -33,7 +33,7 @@ Calculate.valueToString = function(value) {
 
 Calculate.arrayToString = function(a) {
     let s = "";
-    for (const i = 0; i < a.length; i++) {
+    for (let i = 0; i < a.length; i++) {
         s += Calculate.valueToString(a[i]);
         if (i < a.length - 1) {
             s += ",";

@@ -16,8 +16,6 @@ function __typeof__(v) {
     }
 };
 
-Calculate.angleScale = 1;
-
 Calculate.knownMembers = (function() {
     // List of known properties at startup (like Calculate, org.antlr.*)
     var knownMembers = [];
@@ -79,6 +77,104 @@ Calculate.evaluate = function(__input__) {
             return eval(__input__);
         }
     })();
+};
+
+Calculate.log = function(message) {
+    // Overwritten by native code
+};
+
+Calculate.getUserVars = function() {
+    var userVars = [];
+    
+    for (const i in Calculate.sandbox) {
+        if (Calculate.sandbox.hasOwnProperty(i)) {
+            userVars.push(i);
+        }
+    }
+    
+    return userVars;
+};
+
+// Returns an array of tuples, like: [[name, value], [name, value]]
+Calculate.getMemoryVars = function() {
+    const userVars = Calculate.getUserVars();
+    let memory = [];
+    for (const i in userVars) {
+        if (userVars.hasOwnProperty(i)) {
+            const name = userVars[i];
+            const value = Calculate.sandbox[name];
+            if (!Calculate.isNativeFunction(value)) {
+                memory.push([name, Calculate.valueToString(value)])
+            }
+        }
+    }
+    return memory;
+};
+
+Calculate.clearUserVars = function() {
+    Calculate.sandbox["ans"] = 0;
+    
+    const userVars = Calculate.getUserVars();
+    for (const i in userVars) {
+        if (userVars.hasOwnProperty(i)) {
+            const name = userVars[i];
+            try {
+                delete name;
+            } catch (ex) {
+                // Ignore
+            }
+        }
+    }
+};
+
+Calculate.getPossibleCompletions = function() {
+    const possibleCompletions = Calculate.getUserVars();
+    for (const i in Calculate.Math) {
+        if (Calculate.Math.hasOwnProperty(i)) {
+            possibleCompletions.push(i);
+        }
+    }
+    return possibleCompletions;
+};
+
+
+Calculate.applyMemoryVar = function(name, value) {
+    if (typeof name === "string" && typeof value == "string") {
+        Calculate.evaluate(name + "=" + value);
+    }
+};
+
+Calculate.calc = function(expression) {
+    // Apply conversions.
+    // a! -> factorial(a)
+    // a^b -> pow(a,b)
+    const input = new org.antlr.runtime.ANTLRStringStream(expression);
+    const lexer = new ECMAScript3ExtLexer(input);
+    const tokens = new org.antlr.runtime.CommonTokenStream(lexer);
+    const parser = new ECMAScript3ExtParser(tokens);
+    const t = parser.program().getTree();
+    const n = lexer.getNumberOfSyntaxErrors() + parser.getNumberOfSyntaxErrors();
+    
+    if (t != null && n == 0) {
+        const emitter = new ECMAScript3ExtEmitter();
+        emitter.includeWhitespace = false;
+        expression = emitter.emit(t);
+        //Calculate.log("Converted to: " + expression);
+    }
+    
+    const answer = Calculate.evaluate(expression);
+    if (typeof answer === "function") {
+        return "Function defined";
+    } else {
+        Calculate.sandbox["ans"] = answer;
+        return Calculate.valueToString(answer);
+    }
+};
+
+Calculate.angleScale = 1;
+
+Calculate.setAngleMode = function(v) {
+    Calculate.angleScale = (v !== 1) ? 1 : (Math.PI / 180);
 };
 
 /**
@@ -192,106 +288,3 @@ Calculate.Math = Object.freeze({
         }
     }
 });
-
-Object.assign(Calculate, (function() {
-
-
-    // Public methods
-
-    return {
-        log: function(message) {
-            // Overwritten by native code
-        },
-
-        getUserVars: function() {
-            var userVars = [];
-
-            for (const i in Calculate.sandbox) {
-                if (Calculate.sandbox.hasOwnProperty(i)) {
-                    userVars.push(i);
-                }
-            }
-
-            return userVars;
-        },
-
-        // Returns an array of tuples, like: [[name, value], [name, value]]
-        getMemoryVars: function() {
-            const userVars = Calculate.getUserVars();
-            let memory = [];
-            for (const i in userVars) {
-                if (userVars.hasOwnProperty(i)) {
-                    const name = userVars[i];
-                    const value = Calculate.sandbox[name];
-                    if (!Calculate.isNativeFunction(value)) {
-                        memory.push([name, Calculate.valueToString(value)])
-                    }
-                }
-            }
-            return memory;
-        },
-
-        clearUserVars: function() {
-            Calculate.sandbox["ans"] = 0;
-
-            const userVars = Calculate.getUserVars();
-            for (const i in userVars) {
-                if (userVars.hasOwnProperty(i)) {
-                    const name = userVars[i];
-                    try {
-                        delete name;
-                    } catch (ex) {
-                        // Ignore
-                    }
-                }
-            }
-        },
-
-        getPossibleCompletions: function() {
-            const possibleCompletions = Calculate.getUserVars();
-            for (const i in Calculate.Math) {
-                if (Calculate.Math.hasOwnProperty(i)) {
-                    possibleCompletions.push(i);
-                }
-            }
-            return possibleCompletions;
-        },
-
-        setAngleMode: function(v) {
-            Calculate.angleScale = (v !== 1) ? 1 : (Math.PI / 180);
-        },
-
-        applyMemoryVar: function(name, value) {
-            if (typeof name === "string" && typeof value == "string") {
-                Calculate.evaluate(name + "=" + value);
-            }
-        },
-
-        calc: function(expression) {
-            // Apply conversions.
-            // a! -> factorial(a)
-            // a^b -> pow(a,b)
-            const input = new org.antlr.runtime.ANTLRStringStream(expression);
-            const lexer = new ECMAScript3ExtLexer(input);
-            const tokens = new org.antlr.runtime.CommonTokenStream(lexer);
-            const parser = new ECMAScript3ExtParser(tokens);
-            const t = parser.program().getTree();
-            const n = lexer.getNumberOfSyntaxErrors() + parser.getNumberOfSyntaxErrors();
-
-            if (t != null && n == 0) {
-                const emitter = new ECMAScript3ExtEmitter();
-                emitter.includeWhitespace = false;
-                expression = emitter.emit(t);
-                //Calculate.log("Converted to: " + expression);
-            }
-
-            const answer = Calculate.evaluate(expression);
-            if (typeof answer === "function") {
-                return "Function defined";
-            } else {
-                Calculate.sandbox["ans"] = answer;
-                return Calculate.valueToString(answer);
-            }
-        }
-    };
-})());

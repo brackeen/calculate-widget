@@ -24,7 +24,7 @@ Calculate.valueToString = function(value) {
         return '"' + value + '"';
     } else if (typeof value === "function") {
         return value.toString();
-    } else if (typeof value === "object") {
+    } else if (typeof value === "object" && value.toString() == "[object Object]") {
         return Calculate.objectToString(value);
     } else {
         return '"' + value.toString() + '"';

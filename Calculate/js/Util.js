@@ -12,6 +12,8 @@ Calculate.valueToString = function(value) {
         return "undefined";
     } else if (value === null) {
         return "null";
+    } else if (value === globalThis) {
+        return "this";
     } else if (typeof value === "boolean") {
         return value.toString();
     } else if (typeof value === "number") {

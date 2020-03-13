@@ -8,10 +8,64 @@ org.antlr.runtime.BaseRecognizer.prototype.emitErrorMessage = function(message) 
 
 Calculate.angleScale = 1;
 
-Calculate.evaluate = function(__input__, ans) {
+Calculate.knownMembers = (function() {
+    // List of known properties at startup (like Calculate, org.antlr.*)
+    var knownMembers = [];
+    for (const i in globalThis) {
+        if (globalThis.hasOwnProperty(i)) {
+            knownMembers.push(i);
+        }
+    }
+    return knownMembers;
+})();
+
+Calculate.sandbox = { "ans": 0 };
+
+/* Use a proxy prevents access to:
+ - Globals (Calculate, org.antlr.*, etc)
+*/
+Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
+    has: function(target, key) {
+        return key !== "__input__";
+    },
+
+    get: function(target, key) {
+        if (typeof key !== "string") {
+            return undefined;
+        } else if (key === "globalThis") {
+            return globalThis;
+        } else if (Calculate.Math.hasOwnProperty(key)) {
+            return Calculate.Math[key];
+        } else if (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key)) {
+            return globalThis[key];
+        } else if (target.hasOwnProperty(key)) {
+            return Reflect.get(...arguments);
+        } else {
+            throw new ReferenceError("Can't find variable: " + key);
+        }
+    },
+                                   
+   set: function(target, key, value) {
+       const isGlobalConst = key === "globalThis" || (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key));
+       if (!Calculate.Math.hasOwnProperty(key) && !isGlobalConst) {
+           return Reflect.set(...arguments);
+       }
+   },
+
+   deleteProperty: function(target, key) {
+       if (target.hasOwnProperty(key) && key !== "globalThis") {
+           return delete target[key];
+       } else {
+           return false;
+       }
+   }
+});
+
+Calculate.evaluate = function(__input__) {
     // Wrap in anonymous function so "this" is the global object, not Calculate
+    // Use "eval" instead of "Function" to get the last statement on the line ("5;6;")
     return (function() {
-        with (Calculate.Math) {
+        with (Calculate.sandboxProxy) {
             return eval(__input__);
         }
     })();
@@ -132,17 +186,7 @@ Calculate.Math = Object.freeze({
 Object.assign(Calculate, (function() {
     // Private
 
-    var lastAnswer = 0;
     var lastError = false;
-
-    var knownMembers = [];
-
-    // List of known variables at startup. Other variables will be considered "user variables"
-    for (const i in globalThis) {
-        if (globalThis.hasOwnProperty(i)) {
-            knownMembers.push(i);
-        }
-    }
 
     // Public methods
 
@@ -151,25 +195,12 @@ Object.assign(Calculate, (function() {
             // Overwritten by native code
         },
 
-        getLastAnswer: function() {
-            return lastAnswer;
-        },
-
         getUserVars: function() {
             var userVars = [];
 
-            for (const i in globalThis) {
-                if (globalThis.hasOwnProperty(i)) {
-                    var isKnown = false;
-                    for (const j in knownMembers) {
-                        if (i === knownMembers[j]) {
-                            isKnown = true;
-                            break;
-                        }
-                    }
-                    if (!isKnown) {
-                        userVars.push(i);
-                    }
+            for (const i in Calculate.sandbox) {
+                if (Calculate.sandbox.hasOwnProperty(i)) {
+                    userVars.push(i);
                 }
             }
 
@@ -183,7 +214,7 @@ Object.assign(Calculate, (function() {
             for (const i in userVars) {
                 if (userVars.hasOwnProperty(i)) {
                     const name = userVars[i];
-                    const value = globalThis[name];
+                    const value = Calculate.sandbox[name];
                     if (!Calculate.isNativeFunction(value)) {
                         memory.push([name, Calculate.valueToString(value)])
                     }
@@ -193,7 +224,7 @@ Object.assign(Calculate, (function() {
         },
 
         clearUserVars: function() {
-            lastAnswer = 0;
+            Calculate.sandbox["ans"] = 0;
             lastError = false;
 
             const userVars = Calculate.getUserVars();
@@ -216,7 +247,6 @@ Object.assign(Calculate, (function() {
                     possibleCompletions.push(i);
                 }
             }
-            possibleCompletions.push("ans");
             return possibleCompletions;
         },
 
@@ -226,7 +256,7 @@ Object.assign(Calculate, (function() {
 
         applyMemoryVar: function(name, value) {
             if (typeof name === "string" && typeof value == "string") {
-                Calculate.evaluate(name + "=" + value, 0);
+                Calculate.evaluate(name + "=" + value);
             }
         },
 
@@ -252,12 +282,11 @@ Object.assign(Calculate, (function() {
                     //Calculate.log("Converted to: " + expression);
                 }
 
-                answer = Calculate.evaluate(expression, lastAnswer);
+                answer = Calculate.evaluate(expression);
                 if (typeof answer === "function") {
-                    lastAnswer = answer;
                     answer = "Function defined";
                 } else {
-                    lastAnswer = answer;
+                    Calculate.sandbox["ans"] = answer;
                     answer = Calculate.valueToString(answer);
                 }
             } catch (ex) {

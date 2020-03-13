@@ -19,8 +19,9 @@ class CalculateTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    private func calc(_ expression: String) {
-        _ = Calculate.shared.calc(expression, addToHistory: false)
+    @discardableResult
+    private func calc(_ expression: String) -> String? {
+        return Calculate.shared.calc(expression, addToHistory: false)
     }
     
     private func testExpression(_ expression: String) -> Bool {
@@ -60,23 +61,40 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("delete testvar"))
         XCTAssert(testExpression("typeof testvar === 'undefined'"))
     }
+    
+    func testFunctions() {
+        calc("avg = function () { var sum = 0; for (var i = 0; i < avg.arguments.length; i++) { sum += arguments[i]; } return sum / arguments.length; }")
+        calc("median = function () { var list = Array.prototype.slice.call(arguments); list.sort(function(a, b) { return a - b; } ); var i = Math.floor(list.length / 2); if (list.length % 2) { return list[i]; } else { return (list[i] + list[i - 1]) / 2; } }")
+        XCTAssert(testExpression("avg(1, 2, 3, 4, 6, 7, 8, 9) == 5"))
+        XCTAssert(testExpression("median(7, 1, 9, 3, 4, 8, 2, 6) == 5"))
+    }
+    
+    func testBadBehaviour() {
+        XCTAssert(testExpression("Math = 0; Math.PI == pi"))
+        XCTAssert(testExpression("delete Math; Math.PI == pi"))
+        XCTAssert(testExpression("delete globalThis; 1 + 1 == 2"))
+        XCTAssert(testExpression("Calculate = 2; 1 + 1 == Calculate"))
+        XCTAssert(testExpression("org = { antlr: 2 }; 1 + 1 == org.antlr"))
+        XCTAssert(testExpression("delete Calculate; delete org; 1 + 1 == 2"))
+        XCTAssert(testExpression("cos = 0; Math.cos(pi) == -1"))
+    }
 
     func testPrecision() {
-         XCTAssert(testExpression("Calculate.fixPrecision(0.1 + 0.2    ) == 0.3"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.25 - 1.245 ) == 0.005"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.1 - 1      ) == 0.1"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.1 - 1.05   ) == 0.05"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.1 - 1.005  ) == 0.095"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.1 - 1.0005 ) == 0.0995"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1 - 3        ) == -2"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.1 - 1.01   ) == 0.09"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.1 - 1.001  ) == 0.099"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.1 - 1.0001 ) == 0.0999"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.1 - 1.00001) == 0.09999"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.05 * 7     ) == 7.35"))
-         XCTAssert(testExpression("Calculate.fixPrecision(1.1 * 7      ) == 7.7"))
-         XCTAssert(testExpression("Calculate.fixPrecision(10.35 / 3    ) == 3.45"))
-         XCTAssert(testExpression("Calculate.fixPrecision(5010-5000.94 ) == 9.06"))
-         XCTAssert(testExpression("Calculate.fixPrecision(100010-100000.94) == 9.06"))
+         XCTAssertEqual(calc("0.1 + 0.2    "), "0.3")
+         XCTAssertEqual(calc("1.25 - 1.245 "), "0.005")
+         XCTAssertEqual(calc("1.1 - 1      "), "0.1")
+         XCTAssertEqual(calc("1.1 - 1.05   "), "0.05")
+         XCTAssertEqual(calc("1.1 - 1.005  "), "0.095")
+         XCTAssertEqual(calc("1.1 - 1.0005 "), "0.0995")
+         XCTAssertEqual(calc("1 - 3        "), "-2")
+         XCTAssertEqual(calc("1.1 - 1.01   "), "0.09")
+         XCTAssertEqual(calc("1.1 - 1.001  "), "0.099")
+         XCTAssertEqual(calc("1.1 - 1.0001 "), "0.0999")
+         XCTAssertEqual(calc("1.1 - 1.00001"), "0.09999")
+         XCTAssertEqual(calc("1.05 * 7     "), "7.35")
+         XCTAssertEqual(calc("1.1 * 7      "), "7.7")
+         XCTAssertEqual(calc("10.35 / 3    "), "3.45")
+         XCTAssertEqual(calc("5010-5000.94 "), "9.06")
+         XCTAssertEqual(calc("100010-100000.94"), "9.06")
     }
 }

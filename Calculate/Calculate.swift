@@ -129,13 +129,14 @@ public class Calculate {
             fatalError("Couldn't load \(name).js")
         }
 
+        let originalExceptionHandler = context.exceptionHandler
         context.exceptionHandler = { context, exception in
             #warning("TODO: Add to output window")
             let exceptionString = exception?.toString() ?? ""
             print("Error loading \(name).js: \(exceptionString)")
         }
         context.evaluateScript(source, withSourceURL: url)
-        context.exceptionHandler = nil
+        context.exceptionHandler = originalExceptionHandler
     }
     
     private func loadPreferences() {
@@ -146,6 +147,7 @@ public class Calculate {
                 if tuple.count == 2 {
                     let name = tuple[0]
                     let value = tuple[1]
+                    let originalExceptionHandler = context.exceptionHandler
                     context.exceptionHandler = { context, exception in
                         #warning("TODO: Add to output window")
                         let exceptionString = exception?.toString() ?? ""
@@ -154,7 +156,7 @@ public class Calculate {
                     context.objectForKeyedSubscript("Calculate")?
                         .objectForKeyedSubscript("applyMemoryVar")?
                         .call(withArguments: [name, value])
-                    context.exceptionHandler = nil
+                    context.exceptionHandler = originalExceptionHandler
                 }
             }
         }

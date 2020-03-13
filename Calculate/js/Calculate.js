@@ -194,9 +194,7 @@ Calculate.Math = Object.freeze({
 });
 
 Object.assign(Calculate, (function() {
-    // Private
 
-    var lastError = false;
 
     // Public methods
 
@@ -235,7 +233,6 @@ Object.assign(Calculate, (function() {
 
         clearUserVars: function() {
             Calculate.sandbox["ans"] = 0;
-            lastError = false;
 
             const userVars = Calculate.getUserVars();
             for (const i in userVars) {
@@ -271,45 +268,30 @@ Object.assign(Calculate, (function() {
         },
 
         calc: function(expression) {
-            let answer;
-            lastError = false;
-
             // Apply conversions.
             // a! -> factorial(a)
             // a^b -> pow(a,b)
-            try {
-                const input = new org.antlr.runtime.ANTLRStringStream(expression);
-                const lexer = new ECMAScript3ExtLexer(input);
-                const tokens = new org.antlr.runtime.CommonTokenStream(lexer);
-                const parser = new ECMAScript3ExtParser(tokens);
-                const t = parser.program().getTree();
-                const n = lexer.getNumberOfSyntaxErrors() + parser.getNumberOfSyntaxErrors();
+            const input = new org.antlr.runtime.ANTLRStringStream(expression);
+            const lexer = new ECMAScript3ExtLexer(input);
+            const tokens = new org.antlr.runtime.CommonTokenStream(lexer);
+            const parser = new ECMAScript3ExtParser(tokens);
+            const t = parser.program().getTree();
+            const n = lexer.getNumberOfSyntaxErrors() + parser.getNumberOfSyntaxErrors();
 
-                if (t != null && n == 0) {
-                    const emitter = new ECMAScript3ExtEmitter();
-                    emitter.includeWhitespace = false;
-                    expression = emitter.emit(t);
-                    //Calculate.log("Converted to: " + expression);
-                }
-
-                answer = Calculate.evaluate(expression);
-                if (typeof answer === "function") {
-                    answer = "Function defined";
-                } else {
-                    Calculate.sandbox["ans"] = answer;
-                    answer = Calculate.valueToString(answer);
-                }
-            } catch (ex) {
-                answer = ex;
-                lastError = true;
+            if (t != null && n == 0) {
+                const emitter = new ECMAScript3ExtEmitter();
+                emitter.includeWhitespace = false;
+                expression = emitter.emit(t);
+                //Calculate.log("Converted to: " + expression);
             }
 
-            return answer;
-        },
-
-        // Returns true if the last calculation in calc() resulted in an error
-        wasError: function() {
-            return lastError;
+            const answer = Calculate.evaluate(expression);
+            if (typeof answer === "function") {
+                return "Function defined";
+            } else {
+                Calculate.sandbox["ans"] = answer;
+                return Calculate.valueToString(answer);
+            }
         }
     };
 })());

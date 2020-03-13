@@ -35,10 +35,16 @@ public class Calculate {
         }
         inputHistoryIndex = inputHistory.count
         
+        var errorResult: String?
+        let originalExceptionHandler = context.exceptionHandler
+        context.exceptionHandler = { context, exception in
+            errorResult = exception?.toString()
+        }
         let result = context.objectForKeyedSubscript("Calculate")?
             .objectForKeyedSubscript("calc")?
-            .call(withArguments: [expression])
-        return result?.toString()
+            .call(withArguments: [expression])?.toString()
+        context.exceptionHandler = originalExceptionHandler
+        return errorResult ?? result
     }
     
     public func getUserVariables() -> [String] {

@@ -6,6 +6,16 @@ org.antlr.runtime.BaseRecognizer.prototype.emitErrorMessage = function(message) 
     Calculate.log(message)
 }
 
+function __typeof__(v) {
+    with (Calculate.sandbox) {
+        try {
+            return typeof eval(v);
+        } catch (er) {
+            return "undefined";
+        }
+    }
+};
+
 Calculate.angleScale = 1;
 
 Calculate.knownMembers = (function() {
@@ -26,7 +36,7 @@ Calculate.sandbox = { "ans": 0 };
 */
 Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
     has: function(target, key) {
-        return key !== "__input__";
+        return key !== "__input__" && key != "__typeof__";
     },
 
     get: function(target, key) {

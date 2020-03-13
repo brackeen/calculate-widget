@@ -657,6 +657,12 @@ ECMAScript3ExtEmitter.prototype.print = function(node, forceBlock) {
             break;
 
         case ECMAScript3ExtParser.TYPEOF:
+            requiredChildren = 1;
+            this.out.print("__typeof__(\"");
+            this.print(child1);
+            this.out.print("\")");
+            break;
+
         case ECMAScript3ExtParser.DELETE:
             requiredChildren = 1;
             this.out.print(this.name(node));

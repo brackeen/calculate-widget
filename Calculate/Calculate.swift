@@ -18,6 +18,14 @@ public class Calculate {
         case degrees = 1
     }
     
+    public struct Output {
+        let input: String
+        let output: String
+        let isError: Bool
+    }
+    
+    public private(set) var outputHistory: [Output] = []
+    
     public var angleMode: AngleMode = .radians {
         didSet {
             updateAngleMode()
@@ -35,16 +43,21 @@ public class Calculate {
         }
         inputHistoryIndex = inputHistory.count
         
+        var isError = false
         var errorResult: String?
         let originalExceptionHandler = context.exceptionHandler
         context.exceptionHandler = { context, exception in
             errorResult = exception?.toString()
+            isError = true
         }
         let result = context.objectForKeyedSubscript("Calculate")?
             .objectForKeyedSubscript("calc")?
             .call(withArguments: [expression])?.toString()
         context.exceptionHandler = originalExceptionHandler
-        return errorResult ?? result
+        
+        let output = Output(input: expression, output: errorResult ?? result ?? "", isError: isError)
+        appendOutputHistory(output)
+        return output.output
     }
     
     public func getUserVariables() -> [String] {
@@ -88,14 +101,16 @@ public class Calculate {
         return completions
     }
     
+    public func clearOutputHistory() {
+        outputHistory = []
+        memoryNeedsSaving = true
+    }
+    
     public func save() {
         if memoryNeedsSaving {
             memoryNeedsSaving = false
-            if let memory = context.objectForKeyedSubscript("Calculate")?
-                .objectForKeyedSubscript("getMemoryVars")?
-                .call(withArguments: [])?.toArray() as? [[String]] {
-                UserDefaults.standard.set(memory, forKey: memoryKey)
-            }
+            saveMemory()
+            saveOutputHistory()
         }
     }
     
@@ -103,18 +118,25 @@ public class Calculate {
     
     private let context = JSContext()!
 
-    // Do not change these - the same keys are used for both this app and the legacy widget
+    // Do not change angleModeKey or memoryKey - the same keys are used for both this app and the legacy widget
     private let angleModeKey = "anglemode"
     private let memoryKey = "memory"
+    private let outputHistoryKey = "output"
     private let widgetPreferencesMigratedKey = "widgetMigrated"
     
     private let maxInputHistory = 1000
     private var inputHistory: [String] = []
     private var inputHistoryIndex = -1
     
+    private let maxOutputHistory = 1000
+    
     private var memoryNeedsSaving = false
     
     private init() {
+        migrateWidgetPreferences()
+        
+        loadOutputHistory()
+        
         evalulateScript("antlr3-all")
         evalulateScript("ECMAScript3ExtLexer")
         evalulateScript("ECMAScript3ExtParser")
@@ -122,9 +144,10 @@ public class Calculate {
         evalulateScript("Util")
         evalulateScript("Calculate")
                 
-        migrateWidgetPreferences()
-        loadPreferences()
         setLogFunction()
+
+        angleMode = AngleMode(rawValue: UserDefaults.standard.integer(forKey: angleModeKey)) ?? .radians
+        loadMemory()
     }
     
     private func evalulateScript(_ name: String) {
@@ -138,17 +161,32 @@ public class Calculate {
 
         let originalExceptionHandler = context.exceptionHandler
         context.exceptionHandler = { context, exception in
-            #warning("TODO: Add to output window")
-            let exceptionString = exception?.toString() ?? ""
-            print("Error loading \(name).js: \(exceptionString)")
+            self.appendOutputHistory(Output(input: "\(name).js", output: exception?.toString() ?? "Couldn't load script", isError: true))
         }
         context.evaluateScript(source, withSourceURL: url)
         context.exceptionHandler = originalExceptionHandler
     }
     
-    private func loadPreferences() {
-        angleMode = AngleMode(rawValue: UserDefaults.standard.integer(forKey: angleModeKey)) ?? .radians
-        
+    private func loadOutputHistory() {
+        if let savedHistory = UserDefaults.standard.array(forKey: outputHistoryKey) as? [[Any]] {
+            for historyItem in savedHistory {
+                if historyItem.count == 3,
+                    let input = historyItem[0] as? String,
+                    let output = historyItem[1] as? String,
+                    let isError = historyItem[2] as? Bool {
+                    appendOutputHistory(Output(input: input, output: output, isError: isError))
+                }
+            }
+            memoryNeedsSaving = false
+        }
+    }
+    
+    private func saveOutputHistory() {
+        let simpleOutputHistory: [[Any]] = outputHistory.map { [ $0.input, $0.output, $0.isError ] }
+        UserDefaults.standard.set(simpleOutputHistory, forKey: outputHistoryKey)
+    }
+    
+    private func loadMemory() {
         if let memory = UserDefaults.standard.array(forKey: memoryKey) as? [[String]] {
             for tuple in memory {
                 if tuple.count == 2 {
@@ -156,9 +194,7 @@ public class Calculate {
                     let value = tuple[1]
                     let originalExceptionHandler = context.exceptionHandler
                     context.exceptionHandler = { context, exception in
-                        #warning("TODO: Add to output window")
-                        let exceptionString = exception?.toString() ?? ""
-                        print("Error loading \"\(name)\": \(exceptionString)")
+                        self.appendOutputHistory(Output(input: name, output: exception?.toString() ?? "Couldn't load variable", isError: true))
                     }
                     context.objectForKeyedSubscript("Calculate")?
                         .objectForKeyedSubscript("applyMemoryVar")?
@@ -166,6 +202,22 @@ public class Calculate {
                     context.exceptionHandler = originalExceptionHandler
                 }
             }
+        }
+    }
+    
+    private func saveMemory() {
+        if let memory = context.objectForKeyedSubscript("Calculate")?
+            .objectForKeyedSubscript("getMemoryVars")?
+            .call(withArguments: [])?.toArray() as? [[String]] {
+            UserDefaults.standard.set(memory, forKey: memoryKey)
+        }
+    }
+    
+    private func appendOutputHistory(_ output: Output) {
+        memoryNeedsSaving = true
+        outputHistory.append(output)
+        if outputHistory.count > maxOutputHistory {
+            outputHistory.removeFirst(outputHistory.count - maxOutputHistory)
         }
     }
     

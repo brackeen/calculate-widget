@@ -7,11 +7,19 @@ org.antlr.runtime.BaseRecognizer.prototype.emitErrorMessage = function(message) 
 }
 
 function __typeof__(v) {
+    // This works for unknown variables
+    //   typeof unknown == "undefined"
+    // However, it should throw a ReferenceError for expressions, but instead returns "undefined"
+    //   typeof (unknown + 1) // should throw ReferenceError
     with (Calculate.sandbox) {
         try {
             return typeof eval(v);
-        } catch (er) {
-            return "undefined";
+        } catch (err) {
+            if (err instanceof ReferenceError) {
+                return "undefined";
+            } else {
+                throw err;
+            }
         }
     }
 };

@@ -36,6 +36,7 @@ public class Calculate {
         memoryNeedsSaving = true
         
         if addToHistory {
+            inputHistoryNeedsSaving = true
             inputHistory.append(expression)
             if inputHistory.count > maxInputHistory {
                 inputHistory.removeFirst(inputHistory.count - maxInputHistory)
@@ -89,6 +90,10 @@ public class Calculate {
         return inputHistoryIndex >= inputHistory.count
     }
     
+    public func hasInputHistory() -> Bool {
+        return inputHistory.isEmpty
+    }
+    
     public func getCompletions(prefix: String) -> [String] {
         guard let possibleCompletions = context.objectForKeyedSubscript("Calculate")?
             .objectForKeyedSubscript("getPossibleCompletions")?
@@ -112,6 +117,10 @@ public class Calculate {
             saveMemory()
             saveOutputHistory()
         }
+        if inputHistoryNeedsSaving {
+            inputHistoryNeedsSaving = false
+            saveInputHistory();
+        }
     }
     
     // MARK: - Private
@@ -122,19 +131,21 @@ public class Calculate {
     private let angleModeKey = "anglemode"
     private let memoryKey = "memory"
     private let outputHistoryKey = "output"
+    private let inputHistoryKey = "input"
     private let widgetPreferencesMigratedKey = "widgetMigrated"
     
+    private let maxOutputHistory = 1000
     private let maxInputHistory = 1000
     private var inputHistory: [String] = []
-    private var inputHistoryIndex = -1
+    private var inputHistoryIndex = 0
     
-    private let maxOutputHistory = 1000
-    
+    private var inputHistoryNeedsSaving = false
     private var memoryNeedsSaving = false
     
     private init() {
         migrateWidgetPreferences()
         
+        loadInputHistory()
         loadOutputHistory()
         
         evalulateScript("antlr3-all")
@@ -184,6 +195,15 @@ public class Calculate {
     private func saveOutputHistory() {
         let simpleOutputHistory: [[Any]] = outputHistory.map { [ $0.input, $0.output, $0.isError ] }
         UserDefaults.standard.set(simpleOutputHistory, forKey: outputHistoryKey)
+    }
+    
+    private func loadInputHistory() {
+        inputHistory = UserDefaults.standard.array(forKey: inputHistoryKey) as? [String] ?? []
+        inputHistoryIndex = inputHistory.count
+    }
+    
+    private func saveInputHistory() {
+        UserDefaults.standard.set(inputHistory, forKey: inputHistoryKey)
     }
     
     private func loadMemory() {

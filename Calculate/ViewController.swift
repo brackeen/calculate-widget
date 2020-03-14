@@ -21,7 +21,9 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        inputField.stringValue = "1+1"
+        if !Calculate.shared.hasInputHistory() {
+            inputField.stringValue = "1+1"
+        }
         inputField.selectText(nil)
         inputField.cell?.focusRingType = .none
         inputField.becomeFirstResponder()

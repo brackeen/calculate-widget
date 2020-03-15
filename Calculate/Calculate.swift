@@ -91,7 +91,7 @@ public class Calculate {
     }
     
     public func hasInputHistory() -> Bool {
-        return inputHistory.isEmpty
+        return !inputHistory.isEmpty
     }
     
     public func getCompletions(prefix: String) -> [String] {

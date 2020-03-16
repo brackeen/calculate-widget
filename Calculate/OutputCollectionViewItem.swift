@@ -32,6 +32,12 @@ class OutputCollectionViewItem: NSCollectionViewItem {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        inputLabel.font = NSFont.monospacedDigitSystemFont(ofSize: inputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
+        outputLabel.font = NSFont.monospacedDigitSystemFont(ofSize: outputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
+    }
+    
     func fittingSize(forWidth width: CGFloat) -> NSSize {
         if let widthConstraint = widthConstraint {
             widthConstraint.constant = width

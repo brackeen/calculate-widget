@@ -31,6 +31,8 @@ class ViewController: NSViewController {
         prototypeOutputCollectionViewItemSize.width = view.frame.width
         prototypeOutputCollectionViewItemSize.height = prototypeOutputCollectionViewItem.view.frame.height
 
+        inputField.font = NSFont.monospacedDigitSystemFont(ofSize: inputField.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
+        
         if !Calculate.shared.hasInputHistory() {
             inputField.stringValue = "1+1"
         }

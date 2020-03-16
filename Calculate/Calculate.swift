@@ -163,11 +163,13 @@ public class Calculate {
     
     private func evalulateScript(_ name: String) {
         guard let url = Bundle.main.url(forResource: name, withExtension: "js") else {
-            fatalError("Couldn't find \(name).js")
+            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't find script", isError: true))
+            return
         }
         
         guard let source = try? String(contentsOf: url) else {
-            fatalError("Couldn't load \(name).js")
+            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't load script", isError: true))
+            return
         }
 
         let originalExceptionHandler = context.exceptionHandler

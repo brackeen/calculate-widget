@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="OutputCollectionViewItem" customModule="Calculate" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <collectionViewItem id="nsw-Zj-Gig" customClass="OutputCollectionViewItem" customModule="Calculate" customModuleProvider="target">
+            <connections>
+                <outlet property="inputLabel" destination="crO-o1-fuQ" id="9pi-rf-9Yf"/>
+                <outlet property="outputLabel" destination="XX2-tv-cju" id="HCc-Gh-Z9o"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="hcj-d6-D8w"/>
+            </connections>
+        </collectionViewItem>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="42"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="crO-o1-fuQ">
+                    <rect key="frame" x="12" y="21" width="35" height="16"/>
+                    <textFieldCell key="cell" selectable="YES" title="Input" id="w1C-XH-WNa">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XX2-tv-cju">
+                    <rect key="frame" x="30" y="4" width="47" height="16"/>
+                    <textFieldCell key="cell" selectable="YES" title="Output" id="WIk-zH-I1f">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="XX2-tv-cju" secondAttribute="bottom" constant="4" id="3kV-Rp-KCx"/>
+                <constraint firstItem="crO-o1-fuQ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="7oD-Na-sID"/>
+                <constraint firstItem="XX2-tv-cju" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="32" id="dGH-is-2rv"/>
+                <constraint firstItem="crO-o1-fuQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="14" id="doV-pc-dqR"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XX2-tv-cju" secondAttribute="trailing" constant="14" id="lud-ak-Dh7"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="crO-o1-fuQ" secondAttribute="trailing" constant="14" id="rHh-7T-wct"/>
+                <constraint firstItem="XX2-tv-cju" firstAttribute="top" secondItem="crO-o1-fuQ" secondAttribute="bottom" constant="1" id="uOO-Sz-bgo"/>
+            </constraints>
+            <point key="canvasLocation" x="159" y="160"/>
+        </customView>
+    </objects>
+</document>

@@ -32,7 +32,8 @@ public class Calculate {
         }
     }
     
-    public func calc(_ expression: String, addToHistory: Bool = true) -> String? {
+    @discardableResult
+    public func calc(_ expression: String, addToHistory: Bool = true) -> String {
         memoryNeedsSaving = true
         
         if addToHistory {

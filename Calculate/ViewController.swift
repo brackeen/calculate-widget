@@ -11,22 +11,42 @@ import Cocoa
 class ViewController: NSViewController {
     
     @IBOutlet weak var inputField: NSTextField!
+    @IBOutlet weak var outputCollectionView: NSCollectionView!
     
     fileprivate var textFieldWasEmpty = true
     fileprivate var allowInsertAnsVariable = true
     fileprivate var historyEnd: String?
     fileprivate var completions: [String]?
     fileprivate var completionWordStart = "".endIndex
+    
+    fileprivate var prototypeOutputCollectionViewItem: OutputCollectionViewItem!
+    fileprivate var prototypeOutputCollectionViewItemSize: CGSize = .zero
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var topLevelObjects: NSArray?
+        NSNib(nibNamed: OutputCollectionViewItem.identifier.rawValue, bundle: nil)?.instantiate(withOwner: nil, topLevelObjects: &topLevelObjects)
+        prototypeOutputCollectionViewItem = topLevelObjects!.compactMap({ $0 as? OutputCollectionViewItem }).first!
+        prototypeOutputCollectionViewItemSize.width = view.frame.width
+        prototypeOutputCollectionViewItemSize.height = prototypeOutputCollectionViewItem.view.frame.height
 
         if !Calculate.shared.hasInputHistory() {
             inputField.stringValue = "1+1"
         }
         inputField.selectText(nil)
-        inputField.cell?.focusRingType = .none
-        inputField.becomeFirstResponder()
+    }
+
+    override func viewWillLayout() {
+        super.viewWillLayout()
+        
+        prototypeOutputCollectionViewItemSize.width = view.frame.width
+        if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
+            if layout.itemSize != prototypeOutputCollectionViewItemSize {
+                layout.itemSize = prototypeOutputCollectionViewItemSize
+                layout.invalidateLayout()
+            }
+        }
     }
     
     @IBAction func enterPressed(_ sender: Any) {
@@ -42,15 +62,36 @@ class ViewController: NSViewController {
             }
         }
         
-        if let result = Calculate.shared.calc(expression, addToHistory: addToHistory) {
-            print(result)
-        }
+        let originalOutputCount = Calculate.shared.outputHistory.count
+        Calculate.shared.calc(expression, addToHistory: addToHistory)
+        
+        let outputCount = Calculate.shared.outputHistory.count
+        outputCollectionView.performBatchUpdates({
+            if outputCount <= originalOutputCount {
+                let deletedCount = originalOutputCount - originalOutputCount + 1
+                let deletedIndexPaths = Set((0..<deletedCount).map { IndexPath(item: $0, section: 0) })
+                outputCollectionView.deleteItems(at: deletedIndexPaths)
+            }
+            outputCollectionView.insertItems(at: [IndexPath(item: outputCount - 1, section: 0)])
+        }, completionHandler: nil)
+        scrollToBottom()
         
         inputField.stringValue = ""
         textFieldWasEmpty = true
         allowInsertAnsVariable = true
         historyEnd = nil
         completions = nil
+    }
+    
+    fileprivate func scrollToBottom() {
+        let outputCount = Calculate.shared.outputHistory.count
+        if outputCount > 0 {
+            var frame = outputCollectionView.frameForItem(at: outputCount - 1)
+            if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
+                frame.size.height += layout.sectionInset.bottom
+            }
+            outputCollectionView.scrollToVisible(frame)
+        }
     }
     
     fileprivate func doAutocomplete(forward: Bool) {
@@ -163,5 +204,40 @@ extension ViewController: NSTextFieldDelegate {
         } else {
             return false
         }
+    }
+}
+
+extension ViewController: NSCollectionViewDataSource {
+
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Calculate.shared.outputHistory.count
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let item = collectionView.makeItem(withIdentifier: OutputCollectionViewItem.identifier, for: indexPath)
+        if let outputItem = item as? OutputCollectionViewItem {
+            outputItem.output = Calculate.shared.outputHistory[indexPath.item]
+        }
+        return item
+    }
+}
+
+extension ViewController: NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: NSCollectionView,
+           layout collectionViewLayout: NSCollectionViewLayout,
+           sizeForItemAt indexPath: IndexPath) -> NSSize {
+        prototypeOutputCollectionViewItem.output = Calculate.shared.outputHistory[indexPath.item]
+        return prototypeOutputCollectionViewItem.fittingSize(forWidth: collectionView.frame.width)
+    }
+}
+
+class PaddedTextFieldCell: NSTextFieldCell {
+
+    @IBInspectable var leftPadding: CGFloat = 10.0
+
+    override func drawingRect(forBounds rect: NSRect) -> NSRect {
+        let rectInset = NSMakeRect(rect.origin.x + leftPadding, rect.origin.y, rect.size.width - leftPadding, rect.size.height)
+        return super.drawingRect(forBounds: rectInset)
     }
 }

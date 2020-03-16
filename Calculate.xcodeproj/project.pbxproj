@@ -20,6 +20,8 @@
 		E321A0AF2417C3AA00D40474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E321A0AE2417C3AA00D40474 /* Assets.xcassets */; };
 		E321A0B22417C3AA00D40474 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E321A0B02417C3AA00D40474 /* Main.storyboard */; };
 		E321A0D92417C97400D40474 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0D82417C97400D40474 /* Calculate.swift */; };
+		E35AC3EC241FC4EC0041BF6A /* OutputCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC3EA241FC4EC0041BF6A /* OutputCollectionViewItem.swift */; };
+		E35AC3ED241FC4EC0041BF6A /* OutputCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35AC3EB241FC4EC0041BF6A /* OutputCollectionViewItem.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		E321A0B32417C3AA00D40474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E321A0B42417C3AA00D40474 /* Calculate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calculate.entitlements; sourceTree = "<group>"; };
 		E321A0D82417C97400D40474 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
+		E35AC3EA241FC4EC0041BF6A /* OutputCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputCollectionViewItem.swift; sourceTree = "<group>"; };
+		E35AC3EB241FC4EC0041BF6A /* OutputCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutputCollectionViewItem.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,12 +125,14 @@
 			isa = PBXGroup;
 			children = (
 				E321A0AA2417C3A900D40474 /* AppDelegate.swift */,
+				E321A0D82417C97400D40474 /* Calculate.swift */,
 				E321A0AC2417C3A900D40474 /* ViewController.swift */,
-				E321A0AE2417C3AA00D40474 /* Assets.xcassets */,
+				E35AC3EA241FC4EC0041BF6A /* OutputCollectionViewItem.swift */,
+				E35AC3EB241FC4EC0041BF6A /* OutputCollectionViewItem.xib */,
 				E321A0B02417C3AA00D40474 /* Main.storyboard */,
+				E321A0AE2417C3AA00D40474 /* Assets.xcassets */,
 				E321A0B32417C3AA00D40474 /* Info.plist */,
 				E321A0B42417C3AA00D40474 /* Calculate.entitlements */,
-				E321A0D82417C97400D40474 /* Calculate.swift */,
 				E30E631324190F49002EF546 /* container-migration.plist */,
 			);
 			path = Calculate;
@@ -228,6 +234,7 @@
 				E321A0B22417C3AA00D40474 /* Main.storyboard in Resources */,
 				E30E63082417EE45002EF546 /* Calculate.js in Resources */,
 				E30E631424190F49002EF546 /* container-migration.plist in Resources */,
+				E35AC3ED241FC4EC0041BF6A /* OutputCollectionViewItem.xib in Resources */,
 				E30E63052417EE45002EF546 /* ECMAScript3ExtEmitter.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E35AC3EC241FC4EC0041BF6A /* OutputCollectionViewItem.swift in Sources */,
 				E321A0D92417C97400D40474 /* Calculate.swift in Sources */,
 				E321A0AD2417C3A900D40474 /* ViewController.swift in Sources */,
 				E321A0AB2417C3A900D40474 /* AppDelegate.swift in Sources */,

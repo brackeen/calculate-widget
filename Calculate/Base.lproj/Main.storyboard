@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -685,11 +686,12 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Calculate" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
+                    <window key="window" title="Calculate" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="280" height="360"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="240" height="160"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -700,42 +702,93 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="74" y="299"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Calculate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="buw-3S-gyR">
-                                <rect key="frame" x="20" y="20" width="440" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="SJg-cX-nly">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="enterPressed:" target="XfG-lQ-9wD" id="QQu-EZ-CrG"/>
-                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="qAm-dD-hy5"/>
-                                </connections>
-                            </textField>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-k8-6jO">
+                                <rect key="frame" x="0.0" y="32" width="280" height="328"/>
+                                <clipView key="contentView" id="0bz-EC-GNj">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="328"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="9nv-DJ-Gcl">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" id="tvm-x7-VmH">
+                                                <size key="itemSize" width="280" height="42"/>
+                                                <edgeInsets key="sectionInset" left="0.0" right="0.0" top="6" bottom="8"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="1LG-bh-WkB"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="eUl-AU-Jji"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="znX-XM-6KF">
+                                    <rect key="frame" x="1" y="283" width="238" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="7i8-ja-fMU">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <box boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="0Ta-kz-PMQ">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="32"/>
+                                <view key="contentView" id="sCS-zV-GLd">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="buw-3S-gyR">
+                                            <rect key="frame" x="12" y="8" width="256" height="16"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" focusRingType="none" usesSingleLineMode="YES" id="SJg-cX-nly">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="enterPressed:" target="XfG-lQ-9wD" id="QQu-EZ-CrG"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="qAm-dD-hy5"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="buw-3S-gyR" firstAttribute="top" secondItem="sCS-zV-GLd" secondAttribute="top" constant="8" id="8vP-jj-vbC"/>
+                                        <constraint firstAttribute="bottom" secondItem="buw-3S-gyR" secondAttribute="bottom" constant="8" id="hOf-q8-0xe"/>
+                                        <constraint firstItem="buw-3S-gyR" firstAttribute="leading" secondItem="sCS-zV-GLd" secondAttribute="leading" constant="14" id="wZj-aI-F8Y"/>
+                                        <constraint firstAttribute="trailing" secondItem="buw-3S-gyR" secondAttribute="trailing" constant="14" id="yG4-J3-bzp"/>
+                                    </constraints>
+                                </view>
+                                <color key="fillColor" name="unemphasizedSelectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="buw-3S-gyR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="13L-wD-Er8"/>
-                            <constraint firstAttribute="bottom" secondItem="buw-3S-gyR" secondAttribute="bottom" constant="20" id="BdJ-Dx-AeH"/>
-                            <constraint firstAttribute="trailing" secondItem="buw-3S-gyR" secondAttribute="trailing" constant="20" id="MLp-BH-4qq"/>
+                            <constraint firstItem="0Ta-kz-PMQ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="8GH-Mn-tIS"/>
+                            <constraint firstAttribute="trailing" secondItem="bfv-k8-6jO" secondAttribute="trailing" id="HAz-rN-u8Q"/>
+                            <constraint firstItem="0Ta-kz-PMQ" firstAttribute="top" secondItem="bfv-k8-6jO" secondAttribute="bottom" id="I5A-5l-Zf7"/>
+                            <constraint firstAttribute="bottom" secondItem="0Ta-kz-PMQ" secondAttribute="bottom" id="a8x-y6-HJY"/>
+                            <constraint firstItem="bfv-k8-6jO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="h9x-pt-8oE"/>
+                            <constraint firstAttribute="trailing" secondItem="0Ta-kz-PMQ" secondAttribute="trailing" id="tBx-42-hhN"/>
+                            <constraint firstItem="bfv-k8-6jO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="vQr-6r-eWx"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="inputField" destination="buw-3S-gyR" id="zjN-XJ-Kbe"/>
+                        <outlet property="outputCollectionView" destination="9nv-DJ-Gcl" id="AbU-Du-FmO"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="74" y="817"/>
         </scene>
     </scenes>
 </document>

@@ -131,7 +131,7 @@ public class Calculate {
             .call(withArguments: [])?.toArray() as? [[String]] ?? []
         let allMemory = constants + memory
         
-        let memoryOutput: [Output] = allMemory.compactMap {
+        var memoryOutput: [Output] = allMemory.compactMap {
             if $0.count == 2 {
                 return Output(input: $0[0], output: $0[1], type: .memory)
             } else {
@@ -140,6 +140,11 @@ public class Calculate {
         }
         if !memoryOutput.isEmpty {
             memoryNeedsSaving = true
+            // Put "ans" first
+            if let lastAnswerIndex = memoryOutput.firstIndex(where: { $0.input == "ans" }), lastAnswerIndex > 0 {
+                let lastAnswer = memoryOutput.remove(at: lastAnswerIndex)
+                memoryOutput.insert(lastAnswer, at: 0)
+            }
             if memoryOutput.count >= maxOutputHistory {
                 // Don't trim so user can see every variable
                 outputHistory = memoryOutput

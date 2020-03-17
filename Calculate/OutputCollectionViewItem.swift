@@ -22,8 +22,8 @@ class OutputCollectionViewItem: NSCollectionViewItem, OutputItem {
             guard let output = output else {
                 return
             }
-            inputLabel.stringValue = output.input
-            outputLabel.stringValue = output.output
+            inputLabel.stringValue = output.input.breakOnSymbols()
+            outputLabel.stringValue = output.output.breakOnSymbols()
             if output.type == .error {
                 outputLabel.textColor = NSColor(named: NSColor.Name("outputErrorColor"))
             } else {

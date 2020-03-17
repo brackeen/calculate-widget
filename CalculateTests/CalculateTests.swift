@@ -102,4 +102,11 @@ class CalculateTests: XCTestCase {
          XCTAssertEqual(calc("5010-5000.94 "), "9.06")
          XCTAssertEqual(calc("100010-100000.94"), "9.06")
     }
+    
+    func testStringBreak() {
+        XCTAssertEqual("1 + 2".breakOnSymbols(), "1 + 2")
+        XCTAssertEqual("a++".breakOnSymbols(), "a++")
+        XCTAssertEqual("a++;b++".breakOnSymbols(), "a++;\u{200B}b++")
+        XCTAssertEqual("1+2+3".breakOnSymbols(), "1+\u{200B}2+\u{200B}3")
+    }
 }

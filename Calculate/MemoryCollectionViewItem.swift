@@ -23,7 +23,7 @@ class MemoryCollectionViewItem: NSCollectionViewItem, OutputItem {
                 return
             }
             let key = output.input
-            let value = output.output
+            let value = output.output.breakOnSymbols()
             let keyRange = NSRange(key.startIndex..<key.endIndex, in: key)
             let font = NSFont.monospacedDigitSystemFont(ofSize: textField?.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
             let boldFont = NSFont.monospacedDigitSystemFont(ofSize: textField?.font?.pointSize ?? NSFont.systemFontSize, weight: .bold)

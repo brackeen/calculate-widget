@@ -90,7 +90,7 @@ class ViewController: NSViewController {
                 outputCollectionView.insertItems(at: Set(addedIndexPaths))
             }, completionHandler: nil)
         }
-        scrollToBottom()
+        scrollTo(item: outputCount - addedCount)
     }
         
     @IBAction func enterPressed(_ sender: Any) {
@@ -117,14 +117,26 @@ class ViewController: NSViewController {
         completions = nil
     }
     
-    fileprivate func scrollToBottom() {
+    fileprivate func scrollTo(item: Int) {
         let outputCount = Calculate.shared.outputHistory.count
-        if outputCount > 0 {
-            var frame = outputCollectionView.frameForItem(at: outputCount - 1)
+        if item >= 0 && item < outputCount {
+            let extraHeight: CGFloat
             if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
-                frame.size.height += layout.sectionInset.bottom
+                extraHeight = layout.sectionInset.bottom
+            } else {
+                extraHeight = 0
             }
+
+            var frame = outputCollectionView.frameForItem(at: outputCount - 1)
+            frame.size.height += extraHeight
             outputCollectionView.scrollToVisible(frame)
+            
+            if item != outputCount - 1 {
+                // Scroll back up to the first in the list, so it is at the top of the window
+                frame = outputCollectionView.frameForItem(at: item)
+                frame.size.height += extraHeight
+                outputCollectionView.scrollToVisible(frame)
+            }
         }
     }
     

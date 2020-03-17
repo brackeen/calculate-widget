@@ -69,6 +69,12 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func checkForUpdates(_ sender: Any) {
+        if let url = URL(string: "https://github.com/brackeen/calculate-widget/releases") {
+            NSWorkspace.shared.open(url)
+        }
+    }
+    
     private func updateCollectionView(originalOutputCount: Int, addedCount: Int) {
         let outputCount = Calculate.shared.outputHistory.count
         if addedCount >= outputCount || originalOutputCount == 0 {

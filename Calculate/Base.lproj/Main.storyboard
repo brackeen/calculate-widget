@@ -95,6 +95,12 @@
                                                 <action selector="selectAll:" target="Ady-hI-5gd" id="VNm-Mi-diN"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="LCy-7B-Lfx"/>
+                                        <menuItem title="Clear Output" keyEquivalent="k" id="lTf-mO-USy">
+                                            <connections>
+                                                <action selector="clearOutput:" target="Ady-hI-5gd" id="BG6-nv-ciM"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>

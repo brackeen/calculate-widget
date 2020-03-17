@@ -58,6 +58,11 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func clearOutput(_ sender: Any) {
+        Calculate.shared.clearOutputHistory()
+        outputCollectionView.reloadData()
+    }
+        
     @IBAction func enterPressed(_ sender: Any) {
         var expression = inputField.stringValue
         var addToHistory = true
@@ -238,5 +243,18 @@ extension ViewController: NSCollectionViewDelegate, NSCollectionViewDelegateFlow
            sizeForItemAt indexPath: IndexPath) -> NSSize {
         prototypeOutputCollectionViewItem.output = Calculate.shared.outputHistory[indexPath.item]
         return prototypeOutputCollectionViewItem.fittingSize(forWidth: collectionView.frame.width)
+    }
+}
+
+extension ViewController: NSUserInterfaceValidations {
+    
+    func validateUserInterfaceItem(_ item: NSValidatedUserInterfaceItem) -> Bool {
+        if item.action == #selector(copyLastAnswer(_:)) {
+            return !Calculate.shared.outputHistory.isEmpty
+        } else if item.action == #selector(clearOutput(_:)) {
+            return !Calculate.shared.outputHistory.isEmpty
+        } else {
+            return true
+        }
     }
 }

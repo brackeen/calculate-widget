@@ -153,6 +153,7 @@
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Calculate" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" canJoinAllSpaces="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="280" height="360"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -262,7 +263,7 @@
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ujP-t0-gze">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="425" y="461" width="320" height="270"/>
+                        <rect key="contentRect" x="425" y="461" width="400" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                         <connections>
                             <outlet property="delegate" destination="AIb-t2-jTc" id="qk5-8r-Apf"/>
@@ -281,11 +282,11 @@
             <objects>
                 <viewController id="IS2-h4-e7h" customClass="PreferencesViewController" customModule="Calculate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="n7U-Vb-rtY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kH5-ui-Oub">
-                                <rect key="frame" x="46" y="230" width="81" height="16"/>
+                                <rect key="frame" x="58" y="230" width="81" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Angle Mode:" id="Dxy-SN-6Fq">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -293,10 +294,10 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TRI-Zo-Sec">
-                                <rect key="frame" x="131" y="224" width="89" height="25"/>
+                                <rect key="frame" x="143" y="224" width="89" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="Radians" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="tXp-L0-grV" id="eQw-qk-rm8">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="S5T-Gb-9xO">
                                         <items>
                                             <menuItem title="Radians" state="on" id="tXp-L0-grV">
@@ -312,17 +313,38 @@
                                     <action selector="angleModeChanged:" target="IS2-h4-e7h" id="cYp-CY-N8M"/>
                                 </connections>
                             </popUpButton>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="e3t-n9-dws" customClass="MASShortcutView">
+                                <rect key="frame" x="145" y="178" width="200" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="MvJ-J8-7KI"/>
+                                    <constraint firstAttribute="height" constant="25" id="Uj8-fT-sJP"/>
+                                </constraints>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QiW-al-0OJ">
+                                <rect key="frame" x="88" y="182" width="51" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Hotkey:" id="udm-lW-tNt">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="kH5-ui-Oub" firstAttribute="leading" secondItem="n7U-Vb-rtY" secondAttribute="leading" constant="48" id="EbU-yA-DUi"/>
+                            <constraint firstItem="QiW-al-0OJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="n7U-Vb-rtY" secondAttribute="leading" constant="8" id="9De-vd-mIA"/>
+                            <constraint firstItem="kH5-ui-Oub" firstAttribute="leading" secondItem="n7U-Vb-rtY" secondAttribute="leading" constant="60" id="EbU-yA-DUi"/>
                             <constraint firstItem="kH5-ui-Oub" firstAttribute="top" secondItem="n7U-Vb-rtY" secondAttribute="top" constant="24" id="HBl-2k-JiS"/>
+                            <constraint firstItem="e3t-n9-dws" firstAttribute="centerY" secondItem="QiW-al-0OJ" secondAttribute="centerY" id="LmS-5h-SSN"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TRI-Zo-Sec" secondAttribute="trailing" constant="24" id="RG4-gq-jMZ"/>
                             <constraint firstItem="TRI-Zo-Sec" firstAttribute="firstBaseline" secondItem="kH5-ui-Oub" secondAttribute="firstBaseline" id="XDH-1P-FVU"/>
+                            <constraint firstItem="e3t-n9-dws" firstAttribute="leading" secondItem="TRI-Zo-Sec" secondAttribute="leading" id="ajV-hX-5bV"/>
                             <constraint firstItem="TRI-Zo-Sec" firstAttribute="leading" secondItem="kH5-ui-Oub" secondAttribute="trailing" constant="8" id="gXK-iD-kDC"/>
+                            <constraint firstItem="QiW-al-0OJ" firstAttribute="trailing" secondItem="kH5-ui-Oub" secondAttribute="trailing" id="kC6-uh-U65"/>
+                            <constraint firstItem="QiW-al-0OJ" firstAttribute="top" secondItem="kH5-ui-Oub" secondAttribute="bottom" constant="32" id="pYP-8B-FWJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="angleModeButton" destination="TRI-Zo-Sec" id="paR-nA-uQT"/>
+                        <outlet property="shortcutView" destination="e3t-n9-dws" id="mbZ-9g-Onf"/>
                     </connections>
                 </viewController>
                 <customObject id="ckt-dW-pPZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

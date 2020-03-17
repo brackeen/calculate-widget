@@ -38,6 +38,13 @@ class ViewController: NSViewController {
             inputField.stringValue = "1+1"
         }
         inputField.selectText(nil)
+        
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: AppDelegate.hotkeyPreferenceKey, toAction: { [weak self] in
+            NSApp.activate(ignoringOtherApps: true)
+            if let inputField = self?.inputField {
+                inputField.window?.makeFirstResponder(inputField)
+            }
+        })
     }
 
     override func viewWillLayout() {

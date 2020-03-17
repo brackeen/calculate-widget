@@ -10,6 +10,8 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    static let hotkeyPreferenceKey = "hotkey"
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 

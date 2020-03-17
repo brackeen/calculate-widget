@@ -11,11 +11,15 @@ import Cocoa
 class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var angleModeButton: NSPopUpButton!
+    @IBOutlet weak var shortcutView: MASShortcutView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         angleModeButton.selectItem(withTag: Calculate.shared.angleMode.rawValue)
+        
+        shortcutView.style = MASShortcutViewStyleTexturedRect
+        shortcutView.associatedUserDefaultsKey = AppDelegate.hotkeyPreferenceKey
     }
     
     @IBAction func angleModeChanged(_ sender: Any) {

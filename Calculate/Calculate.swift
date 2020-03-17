@@ -18,10 +18,15 @@ public class Calculate {
         case degrees = 1
     }
     
+    public enum OutputType: Int {
+        case normal
+        case error
+    }
+    
     public struct Output {
         let input: String
         let output: String
-        let isError: Bool
+        let type: OutputType
     }
     
     public private(set) var outputHistory: [Output] = []
@@ -45,19 +50,19 @@ public class Calculate {
         }
         inputHistoryIndex = inputHistory.count
         
-        var isError = false
+        var type: OutputType = .normal
         var errorResult: String?
         let originalExceptionHandler = context.exceptionHandler
         context.exceptionHandler = { context, exception in
             errorResult = exception?.toString()
-            isError = true
+            type = .error
         }
         let result = context.objectForKeyedSubscript("Calculate")?
             .objectForKeyedSubscript("calc")?
             .call(withArguments: [expression])?.toString()
         context.exceptionHandler = originalExceptionHandler
         
-        let output = Output(input: expression, output: errorResult ?? result ?? "", isError: isError)
+        let output = Output(input: expression, output: errorResult ?? result ?? "", type: type)
         appendOutputHistory(output)
         return output.output
     }
@@ -164,18 +169,18 @@ public class Calculate {
     
     private func evalulateScript(_ name: String) {
         guard let url = Bundle.main.url(forResource: name, withExtension: "js") else {
-            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't find script", isError: true))
+            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't find script", type: .error))
             return
         }
         
         guard let source = try? String(contentsOf: url) else {
-            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't load script", isError: true))
+            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't load script",  type: .error))
             return
         }
 
         let originalExceptionHandler = context.exceptionHandler
         context.exceptionHandler = { context, exception in
-            self.appendOutputHistory(Output(input: "\(name).js", output: exception?.toString() ?? "Couldn't load script", isError: true))
+            self.appendOutputHistory(Output(input: "\(name).js", output: exception?.toString() ?? "Couldn't load script",  type: .error))
         }
         context.evaluateScript(source, withSourceURL: url)
         context.exceptionHandler = originalExceptionHandler
@@ -187,8 +192,9 @@ public class Calculate {
                 if historyItem.count == 3,
                     let input = historyItem[0] as? String,
                     let output = historyItem[1] as? String,
-                    let isError = historyItem[2] as? Bool {
-                    appendOutputHistory(Output(input: input, output: output, isError: isError))
+                    let rawType = historyItem[2] as? Int,
+                    let type = OutputType(rawValue: rawType) {
+                    appendOutputHistory(Output(input: input, output: output, type: type))
                 }
             }
             memoryNeedsSaving = false
@@ -196,7 +202,7 @@ public class Calculate {
     }
     
     private func saveOutputHistory() {
-        let simpleOutputHistory: [[Any]] = outputHistory.map { [ $0.input, $0.output, $0.isError ] }
+        let simpleOutputHistory: [[Any]] = outputHistory.map { [ $0.input, $0.output, $0.type.rawValue ] }
         UserDefaults.standard.set(simpleOutputHistory, forKey: outputHistoryKey)
     }
     
@@ -217,7 +223,7 @@ public class Calculate {
                     let value = tuple[1]
                     let originalExceptionHandler = context.exceptionHandler
                     context.exceptionHandler = { context, exception in
-                        self.appendOutputHistory(Output(input: name, output: exception?.toString() ?? "Couldn't load variable", isError: true))
+                        self.appendOutputHistory(Output(input: name, output: exception?.toString() ?? "Couldn't load variable", type: .error))
                     }
                     context.objectForKeyedSubscript("Calculate")?
                         .objectForKeyedSubscript("applyMemoryVar")?

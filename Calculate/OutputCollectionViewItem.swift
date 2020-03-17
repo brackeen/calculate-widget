@@ -24,7 +24,7 @@ class OutputCollectionViewItem: NSCollectionViewItem {
             }
             inputLabel.stringValue = output.input
             outputLabel.stringValue = output.output
-            if output.isError {
+            if output.type == .error {
                 outputLabel.textColor = NSColor(named: NSColor.Name("outputErrorColor"))
             } else {
                 outputLabel.textColor = NSColor.labelColor

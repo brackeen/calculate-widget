@@ -51,6 +51,13 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func copyLastAnswer(_ sender: Any) {
+        if let lastAnswer = Calculate.shared.outputHistory.last?.output {
+            NSPasteboard.general.declareTypes([.string], owner: nil)
+            NSPasteboard.general.setString(lastAnswer, forType: .string)
+        }
+    }
+    
     @IBAction func enterPressed(_ sender: Any) {
         var expression = inputField.stringValue
         var addToHistory = true

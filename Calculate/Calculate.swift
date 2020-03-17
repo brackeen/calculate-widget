@@ -205,6 +205,7 @@ public class Calculate {
         setLogFunction()
 
         angleMode = AngleMode(rawValue: UserDefaults.standard.integer(forKey: angleModeKey)) ?? .radians
+        updateAngleMode(updateDefaults: false)
         loadMemory()
     }
     
@@ -298,8 +299,10 @@ public class Calculate {
         context.objectForKeyedSubscript("Calculate")?.setObject(logFunction, forKeyedSubscript: ("log" as NSString))
     }
     
-    private func updateAngleMode() {
-        UserDefaults.standard.set(angleMode.rawValue, forKey: angleModeKey)
+    private func updateAngleMode(updateDefaults: Bool = true) {
+        if updateDefaults {
+            UserDefaults.standard.set(angleMode.rawValue, forKey: angleModeKey)
+        }
         
         context.objectForKeyedSubscript("Calculate")?
             .objectForKeyedSubscript("setAngleMode")?

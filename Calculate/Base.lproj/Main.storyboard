@@ -30,7 +30,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="AIb-t2-jTc" kind="show" id="F40-kg-ZSR"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -62,9 +66,6 @@
                                         </menuItem>
                                     </items>
                                 </menu>
-                            </menuItem>
-                            <menuItem title="File" id="dMs-cI-mzQ">
-                                <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
                             <menuItem title="Edit" id="5QF-Oa-p0T">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -144,7 +145,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="74" y="-66"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -253,6 +254,80 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74" y="817"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="0rK-Vi-ypH">
+            <objects>
+                <windowController id="AIb-t2-jTc" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ujP-t0-gze">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="320" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <connections>
+                            <outlet property="delegate" destination="AIb-t2-jTc" id="qk5-8r-Apf"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="IS2-h4-e7h" kind="relationship" relationship="window.shadowedContentViewController" id="xAI-tP-Ztu"/>
+                    </connections>
+                </windowController>
+                <customObject id="uxE-za-meF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="337"/>
+        </scene>
+        <!--Preferences View Controller-->
+        <scene sceneID="qud-Vl-K1b">
+            <objects>
+                <viewController id="IS2-h4-e7h" customClass="PreferencesViewController" customModule="Calculate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="n7U-Vb-rtY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kH5-ui-Oub">
+                                <rect key="frame" x="46" y="230" width="81" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Angle Mode:" id="Dxy-SN-6Fq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TRI-Zo-Sec">
+                                <rect key="frame" x="131" y="224" width="89" height="25"/>
+                                <popUpButtonCell key="cell" type="push" title="Radians" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="tXp-L0-grV" id="eQw-qk-rm8">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <menu key="menu" id="S5T-Gb-9xO">
+                                        <items>
+                                            <menuItem title="Radians" state="on" id="tXp-L0-grV">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Degrees" tag="1" id="s0m-dV-vgV">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="angleModeChanged:" target="IS2-h4-e7h" id="cYp-CY-N8M"/>
+                                </connections>
+                            </popUpButton>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="kH5-ui-Oub" firstAttribute="leading" secondItem="n7U-Vb-rtY" secondAttribute="leading" constant="48" id="EbU-yA-DUi"/>
+                            <constraint firstItem="kH5-ui-Oub" firstAttribute="top" secondItem="n7U-Vb-rtY" secondAttribute="top" constant="24" id="HBl-2k-JiS"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TRI-Zo-Sec" secondAttribute="trailing" constant="24" id="RG4-gq-jMZ"/>
+                            <constraint firstItem="TRI-Zo-Sec" firstAttribute="firstBaseline" secondItem="kH5-ui-Oub" secondAttribute="firstBaseline" id="XDH-1P-FVU"/>
+                            <constraint firstItem="TRI-Zo-Sec" firstAttribute="leading" secondItem="kH5-ui-Oub" secondAttribute="trailing" constant="8" id="gXK-iD-kDC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="angleModeButton" destination="TRI-Zo-Sec" id="paR-nA-uQT"/>
+                    </connections>
+                </viewController>
+                <customObject id="ckt-dW-pPZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="772"/>
         </scene>
     </scenes>
 </document>

@@ -140,6 +140,14 @@ class ViewController: NSViewController {
         }
     }
     
+    fileprivate func scrollRelative(amount: CGFloat) {
+        var frame = outputCollectionView.visibleRect
+        frame.origin.y += amount
+        print(frame)
+        print(outputCollectionView.bounds.height)
+        outputCollectionView.animator().scrollToVisible(frame)
+    }
+    
     fileprivate func doAutocomplete(forward: Bool) {
         let input = inputField.stringValue
         
@@ -246,6 +254,18 @@ extension ViewController: NSTextFieldDelegate {
                 inputField.stringValue = historyItem
                 inputField.currentEditor()?.moveToEndOfLine(nil)
             }
+            return true
+        } else if commandSelector == #selector(scrollPageUp(_:)) {
+            scrollRelative(amount: -outputCollectionView.visibleRect.height)
+            return true
+        } else if commandSelector == #selector(scrollPageDown(_:)) {
+            scrollRelative(amount: outputCollectionView.visibleRect.height)
+            return true
+        } else if commandSelector == #selector(moveToBeginningOfDocument(_:)) {
+            scrollTo(item: 0)
+            return true
+        } else if commandSelector == #selector(moveToEndOfDocument(_:)) {
+            scrollTo(item: Calculate.shared.outputHistory.count - 1)
             return true
         } else {
             return false

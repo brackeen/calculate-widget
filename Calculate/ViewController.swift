@@ -240,13 +240,3 @@ extension ViewController: NSCollectionViewDelegate, NSCollectionViewDelegateFlow
         return prototypeOutputCollectionViewItem.fittingSize(forWidth: collectionView.frame.width)
     }
 }
-
-class PaddedTextFieldCell: NSTextFieldCell {
-
-    @IBInspectable var leftPadding: CGFloat = 10.0
-
-    override func drawingRect(forBounds rect: NSRect) -> NSRect {
-        let rectInset = NSMakeRect(rect.origin.x + leftPadding, rect.origin.y, rect.size.width - leftPadding, rect.size.height)
-        return super.drawingRect(forBounds: rectInset)
-    }
-}

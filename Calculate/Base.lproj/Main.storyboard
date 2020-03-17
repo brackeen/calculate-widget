@@ -95,12 +95,6 @@
                                                 <action selector="selectAll:" target="Ady-hI-5gd" id="VNm-Mi-diN"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="LCy-7B-Lfx"/>
-                                        <menuItem title="Clear Output" keyEquivalent="k" id="lTf-mO-USy">
-                                            <connections>
-                                                <action selector="clearOutput:" target="Ady-hI-5gd" id="BG6-nv-ciM"/>
-                                            </connections>
-                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -108,28 +102,14 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
                                     <items>
-                                        <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
-                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                        <menuItem title="Show Memory" keyEquivalent="m" id="OCo-fq-TCR">
                                             <connections>
-                                                <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="dU3-MA-1Rq"/>
+                                                <action selector="showMemory:" target="Ady-hI-5gd" id="ZPr-dD-b6L"/>
                                             </connections>
                                         </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
-                            <menuItem title="Window" id="aUF-d1-5bR">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
-                                    <items>
-                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                        <menuItem title="Clear Output" keyEquivalent="k" id="lTf-mO-USy">
                                             <connections>
-                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Zoom" id="R4o-n2-Eq4">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
+                                                <action selector="clearOutput:" target="Ady-hI-5gd" id="BG6-nv-ciM"/>
                                             </connections>
                                         </menuItem>
                                     </items>

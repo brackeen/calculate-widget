@@ -21,6 +21,7 @@ public class Calculate {
     public enum OutputType: Int {
         case normal
         case error
+        case memory
     }
     
     public struct Output {
@@ -119,6 +120,37 @@ public class Calculate {
     
     public func getLastAnswer() -> String? {
         return outputHistory.last { $0.type == .normal }?.output
+    }
+    
+    public func showMemory() -> Int {
+        let memory = context.objectForKeyedSubscript("Calculate")?
+            .objectForKeyedSubscript("getMemoryVars")?
+            .call(withArguments: [])?.toArray() as? [[String]] ?? []
+        let constants = context.objectForKeyedSubscript("Calculate")?
+            .objectForKeyedSubscript("getConstants")?
+            .call(withArguments: [])?.toArray() as? [[String]] ?? []
+        let allMemory = constants + memory
+        
+        let memoryOutput: [Output] = allMemory.compactMap {
+            if $0.count == 2 {
+                return Output(input: $0[0], output: $0[1], type: .memory)
+            } else {
+                return nil
+            }
+        }
+        if !memoryOutput.isEmpty {
+            memoryNeedsSaving = true
+            if memoryOutput.count >= maxOutputHistory {
+                // Don't trim so user can see every variable
+                outputHistory = memoryOutput
+            } else {
+                outputHistory.append(contentsOf: memoryOutput)
+                if outputHistory.count > maxOutputHistory {
+                    outputHistory.removeFirst(outputHistory.count - maxOutputHistory)
+                }
+            }
+        }
+        return memoryOutput.count
     }
     
     public func save() {

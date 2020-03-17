@@ -62,6 +62,32 @@ class ViewController: NSViewController {
         Calculate.shared.clearOutputHistory()
         outputCollectionView.reloadData()
     }
+    
+    @IBAction func showMemory(_ sender: Any) {
+        let originalOutputCount = Calculate.shared.outputHistory.count
+        let addedCount = Calculate.shared.showMemory()
+        if addedCount > 0 {
+            updateCollectionView(originalOutputCount: originalOutputCount, addedCount: addedCount)
+        }
+    }
+    
+    private func updateCollectionView(originalOutputCount: Int, addedCount: Int) {
+        let outputCount = Calculate.shared.outputHistory.count
+        if addedCount >= outputCount || originalOutputCount == 0 {
+            outputCollectionView.reloadData()
+        } else {
+            outputCollectionView.performBatchUpdates({
+                let deletedCount = originalOutputCount - outputCount + addedCount
+                if deletedCount > 0 {
+                    let deletedIndexPaths = (0..<deletedCount).map { IndexPath(item: $0, section: 0) }
+                    outputCollectionView.deleteItems(at: Set(deletedIndexPaths))
+                }
+                let addedIndexPaths = (0..<addedCount).map { IndexPath(item: originalOutputCount - deletedCount + $0, section: 0) }
+                outputCollectionView.insertItems(at: Set(addedIndexPaths))
+            }, completionHandler: nil)
+        }
+        scrollToBottom()
+    }
         
     @IBAction func enterPressed(_ sender: Any) {
         var expression = inputField.stringValue
@@ -78,17 +104,7 @@ class ViewController: NSViewController {
         
         let originalOutputCount = Calculate.shared.outputHistory.count
         Calculate.shared.calc(expression, addToHistory: addToHistory)
-        
-        let outputCount = Calculate.shared.outputHistory.count
-        outputCollectionView.performBatchUpdates({
-            if outputCount <= originalOutputCount {
-                let deletedCount = originalOutputCount - originalOutputCount + 1
-                let deletedIndexPaths = Set((0..<deletedCount).map { IndexPath(item: $0, section: 0) })
-                outputCollectionView.deleteItems(at: deletedIndexPaths)
-            }
-            outputCollectionView.insertItems(at: [IndexPath(item: outputCount - 1, section: 0)])
-        }, completionHandler: nil)
-        scrollToBottom()
+        updateCollectionView(originalOutputCount: originalOutputCount, addedCount: 1)
         
         inputField.stringValue = ""
         textFieldWasEmpty = true

@@ -119,6 +119,13 @@ Calculate.getMemoryVars = function() {
     return memory;
 };
 
+Calculate.getConstants = function() {
+    let constants = []
+    constants.push(["pi", Calculate.valueToString(Calculate.Math.pi)])
+    constants.push(["e", Calculate.valueToString(Calculate.Math.e)])
+    return constants;
+}
+
 Calculate.clearUserVars = function() {
     Calculate.sandbox["ans"] = 0;
     

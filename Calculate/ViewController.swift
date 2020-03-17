@@ -20,7 +20,6 @@ class ViewController: NSViewController {
     fileprivate var completionWordStart = "".endIndex
     
     fileprivate var prototypeOutputCollectionViewItem: OutputCollectionViewItem!
-    fileprivate var prototypeOutputCollectionViewItemSize: CGSize = .zero
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +27,10 @@ class ViewController: NSViewController {
         var topLevelObjects: NSArray?
         NSNib(nibNamed: OutputCollectionViewItem.identifier.rawValue, bundle: nil)?.instantiate(withOwner: nil, topLevelObjects: &topLevelObjects)
         prototypeOutputCollectionViewItem = topLevelObjects!.compactMap({ $0 as? OutputCollectionViewItem }).first!
-        prototypeOutputCollectionViewItemSize.width = view.frame.width
-        prototypeOutputCollectionViewItemSize.height = prototypeOutputCollectionViewItem.view.frame.height
+        
+        if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
+            layout.itemSize = NSSize(width: view.frame.width, height: prototypeOutputCollectionViewItem.view.frame.height)
+        }
 
         inputField.font = NSFont.monospacedDigitSystemFont(ofSize: inputField.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
         
@@ -42,12 +43,9 @@ class ViewController: NSViewController {
     override func viewWillLayout() {
         super.viewWillLayout()
         
-        prototypeOutputCollectionViewItemSize.width = view.frame.width
         if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
-            if layout.itemSize != prototypeOutputCollectionViewItemSize {
-                layout.itemSize = prototypeOutputCollectionViewItemSize
-                layout.invalidateLayout()
-            }
+            layout.itemSize.width = view.frame.width
+            layout.invalidateLayout()
         }
     }
     

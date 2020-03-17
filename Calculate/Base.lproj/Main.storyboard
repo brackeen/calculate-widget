@@ -112,6 +112,7 @@
                                                 <action selector="clearOutput:" target="Ady-hI-5gd" id="BG6-nv-ciM"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="ZeT-IG-j1f"/>
                                     </items>
                                 </menu>
                             </menuItem>

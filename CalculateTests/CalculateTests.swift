@@ -62,6 +62,11 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("typeof testvar === 'undefined'"))
     }
     
+    func testComments() {
+        XCTAssertEqual(calc("/* comment */ 2"), "2")
+        XCTAssertEqual(calc("( function (x) { return /* comment */ x * 2; })(2)"), "4")
+    }
+    
     func testFunctions() {
         calc("avg = function () { var sum = 0; for (var i = 0; i < avg.arguments.length; i++) { sum += arguments[i]; } return sum / arguments.length; }")
         calc("median = function () { var list = Array.prototype.slice.call(arguments); list.sort(function(a, b) { return a - b; } ); var i = Math.floor(list.length / 2); if (list.length % 2) { return list[i]; } else { return (list[i] + list[i - 1]) / 2; } }")

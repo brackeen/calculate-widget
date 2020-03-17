@@ -6,6 +6,11 @@ org.antlr.runtime.BaseRecognizer.prototype.emitErrorMessage = function(message) 
     Calculate.log(message)
 }
 
+// For ECMAScript3ExtParser
+String.prototype.matches = function(regex) {
+    return this.match(regex) != null
+}
+
 function __typeof__(v) {
     // This works for unknown variables
     //   typeof unknown == "undefined"

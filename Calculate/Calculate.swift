@@ -117,6 +117,10 @@ public class Calculate {
         memoryNeedsSaving = true
     }
     
+    public func getLastAnswer() -> String? {
+        return outputHistory.last { $0.type == .normal }?.output
+    }
+    
     public func save() {
         if memoryNeedsSaving {
             memoryNeedsSaving = false

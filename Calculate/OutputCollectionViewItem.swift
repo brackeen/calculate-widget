@@ -8,14 +8,14 @@
 
 import Cocoa
 
-class OutputCollectionViewItem: NSCollectionViewItem {
+class OutputCollectionViewItem: NSCollectionViewItem, OutputItem {
     
     static let identifier = NSUserInterfaceItemIdentifier("OutputCollectionViewItem")
     
     @IBOutlet weak var inputLabel: NSTextField!
     @IBOutlet weak var outputLabel: NSTextField!
     
-    private var widthConstraint: NSLayoutConstraint?
+    internal var widthConstraint: NSLayoutConstraint?
     
     var output: Calculate.Output? {
         didSet {
@@ -36,18 +36,5 @@ class OutputCollectionViewItem: NSCollectionViewItem {
         super.viewDidLoad()
         inputLabel.font = NSFont.monospacedDigitSystemFont(ofSize: inputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
         outputLabel.font = NSFont.monospacedDigitSystemFont(ofSize: outputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
-    }
-    
-    func fittingSize(forWidth width: CGFloat) -> NSSize {
-        if let widthConstraint = widthConstraint {
-            widthConstraint.constant = width
-        } else {
-            widthConstraint = NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width)
-            view.addConstraint(widthConstraint!)
-        }
-        
-        view.layoutSubtreeIfNeeded()
-
-        return view.fittingSize
     }
 }

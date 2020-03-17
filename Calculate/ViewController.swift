@@ -20,13 +20,13 @@ class ViewController: NSViewController {
     fileprivate var completionWordStart = "".endIndex
     
     fileprivate var prototypeOutputCollectionViewItem: OutputCollectionViewItem!
+    fileprivate var prototypeMemoryCollectionViewItem: MemoryCollectionViewItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var topLevelObjects: NSArray?
-        NSNib(nibNamed: OutputCollectionViewItem.identifier.rawValue, bundle: nil)?.instantiate(withOwner: nil, topLevelObjects: &topLevelObjects)
-        prototypeOutputCollectionViewItem = topLevelObjects!.compactMap({ $0 as? OutputCollectionViewItem }).first!
+        prototypeOutputCollectionViewItem = OutputCollectionViewItem.loadFromNib()!
+        prototypeMemoryCollectionViewItem = MemoryCollectionViewItem.loadFromNib()!
         
         if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
             layout.itemSize = NSSize(width: view.frame.width, height: prototypeOutputCollectionViewItem.view.frame.height)
@@ -248,10 +248,14 @@ extension ViewController: NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = collectionView.makeItem(withIdentifier: OutputCollectionViewItem.identifier, for: indexPath)
-        if let outputItem = item as? OutputCollectionViewItem {
-            outputItem.output = Calculate.shared.outputHistory[indexPath.item]
+        let item: NSCollectionViewItem
+        let output = Calculate.shared.outputHistory[indexPath.item]
+        if output.type == .memory {
+            item = collectionView.makeItem(withIdentifier: MemoryCollectionViewItem.identifier, for: indexPath)
+        } else {
+            item = collectionView.makeItem(withIdentifier: OutputCollectionViewItem.identifier, for: indexPath)
         }
+        (item as? OutputItem)?.output = output
         return item
     }
 }
@@ -261,8 +265,15 @@ extension ViewController: NSCollectionViewDelegate, NSCollectionViewDelegateFlow
     func collectionView(_ collectionView: NSCollectionView,
            layout collectionViewLayout: NSCollectionViewLayout,
            sizeForItemAt indexPath: IndexPath) -> NSSize {
-        prototypeOutputCollectionViewItem.output = Calculate.shared.outputHistory[indexPath.item]
-        return prototypeOutputCollectionViewItem.fittingSize(forWidth: collectionView.frame.width)
+        let item: OutputItem
+        let output = Calculate.shared.outputHistory[indexPath.item]
+        if output.type == .memory {
+            item = prototypeMemoryCollectionViewItem
+        } else {
+            item = prototypeOutputCollectionViewItem
+        }
+        item.output = output
+        return item.fittingSize(forWidth: collectionView.frame.width)
     }
 }
 

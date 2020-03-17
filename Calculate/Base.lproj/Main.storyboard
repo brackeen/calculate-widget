@@ -198,7 +198,7 @@
                                         <collectionView id="9nv-DJ-Gcl">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="158"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" id="tvm-x7-VmH">
+                                            <collectionViewFlowLayout key="collectionViewLayout" id="tvm-x7-VmH" customClass="BottomAlignedCollectionViewFlowLayout" customModule="Calculate" customModuleProvider="target">
                                                 <size key="itemSize" width="280" height="42"/>
                                                 <edgeInsets key="sectionInset" left="0.0" right="0.0" top="6" bottom="8"/>
                                             </collectionViewFlowLayout>

@@ -258,3 +258,19 @@ extension ViewController: NSUserInterfaceValidations {
         }
     }
 }
+
+class BottomAlignedCollectionViewFlowLayout: NSCollectionViewFlowLayout {
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [NSCollectionViewLayoutAttributes] {
+        let attributes = super.layoutAttributesForElements(in: rect)
+        guard let collectionView = collectionView, collectionView.bounds.height > collectionViewContentSize.height else {
+            return attributes
+        }
+        let offset = collectionView.bounds.height - collectionViewContentSize.height
+        return attributes.map { attribute in
+            let newAttribute = attribute.copy() as! NSCollectionViewLayoutAttributes
+            newAttribute.frame.origin.y += offset
+            return newAttribute
+        }
+    }
+}

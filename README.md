@@ -6,6 +6,16 @@ Calculate is a Mac OS X dashboard widget for evaluating math expressions.
 
 [http://www.brackeen.com/calculate/](http://www.brackeen.com/calculate/)
 
+## Building
+Build with Xcode 11.3 and CocoaPods 1.9.1.
+```
+brew install cocoapods
+git clone https://github.com/brackeen/calculate-widget.git
+cd calculate-widget
+pod install
+open Calculate.xcworkspace
+```
+
 ## How it works
 
 Calculate has a custom ANTLR grammar similar to JavaScript, but with the 

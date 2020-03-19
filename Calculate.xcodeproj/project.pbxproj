@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37EEFB2C2A282DEDF1C07947 /* libPods-CalculateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98C0CD4AF1CAAFF3EB5D93 /* libPods-CalculateTests.a */; };
 		CA19B8C2BDBB78D7DAEEC65B /* libPods-Calculate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6CEA0390769C703898CE1A /* libPods-Calculate.a */; };
 		E30E63012417EE45002EF546 /* ECMAScript3ExtParser.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62F92417EE45002EF546 /* ECMAScript3ExtParser.js */; };
 		E30E63022417EE45002EF546 /* Util.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FA2417EE45002EF546 /* Util.js */; };
@@ -41,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B2EF398B604C1FC9F3C8CD6 /* Pods-CalculateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalculateTests/Pods-CalculateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D1C40DE1801127A9A4D166A /* Pods-CalculateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalculateTests/Pods-CalculateTests.release.xcconfig"; sourceTree = "<group>"; };
+		3E98C0CD4AF1CAAFF3EB5D93 /* libPods-CalculateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CalculateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6CEA0390769C703898CE1A /* libPods-Calculate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Calculate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A6813DDEA02744F7ED8A9E /* Pods-Calculate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calculate/Pods-Calculate.debug.xcconfig"; sourceTree = "<group>"; };
 		E30E62F72417E64A002EF546 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37EEFB2C2A282DEDF1C07947 /* libPods-CalculateTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				5B6CEA0390769C703898CE1A /* libPods-Calculate.a */,
+				3E98C0CD4AF1CAAFF3EB5D93 /* libPods-CalculateTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,6 +181,8 @@
 			children = (
 				B2A6813DDEA02744F7ED8A9E /* Pods-Calculate.debug.xcconfig */,
 				FEB01603900BDD81F54093D1 /* Pods-Calculate.release.xcconfig */,
+				0B2EF398B604C1FC9F3C8CD6 /* Pods-CalculateTests.debug.xcconfig */,
+				1D1C40DE1801127A9A4D166A /* Pods-CalculateTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -186,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3198E78241A7A7C00A167C7 /* Build configuration list for PBXNativeTarget "CalculateTests" */;
 			buildPhases = (
+				C445E44E8FE321F157A885DA /* [CP] Check Pods Manifest.lock */,
 				E3198E6D241A7A7C00A167C7 /* Sources */,
 				E3198E6E241A7A7C00A167C7 /* Frameworks */,
 				E3198E6F241A7A7C00A167C7 /* Resources */,
+				4AB5A53147E0E4705175B7C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,6 +297,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4AB5A53147E0E4705175B7C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculateTests/Pods-CalculateTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalculateTests/Pods-CalculateTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CalculateTests/Pods-CalculateTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8FB2D18C92665AB4A4E4896B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +329,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calculate/Pods-Calculate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C445E44E8FE321F157A885DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalculateTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D55168657B0DC90C173D74F5 /* [CP] Check Pods Manifest.lock */ = {
@@ -372,6 +421,7 @@
 /* Begin XCBuildConfiguration section */
 		E3198E79241A7A7C00A167C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B2EF398B604C1FC9F3C8CD6 /* Pods-CalculateTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -391,6 +441,7 @@
 		};
 		E3198E7A241A7A7C00A167C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D1C40DE1801127A9A4D166A /* Pods-CalculateTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

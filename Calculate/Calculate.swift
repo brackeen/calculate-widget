@@ -28,6 +28,7 @@ public class Calculate {
         let input: String
         let output: String
         let type: OutputType
+        var newSection: Bool
     }
     
     public private(set) var outputHistory: [Output] = []
@@ -63,7 +64,7 @@ public class Calculate {
             .call(withArguments: [expression])?.toString()
         context.exceptionHandler = originalExceptionHandler
         
-        let output = Output(input: expression, output: errorResult ?? result ?? "", type: type)
+        let output = Output(input: expression, output: errorResult ?? result ?? "", type: type, newSection: false)
         appendOutputHistory(output)
         return output.output
     }
@@ -133,7 +134,7 @@ public class Calculate {
         
         var memoryOutput: [Output] = allMemory.compactMap {
             if $0.count == 2 {
-                return Output(input: $0[0], output: $0[1], type: .memory)
+                return Output(input: $0[0], output: $0[1], type: .memory, newSection: false)
             } else {
                 return nil
             }
@@ -144,6 +145,11 @@ public class Calculate {
             if let lastAnswerIndex = memoryOutput.firstIndex(where: { $0.input == "ans" }), lastAnswerIndex > 0 {
                 let lastAnswer = memoryOutput.remove(at: lastAnswerIndex)
                 memoryOutput.insert(lastAnswer, at: 0)
+            }
+            if var firstItem = memoryOutput.first {
+                firstItem.newSection = true
+                memoryOutput.removeFirst()
+                memoryOutput.insert(firstItem, at: 0)
             }
             if memoryOutput.count >= maxOutputHistory {
                 // Don't trim so user can see every variable
@@ -211,18 +217,18 @@ public class Calculate {
     
     private func evalulateScript(_ name: String) {
         guard let url = Bundle.main.url(forResource: name, withExtension: "js") else {
-            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't find script", type: .error))
+            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't find script", type: .error, newSection: false))
             return
         }
         
         guard let source = try? String(contentsOf: url) else {
-            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't load script",  type: .error))
+            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't load script",  type: .error, newSection: false))
             return
         }
 
         let originalExceptionHandler = context.exceptionHandler
         context.exceptionHandler = { context, exception in
-            self.appendOutputHistory(Output(input: "\(name).js", output: exception?.toString() ?? "Couldn't load script",  type: .error))
+            self.appendOutputHistory(Output(input: "\(name).js", output: exception?.toString() ?? "Couldn't load script",  type: .error, newSection: false))
         }
         context.evaluateScript(source, withSourceURL: url)
         context.exceptionHandler = originalExceptionHandler
@@ -231,12 +237,13 @@ public class Calculate {
     private func loadOutputHistory() {
         if let savedHistory = UserDefaults.standard.array(forKey: outputHistoryKey) as? [[Any]] {
             for historyItem in savedHistory {
-                if historyItem.count == 3,
+                if historyItem.count >= 3,
                     let input = historyItem[0] as? String,
                     let output = historyItem[1] as? String,
                     let rawType = historyItem[2] as? Int,
-                    let type = OutputType(rawValue: rawType) {
-                    appendOutputHistory(Output(input: input, output: output, type: type))
+                    let type = OutputType(rawValue: rawType),
+                    let newSection = historyItem.count > 3 ?  historyItem[3] as? Bool : false {
+                    appendOutputHistory(Output(input: input, output: output, type: type, newSection: newSection))
                 }
             }
             memoryNeedsSaving = false
@@ -244,7 +251,13 @@ public class Calculate {
     }
     
     private func saveOutputHistory() {
-        let simpleOutputHistory: [[Any]] = outputHistory.map { [ $0.input, $0.output, $0.type.rawValue ] }
+        let simpleOutputHistory: [[Any]] = outputHistory.map {
+            if $0.newSection {
+                return [ $0.input, $0.output, $0.type.rawValue, true ]
+            } else {
+                return [ $0.input, $0.output, $0.type.rawValue ]
+            }
+        }
         UserDefaults.standard.set(simpleOutputHistory, forKey: outputHistoryKey)
     }
     
@@ -265,7 +278,7 @@ public class Calculate {
                     let value = tuple[1]
                     let originalExceptionHandler = context.exceptionHandler
                     context.exceptionHandler = { context, exception in
-                        self.appendOutputHistory(Output(input: name, output: exception?.toString() ?? "Couldn't load variable", type: .error))
+                        self.appendOutputHistory(Output(input: name, output: exception?.toString() ?? "Couldn't load variable", type: .error, newSection: false))
                     }
                     context.objectForKeyedSubscript("Calculate")?
                         .objectForKeyedSubscript("applyMemoryVar")?

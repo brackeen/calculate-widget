@@ -291,6 +291,12 @@ extension ViewController: NSCollectionViewDataSource {
         let output = Calculate.shared.outputHistory[indexPath.item]
         if output.type == .memory {
             item = collectionView.makeItem(withIdentifier: MemoryCollectionViewItem.identifier, for: indexPath)
+            if let memoryItem = item as? MemoryCollectionViewItem {
+                memoryItem.isFirstInList = output.newSection
+                memoryItem.isLastInList = (Calculate.shared.outputHistory.count - 1 == indexPath.item ||
+                    Calculate.shared.outputHistory[indexPath.item + 1].type != .memory ||
+                    Calculate.shared.outputHistory[indexPath.item + 1].newSection)
+            }
         } else {
             item = collectionView.makeItem(withIdentifier: OutputCollectionViewItem.identifier, for: indexPath)
         }
@@ -308,6 +314,12 @@ extension ViewController: NSCollectionViewDelegate, NSCollectionViewDelegateFlow
         let output = Calculate.shared.outputHistory[indexPath.item]
         if output.type == .memory {
             item = prototypeMemoryCollectionViewItem
+            if let memoryItem = item as? MemoryCollectionViewItem {
+                memoryItem.isFirstInList = output.newSection
+                memoryItem.isLastInList = (Calculate.shared.outputHistory.count - 1 == indexPath.item ||
+                    Calculate.shared.outputHistory[indexPath.item + 1].type != .memory ||
+                    Calculate.shared.outputHistory[indexPath.item + 1].newSection)
+            }
         } else {
             item = prototypeOutputCollectionViewItem
         }

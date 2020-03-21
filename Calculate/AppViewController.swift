@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AppViewController.swift
 //  Calculate
 //
 //  Created by David Brackeen on 3/10/20.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class AppViewController: NSViewController {
     
     @IBOutlet weak var inputField: NSTextField!
     @IBOutlet weak var outputCollectionView: NSCollectionView!
@@ -215,7 +215,7 @@ class ViewController: NSViewController {
     }
 }
 
-extension ViewController: NSTextFieldDelegate {
+extension AppViewController: NSTextFieldDelegate {
 
     func controlTextDidChange(_ obj: Notification) {
         completions = nil
@@ -278,7 +278,7 @@ extension ViewController: NSTextFieldDelegate {
     }
 }
 
-extension ViewController: NSCollectionViewDataSource {
+extension AppViewController: NSCollectionViewDataSource {
 
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         return Calculate.shared.outputHistory.count
@@ -303,7 +303,7 @@ extension ViewController: NSCollectionViewDataSource {
     }
 }
 
-extension ViewController: NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
+extension AppViewController: NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: NSCollectionView,
            layout collectionViewLayout: NSCollectionViewLayout,
@@ -326,7 +326,7 @@ extension ViewController: NSCollectionViewDelegate, NSCollectionViewDelegateFlow
     }
 }
 
-extension ViewController: NSUserInterfaceValidations {
+extension AppViewController: NSUserInterfaceValidations {
     
     func validateUserInterfaceItem(_ item: NSValidatedUserInterfaceItem) -> Bool {
         if item.action == #selector(copyLastAnswer(_:)) {

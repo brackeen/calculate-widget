@@ -18,7 +18,7 @@
 		E30E631424190F49002EF546 /* container-migration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E30E631324190F49002EF546 /* container-migration.plist */; };
 		E3198E74241A7A7C00A167C7 /* CalculateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3198E73241A7A7C00A167C7 /* CalculateTests.swift */; };
 		E321A0AB2417C3A900D40474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0AA2417C3A900D40474 /* AppDelegate.swift */; };
-		E321A0AD2417C3A900D40474 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0AC2417C3A900D40474 /* ViewController.swift */; };
+		E321A0AD2417C3A900D40474 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0AC2417C3A900D40474 /* AppViewController.swift */; };
 		E321A0AF2417C3AA00D40474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E321A0AE2417C3AA00D40474 /* Assets.xcassets */; };
 		E321A0B22417C3AA00D40474 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E321A0B02417C3AA00D40474 /* Main.storyboard */; };
 		E321A0D92417C97400D40474 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E321A0D82417C97400D40474 /* Calculate.swift */; };
@@ -62,7 +62,7 @@
 		E3198E75241A7A7C00A167C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E321A0A72417C3A900D40474 /* Calculate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E321A0AA2417C3A900D40474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E321A0AC2417C3A900D40474 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E321A0AC2417C3A900D40474 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		E321A0AE2417C3AA00D40474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E321A0B12417C3AA00D40474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E321A0B32417C3AA00D40474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,10 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				E321A0AA2417C3A900D40474 /* AppDelegate.swift */,
+				E35AC40D2426B27C0041BF6A /* AppWindow.swift */,
+				E321A0AC2417C3A900D40474 /* AppViewController.swift */,
 				E321A0D82417C97400D40474 /* Calculate.swift */,
 				E35AC3F42421450B0041BF6A /* String+Break.swift */,
-				E35AC40D2426B27C0041BF6A /* AppWindow.swift */,
-				E321A0AC2417C3A900D40474 /* ViewController.swift */,
 				E35AC3F224212A8F0041BF6A /* OutputItem.swift */,
 				E35AC3EA241FC4EC0041BF6A /* OutputCollectionViewItem.swift */,
 				E35AC3EB241FC4EC0041BF6A /* OutputCollectionViewItem.xib */,
@@ -394,7 +394,7 @@
 				E321A0D92417C97400D40474 /* Calculate.swift in Sources */,
 				E35AC3F0242127450041BF6A /* MemoryCollectionViewItem.swift in Sources */,
 				E35AC3FC242182110041BF6A /* PreferencesViewController.swift in Sources */,
-				E321A0AD2417C3A900D40474 /* ViewController.swift in Sources */,
+				E321A0AD2417C3A900D40474 /* AppViewController.swift in Sources */,
 				E35AC3F52421450B0041BF6A /* String+Break.swift in Sources */,
 				E35AC3F324212A8F0041BF6A /* OutputItem.swift in Sources */,
 				E321A0AB2417C3A900D40474 /* AppDelegate.swift in Sources */,

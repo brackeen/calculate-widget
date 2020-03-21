@@ -31,6 +31,7 @@
 		E35AC3FC242182110041BF6A /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC3FB242182110041BF6A /* PreferencesViewController.swift */; };
 		E35AC40E2426B27C0041BF6A /* AppWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC40D2426B27C0041BF6A /* AppWindow.swift */; };
 		E35AC4102426BC3E0041BF6A /* SelectAllTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC40F2426BC3E0041BF6A /* SelectAllTextField.swift */; };
+		E35AC4122426C4650041BF6A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC4112426C4650041BF6A /* AppView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		E35AC3FD242184D40041BF6A /* Calculate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calculate-Bridging-Header.h"; sourceTree = "<group>"; };
 		E35AC40D2426B27C0041BF6A /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		E35AC40F2426BC3E0041BF6A /* SelectAllTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAllTextField.swift; sourceTree = "<group>"; };
+		E35AC4112426C4650041BF6A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		FEB01603900BDD81F54093D1 /* Pods-Calculate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calculate/Pods-Calculate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 			children = (
 				E321A0AA2417C3A900D40474 /* AppDelegate.swift */,
 				E35AC40D2426B27C0041BF6A /* AppWindow.swift */,
+				E35AC4112426C4650041BF6A /* AppView.swift */,
 				E321A0AC2417C3A900D40474 /* AppViewController.swift */,
 				E321A0D82417C97400D40474 /* Calculate.swift */,
 				E35AC3F42421450B0041BF6A /* String+Break.swift */,
@@ -396,6 +399,7 @@
 				E35AC40E2426B27C0041BF6A /* AppWindow.swift in Sources */,
 				E321A0D92417C97400D40474 /* Calculate.swift in Sources */,
 				E35AC3F0242127450041BF6A /* MemoryCollectionViewItem.swift in Sources */,
+				E35AC4122426C4650041BF6A /* AppView.swift in Sources */,
 				E35AC3FC242182110041BF6A /* PreferencesViewController.swift in Sources */,
 				E35AC4102426BC3E0041BF6A /* SelectAllTextField.swift in Sources */,
 				E321A0AD2417C3A900D40474 /* AppViewController.swift in Sources */,

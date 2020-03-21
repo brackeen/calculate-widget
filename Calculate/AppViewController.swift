@@ -38,6 +38,7 @@ class AppViewController: NSViewController {
             inputField.stringValue = "1+1"
         }
         inputField.selectText(nil)
+        (view as? AppView)?.viewToFocusOnClick = inputField
         
         MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: AppDelegate.hotkeyPreferenceKey, toAction: { [weak self] in
             NSApp.activate(ignoringOtherApps: true)

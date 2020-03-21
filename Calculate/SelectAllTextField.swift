@@ -12,7 +12,7 @@ class SelectAllTextField: NSTextField {
     
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
-        if let textEditor = currentEditor() {
+        if let textEditor = currentEditor(), textEditor.selectedRange.length == 0 {
             textEditor.selectAll(self)
         }
     }

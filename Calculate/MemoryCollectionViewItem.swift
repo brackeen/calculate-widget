@@ -36,7 +36,7 @@ class MemoryCollectionViewItem: NSCollectionViewItem, OutputItem {
                 attributes: [
                     NSAttributedString.Key.paragraphStyle: paragraph,
                     NSAttributedString.Key.font: font,
-                    NSAttributedString.Key.foregroundColor: NSColor.labelColor
+                    NSAttributedString.Key.foregroundColor: NSColor(named: NSColor.Name("memoryColor")) ?? NSColor.labelColor
                 ]
             )
             attributedString.addAttribute(NSAttributedString.Key.font, value: boldFont, range: keyRange)

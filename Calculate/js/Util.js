@@ -36,7 +36,7 @@ Calculate.arrayToString = function(a) {
     for (let i = 0; i < a.length; i++) {
         s += Calculate.valueToString(a[i]);
         if (i < a.length - 1) {
-            s += ",";
+            s += ", ";
         }
     }
     return "[" + s + "]";

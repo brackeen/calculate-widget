@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m4Y-Q0-Ka1" customClass="SelectAllTextField" customModule="Calculate" customModuleProvider="target">
-                    <rect key="frame" x="22" y="0.0" width="54" height="16"/>
+                    <rect key="frame" x="18" y="0.0" width="54" height="16"/>
                     <textFieldCell key="cell" selectable="YES" title="Memory" id="jRK-qx-vI7">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -36,8 +36,8 @@
             </subviews>
             <constraints>
                 <constraint firstItem="m4Y-Q0-Ka1" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="JLp-Co-jve"/>
-                <constraint firstItem="m4Y-Q0-Ka1" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="24" id="jzk-9W-h8o"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m4Y-Q0-Ka1" secondAttribute="trailing" constant="14" id="qlf-sD-yID"/>
+                <constraint firstItem="m4Y-Q0-Ka1" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="jzk-9W-h8o"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m4Y-Q0-Ka1" secondAttribute="trailing" constant="20" id="qlf-sD-yID"/>
                 <constraint firstAttribute="bottom" secondItem="m4Y-Q0-Ka1" secondAttribute="bottom" id="ulL-6W-ZfA"/>
             </constraints>
             <point key="canvasLocation" x="140" y="153.5"/>

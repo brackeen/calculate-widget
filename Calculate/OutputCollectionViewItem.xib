@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="crO-o1-fuQ" customClass="SelectAllTextField" customModule="Calculate" customModuleProvider="target">
-                    <rect key="frame" x="12" y="21" width="35" height="16"/>
+                    <rect key="frame" x="18" y="21" width="35" height="16"/>
                     <textFieldCell key="cell" selectable="YES" title="Input" id="w1C-XH-WNa">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -33,7 +33,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XX2-tv-cju" customClass="SelectAllTextField" customModule="Calculate" customModuleProvider="target">
-                    <rect key="frame" x="30" y="4" width="47" height="16"/>
+                    <rect key="frame" x="36" y="4" width="47" height="16"/>
                     <textFieldCell key="cell" selectable="YES" title="Output" id="WIk-zH-I1f">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -44,10 +44,10 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="XX2-tv-cju" secondAttribute="bottom" constant="4" id="3kV-Rp-KCx"/>
                 <constraint firstItem="crO-o1-fuQ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="7oD-Na-sID"/>
-                <constraint firstItem="XX2-tv-cju" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="32" id="dGH-is-2rv"/>
-                <constraint firstItem="crO-o1-fuQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="14" id="doV-pc-dqR"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XX2-tv-cju" secondAttribute="trailing" constant="14" id="lud-ak-Dh7"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="crO-o1-fuQ" secondAttribute="trailing" constant="14" id="rHh-7T-wct"/>
+                <constraint firstItem="XX2-tv-cju" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="38" id="dGH-is-2rv"/>
+                <constraint firstItem="crO-o1-fuQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="doV-pc-dqR"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XX2-tv-cju" secondAttribute="trailing" constant="20" id="lud-ak-Dh7"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="crO-o1-fuQ" secondAttribute="trailing" constant="20" id="rHh-7T-wct"/>
                 <constraint firstItem="XX2-tv-cju" firstAttribute="top" secondItem="crO-o1-fuQ" secondAttribute="bottom" constant="1" id="uOO-Sz-bgo"/>
             </constraints>
             <point key="canvasLocation" x="159" y="160"/>

@@ -150,8 +150,6 @@ class ViewController: NSViewController {
     fileprivate func scrollRelative(amount: CGFloat) {
         var frame = outputCollectionView.visibleRect
         frame.origin.y += amount
-        print(frame)
-        print(outputCollectionView.bounds.height)
         outputCollectionView.animator().scrollToVisible(frame)
     }
     

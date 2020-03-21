@@ -114,6 +114,12 @@ class AppViewController: NSViewController {
             }
         }
         
+        // Fixes issue where expression is copied from output and it contains the zero-width space character.
+        // This isn't a perfect solution - a better solution would be one of:
+        // 1) Prevent copying/pasting zero-width space character to/from TextFields
+        // 2) Custom word-wrapping in TextFields (avoid zero-width space character altogether)
+        expression.removeAll(where: { $0 == "\u{200B}" })
+        
         let originalOutputCount = Calculate.shared.outputHistory.count
         Calculate.shared.calc(expression, addToHistory: addToHistory)
         updateCollectionView(originalOutputCount: originalOutputCount, addedCount: 1)
@@ -214,6 +220,10 @@ class AppViewController: NSViewController {
             }
         }
     }
+}
+
+private class Hack: NSText {
+    
 }
 
 extension AppViewController: NSTextFieldDelegate {

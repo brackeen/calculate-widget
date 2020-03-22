@@ -50,6 +50,13 @@ class AppViewController: NSViewController {
                 }
             }
         })
+        
+        // Focus in an async block to get around window restoration
+        DispatchQueue.main.async { [weak self] in
+            if let inputField = self?.inputField, let window = inputField.window, !window.viewIsFirstResponder(inputField) {
+                window.makeFirstResponder(inputField)
+            }
+        }
     }
 
     override func viewWillLayout() {

@@ -41,9 +41,13 @@ class AppViewController: NSViewController {
         (view as? AppView)?.viewToFocusOnClick = inputField
         
         MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: AppDelegate.hotkeyPreferenceKey, toAction: { [weak self] in
-            NSApp.activate(ignoringOtherApps: true)
-            if let inputField = self?.inputField {
-                inputField.window?.makeFirstResponder(inputField)
+            if let inputField = self?.inputField, let window = inputField.window {
+                if NSApp.isActive && window.viewIsFirstResponder(inputField) {
+                    NSApp.hide(nil)
+                } else {
+                    NSApp.activate(ignoringOtherApps: true)
+                    window.makeFirstResponder(inputField)
+                }
             }
         })
     }

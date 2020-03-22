@@ -15,3 +15,14 @@ class AppWindow: NSWindow {
         self.backgroundColor = NSColor(named: NSColor.Name("backgroundColor"))
     }
 }
+
+extension NSWindow {
+    
+    func viewIsFirstResponder(_ view: NSView) -> Bool {
+        if let firstResponderView = view.window?.firstResponder as? NSView {
+            return firstResponderView.ancestorShared(with: view) == view
+        } else {
+            return false
+        }
+    }
+}

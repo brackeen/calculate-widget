@@ -14,11 +14,8 @@ class AppView: NSView {
     
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
-        if let view = self.viewToFocusOnClick {
-            let firstResponderView = view.window?.firstResponder as? NSView
-            if firstResponderView == nil || firstResponderView!.ancestorShared(with: view) != view {
-                view.window?.makeFirstResponder(view)
-            }
+        if let view = viewToFocusOnClick, let window = view.window, !window.viewIsFirstResponder(view) {
+            window.makeFirstResponder(view)
         }
     }
 }

@@ -1,5 +1,8 @@
 # Change Log
 
+### 2.0 alpha 1 (March 23, 2020)
+- Newly written native app using the original JS engine.
+
 ### [1.2.2](https://github.com/brackeen/calculate-widget/releases/tag/1.2.2) (December 17, 2015)
 - Minor update for Mac OS X 10.11 El Capitan (Use system font).
 

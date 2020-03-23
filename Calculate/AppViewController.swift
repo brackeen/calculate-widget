@@ -88,6 +88,14 @@ class AppViewController: NSViewController {
         }
     }
     
+    @IBAction func showHelp(_ sender: Any) {
+        let originalOutputCount = Calculate.shared.outputHistory.count
+        let addedCount = Calculate.shared.showHelp()
+        if addedCount > 0 {
+            updateCollectionView(originalOutputCount: originalOutputCount, addedCount: addedCount)
+        }
+    }
+    
     @IBAction func checkForUpdates(_ sender: Any) {
         if let url = URL(string: "https://github.com/brackeen/calculate-widget/releases") {
             NSWorkspace.shared.open(url)
@@ -233,10 +241,6 @@ class AppViewController: NSViewController {
     }
 }
 
-private class Hack: NSText {
-    
-}
-
 extension AppViewController: NSTextFieldDelegate {
 
     func controlTextDidChange(_ obj: Notification) {
@@ -317,6 +321,8 @@ extension AppViewController: NSCollectionViewDataSource {
                     Calculate.shared.outputHistory[indexPath.item + 1].type != .memory ||
                     Calculate.shared.outputHistory[indexPath.item + 1].newSection)
             }
+        } else if output.type == .help {
+            item = collectionView.makeItem(withIdentifier: MemoryCollectionViewItem.identifier, for: indexPath)
         } else {
             item = collectionView.makeItem(withIdentifier: OutputCollectionViewItem.identifier, for: indexPath)
         }
@@ -340,6 +346,8 @@ extension AppViewController: NSCollectionViewDelegate, NSCollectionViewDelegateF
                     Calculate.shared.outputHistory[indexPath.item + 1].type != .memory ||
                     Calculate.shared.outputHistory[indexPath.item + 1].newSection)
             }
+        } else if output.type == .help {
+            item = prototypeMemoryCollectionViewItem
         } else {
             item = prototypeOutputCollectionViewItem
         }

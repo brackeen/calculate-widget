@@ -22,6 +22,8 @@ public class Calculate {
         case normal
         case error
         case memory
+        case help
+        case helpExample
     }
     
     public struct Output {
@@ -139,29 +141,48 @@ public class Calculate {
                 return nil
             }
         }
-        if !memoryOutput.isEmpty {
-            memoryNeedsSaving = true
-            // Put "ans" first
-            if let lastAnswerIndex = memoryOutput.firstIndex(where: { $0.input == "ans" }), lastAnswerIndex > 0 {
-                let lastAnswer = memoryOutput.remove(at: lastAnswerIndex)
-                memoryOutput.insert(lastAnswer, at: 0)
-            }
-            if var firstItem = memoryOutput.first {
-                firstItem.newSection = true
-                memoryOutput.removeFirst()
-                memoryOutput.insert(firstItem, at: 0)
-            }
-            if memoryOutput.count >= maxOutputHistory {
-                // Don't trim so user can see every variable
-                outputHistory = memoryOutput
-            } else {
-                outputHistory.append(contentsOf: memoryOutput)
-                if outputHistory.count > maxOutputHistory {
-                    outputHistory.removeFirst(outputHistory.count - maxOutputHistory)
-                }
-            }
+        // Put "ans" first
+        if let lastAnswerIndex = memoryOutput.firstIndex(where: { $0.input == "ans" }), lastAnswerIndex > 0 {
+            let lastAnswer = memoryOutput.remove(at: lastAnswerIndex)
+            memoryOutput.insert(lastAnswer, at: 0)
         }
+        if var firstItem = memoryOutput.first {
+            firstItem.newSection = true
+            memoryOutput.removeFirst()
+            memoryOutput.insert(firstItem, at: 0)
+        }
+        appendOutputHistoryList(memoryOutput)
         return memoryOutput.count
+    }
+    
+    public func showHelp() -> Int {
+        let helpOutput: [Output] = [
+            Output(input: "Calculate", output: " is a math expression calculator with persistent memory for variables and functions. Nearly any JavaScript expression can be evaluated.", type: .help, newSection: false),
+            Output(input: "Samples", output: "", type: .help, newSection: false),
+            Output(input: "2+2", output: "4", type: .helpExample, newSection: false),
+            Output(input: "2^8", output: "256", type: .helpExample, newSection: false),
+            Output(input: "(1+sqrt(5))/2", output: "1.618033988749895", type: .helpExample, newSection: false),
+            Output(input: "r=1/2", output: "0.5", type: .helpExample, newSection: false),
+            Output(input: "2*pi*r", output: "3.141592653589793", type: .helpExample, newSection: false),
+            Output(input: "cos(ans)", output: "-1", type: .helpExample, newSection: false),
+            Output(input: "sqr = function(x) { return x*x }", output: "Function defined", type: .helpExample, newSection: false),
+            Output(input: "sqr(3)", output: "9", type: .helpExample, newSection: false),
+            Output(input: "Previous answer", output: "\nans", type: .help, newSection: false),
+            Output(input: "Constants", output: "\npi, e", type: .help, newSection: false),
+            Output(input: "Basic functions", output: "\nsqrt pow abs round floor ceil min max random", type: .help, newSection: false),
+            Output(input: "Log functions", output: "\nexp ln log2 log10", type: .help, newSection: false),
+            Output(input: "Trig functions", output: "\nsin cos tan csc sec cot\nasin acos atan atan2 acsc asec acot", type: .help, newSection: false),
+            Output(input: "Hyperbolic functions", output: "\nsinh cosh tanh csch sech coth\nasinh acosh atanh acsch asech acoth", type: .help, newSection: false),
+            Output(input: "More info", output:
+                "\n \u{2022}\tTyping an operator (+, -, *, /) on an empty line automatically inserts \"ans\" before it. So typing \"+1\" expands to \"ans+1\"." +
+                "\n \u{2022}\tPress the Up and Down arrow keys to browse input history." +
+                "\n \u{2022}\tUse the Tab key to automplete. Type the first few letters of a variable name or function name then press Tab." +
+                "\n \u{2022}\tTo delete a variable or function by name, enter \"delete name\".",
+                   type: .help, newSection: false),
+        ]
+        
+        appendOutputHistoryList(helpOutput)
+        return helpOutput.count
     }
     
     public func save() {
@@ -294,6 +315,22 @@ public class Calculate {
             .objectForKeyedSubscript("getMemoryVars")?
             .call(withArguments: [])?.toArray() as? [[String]] {
             UserDefaults.standard.set(memory, forKey: memoryKey)
+        }
+    }
+    
+    private func appendOutputHistoryList(_ list: [Output]) {
+        guard !list.isEmpty else {
+            return
+        }
+        memoryNeedsSaving = true
+        if list.count >= maxOutputHistory {
+            // Don't trim so user can see everything new
+            outputHistory = list
+        } else {
+            outputHistory.append(contentsOf: list)
+            if outputHistory.count > maxOutputHistory {
+                outputHistory.removeFirst(outputHistory.count - maxOutputHistory)
+            }
         }
     }
     

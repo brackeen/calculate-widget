@@ -66,6 +66,18 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="File" hidden="YES" allowsKeyEquivalentWhenHidden="YES" id="LRg-vp-H5i">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="File" id="VxK-qo-JRn">
+                                    <items>
+                                        <menuItem title="Close" keyEquivalent="w" allowsKeyEquivalentWhenHidden="YES" id="uvn-Kt-OYO">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="jd7-iX-3eG"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Edit" id="5QF-Oa-p0T">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Edit" id="W48-6f-4Dl">

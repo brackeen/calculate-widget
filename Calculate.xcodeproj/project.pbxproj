@@ -27,10 +27,10 @@
 		E35AC4102426BC3E0041BF6A /* SelectAllTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC40F2426BC3E0041BF6A /* SelectAllTextField.swift */; };
 		E35AC4122426C4650041BF6A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC4112426C4650041BF6A /* AppView.swift */; };
 		E35AC424242CF1EF0041BF6A /* Calculate.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC423242CF1EF0041BF6A /* Calculate.js */; };
-		E35AC429242CF3BD0041BF6A /* ECMAScript3ExtEmitter.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC425242CF3BD0041BF6A /* ECMAScript3ExtEmitter.js */; };
-		E35AC42A242CF3BD0041BF6A /* antlr3-all.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC426242CF3BD0041BF6A /* antlr3-all.js */; };
-		E35AC42B242CF3BD0041BF6A /* ECMAScript3ExtParser.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC427242CF3BD0041BF6A /* ECMAScript3ExtParser.js */; };
-		E35AC42C242CF3BD0041BF6A /* ECMAScript3ExtLexer.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC428242CF3BD0041BF6A /* ECMAScript3ExtLexer.js */; };
+		E35AC431242CF5F90041BF6A /* ECMAScript3ExtLexer.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC42D242CF5F90041BF6A /* ECMAScript3ExtLexer.js */; };
+		E35AC432242CF5F90041BF6A /* ECMAScript3ExtParser.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC42E242CF5F90041BF6A /* ECMAScript3ExtParser.js */; };
+		E35AC433242CF5F90041BF6A /* antlr3-all.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC42F242CF5F90041BF6A /* antlr3-all.js */; };
+		E35AC434242CF5F90041BF6A /* ECMAScript3ExtEmitter.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC430242CF5F90041BF6A /* ECMAScript3ExtEmitter.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,10 +75,10 @@
 		E35AC40F2426BC3E0041BF6A /* SelectAllTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAllTextField.swift; sourceTree = "<group>"; };
 		E35AC4112426C4650041BF6A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		E35AC423242CF1EF0041BF6A /* Calculate.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Calculate.js; sourceTree = "<group>"; };
-		E35AC425242CF3BD0041BF6A /* ECMAScript3ExtEmitter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = ECMAScript3ExtEmitter.js; path = ES3Grammar/3rdparty/ECMAScript3ExtEmitter.js; sourceTree = "<group>"; };
-		E35AC426242CF3BD0041BF6A /* antlr3-all.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "antlr3-all.js"; path = "ES3Grammar/3rdparty/antlr3-all.js"; sourceTree = "<group>"; };
-		E35AC427242CF3BD0041BF6A /* ECMAScript3ExtParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = ECMAScript3ExtParser.js; path = ES3Grammar/3rdparty/gen/ECMAScript3ExtParser.js; sourceTree = "<group>"; };
-		E35AC428242CF3BD0041BF6A /* ECMAScript3ExtLexer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = ECMAScript3ExtLexer.js; path = ES3Grammar/3rdparty/gen/ECMAScript3ExtLexer.js; sourceTree = "<group>"; };
+		E35AC42D242CF5F90041BF6A /* ECMAScript3ExtLexer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = ECMAScript3ExtLexer.js; path = ES3Grammar/ECMAScript3ExtLexer.js; sourceTree = "<group>"; };
+		E35AC42E242CF5F90041BF6A /* ECMAScript3ExtParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = ECMAScript3ExtParser.js; path = ES3Grammar/ECMAScript3ExtParser.js; sourceTree = "<group>"; };
+		E35AC42F242CF5F90041BF6A /* antlr3-all.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "antlr3-all.js"; path = "ES3Grammar/antlr3-all.js"; sourceTree = "<group>"; };
+		E35AC430242CF5F90041BF6A /* ECMAScript3ExtEmitter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = ECMAScript3ExtEmitter.js; path = ES3Grammar/ECMAScript3ExtEmitter.js; sourceTree = "<group>"; };
 		FEB01603900BDD81F54093D1 /* Pods-Calculate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calculate/Pods-Calculate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,7 +125,7 @@
 			children = (
 				E30E62F72417E64A002EF546 /* README.md */,
 				E3198E6C241A73CD00A167C7 /* CHANGELOG.md */,
-				E35AC41A242CF1C50041BF6A /* 3rdparty */,
+				E35AC41A242CF1C50041BF6A /* js */,
 				E321A0A92417C3A900D40474 /* Calculate */,
 				E3198E72241A7A7C00A167C7 /* CalculateTests */,
 				E321A0A82417C3A900D40474 /* Products */,
@@ -170,15 +170,15 @@
 			path = Calculate;
 			sourceTree = "<group>";
 		};
-		E35AC41A242CF1C50041BF6A /* 3rdparty */ = {
+		E35AC41A242CF1C50041BF6A /* js */ = {
 			isa = PBXGroup;
 			children = (
-				E35AC426242CF3BD0041BF6A /* antlr3-all.js */,
-				E35AC428242CF3BD0041BF6A /* ECMAScript3ExtLexer.js */,
-				E35AC427242CF3BD0041BF6A /* ECMAScript3ExtParser.js */,
-				E35AC425242CF3BD0041BF6A /* ECMAScript3ExtEmitter.js */,
+				E35AC42F242CF5F90041BF6A /* antlr3-all.js */,
+				E35AC42D242CF5F90041BF6A /* ECMAScript3ExtLexer.js */,
+				E35AC42E242CF5F90041BF6A /* ECMAScript3ExtParser.js */,
+				E35AC430242CF5F90041BF6A /* ECMAScript3ExtEmitter.js */,
 			);
-			name = 3rdparty;
+			name = js;
 			sourceTree = "<group>";
 		};
 		FC865C3C0B45F6331D2D159B /* Pods */ = {
@@ -285,16 +285,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E35AC42C242CF3BD0041BF6A /* ECMAScript3ExtLexer.js in Resources */,
 				E35AC3F1242127450041BF6A /* MemoryCollectionViewItem.xib in Resources */,
-				E35AC42B242CF3BD0041BF6A /* ECMAScript3ExtParser.js in Resources */,
 				E321A0AF2417C3AA00D40474 /* Assets.xcassets in Resources */,
-				E35AC42A242CF3BD0041BF6A /* antlr3-all.js in Resources */,
+				E35AC431242CF5F90041BF6A /* ECMAScript3ExtLexer.js in Resources */,
 				E321A0B22417C3AA00D40474 /* Main.storyboard in Resources */,
+				E35AC434242CF5F90041BF6A /* ECMAScript3ExtEmitter.js in Resources */,
 				E35AC424242CF1EF0041BF6A /* Calculate.js in Resources */,
 				E30E631424190F49002EF546 /* container-migration.plist in Resources */,
+				E35AC432242CF5F90041BF6A /* ECMAScript3ExtParser.js in Resources */,
 				E35AC3ED241FC4EC0041BF6A /* OutputCollectionViewItem.xib in Resources */,
-				E35AC429242CF3BD0041BF6A /* ECMAScript3ExtEmitter.js in Resources */,
+				E35AC433242CF5F90041BF6A /* antlr3-all.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

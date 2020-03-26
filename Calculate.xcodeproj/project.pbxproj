@@ -10,7 +10,6 @@
 		37EEFB2C2A282DEDF1C07947 /* libPods-CalculateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98C0CD4AF1CAAFF3EB5D93 /* libPods-CalculateTests.a */; };
 		CA19B8C2BDBB78D7DAEEC65B /* libPods-Calculate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6CEA0390769C703898CE1A /* libPods-Calculate.a */; };
 		E30E63012417EE45002EF546 /* ECMAScript3ExtParser.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62F92417EE45002EF546 /* ECMAScript3ExtParser.js */; };
-		E30E63022417EE45002EF546 /* Util.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FA2417EE45002EF546 /* Util.js */; };
 		E30E63032417EE45002EF546 /* ECMAScript3ExtLexer.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FB2417EE45002EF546 /* ECMAScript3ExtLexer.js */; };
 		E30E63052417EE45002EF546 /* ECMAScript3ExtEmitter.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FD2417EE45002EF546 /* ECMAScript3ExtEmitter.js */; };
 		E30E63062417EE45002EF546 /* antlr3-all.js in Resources */ = {isa = PBXBuildFile; fileRef = E30E62FE2417EE45002EF546 /* antlr3-all.js */; };
@@ -52,7 +51,6 @@
 		B2A6813DDEA02744F7ED8A9E /* Pods-Calculate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calculate/Pods-Calculate.debug.xcconfig"; sourceTree = "<group>"; };
 		E30E62F72417E64A002EF546 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E30E62F92417EE45002EF546 /* ECMAScript3ExtParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtParser.js; sourceTree = "<group>"; };
-		E30E62FA2417EE45002EF546 /* Util.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Util.js; sourceTree = "<group>"; };
 		E30E62FB2417EE45002EF546 /* ECMAScript3ExtLexer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtLexer.js; sourceTree = "<group>"; };
 		E30E62FD2417EE45002EF546 /* ECMAScript3ExtEmitter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ECMAScript3ExtEmitter.js; sourceTree = "<group>"; };
 		E30E62FE2417EE45002EF546 /* antlr3-all.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "antlr3-all.js"; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				E30E62F92417EE45002EF546 /* ECMAScript3ExtParser.js */,
 				E30E62FD2417EE45002EF546 /* ECMAScript3ExtEmitter.js */,
 				E30E63002417EE45002EF546 /* Calculate.js */,
-				E30E62FA2417EE45002EF546 /* Util.js */,
 			);
 			name = js;
 			path = Calculate/js;
@@ -291,7 +288,6 @@
 			files = (
 				E30E63032417EE45002EF546 /* ECMAScript3ExtLexer.js in Resources */,
 				E35AC3F1242127450041BF6A /* MemoryCollectionViewItem.xib in Resources */,
-				E30E63022417EE45002EF546 /* Util.js in Resources */,
 				E30E63062417EE45002EF546 /* antlr3-all.js in Resources */,
 				E321A0AF2417C3AA00D40474 /* Assets.xcassets in Resources */,
 				E30E63012417EE45002EF546 /* ECMAScript3ExtParser.js in Resources */,

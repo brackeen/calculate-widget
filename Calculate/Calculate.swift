@@ -226,7 +226,6 @@ public class Calculate {
         evalulateScript("ECMAScript3ExtLexer")
         evalulateScript("ECMAScript3ExtParser")
         evalulateScript("ECMAScript3ExtEmitter")
-        evalulateScript("Util")
         evalulateScript("Calculate")
                 
         setLogFunction()

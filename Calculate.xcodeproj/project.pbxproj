@@ -31,6 +31,7 @@
 		E35AC432242CF5F90041BF6A /* ECMAScript3ExtParser.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC42E242CF5F90041BF6A /* ECMAScript3ExtParser.js */; };
 		E35AC433242CF5F90041BF6A /* antlr3-all.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC42F242CF5F90041BF6A /* antlr3-all.js */; };
 		E35AC434242CF5F90041BF6A /* ECMAScript3ExtEmitter.js in Resources */ = {isa = PBXBuildFile; fileRef = E35AC430242CF5F90041BF6A /* ECMAScript3ExtEmitter.js */; };
+		E35AC436242E47610041BF6A /* NSFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC435242E47610041BF6A /* NSFont+App.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		E35AC42E242CF5F90041BF6A /* ECMAScript3ExtParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = ECMAScript3ExtParser.js; path = ES3Grammar/ECMAScript3ExtParser.js; sourceTree = "<group>"; };
 		E35AC42F242CF5F90041BF6A /* antlr3-all.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "antlr3-all.js"; path = "ES3Grammar/antlr3-all.js"; sourceTree = "<group>"; };
 		E35AC430242CF5F90041BF6A /* ECMAScript3ExtEmitter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = ECMAScript3ExtEmitter.js; path = ES3Grammar/ECMAScript3ExtEmitter.js; sourceTree = "<group>"; };
+		E35AC435242E47610041BF6A /* NSFont+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+App.swift"; sourceTree = "<group>"; };
 		FEB01603900BDD81F54093D1 /* Pods-Calculate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calculate/Pods-Calculate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 				E35AC4112426C4650041BF6A /* AppView.swift */,
 				E321A0AC2417C3A900D40474 /* AppViewController.swift */,
 				E321A0D82417C97400D40474 /* Calculate.swift */,
+				E35AC435242E47610041BF6A /* NSFont+App.swift */,
 				E35AC3F42421450B0041BF6A /* String+Break.swift */,
 				E35AC40F2426BC3E0041BF6A /* SelectAllTextField.swift */,
 				E35AC3F224212A8F0041BF6A /* OutputItem.swift */,
@@ -393,6 +396,7 @@
 				E35AC3EC241FC4EC0041BF6A /* OutputCollectionViewItem.swift in Sources */,
 				E35AC40E2426B27C0041BF6A /* AppWindow.swift in Sources */,
 				E321A0D92417C97400D40474 /* Calculate.swift in Sources */,
+				E35AC436242E47610041BF6A /* NSFont+App.swift in Sources */,
 				E35AC3F0242127450041BF6A /* MemoryCollectionViewItem.swift in Sources */,
 				E35AC4122426C4650041BF6A /* AppView.swift in Sources */,
 				E35AC3FC242182110041BF6A /* PreferencesViewController.swift in Sources */,

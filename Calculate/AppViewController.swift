@@ -32,7 +32,7 @@ class AppViewController: NSViewController {
             layout.itemSize = NSSize(width: view.frame.width, height: prototypeOutputCollectionViewItem.view.frame.height)
         }
 
-        inputField.font = NSFont.monospacedDigitSystemFont(ofSize: inputField.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
+        inputField.font = NSFont.appFont(ofSize: inputField.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
         
         if !Calculate.shared.hasInputHistory() {
             inputField.stringValue = "1+1"

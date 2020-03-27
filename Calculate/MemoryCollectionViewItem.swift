@@ -25,8 +25,9 @@ class MemoryCollectionViewItem: NSCollectionViewItem, OutputItem {
             let key = output.input
             let value = output.output.breakOnSymbols()
             let keyRange = NSRange(key.startIndex..<key.endIndex, in: key)
-            let font = NSFont.monospacedDigitSystemFont(ofSize: textField?.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
-            let boldFont = NSFont.monospacedDigitSystemFont(ofSize: textField?.font?.pointSize ?? NSFont.systemFontSize, weight: .bold)
+            let font = NSFont.appFont(ofSize: textField?.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
+            let boldFont = NSFont.appFont(ofSize: textField?.font?.pointSize ?? NSFont.systemFontSize, weight: .bold)
+            let indent = ("00" as NSString).size(withAttributes: [NSAttributedString.Key.font: font]).width
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.firstLineHeadIndent = 0
 
@@ -35,7 +36,7 @@ class MemoryCollectionViewItem: NSCollectionViewItem, OutputItem {
             if output.type == .memory {
                 string = key + " = " + value
                 textColor = NSColor(named: NSColor.Name("memoryColor")) ?? NSColor.labelColor
-                 paragraphStyle.headIndent = 18
+                paragraphStyle.headIndent = indent
             } else {
                 string = key + value
                 textColor = NSColor.labelColor
@@ -44,7 +45,7 @@ class MemoryCollectionViewItem: NSCollectionViewItem, OutputItem {
                 
                 let bullet = "\u{2022}"
                 if value.contains(bullet) {
-                    paragraphStyle.headIndent = 18
+                    paragraphStyle.headIndent = max(indent, (" \u{2022} " as NSString).size(withAttributes: [NSAttributedString.Key.font: font]).width)
                     paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: paragraphStyle.headIndent, options: [NSTextTab.OptionKey: Any]())]
                 }
             }
@@ -67,13 +68,13 @@ class MemoryCollectionViewItem: NSCollectionViewItem, OutputItem {
     
     var isFirstInList: Bool = false {
         didSet {
-            topSpacingConstraint?.constant = isFirstInList ? 4 : 0
+            topSpacingConstraint?.constant = isFirstInList ? 8 : 0
         }
     }
 
     var isLastInList: Bool = false {
         didSet {
-            bottomSpacingConstraint?.constant = isLastInList ? 4 : 0
+            bottomSpacingConstraint?.constant = isLastInList ? 8 : 0
         }
     }
 }

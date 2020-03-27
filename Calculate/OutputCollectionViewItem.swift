@@ -14,6 +14,8 @@ class OutputCollectionViewItem: NSCollectionViewItem, OutputItem {
     
     @IBOutlet weak var inputLabel: NSTextField!
     @IBOutlet weak var outputLabel: NSTextField!
+    @IBOutlet weak var inputLabelLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var outputLabelLeadingConstraint: NSLayoutConstraint!
     
     internal var widthConstraint: NSLayoutConstraint?
     
@@ -22,6 +24,12 @@ class OutputCollectionViewItem: NSCollectionViewItem, OutputItem {
             guard let output = output else {
                 return
             }
+            let inputFont = NSFont.appFont(ofSize: inputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
+            let outputFont = NSFont.appFont(ofSize: outputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
+            let indent = ("00" as NSString).size(withAttributes: [NSAttributedString.Key.font: outputFont]).width
+            inputLabel.font = inputFont
+            outputLabel.font = outputFont
+            outputLabelLeadingConstraint.constant = inputLabelLeadingConstraint.constant + indent
             inputLabel.stringValue = output.input.breakOnSymbols()
             outputLabel.stringValue = output.output.breakOnSymbols()
             if output.type == .error {
@@ -30,11 +38,5 @@ class OutputCollectionViewItem: NSCollectionViewItem, OutputItem {
                 outputLabel.textColor = NSColor.labelColor
             }
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        inputLabel.font = NSFont.monospacedDigitSystemFont(ofSize: inputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
-        outputLabel.font = NSFont.monospacedDigitSystemFont(ofSize: outputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
     }
 }

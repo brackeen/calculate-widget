@@ -14,7 +14,9 @@
         <collectionViewItem id="nsw-Zj-Gig" customClass="OutputCollectionViewItem" customModule="Calculate" customModuleProvider="target">
             <connections>
                 <outlet property="inputLabel" destination="crO-o1-fuQ" id="9pi-rf-9Yf"/>
+                <outlet property="inputLabelLeadingConstraint" destination="doV-pc-dqR" id="kes-cs-GWG"/>
                 <outlet property="outputLabel" destination="XX2-tv-cju" id="HCc-Gh-Z9o"/>
+                <outlet property="outputLabelLeadingConstraint" destination="dGH-is-2rv" id="rvS-ea-qcR"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="hcj-d6-D8w"/>
             </connections>
         </collectionViewItem>

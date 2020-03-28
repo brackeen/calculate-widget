@@ -26,7 +26,7 @@ class OutputCollectionViewItem: NSCollectionViewItem, OutputItem {
             }
             let inputFont = NSFont.appFont(ofSize: inputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
             let outputFont = NSFont.appFont(ofSize: outputLabel.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
-            let indent = ("00" as NSString).size(withAttributes: [NSAttributedString.Key.font: outputFont]).width
+            let indent = ("00" as NSString).size(withAttributes: [.font: outputFont]).width
             inputLabel.font = inputFont
             outputLabel.font = outputFont
             outputLabelLeadingConstraint.constant = inputLabelLeadingConstraint.constant + indent

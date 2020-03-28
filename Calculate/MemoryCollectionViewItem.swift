@@ -27,7 +27,7 @@ class MemoryCollectionViewItem: NSCollectionViewItem, OutputItem {
             let keyRange = NSRange(key.startIndex..<key.endIndex, in: key)
             let font = NSFont.appFont(ofSize: textField?.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
             let boldFont = NSFont.appFont(ofSize: textField?.font?.pointSize ?? NSFont.systemFontSize, weight: .bold)
-            let indent = ("00" as NSString).size(withAttributes: [NSAttributedString.Key.font: font]).width
+            let indent = ("00" as NSString).size(withAttributes: [.font: font]).width
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.firstLineHeadIndent = 0
 
@@ -45,21 +45,16 @@ class MemoryCollectionViewItem: NSCollectionViewItem, OutputItem {
                 
                 let bullet = "\u{2022}"
                 if value.contains(bullet) {
-                    paragraphStyle.headIndent = max(indent, (" \u{2022} " as NSString).size(withAttributes: [NSAttributedString.Key.font: font]).width)
-                    paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: paragraphStyle.headIndent, options: [NSTextTab.OptionKey: Any]())]
+                    paragraphStyle.headIndent = max(indent, (" \u{2022} " as NSString).size(withAttributes: [.font: font]).width)
+                    paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: paragraphStyle.headIndent, options: [:])]
                 }
             }
             
-
-            let attributedString = NSMutableAttributedString(
-                string: string,
-                attributes: [
-                    NSAttributedString.Key.paragraphStyle: paragraphStyle,
-                    NSAttributedString.Key.font: font,
-                    NSAttributedString.Key.foregroundColor: textColor
-                ]
-            )
-            attributedString.addAttribute(NSAttributedString.Key.font, value: boldFont, range: keyRange)
+            let attributedString = NSMutableAttributedString(string: string, attributes: [
+                .paragraphStyle: paragraphStyle,
+                .font: font,
+                .foregroundColor: textColor])
+            attributedString.addAttribute(.font, value: boldFont, range: keyRange)
             
             textField?.attributedStringValue = attributedString
             textField?.allowsEditingTextAttributes = true

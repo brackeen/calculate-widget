@@ -134,6 +134,32 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Window" id="PeM-49-yg6">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="Cdx-hh-Jgx">
+                                    <items>
+                                        <menuItem title="Minimize" id="1ar-kM-1w6">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="sxJ-ys-eD7"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Zoom" id="inf-Kk-zoz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="performZoom:" target="Ady-hI-5gd" id="jLh-Fv-NJK"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4X7-1C-GUC"/>
+                                        <menuItem title="Bring All to Front" id="Dcw-6r-wOh">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="Vz6-wf-bcf"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Help" id="wpr-3q-Mcd">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
@@ -256,6 +282,7 @@
                 <windowController id="AIb-t2-jTc" sceneMemberID="viewController">
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="ujP-t0-gze">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="425" y="461" width="400" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>

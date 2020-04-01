@@ -168,6 +168,24 @@ class AppViewController: NSViewController {
         completions = nil
     }
     
+    @IBAction func scrollOutputPageUp(_ sender: Any?) {
+        scrollRelative(amount: -outputCollectionView.visibleRect.height)
+    }
+        
+    @IBAction func scrollOutputPageDown(_ sender: Any?) {
+        scrollRelative(amount: outputCollectionView.visibleRect.height)
+    }
+    
+    @IBAction func scrollOutputLineUp(_ sender: Any?) {
+        let height = prototypeOutputCollectionViewItem.view.frame.size.height
+        scrollRelative(amount: -height)
+    }
+        
+    @IBAction func scrollOutputLineDown(_ sender: Any?) {
+        let height = prototypeOutputCollectionViewItem.view.frame.size.height
+        scrollRelative(amount: height)
+    }
+    
     fileprivate func scrollTo(item: Int) {
         let outputCount = Calculate.shared.outputHistory.count
         if item >= 0 && item < outputCount {
@@ -305,10 +323,10 @@ extension AppViewController: NSTextFieldDelegate {
             }
             return true
         } else if commandSelector == #selector(scrollPageUp(_:)) {
-            scrollRelative(amount: -outputCollectionView.visibleRect.height)
+            scrollOutputPageUp(nil)
             return true
         } else if commandSelector == #selector(scrollPageDown(_:)) {
-            scrollRelative(amount: outputCollectionView.visibleRect.height)
+            scrollOutputPageDown(nil)
             return true
         } else if commandSelector == #selector(moveToBeginningOfDocument(_:)) {
             scrollTo(item: 0)

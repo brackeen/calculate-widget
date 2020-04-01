@@ -130,6 +130,30 @@
                                                 <action selector="clearOutput:" target="Ady-hI-5gd" id="BG6-nv-ciM"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="hBC-tn-yvN"/>
+                                        <menuItem title="Page Up" keyEquivalent="" id="4s2-Cc-7Kn">
+                                            <connections>
+                                                <action selector="scrollOutputPageUp:" target="Ady-hI-5gd" id="421-ON-cqw"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Page Down" keyEquivalent="" id="Wfn-h2-QBS">
+                                            <connections>
+                                                <action selector="scrollOutputPageDown:" target="Ady-hI-5gd" id="p4z-ZA-JHE"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Zla-wU-HJA"/>
+                                        <menuItem title="Line Up" keyEquivalent="" id="VH9-95-iSq">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="scrollOutputLineUp:" target="Ady-hI-5gd" id="04x-p8-3rf"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Line Down" keyEquivalent="" id="iou-6Y-qls">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="scrollOutputLineDown:" target="Ady-hI-5gd" id="U5S-h5-hcL"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="ZeT-IG-j1f"/>
                                     </items>
                                 </menu>

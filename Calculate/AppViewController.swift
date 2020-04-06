@@ -44,27 +44,12 @@ class AppViewController: NSViewController {
             if let inputField = self?.inputField, let window = inputField.window {
                 if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
                     NSApp.hide(nil)
-                } else if window.isOnActiveSpace {
-                    NSApp.activate(ignoringOtherApps: true)
-                    window.makeFirstResponder(inputField)
                 } else {
-                    // Moves the window to the active space, allowing it to appear on top of full screen windows.
-                    // This is almost perfect, but sometimes Calculate loses ownership of the menu bar when switching spaces.
-                    // Note: The window should not have the .moveToActiveSpace collection behavior at all times because
-                    // this causes window ordering issues when switching spaces.
-                    // Tested on macOS 10.14.6 (Mojave) only.
-                    NSApp.hide(nil)
-                    let originalWindowCollectionBehavior = window.collectionBehavior
-                    window.collectionBehavior = [ .moveToActiveSpace ]
-                    DispatchQueue.main.async {
-                        NSApp.setActivationPolicy(.accessory)
-                        NSApp.activate(ignoringOtherApps: true)
-                        window.makeFirstResponder(inputField)
-                        DispatchQueue.main.async {
-                            NSApp.setActivationPolicy(.regular)
-                            window.collectionBehavior = originalWindowCollectionBehavior
+                    window.moveToActiveSpace(completion: {
+                        if !window.viewIsFirstResponder(inputField) {
+                            window.makeFirstResponder(inputField)
                         }
-                    }
+                    })
                 }
             }
         })

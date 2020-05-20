@@ -19,8 +19,20 @@ class AppViewController: NSViewController {
     fileprivate var completions: [String]?
     fileprivate var completionWordStart = "".endIndex
     
+    // Caching measured item heights improves performance when resizing the window,
+    // but may not be the best solution. A better solution would be using a NSCollectionView that
+    // doesn't need to know the size of *every* item (for collectionViewContentSize).
+    fileprivate struct MeasuredItemHeight {
+        let height: CGFloat
+        var minKnownWidth: CGFloat
+        var maxKnownWidth: CGFloat
+    }
+    fileprivate var measuredItemHeights: [MeasuredItemHeight] = []
+    
     fileprivate var prototypeOutputCollectionViewItem: OutputCollectionViewItem!
     fileprivate var prototypeMemoryCollectionViewItem: MemoryCollectionViewItem!
+    fileprivate var outputCollectionViewItemDefaultHeight: CGFloat = 0
+    fileprivate var memoryCollectionViewItemDefaultHeight: CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +40,11 @@ class AppViewController: NSViewController {
         prototypeOutputCollectionViewItem = OutputCollectionViewItem.loadFromNib()!
         prototypeMemoryCollectionViewItem = MemoryCollectionViewItem.loadFromNib()!
         
+        outputCollectionViewItemDefaultHeight = prototypeOutputCollectionViewItem.view.frame.height
+        memoryCollectionViewItemDefaultHeight = prototypeMemoryCollectionViewItem.view.frame.height
+        
         if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
-            layout.itemSize = NSSize(width: view.frame.width, height: prototypeOutputCollectionViewItem.view.frame.height)
+            layout.itemSize = NSSize(width: view.frame.width, height: outputCollectionViewItemDefaultHeight)
         }
 
         inputField.font = NSFont.appFont(ofSize: inputField.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
@@ -66,8 +81,10 @@ class AppViewController: NSViewController {
         super.viewWillLayout()
         
         if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
-            layout.itemSize.width = view.frame.width
-            layout.invalidateLayout()
+            if layout.itemSize.width != view.frame.width {
+                layout.itemSize.width = view.frame.width
+                layout.invalidateLayout()
+            }
         }
     }
     
@@ -81,6 +98,7 @@ class AppViewController: NSViewController {
     @IBAction func clearOutput(_ sender: Any) {
         Calculate.shared.clearOutputHistory()
         outputCollectionView.reloadData()
+        measuredItemHeights = []
     }
     
     @IBAction func showMemory(_ sender: Any) {
@@ -109,10 +127,12 @@ class AppViewController: NSViewController {
         let outputCount = Calculate.shared.outputHistory.count
         if addedCount >= outputCount || originalOutputCount == 0 {
             outputCollectionView.reloadData()
+            measuredItemHeights = []
         } else {
             outputCollectionView.performBatchUpdates({
                 let deletedCount = originalOutputCount - outputCount + addedCount
                 if deletedCount > 0 {
+                    measuredItemHeights.removeFirst(min(deletedCount, measuredItemHeights.count))
                     let deletedIndexPaths = (0..<deletedCount).map { IndexPath(item: $0, section: 0) }
                     outputCollectionView.deleteItems(at: Set(deletedIndexPaths))
                 }
@@ -162,12 +182,12 @@ class AppViewController: NSViewController {
     }
     
     @IBAction func scrollOutputLineUp(_ sender: Any?) {
-        let height = prototypeOutputCollectionViewItem.view.frame.size.height
+        let height = outputCollectionViewItemDefaultHeight
         scrollRelative(amount: -height)
     }
         
     @IBAction func scrollOutputLineDown(_ sender: Any?) {
-        let height = prototypeOutputCollectionViewItem.view.frame.size.height
+        let height = outputCollectionViewItemDefaultHeight
         scrollRelative(amount: height)
     }
     
@@ -357,10 +377,25 @@ extension AppViewController: NSCollectionViewDelegate, NSCollectionViewDelegateF
     func collectionView(_ collectionView: NSCollectionView,
            layout collectionViewLayout: NSCollectionViewLayout,
            sizeForItemAt indexPath: IndexPath) -> NSSize {
+        
+        let collectionViewWidth = collectionView.frame.width;
+        if indexPath.item < measuredItemHeights.count {
+            let measuredItemHeight = measuredItemHeights[indexPath.item]
+            if collectionViewWidth >= measuredItemHeight.minKnownWidth && collectionViewWidth <= measuredItemHeight.maxKnownWidth {
+                return CGSize(width: collectionViewWidth, height: measuredItemHeight.height)
+            }
+        } else {
+            let count = indexPath.item - measuredItemHeights.count + 1
+            let measuredItemHeight = MeasuredItemHeight(height: 0, minKnownWidth: 0, maxKnownWidth: 0)
+            measuredItemHeights.append(contentsOf: Array(repeating: measuredItemHeight, count: count))
+        }
+
+        let defaultHeight: CGFloat
         let item: OutputItem
         let output = Calculate.shared.outputHistory[indexPath.item]
         if output.type == .memory {
             item = prototypeMemoryCollectionViewItem
+            defaultHeight = memoryCollectionViewItemDefaultHeight
             if let memoryItem = item as? MemoryCollectionViewItem {
                 memoryItem.isFirstInList = output.newSection
                 memoryItem.isLastInList = (Calculate.shared.outputHistory.count - 1 == indexPath.item ||
@@ -369,11 +404,30 @@ extension AppViewController: NSCollectionViewDelegate, NSCollectionViewDelegateF
             }
         } else if output.type == .help {
             item = prototypeMemoryCollectionViewItem
+            defaultHeight = memoryCollectionViewItemDefaultHeight
         } else {
             item = prototypeOutputCollectionViewItem
+            defaultHeight = outputCollectionViewItemDefaultHeight
         }
         item.output = output
-        return item.fittingSize(forWidth: collectionView.frame.width)
+        let size = item.fittingSize(forWidth: collectionViewWidth)
+        var measuredItemHeight = measuredItemHeights[indexPath.item]
+        if measuredItemHeight.height == size.height {
+            if measuredItemHeight.minKnownWidth > collectionViewWidth {
+                measuredItemHeight.minKnownWidth = collectionViewWidth
+            }
+            if measuredItemHeight.maxKnownWidth < collectionViewWidth {
+                measuredItemHeight.maxKnownWidth = collectionViewWidth
+            }
+        } else {
+            measuredItemHeight = MeasuredItemHeight(height: size.height, minKnownWidth: collectionViewWidth, maxKnownWidth: collectionViewWidth)
+        }
+        if size.height <= defaultHeight {
+            measuredItemHeight.maxKnownWidth = .greatestFiniteMagnitude
+        }
+        measuredItemHeights[indexPath.item] = measuredItemHeight
+        return size
+        
     }
 }
 

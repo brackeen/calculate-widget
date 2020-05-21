@@ -19,16 +19,6 @@ class AppViewController: NSViewController {
     fileprivate var completions: [String]?
     fileprivate var completionWordStart = "".endIndex
     
-    // Caching measured item heights improves performance when resizing the window,
-    // but may not be the best solution. A better solution would be using a NSCollectionView that
-    // doesn't need to know the size of *every* item (for collectionViewContentSize).
-    fileprivate struct MeasuredItemHeight {
-        let height: CGFloat
-        var minKnownWidth: CGFloat
-        var maxKnownWidth: CGFloat
-    }
-    fileprivate var measuredItemHeights: [MeasuredItemHeight] = []
-    
     fileprivate var prototypeOutputCollectionViewItem: OutputCollectionViewItem!
     fileprivate var prototypeMemoryCollectionViewItem: MemoryCollectionViewItem!
     fileprivate var outputCollectionViewItemDefaultHeight: CGFloat = 0
@@ -46,6 +36,8 @@ class AppViewController: NSViewController {
         if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
             layout.itemSize = NSSize(width: view.frame.width, height: outputCollectionViewItemDefaultHeight)
         }
+        
+        (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.bottomAligned = true
 
         inputField.font = NSFont.appFont(ofSize: inputField.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
         
@@ -77,17 +69,6 @@ class AppViewController: NSViewController {
         }
     }
 
-    override func viewWillLayout() {
-        super.viewWillLayout()
-        
-        if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
-            if layout.itemSize.width != view.frame.width {
-                layout.itemSize.width = view.frame.width
-                layout.invalidateLayout()
-            }
-        }
-    }
-    
     @IBAction func copyLastAnswer(_ sender: Any) {
         if let lastAnswer = Calculate.shared.getLastAnswer() {
             NSPasteboard.general.declareTypes([.string], owner: nil)
@@ -98,7 +79,7 @@ class AppViewController: NSViewController {
     @IBAction func clearOutput(_ sender: Any) {
         Calculate.shared.clearOutputHistory()
         outputCollectionView.reloadData()
-        measuredItemHeights = []
+        (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.notifyReloadData()
     }
     
     @IBAction func showMemory(_ sender: Any) {
@@ -127,12 +108,12 @@ class AppViewController: NSViewController {
         let outputCount = Calculate.shared.outputHistory.count
         if addedCount >= outputCount || originalOutputCount == 0 {
             outputCollectionView.reloadData()
-            measuredItemHeights = []
+            (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.notifyReloadData()
         } else {
             outputCollectionView.performBatchUpdates({
                 let deletedCount = originalOutputCount - outputCount + addedCount
                 if deletedCount > 0 {
-                    measuredItemHeights.removeFirst(min(deletedCount, measuredItemHeights.count))
+                    (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.notifyDeleteFirst(deletedCount)
                     let deletedIndexPaths = (0..<deletedCount).map { IndexPath(item: $0, section: 0) }
                     outputCollectionView.deleteItems(at: Set(deletedIndexPaths))
                 }
@@ -372,30 +353,22 @@ extension AppViewController: NSCollectionViewDataSource {
     }
 }
 
-extension AppViewController: NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
+extension AppViewController: NSCollectionViewDelegate, VerticalListCollectionViewDelegateLayout {
     
-    func collectionView(_ collectionView: NSCollectionView,
-           layout collectionViewLayout: NSCollectionViewLayout,
-           sizeForItemAt indexPath: IndexPath) -> NSSize {
-        
-        let collectionViewWidth = collectionView.frame.width;
-        if indexPath.item < measuredItemHeights.count {
-            let measuredItemHeight = measuredItemHeights[indexPath.item]
-            if collectionViewWidth >= measuredItemHeight.minKnownWidth && collectionViewWidth <= measuredItemHeight.maxKnownWidth {
-                return CGSize(width: collectionViewWidth, height: measuredItemHeight.height)
-            }
+    func minimumHeight(forItemAt indexPath: IndexPath) -> CGFloat {
+        let output = Calculate.shared.outputHistory[indexPath.item]
+        if output.type == .memory || output.type == .help {
+            return memoryCollectionViewItemDefaultHeight
         } else {
-            let count = indexPath.item - measuredItemHeights.count + 1
-            let measuredItemHeight = MeasuredItemHeight(height: 0, minKnownWidth: 0, maxKnownWidth: 0)
-            measuredItemHeights.append(contentsOf: Array(repeating: measuredItemHeight, count: count))
+            return outputCollectionViewItemDefaultHeight
         }
-
-        let defaultHeight: CGFloat
+    }
+    
+    func measuredHeight(forItemAt indexPath: IndexPath, width: CGFloat) -> CGFloat {
         let item: OutputItem
         let output = Calculate.shared.outputHistory[indexPath.item]
         if output.type == .memory {
             item = prototypeMemoryCollectionViewItem
-            defaultHeight = memoryCollectionViewItemDefaultHeight
             if let memoryItem = item as? MemoryCollectionViewItem {
                 memoryItem.isFirstInList = output.newSection
                 memoryItem.isLastInList = (Calculate.shared.outputHistory.count - 1 == indexPath.item ||
@@ -404,30 +377,16 @@ extension AppViewController: NSCollectionViewDelegate, NSCollectionViewDelegateF
             }
         } else if output.type == .help {
             item = prototypeMemoryCollectionViewItem
-            defaultHeight = memoryCollectionViewItemDefaultHeight
         } else {
             item = prototypeOutputCollectionViewItem
-            defaultHeight = outputCollectionViewItemDefaultHeight
         }
         item.output = output
-        let size = item.fittingSize(forWidth: collectionViewWidth)
-        var measuredItemHeight = measuredItemHeights[indexPath.item]
-        if measuredItemHeight.height == size.height {
-            if measuredItemHeight.minKnownWidth > collectionViewWidth {
-                measuredItemHeight.minKnownWidth = collectionViewWidth
-            }
-            if measuredItemHeight.maxKnownWidth < collectionViewWidth {
-                measuredItemHeight.maxKnownWidth = collectionViewWidth
-            }
-        } else {
-            measuredItemHeight = MeasuredItemHeight(height: size.height, minKnownWidth: collectionViewWidth, maxKnownWidth: collectionViewWidth)
-        }
-        if size.height <= defaultHeight {
-            measuredItemHeight.maxKnownWidth = .greatestFiniteMagnitude
-        }
-        measuredItemHeights[indexPath.item] = measuredItemHeight
-        return size
-        
+        let size = item.fittingSize(forWidth: width)
+        return size.height
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+        return itemSize(forWidth: collectionView.frame.width, layout: collectionViewLayout, indexPath: indexPath)
     }
 }
 
@@ -440,22 +399,6 @@ extension AppViewController: NSUserInterfaceValidations {
             return !Calculate.shared.outputHistory.isEmpty
         } else {
             return true
-        }
-    }
-}
-
-class BottomAlignedCollectionViewFlowLayout: NSCollectionViewFlowLayout {
-    
-    override func layoutAttributesForElements(in rect: CGRect) -> [NSCollectionViewLayoutAttributes] {
-        let attributes = super.layoutAttributesForElements(in: rect)
-        guard let collectionView = collectionView, collectionView.bounds.height > collectionViewContentSize.height else {
-            return attributes
-        }
-        let offset = collectionView.bounds.height - collectionViewContentSize.height
-        return attributes.map { attribute in
-            let newAttribute = attribute.copy() as! NSCollectionViewLayoutAttributes
-            newAttribute.frame.origin.y += offset
-            return newAttribute
         }
     }
 }

@@ -355,6 +355,10 @@ extension AppViewController: NSCollectionViewDataSource {
 
 extension AppViewController: NSCollectionViewDelegate, VerticalListCollectionViewDelegateLayout {
     
+    func minimumWidth() -> CGFloat {
+        return outputCollectionView.window?.minSize.width ?? 0
+    }
+    
     func minimumHeight(forItemAt indexPath: IndexPath) -> CGFloat {
         let output = Calculate.shared.outputHistory[indexPath.item]
         if output.type == .memory || output.type == .help {

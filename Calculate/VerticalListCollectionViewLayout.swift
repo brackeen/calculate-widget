@@ -5,6 +5,7 @@ import Cocoa
  Assumptions:
  - Only one section.
  - Items can have different heights.
+ - Most items fit in the minimum width.
  - Items only change in height when the width of the NSCollectionView changes.
  - Items only grow in height when the width shrinks. (Height of items is inverse to the width of the NSCollectionView.)
  - Item deletions always happen at the beginning of the list.
@@ -75,7 +76,9 @@ class VerticalListCollectionViewLayout: NSCollectionViewFlowLayout {
     }
 }
 
-@objc protocol VerticalListCollectionViewDelegateLayout: NSCollectionViewDelegateFlowLayout {
+protocol VerticalListCollectionViewDelegateLayout: NSCollectionViewDelegateFlowLayout {
+    
+    func minimumWidth() -> CGFloat
     
     func minimumHeight(forItemAt indexPath: IndexPath) -> CGFloat
     
@@ -100,6 +103,16 @@ extension VerticalListCollectionViewDelegateLayout {
         var measuredItem = layout.measuredItems[indexPath.item]
         if collectionViewWidth >= measuredItem.minKnownWidth && collectionViewWidth <= measuredItem.maxKnownWidth {
             return CGSize(width: collectionViewWidth, height: measuredItem.height)
+        }
+        
+        let collectionViewMinWidth = minimumWidth()
+        if measuredItem.height <= 0 && collectionViewMinWidth > 0 {
+            // First measure. See if it fits in the minimum width
+            let maximumItemHeight = measuredHeight(forItemAt: indexPath, width: collectionViewMinWidth)
+            if maximumItemHeight == minimumHeight(forItemAt: indexPath) {
+                layout.measuredItems[indexPath.item] = VerticalListCollectionViewLayout.MeasuredItem(height: maximumItemHeight, minKnownWidth: collectionViewMinWidth, maxKnownWidth: .greatestFiniteMagnitude)
+                return CGSize(width: collectionViewWidth, height: maximumItemHeight)
+            }
         }
 
         let itemHeight = measuredHeight(forItemAt: indexPath, width: collectionViewWidth)

@@ -53,9 +53,7 @@ class AppViewController: NSViewController {
                     NSApp.hide(nil)
                 } else {
                     window.moveToActiveSpace(completion: {
-                        if !window.viewIsFirstResponder(inputField) {
-                            window.makeFirstResponder(inputField)
-                        }
+                        self?.focusInputField()
                     })
                 }
             }
@@ -63,9 +61,13 @@ class AppViewController: NSViewController {
         
         // Focus in an async block to get around window restoration
         DispatchQueue.main.async { [weak self] in
-            if let inputField = self?.inputField, let window = inputField.window, !window.viewIsFirstResponder(inputField) {
-                window.makeFirstResponder(inputField)
-            }
+            self?.focusInputField()
+        }
+    }
+    
+    func focusInputField() {
+        if let window = inputField.window, !window.viewIsFirstResponder(inputField) {
+            window.makeFirstResponder(inputField)
         }
     }
 

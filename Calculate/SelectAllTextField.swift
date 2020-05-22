@@ -16,4 +16,8 @@ class SelectAllTextField: NSTextField {
             textEditor.selectAll(self)
         }
     }
+    
+    override func cancelOperation(_ sender: Any?) {
+        (window?.contentViewController as? AppViewController)?.focusInputField()
+    }
 }

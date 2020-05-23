@@ -235,6 +235,16 @@ class AppViewController: NSViewController {
         outputCollectionView.animator().scrollToVisible(frame)
     }
     
+    fileprivate func replaceAutocompletion(_ completion: String) {
+        let input = inputField.stringValue
+        if let textView = inputField.currentEditor() as? NSTextView {
+            // For Undo support
+            let currentCompletions = completions
+            textView.insertText(completion, replacementRange: NSRange(completionWordStart..., in: input))
+            completions = currentCompletions
+        }
+    }
+    
     fileprivate func doAutocomplete(forward: Bool) {
         let input = inputField.stringValue
         
@@ -249,7 +259,7 @@ class AppViewController: NSViewController {
                 for i in completions.indices {
                     if lastCompletion == completions[i] {
                         let j = (i + offset) % completions.count
-                        inputField.stringValue = input[..<completionWordStart] + completions[j]
+                        replaceAutocompletion(completions[j])
                         inputField.currentEditor()?.moveToEndOfLine(nil)
                         break
                     }
@@ -287,7 +297,7 @@ class AppViewController: NSViewController {
                         if prefix == completion && completions.count > 1 {
                             completion = completions[1]
                         }
-                        inputField.stringValue = input[..<completionWordStart] + completion
+                        replaceAutocompletion(completion)
                         inputField.currentEditor()?.moveToEndOfLine(nil)
                     }
                     self.completions = completions
@@ -309,7 +319,8 @@ extension AppViewController: NSTextFieldDelegate {
                 (ch == "+" || ch == "-" || ch == "*" || ch == "/" || ch == "%" || ch == "&" || ch == "|" || ch == "^") &&
                 UserDefaults.standard.insertAnsEnabled {
 
-                inputField.insertAns()
+                // Register later otherwise the edit will get merged with the current edit (inserting the "+" for example)
+                inputField.insertAns(registerLater: true)
 
                 allowInsertAnsVariable = false
             }
@@ -364,14 +375,20 @@ extension AppViewController: NSTextFieldDelegate {
 
 extension NSTextField {
     
-     func insertAns() {
+    func insertAns(registerLater: Bool = false) {
         let originalText = stringValue
-        // Do later otherwise the edit will get merged with the original undo action (inserting the "+" for example)
-        DispatchQueue.main.async {
+        let registerBlock = {
             self.currentEditor()?.undoManager?.registerUndo(withTarget: self, handler: { me in
                 me.undoInsertAns(originalText: originalText)
             })
             self.currentEditor()?.undoManager?.setActionName("Insert \"ans\"")
+        }
+        if registerLater {
+            DispatchQueue.main.async {
+                registerBlock()
+            }
+        } else {
+            registerBlock()
         }
         currentEditor()?.replaceCharacters(in: NSRange(location: 0, length: 0), with: "ans")
         currentEditor()?.moveToEndOfLine(nil)

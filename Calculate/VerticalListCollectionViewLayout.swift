@@ -57,6 +57,8 @@ class VerticalListCollectionViewLayout: NSCollectionViewFlowLayout {
         if itemSize.width != newBounds.width {
             itemSize.width = newBounds.width
             return true
+        } else if bottomAligned && newBounds.height > collectionViewContentSize.height {
+            return true
         } else {
             return false
         }

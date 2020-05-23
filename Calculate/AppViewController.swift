@@ -51,14 +51,19 @@ class AppViewController: NSViewController {
         inputField.selectText(nil)
         (view as? AppView)?.viewToFocusOnClick = inputField
         
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: AppDelegate.hotkeyPreferenceKey, toAction: { [weak self] in
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: UserDefaults.hotkeyDefaultsKey, toAction: { [weak self] in
             if let inputField = self?.inputField, let window = inputField.window {
                 if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
                     NSApp.hide(nil)
                 } else {
-                    window.moveToActiveSpace(completion: {
+                    if UserDefaults.standard.moveToActiveSpaceEnabled {
+                        window.moveToActiveSpace(completion: {
+                            self?.focusInputField()
+                        })
+                    } else {
+                        NSApp.activate(ignoringOtherApps: true)
                         self?.focusInputField()
-                    })
+                    }
                 }
             }
         })
@@ -70,8 +75,11 @@ class AppViewController: NSViewController {
     }
     
     func focusInputField() {
-        if let window = inputField.window, !window.viewIsFirstResponder(inputField) {
-            window.makeFirstResponder(inputField)
+        if let window = inputField.window {
+            window.makeKeyAndOrderFront(nil)
+            if !window.viewIsFirstResponder(inputField) {
+                window.makeFirstResponder(inputField)
+            }
         }
     }
 

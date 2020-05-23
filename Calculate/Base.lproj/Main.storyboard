@@ -384,15 +384,28 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m1b-Mu-eTz">
+                                <rect key="frame" x="143" y="150" width="153" height="18"/>
+                                <buttonCell key="cell" type="check" title="Move to Active Space" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4tw-g0-FgG">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="moveToActiveSpaceChanged:" target="IS2-h4-e7h" id="CdI-Wq-dSL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m1b-Mu-eTz" secondAttribute="trailing" constant="24" id="211-Sd-Cna"/>
                             <constraint firstItem="QiW-al-0OJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="n7U-Vb-rtY" secondAttribute="leading" constant="8" id="9De-vd-mIA"/>
                             <constraint firstItem="kH5-ui-Oub" firstAttribute="leading" secondItem="n7U-Vb-rtY" secondAttribute="leading" constant="60" id="EbU-yA-DUi"/>
                             <constraint firstItem="kH5-ui-Oub" firstAttribute="top" secondItem="n7U-Vb-rtY" secondAttribute="top" constant="24" id="HBl-2k-JiS"/>
                             <constraint firstItem="e3t-n9-dws" firstAttribute="centerY" secondItem="QiW-al-0OJ" secondAttribute="centerY" id="LmS-5h-SSN"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TRI-Zo-Sec" secondAttribute="trailing" constant="24" id="RG4-gq-jMZ"/>
                             <constraint firstItem="TRI-Zo-Sec" firstAttribute="firstBaseline" secondItem="kH5-ui-Oub" secondAttribute="firstBaseline" id="XDH-1P-FVU"/>
+                            <constraint firstItem="m1b-Mu-eTz" firstAttribute="leading" secondItem="e3t-n9-dws" secondAttribute="leading" id="ZU3-Ai-5oA"/>
                             <constraint firstItem="e3t-n9-dws" firstAttribute="leading" secondItem="TRI-Zo-Sec" secondAttribute="leading" id="ajV-hX-5bV"/>
+                            <constraint firstItem="m1b-Mu-eTz" firstAttribute="top" secondItem="e3t-n9-dws" secondAttribute="bottom" constant="12" id="dnL-EJ-dRp"/>
                             <constraint firstItem="TRI-Zo-Sec" firstAttribute="leading" secondItem="kH5-ui-Oub" secondAttribute="trailing" constant="8" id="gXK-iD-kDC"/>
                             <constraint firstItem="QiW-al-0OJ" firstAttribute="trailing" secondItem="kH5-ui-Oub" secondAttribute="trailing" id="kC6-uh-U65"/>
                             <constraint firstItem="QiW-al-0OJ" firstAttribute="top" secondItem="kH5-ui-Oub" secondAttribute="bottom" constant="32" id="pYP-8B-FWJ"/>
@@ -400,6 +413,7 @@
                     </view>
                     <connections>
                         <outlet property="angleModeButton" destination="TRI-Zo-Sec" id="paR-nA-uQT"/>
+                        <outlet property="moveToActiveSpaceButton" destination="m1b-Mu-eTz" id="92G-4w-yFJ"/>
                         <outlet property="shortcutView" destination="e3t-n9-dws" id="mbZ-9g-Onf"/>
                     </connections>
                 </viewController>

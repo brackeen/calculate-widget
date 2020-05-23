@@ -11,6 +11,7 @@ import Cocoa
 class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var angleModeButton: NSPopUpButton!
+    @IBOutlet weak var moveToActiveSpaceButton: NSButton!
     @IBOutlet weak var shortcutView: MASShortcutView!
     
     override func viewDidLoad() {
@@ -19,12 +20,22 @@ class PreferencesViewController: NSViewController {
         angleModeButton.selectItem(withTag: Calculate.shared.angleMode.rawValue)
         
         shortcutView.style = MASShortcutViewStyleTexturedRect
-        shortcutView.associatedUserDefaultsKey = AppDelegate.hotkeyPreferenceKey
+        shortcutView.associatedUserDefaultsKey = UserDefaults.hotkeyDefaultsKey
+        shortcutView.shortcutValueChange = { [weak self] shortcutView in
+            self?.moveToActiveSpaceButton.isEnabled = (shortcutView?.shortcutValue != nil)
+        }
+
+        moveToActiveSpaceButton.state = UserDefaults.standard.moveToActiveSpaceEnabled ? .on : .off
+        moveToActiveSpaceButton.isEnabled = (shortcutView.shortcutValue != nil)
     }
     
     @IBAction func angleModeChanged(_ sender: Any) {
         if let angleMode = Calculate.AngleMode(rawValue: angleModeButton.selectedTag()) {
             Calculate.shared.angleMode = angleMode
         }
+    }
+    
+    @IBAction func moveToActiveSpaceChanged(_ sender: Any) {
+        UserDefaults.standard.moveToActiveSpaceEnabled = moveToActiveSpaceButton.state == .on
     }
 }

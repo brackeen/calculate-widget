@@ -51,7 +51,7 @@ class AppViewController: NSViewController {
         inputField.selectText(nil)
         (view as? AppView)?.viewToFocusOnClick = inputField
         
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: UserDefaults.hotkeyDefaultsKey, toAction: { [weak self] in
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: UserDefaults.HotkeyDefaultsKey, toAction: { [weak self] in
             if let inputField = self?.inputField, let window = inputField.window {
                 if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
                     NSApp.hide(nil)
@@ -68,6 +68,8 @@ class AppViewController: NSViewController {
             }
         })
         
+        NotificationCenter.default.addObserver(self, selector: #selector(fontDidChange), name: UserDefaults.FontDidChange, object: nil)
+        
         // Focus in an async block to get around window restoration
         DispatchQueue.main.async { [weak self] in
             self?.focusInputField()
@@ -81,6 +83,13 @@ class AppViewController: NSViewController {
                 window.makeFirstResponder(inputField)
             }
         }
+    }
+    
+    @objc func fontDidChange(_ sender: Any) {
+        // NOTE: This is slow with lot of history.
+        outputCollectionView.reloadData()
+        (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.notifyReloadData()
+        inputField.font = NSFont.appFont(ofSize: inputField.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
     }
 
     @IBAction func copyLastAnswer(_ sender: Any) {

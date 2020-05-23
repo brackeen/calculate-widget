@@ -10,33 +10,48 @@ import Foundation
 
 extension UserDefaults {
     
-    static let hotkeyDefaultsKey = "hotkey"
+    static let HotkeyDefaultsKey = "hotkey"
+    static let FontDidChange = NSNotification.Name("FontDidChange")
 
-    private static let hotkeyMoveToActiveSpaceDefaultsKey = "hotkeyMoveToActiveSpace"
-    private static let insertAnsDefaultsKey = "insertAns"
+    private static let HotkeyMoveToActiveSpaceDefaultsKey = "hotkeyMoveToActiveSpace"
+    private static let InsertAnsDefaultsKey = "insertAns"
+    private static let MonospaceFontKey = "monospace"
     
     var moveToActiveSpaceEnabled: Bool {
         get {
-            return bool(forKey: UserDefaults.hotkeyMoveToActiveSpaceDefaultsKey)
+            return bool(forKey: UserDefaults.HotkeyMoveToActiveSpaceDefaultsKey)
         }
         set {
-            set(newValue, forKey: UserDefaults.hotkeyMoveToActiveSpaceDefaultsKey)
+            set(newValue, forKey: UserDefaults.HotkeyMoveToActiveSpaceDefaultsKey)
         }
     }
     
     var insertAnsEnabled: Bool {
         get {
-            return bool(forKey: UserDefaults.insertAnsDefaultsKey)
+            return bool(forKey: UserDefaults.InsertAnsDefaultsKey)
         }
         set {
-            set(newValue, forKey: UserDefaults.insertAnsDefaultsKey)
+            set(newValue, forKey: UserDefaults.InsertAnsDefaultsKey)
+        }
+    }
+    
+    var monospaceFont: Bool {
+        get {
+            return bool(forKey: UserDefaults.MonospaceFontKey)
+        }
+        set {
+            if newValue != monospaceFont {
+                set(newValue, forKey: UserDefaults.MonospaceFontKey)
+                NotificationCenter.default.post(name: UserDefaults.FontDidChange, object: nil)
+            }
         }
     }
     
     func registerDefaults() {
         register(defaults: [
-            UserDefaults.hotkeyMoveToActiveSpaceDefaultsKey: true,
-            UserDefaults.insertAnsDefaultsKey: true,
+            UserDefaults.HotkeyMoveToActiveSpaceDefaultsKey: true,
+            UserDefaults.InsertAnsDefaultsKey: true,
+            UserDefaults.MonospaceFontKey: false,
         ])
     }
 }

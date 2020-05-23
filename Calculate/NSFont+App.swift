@@ -11,7 +11,7 @@ import Cocoa
 extension NSFont {
     
     class func appFont(ofSize fontSize: CGFloat, weight: NSFont.Weight) -> NSFont {
-        let monospace = UserDefaults.standard.bool(forKey: "monospaceFont")
+        let monospace = UserDefaults.standard.monospaceFont
         if monospace {
             if #available(OSX 10.15, *) {
                 return NSFont.monospacedSystemFont(ofSize: fontSize, weight: weight)

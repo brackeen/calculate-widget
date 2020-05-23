@@ -12,14 +12,31 @@ extension UserDefaults {
     
     static let hotkeyDefaultsKey = "hotkey"
 
-    private static let hotkeyMoveToActiveSpaceDisabledDefaultsKey = "hotkeyMoveToActiveSpaceDisabled"
+    private static let hotkeyMoveToActiveSpaceDefaultsKey = "hotkeyMoveToActiveSpace"
+    private static let insertAnsDefaultsKey = "insertAns"
     
     var moveToActiveSpaceEnabled: Bool {
         get {
-            return !bool(forKey: UserDefaults.hotkeyMoveToActiveSpaceDisabledDefaultsKey)
+            return bool(forKey: UserDefaults.hotkeyMoveToActiveSpaceDefaultsKey)
         }
         set {
-            set(!newValue, forKey: UserDefaults.hotkeyMoveToActiveSpaceDisabledDefaultsKey)
+            set(newValue, forKey: UserDefaults.hotkeyMoveToActiveSpaceDefaultsKey)
         }
+    }
+    
+    var insertAnsEnabled: Bool {
+        get {
+            return bool(forKey: UserDefaults.insertAnsDefaultsKey)
+        }
+        set {
+            set(newValue, forKey: UserDefaults.insertAnsDefaultsKey)
+        }
+    }
+    
+    func registerDefaults() {
+        register(defaults: [
+            UserDefaults.hotkeyMoveToActiveSpaceDefaultsKey: true,
+            UserDefaults.insertAnsDefaultsKey: true,
+        ])
     }
 }

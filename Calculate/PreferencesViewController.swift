@@ -11,6 +11,7 @@ import Cocoa
 class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var angleModeButton: NSPopUpButton!
+    @IBOutlet weak var insertAnsButton: NSButton!
     @IBOutlet weak var moveToActiveSpaceButton: NSButton!
     @IBOutlet weak var shortcutView: MASShortcutView!
     
@@ -18,6 +19,7 @@ class PreferencesViewController: NSViewController {
         super.viewDidLoad()
         
         angleModeButton.selectItem(withTag: Calculate.shared.angleMode.rawValue)
+        insertAnsButton.state = UserDefaults.standard.insertAnsEnabled ? .on : .off
         
         shortcutView.style = MASShortcutViewStyleTexturedRect
         shortcutView.associatedUserDefaultsKey = UserDefaults.hotkeyDefaultsKey
@@ -37,5 +39,9 @@ class PreferencesViewController: NSViewController {
     
     @IBAction func moveToActiveSpaceChanged(_ sender: Any) {
         UserDefaults.standard.moveToActiveSpaceEnabled = moveToActiveSpaceButton.state == .on
+    }
+    
+    @IBAction func insertAnsChanged(_ sender: Any) {
+        UserDefaults.standard.insertAnsEnabled = insertAnsButton.state == .on
     }
 }

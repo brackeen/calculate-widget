@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-
+        UserDefaults.standard.registerDefaults()
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

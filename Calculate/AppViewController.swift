@@ -298,7 +298,8 @@ extension AppViewController: NSTextFieldDelegate {
             textFieldWasEmpty = true
         } else {
             if let ch = text.first, text.count == 1, textFieldWasEmpty && allowInsertAnsVariable &&
-                (ch == "+" || ch == "-" || ch == "*" || ch == "/" || ch == "%" || ch == "&" || ch == "|" || ch == "^") {
+                (ch == "+" || ch == "-" || ch == "*" || ch == "/" || ch == "%" || ch == "&" || ch == "|" || ch == "^") &&
+                UserDefaults.standard.insertAnsEnabled {
 
                 inputField.insertAns()
 

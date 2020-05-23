@@ -342,15 +342,15 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kH5-ui-Oub">
-                                <rect key="frame" x="58" y="230" width="81" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Angle Mode:" id="Dxy-SN-6Fq">
+                                <rect key="frame" x="78" y="230" width="39" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Input:" id="Dxy-SN-6Fq">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TRI-Zo-Sec">
-                                <rect key="frame" x="143" y="224" width="89" height="25"/>
+                                <rect key="frame" x="121" y="224" width="89" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="Radians" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="tXp-L0-grV" id="eQw-qk-rm8">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -370,14 +370,14 @@
                                 </connections>
                             </popUpButton>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="e3t-n9-dws" customClass="MASShortcutView">
-                                <rect key="frame" x="145" y="178" width="200" height="25"/>
+                                <rect key="frame" x="123" y="130" width="200" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="MvJ-J8-7KI"/>
                                     <constraint firstAttribute="height" constant="25" id="Uj8-fT-sJP"/>
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QiW-al-0OJ">
-                                <rect key="frame" x="88" y="182" width="51" height="16"/>
+                                <rect key="frame" x="66" y="134" width="51" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Hotkey:" id="udm-lW-tNt">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -385,7 +385,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m1b-Mu-eTz">
-                                <rect key="frame" x="143" y="150" width="153" height="18"/>
+                                <rect key="frame" x="121" y="102" width="153" height="18"/>
                                 <buttonCell key="cell" type="check" title="Move to Active Space" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4tw-g0-FgG">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -394,11 +394,31 @@
                                     <action selector="moveToActiveSpaceChanged:" target="IS2-h4-e7h" id="CdI-Wq-dSL"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G0W-at-fKB">
+                                <rect key="frame" x="121" y="199" width="178" height="18"/>
+                                <buttonCell key="cell" type="check" title="Insert &quot;ans&quot; automatically" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bDB-zp-Ujk">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="insertAnsChanged:" target="IS2-h4-e7h" id="JI0-g1-Dzt"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8cN-mH-KKD">
+                                <rect key="frame" x="139" y="183" width="169" height="14"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Typing &quot;+1&quot; expands to &quot;ans+1&quot;" id="pnJ-Cy-cp3">
+                                    <font key="font" metaFont="message" size="11"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m1b-Mu-eTz" secondAttribute="trailing" constant="24" id="211-Sd-Cna"/>
                             <constraint firstItem="QiW-al-0OJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="n7U-Vb-rtY" secondAttribute="leading" constant="8" id="9De-vd-mIA"/>
-                            <constraint firstItem="kH5-ui-Oub" firstAttribute="leading" secondItem="n7U-Vb-rtY" secondAttribute="leading" constant="60" id="EbU-yA-DUi"/>
+                            <constraint firstItem="G0W-at-fKB" firstAttribute="leading" secondItem="TRI-Zo-Sec" secondAttribute="leading" id="AVn-hB-xUK"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8cN-mH-KKD" secondAttribute="trailing" constant="24" id="D9H-1T-3EC"/>
+                            <constraint firstItem="kH5-ui-Oub" firstAttribute="leading" secondItem="n7U-Vb-rtY" secondAttribute="leading" constant="80" id="EbU-yA-DUi"/>
                             <constraint firstItem="kH5-ui-Oub" firstAttribute="top" secondItem="n7U-Vb-rtY" secondAttribute="top" constant="24" id="HBl-2k-JiS"/>
                             <constraint firstItem="e3t-n9-dws" firstAttribute="centerY" secondItem="QiW-al-0OJ" secondAttribute="centerY" id="LmS-5h-SSN"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TRI-Zo-Sec" secondAttribute="trailing" constant="24" id="RG4-gq-jMZ"/>
@@ -408,11 +428,16 @@
                             <constraint firstItem="m1b-Mu-eTz" firstAttribute="top" secondItem="e3t-n9-dws" secondAttribute="bottom" constant="12" id="dnL-EJ-dRp"/>
                             <constraint firstItem="TRI-Zo-Sec" firstAttribute="leading" secondItem="kH5-ui-Oub" secondAttribute="trailing" constant="8" id="gXK-iD-kDC"/>
                             <constraint firstItem="QiW-al-0OJ" firstAttribute="trailing" secondItem="kH5-ui-Oub" secondAttribute="trailing" id="kC6-uh-U65"/>
-                            <constraint firstItem="QiW-al-0OJ" firstAttribute="top" secondItem="kH5-ui-Oub" secondAttribute="bottom" constant="32" id="pYP-8B-FWJ"/>
+                            <constraint firstItem="QiW-al-0OJ" firstAttribute="top" secondItem="kH5-ui-Oub" secondAttribute="bottom" constant="80" id="pYP-8B-FWJ"/>
+                            <constraint firstItem="8cN-mH-KKD" firstAttribute="leading" secondItem="G0W-at-fKB" secondAttribute="leading" constant="18" id="sby-Aq-5L9"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G0W-at-fKB" secondAttribute="trailing" constant="24" id="sqO-Qe-xpx"/>
+                            <constraint firstItem="8cN-mH-KKD" firstAttribute="top" secondItem="G0W-at-fKB" secondAttribute="bottom" constant="4" id="t0V-6C-MFC"/>
+                            <constraint firstItem="G0W-at-fKB" firstAttribute="top" secondItem="TRI-Zo-Sec" secondAttribute="bottom" constant="12" id="uVE-gl-PA6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="angleModeButton" destination="TRI-Zo-Sec" id="paR-nA-uQT"/>
+                        <outlet property="insertAnsButton" destination="G0W-at-fKB" id="TiU-OB-caO"/>
                         <outlet property="moveToActiveSpaceButton" destination="m1b-Mu-eTz" id="92G-4w-yFJ"/>
                         <outlet property="shortcutView" destination="e3t-n9-dws" id="mbZ-9g-Onf"/>
                     </connections>

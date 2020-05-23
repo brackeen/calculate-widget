@@ -19,6 +19,10 @@ class AppViewController: NSViewController {
     fileprivate var completions: [String]?
     fileprivate var completionWordStart = "".endIndex
     
+    fileprivate var inputFieldUndoManager: UndoManager? {
+        return inputField?.currentEditor()?.undoManager
+    }
+    
     fileprivate var prototypeOutputCollectionViewItem: OutputCollectionViewItem!
     fileprivate var prototypeMemoryCollectionViewItem: MemoryCollectionViewItem!
     fileprivate var outputCollectionViewItemDefaultHeight: CGFloat = 0
@@ -124,6 +128,18 @@ class AppViewController: NSViewController {
             }, completionHandler: nil)
         }
         scrollTo(item: outputCount - addedCount)
+    }
+    
+    @IBAction func undo(_ sender: Any) {
+        if let undoManager = inputFieldUndoManager, undoManager.canUndo {
+            undoManager.undo()
+        }
+    }
+    
+    @IBAction func redo(_ sender: Any) {
+        if let undoManager = inputFieldUndoManager, undoManager.canRedo {
+            undoManager.redo()
+        }
     }
         
     @IBAction func enterPressed(_ sender: Any) {
@@ -273,10 +289,11 @@ extension AppViewController: NSTextFieldDelegate {
         if text.isEmpty {
             textFieldWasEmpty = true
         } else {
-            if let ch = text.first, textFieldWasEmpty && allowInsertAnsVariable &&
+            if let ch = text.first, text.count == 1, textFieldWasEmpty && allowInsertAnsVariable &&
                 (ch == "+" || ch == "-" || ch == "*" || ch == "/" || ch == "%" || ch == "&" || ch == "|" || ch == "^") {
-                inputField.stringValue = "ans" + text
-                inputField.currentEditor()?.moveToEndOfLine(nil)
+
+                inputField.insertAns()
+
                 allowInsertAnsVariable = false
             }
             textFieldWasEmpty = false
@@ -325,6 +342,31 @@ extension AppViewController: NSTextFieldDelegate {
         } else {
             return false
         }
+    }
+}
+
+extension NSTextField {
+    
+     func insertAns() {
+        let originalText = stringValue
+        // Do later otherwise the edit will get merged with the original undo action (inserting the "+" for example)
+        DispatchQueue.main.async {
+            self.currentEditor()?.undoManager?.registerUndo(withTarget: self, handler: { me in
+                me.undoInsertAns(originalText: originalText)
+            })
+            self.currentEditor()?.undoManager?.setActionName("Insert \"ans\"")
+        }
+        currentEditor()?.replaceCharacters(in: NSRange(location: 0, length: 0), with: "ans")
+        currentEditor()?.moveToEndOfLine(nil)
+    }
+
+    func undoInsertAns(originalText: String) {
+        currentEditor()?.undoManager?.registerUndo(withTarget: self, handler: { me in
+            me.insertAns()
+        })
+        currentEditor()?.undoManager?.setActionName("Insert \"ans\"")
+        stringValue = originalText
+        currentEditor()?.moveToEndOfLine(nil)
     }
 }
 
@@ -403,6 +445,20 @@ extension AppViewController: NSUserInterfaceValidations {
             return Calculate.shared.getLastAnswer() != nil
         } else if item.action == #selector(clearOutput(_:)) {
             return !Calculate.shared.outputHistory.isEmpty
+        } else if item.action == #selector(undo(_:)) {
+            if let undoManager = inputFieldUndoManager {
+                (item as? NSMenuItem)?.title = undoManager.undoMenuItemTitle
+                return undoManager.canUndo
+            } else {
+                return false
+            }
+        } else if item.action == #selector(redo(_:)) {
+            if let undoManager = inputFieldUndoManager {
+                (item as? NSMenuItem)?.title = undoManager.redoMenuItemTitle
+                return undoManager.canRedo
+            } else {
+                return false
+            }
         } else {
             return true
         }

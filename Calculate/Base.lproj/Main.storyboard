@@ -82,6 +82,17 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Edit" id="W48-6f-4Dl">
                                     <items>
+                                        <menuItem title="Undo" keyEquivalent="z" id="xhJ-D0-Sk6">
+                                            <connections>
+                                                <action selector="undo:" target="Ady-hI-5gd" id="G61-NN-Zda"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Redo" keyEquivalent="Z" id="AOg-8V-zbt">
+                                            <connections>
+                                                <action selector="redo:" target="Ady-hI-5gd" id="7IT-WG-Kkb"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Ndo-nr-2G8"/>
                                         <menuItem title="Cut" keyEquivalent="x" id="uRl-iY-unG">
                                             <connections>
                                                 <action selector="cut:" target="Ady-hI-5gd" id="YJe-68-I9s"/>
@@ -270,7 +281,7 @@
                             </scrollView>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="buw-3S-gyR">
                                 <rect key="frame" x="18" y="18" width="244" height="16"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" focusRingType="none" usesSingleLineMode="YES" id="SJg-cX-nly">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" focusRingType="none" usesSingleLineMode="YES" id="SJg-cX-nly">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

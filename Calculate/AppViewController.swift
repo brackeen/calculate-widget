@@ -84,10 +84,9 @@ class AppViewController: NSViewController {
     }
 
     @IBAction func copyLastAnswer(_ sender: Any) {
-        if let lastAnswer = Calculate.shared.getLastAnswer() {
-            NSPasteboard.general.declareTypes([.string], owner: nil)
-            NSPasteboard.general.setString(lastAnswer, forType: .string)
-        }
+        let lastAnswer = Calculate.shared.getLastAnswer() ?? "0"
+        NSPasteboard.general.declareTypes([.string], owner: nil)
+        NSPasteboard.general.setString(lastAnswer, forType: .string)
     }
     
     @IBAction func clearOutput(_ sender: Any) {
@@ -450,9 +449,7 @@ extension AppViewController: NSCollectionViewDelegate, VerticalListCollectionVie
 extension AppViewController: NSUserInterfaceValidations {
     
     func validateUserInterfaceItem(_ item: NSValidatedUserInterfaceItem) -> Bool {
-        if item.action == #selector(copyLastAnswer(_:)) {
-            return Calculate.shared.getLastAnswer() != nil
-        } else if item.action == #selector(clearOutput(_:)) {
+        if item.action == #selector(clearOutput(_:)) {
             return !Calculate.shared.outputHistory.isEmpty
         } else if item.action == #selector(undo(_:)) {
             if let undoManager = inputFieldUndoManager {

@@ -122,7 +122,13 @@ public class Calculate {
     }
     
     public func getLastAnswer() -> String? {
-        return outputHistory.last { $0.type == .normal }?.output
+        return getUserVariable("ans")
+    }
+    
+    public func getUserVariable(_ name: String) -> String? {
+        return context.objectForKeyedSubscript("Calculate")?
+            .objectForKeyedSubscript("getUserVar")?
+            .call(withArguments: [name])?.toString()
     }
     
     public func showMemory() -> Int {

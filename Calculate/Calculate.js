@@ -201,6 +201,10 @@ Calculate.getUserVars = function() {
     return userVars;
 };
 
+Calculate.getUserVar = function(name) {
+    return Calculate.sandbox[name] 
+}
+
 // Returns an array of tuples, like: [[name, value], [name, value]]
 Calculate.getMemoryVars = function() {
     const userVars = Calculate.getUserVars();

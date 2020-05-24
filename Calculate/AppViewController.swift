@@ -381,7 +381,7 @@ extension NSTextField {
             self.currentEditor()?.undoManager?.registerUndo(withTarget: self, handler: { me in
                 me.undoInsertAns(originalText: originalText)
             })
-            self.currentEditor()?.undoManager?.setActionName("Insert \"ans\"")
+            self.currentEditor()?.undoManager?.setActionName(NSLocalizedString("Insert \"ans\"", comment: "Insert \"ans\" undo action name"))
         }
         if registerLater {
             DispatchQueue.main.async {
@@ -398,7 +398,7 @@ extension NSTextField {
         currentEditor()?.undoManager?.registerUndo(withTarget: self, handler: { me in
             me.insertAns()
         })
-        currentEditor()?.undoManager?.setActionName("Insert \"ans\"")
+        currentEditor()?.undoManager?.setActionName(NSLocalizedString("Insert \"ans\"", comment: "Insert \"ans\" undo action name"))
         stringValue = originalText
         currentEditor()?.moveToEndOfLine(nil)
     }

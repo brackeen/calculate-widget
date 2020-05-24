@@ -14,7 +14,6 @@ class AppViewController: NSViewController {
     @IBOutlet weak var outputCollectionView: NSCollectionView!
     
     fileprivate var textFieldWasEmpty = true
-    fileprivate var allowInsertAnsVariable = true
     fileprivate var historyEnd: String?
     fileprivate var completions: [String]?
     fileprivate var completionWordStart = "".endIndex
@@ -171,6 +170,9 @@ class AppViewController: NSViewController {
             }
         }
         
+        // This allows the user to type " -1", to avoid inserting "ans", and display the input normally
+        expression = expression.trimmingCharacters(in: .whitespacesAndNewlines)
+        
         // Fixes issue where expression is copied from output and it contains the zero-width space character.
         // This isn't a perfect solution - a better solution would be one of:
         // 1) Prevent copying/pasting zero-width space character to/from TextFields
@@ -183,7 +185,6 @@ class AppViewController: NSViewController {
         
         inputField.stringValue = ""
         textFieldWasEmpty = true
-        allowInsertAnsVariable = true
         historyEnd = nil
         completions = nil
     }
@@ -315,14 +316,12 @@ extension AppViewController: NSTextFieldDelegate {
         if text.isEmpty {
             textFieldWasEmpty = true
         } else {
-            if let ch = text.first, text.count == 1, textFieldWasEmpty && allowInsertAnsVariable &&
+            if let ch = text.first, text.count == 1, textFieldWasEmpty &&
                 (ch == "+" || ch == "-" || ch == "*" || ch == "/" || ch == "%" || ch == "&" || ch == "|" || ch == "^") &&
                 UserDefaults.standard.insertAnsEnabled {
 
                 // Register later otherwise the edit will get merged with the current edit (inserting the "+" for example)
                 inputField.insertAns(registerLater: true)
-
-                allowInsertAnsVariable = false
             }
             textFieldWasEmpty = false
         }
@@ -375,7 +374,7 @@ extension AppViewController: NSTextFieldDelegate {
 
 extension NSTextField {
     
-    func insertAns(registerLater: Bool = false) {
+    fileprivate func insertAns(registerLater: Bool = false) {
         let originalText = stringValue
         let registerBlock = {
             self.currentEditor()?.undoManager?.registerUndo(withTarget: self, handler: { me in
@@ -394,7 +393,7 @@ extension NSTextField {
         currentEditor()?.moveToEndOfLine(nil)
     }
 
-    func undoInsertAns(originalText: String) {
+    fileprivate func undoInsertAns(originalText: String) {
         currentEditor()?.undoManager?.registerUndo(withTarget: self, handler: { me in
             me.insertAns()
         })

@@ -386,8 +386,8 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m1b-Mu-eTz">
-                                <rect key="frame" x="121" y="36" width="151" height="18"/>
-                                <buttonCell key="cell" type="check" title="Move to active space" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4tw-g0-FgG">
+                                <rect key="frame" x="121" y="36" width="211" height="18"/>
+                                <buttonCell key="cell" type="check" title="Move Calculate to active space" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4tw-g0-FgG">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -408,7 +408,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8cN-mH-KKD">
                                 <rect key="frame" x="139" y="165" width="289" height="28"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="pnJ-Cy-cp3">
-                                    <font key="font" metaFont="controlContent" size="11"/>
+                                    <font key="font" metaFont="label" size="11"/>
                                     <string key="title">Typing "+1" expands to "ans+1".
 To disable, type a space before the operator, like " -1".</string>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>

@@ -89,6 +89,13 @@ class AppViewController: NSViewController {
         outputCollectionView.reloadData()
         (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.notifyReloadData()
         inputField.font = NSFont.appFont(ofSize: inputField.font?.pointSize ?? NSFont.systemFontSize, weight: .regular)
+
+        // Not sure why, this seems to be required if a cell is word wrapping
+        DispatchQueue.main.async {
+            let context = NSCollectionViewFlowLayoutInvalidationContext()
+            context.invalidateFlowLayoutDelegateMetrics = false
+            self.outputCollectionView.collectionViewLayout?.invalidateLayout(with: context)
+        }
     }
 
     @IBAction func copyLastAnswer(_ sender: Any) {

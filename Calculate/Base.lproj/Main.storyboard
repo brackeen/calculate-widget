@@ -228,7 +228,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="256" height="342"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="256" height="128"/>
+                        <value key="minSize" type="size" width="216" height="128"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -408,7 +408,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8cN-mH-KKD">
                                 <rect key="frame" x="139" y="165" width="289" height="28"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="pnJ-Cy-cp3">
-                                    <font key="font" metaFont="label" size="11"/>
+                                    <font key="font" metaFont="message" size="11"/>
                                     <string key="title">Typing "+1" expands to "ans+1".
 To disable, type a space before the operator, like " -1".</string>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>

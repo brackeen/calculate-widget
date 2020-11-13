@@ -112,6 +112,7 @@ class AppViewController: NSViewController {
     }
     
     @IBAction func clearOutput(_ sender: Any) {
+        (view as? AppView)?.showTitleBar(false)
         Calculate.shared.clearOutputHistory()
         outputCollectionView.reloadData()
         horizontalDivider.alphaValue = 0
@@ -119,6 +120,7 @@ class AppViewController: NSViewController {
     }
     
     @IBAction func showMemory(_ sender: Any) {
+        (view as? AppView)?.showTitleBar(false)
         let originalOutputCount = Calculate.shared.outputHistory.count
         let addedCount = Calculate.shared.showMemory()
         if addedCount > 0 {
@@ -127,6 +129,7 @@ class AppViewController: NSViewController {
     }
     
     @IBAction func showHelp(_ sender: Any) {
+        (view as? AppView)?.showTitleBar(false)
         let originalOutputCount = Calculate.shared.outputHistory.count
         let addedCount = Calculate.shared.showHelp()
         if addedCount > 0 {
@@ -341,6 +344,7 @@ class AppViewController: NSViewController {
 extension AppViewController: NSTextFieldDelegate {
 
     func controlTextDidChange(_ obj: Notification) {
+        (view as? AppView)?.showTitleBar(false)
         completions = nil
         let text = inputField.stringValue
         if text.isEmpty {
@@ -358,6 +362,7 @@ extension AppViewController: NSTextFieldDelegate {
     }
     
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        (view as? AppView)?.showTitleBar(false)
         if commandSelector == #selector(insertTab(_:)) {
             doAutocomplete(forward: true)
             return true

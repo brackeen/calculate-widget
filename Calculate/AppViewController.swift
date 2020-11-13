@@ -12,6 +12,7 @@ class AppViewController: NSViewController {
     
     @IBOutlet weak var inputField: NSTextField!
     @IBOutlet weak var outputCollectionView: NSCollectionView!
+    @IBOutlet weak var horizontalDivider: NSBox!
     
     fileprivate var textFieldWasEmpty = true
     fileprivate var historyEnd: String?
@@ -26,6 +27,8 @@ class AppViewController: NSViewController {
     fileprivate var prototypeMemoryCollectionViewItem: MemoryCollectionViewItem!
     fileprivate var outputCollectionViewItemDefaultHeight: CGFloat = 0
     fileprivate var memoryCollectionViewItemDefaultHeight: CGFloat = 0
+    
+    fileprivate let collectionViewInsets = NSEdgeInsets(top: 0, left: 0, bottom: 6, right: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +72,12 @@ class AppViewController: NSViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(fontDidChange), name: UserDefaults.FontDidChange, object: nil)
         
-        // Focus in an async block to get around window restoration
+        horizontalDivider.alphaValue = 0.0
+        
+        // Focus Input Field in an async block to get around window restoration
         DispatchQueue.main.async { [weak self] in
             self?.focusInputField()
+            self?.adjustDividerIfNeeded()
         }
     }
     
@@ -95,6 +101,7 @@ class AppViewController: NSViewController {
             let context = NSCollectionViewFlowLayoutInvalidationContext()
             context.invalidateFlowLayoutDelegateMetrics = false
             self.outputCollectionView.collectionViewLayout?.invalidateLayout(with: context)
+            self.adjustDividerIfNeeded()
         }
     }
 
@@ -107,6 +114,7 @@ class AppViewController: NSViewController {
     @IBAction func clearOutput(_ sender: Any) {
         Calculate.shared.clearOutputHistory()
         outputCollectionView.reloadData()
+        horizontalDivider.alphaValue = 0
         (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.notifyReloadData()
     }
     
@@ -132,11 +140,24 @@ class AppViewController: NSViewController {
         }
     }
     
+    private func adjustDividerIfNeeded() {
+        let alpha: CGFloat = outputCollectionView.visibleRect.height < outputCollectionView.frame.height ? 1.0 : 0.0
+        if horizontalDivider.alphaValue != alpha {
+            NSAnimationContext.runAnimationGroup { _ in
+                NSAnimationContext.current.duration = alpha > 0 ? 0.25 : 0.125
+                self.horizontalDivider.animator().alphaValue = alpha
+            }
+        }
+    }
+    
     private func updateCollectionView(originalOutputCount: Int, addedCount: Int) {
         let outputCount = Calculate.shared.outputHistory.count
         if addedCount >= outputCount || originalOutputCount == 0 {
             outputCollectionView.reloadData()
             (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.notifyReloadData()
+            DispatchQueue.main.async {
+                self.adjustDividerIfNeeded()
+            }
         } else {
             outputCollectionView.performBatchUpdates({
                 let deletedCount = originalOutputCount - outputCount + addedCount
@@ -150,6 +171,7 @@ class AppViewController: NSViewController {
             }, completionHandler: nil)
         }
         scrollTo(item: outputCount - addedCount)
+        adjustDividerIfNeeded()
     }
     
     @IBAction func undo(_ sender: Any) {
@@ -217,12 +239,13 @@ class AppViewController: NSViewController {
     fileprivate func scrollTo(item: Int) {
         let outputCount = Calculate.shared.outputHistory.count
         if item >= 0 && item < outputCount {
-            let extraHeight: CGFloat
+            var extraHeight: CGFloat
             if let layout = outputCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout {
                 extraHeight = layout.sectionInset.bottom
             } else {
                 extraHeight = 0
             }
+            extraHeight += collectionViewInsets.bottom
 
             var frame = outputCollectionView.frameForItem(at: outputCount - 1)
             frame.size.height += extraHeight
@@ -475,6 +498,12 @@ extension AppViewController: NSCollectionViewDelegate, VerticalListCollectionVie
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
         return itemSize(forWidth: collectionView.frame.width, layout: collectionViewLayout, indexPath: indexPath)
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView,
+                          layout collectionViewLayout: NSCollectionViewLayout,
+                          insetForSectionAt section: Int) -> NSEdgeInsets {
+        return collectionViewInsets
     }
 }
 

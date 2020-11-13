@@ -160,8 +160,11 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
     },
                                    
    set: function(target, key, value) {
+       if (Calculate.Math.hasOwnProperty(key)) {
+           throw new TypeError("\"" + key + "\" is a constant");
+       }
        const isGlobalConst = key === "globalThis" || (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key));
-       if (!Calculate.Math.hasOwnProperty(key) && !isGlobalConst) {
+       if (!isGlobalConst) {
            return Reflect.set(...arguments);
        }
    },

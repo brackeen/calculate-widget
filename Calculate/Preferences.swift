@@ -47,6 +47,12 @@ extension UserDefaults {
         }
     }
     
+    var isHotKeySet: Bool {
+        let shortcutView = MASShortcutView()
+        shortcutView.associatedUserDefaultsKey = UserDefaults.HotkeyDefaultsKey
+        return shortcutView.shortcutValue != nil
+    }
+    
     func registerDefaults() {
         register(defaults: [
             UserDefaults.HotkeyMoveToActiveSpaceDefaultsKey: true,

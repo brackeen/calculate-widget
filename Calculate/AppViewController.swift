@@ -72,6 +72,11 @@ class AppViewController: NSViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(fontDidChange), name: UserDefaults.FontDidChange, object: nil)
         
+        if let scrollContentView = outputCollectionView.superview as? NSClipView {
+            scrollContentView.postsBoundsChangedNotifications = true
+            NotificationCenter.default.addObserver(self, selector: #selector(didScroll(_:)), name: NSView.boundsDidChangeNotification, object: scrollContentView)
+        }
+        
         horizontalDivider.alphaValue = 0.0
         
         // Focus Input Field in an async block to get around window restoration
@@ -144,10 +149,11 @@ class AppViewController: NSViewController {
     }
     
     private func adjustDividerIfNeeded() {
-        let alpha: CGFloat = outputCollectionView.visibleRect.height < outputCollectionView.frame.height ? 1.0 : 0.0
+        // Show the divider if bottom content is clipped
+        let alpha: CGFloat = outputCollectionView.visibleRect.minY + outputCollectionView.visibleRect.height < outputCollectionView.frame.height ? 1.0 : 0.0
         if horizontalDivider.alphaValue != alpha {
             NSAnimationContext.runAnimationGroup { _ in
-                NSAnimationContext.current.duration = alpha > 0 ? 0.25 : 0.125
+                NSAnimationContext.current.duration = 0.25
                 self.horizontalDivider.animator().alphaValue = alpha
             }
         }
@@ -267,6 +273,10 @@ class AppViewController: NSViewController {
         var frame = outputCollectionView.visibleRect
         frame.origin.y += amount
         outputCollectionView.animator().scrollToVisible(frame)
+    }
+    
+    @objc func didScroll(_ clipView: NSClipView) {
+        adjustDividerIfNeeded()
     }
     
     fileprivate func replaceAutocompletion(_ completion: String) {

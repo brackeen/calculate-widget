@@ -14,6 +14,14 @@ class AppWindow: NSWindow {
         super.awakeFromNib()
         self.backgroundColor = NSColor(named: NSColor.Name("backgroundColor"))
     }
+    
+    override func fieldEditor(_ createFlag: Bool, for object: Any?) -> NSText? {
+        if let textField = object as? SelectAllTextField {
+            return textField.fieldEditor(createFlag)
+        } else {
+            return super.fieldEditor(createFlag, for: object)
+        }
+    }
 }
 
 extension NSWindow {

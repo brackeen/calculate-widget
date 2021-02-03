@@ -29,4 +29,14 @@ extension String {
             return result
         }).reversed().joined()
     }
+    
+    public mutating func removeInvisibleBreaks() {
+        removeAll(where: { $0 == "\u{200B}" })
+    }
+    
+    public func removedInvisibleBreaks() -> String {
+        var mutableString = self
+        mutableString.removeInvisibleBreaks()
+        return mutableString
+    }
 }

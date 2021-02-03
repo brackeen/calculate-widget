@@ -39,7 +39,7 @@ class CalculateTests: XCTestCase {
     
     func testConstants() {
         XCTAssert(testExpression("(delete pi) == false"))
-        XCTAssert(testExpression("pi = 42; pi == π"))
+        XCTAssert(testExpression("try { pi = 42 } catch (err) { }; pi == π"))
         XCTAssert(testExpression("testvar = Infinity; Infinity = 42; testvar == Infinity"))
         XCTAssert(testExpression("testvar = undefined; undefined = 42; testvar == undefined"))
         XCTAssert(testExpression("testvar = NaN; NaN = 42; isNaN(testvar)"))
@@ -81,7 +81,7 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("Calculate = 2; 1 + 1 == Calculate"))
         XCTAssert(testExpression("org = { antlr: 2 }; 1 + 1 == org.antlr"))
         XCTAssert(testExpression("delete Calculate; delete org; 1 + 1 == 2"))
-        XCTAssert(testExpression("cos = 0; Math.cos(pi) == -1"))
+        XCTAssert(testExpression("try { cos = 0 } catch (err) { }; Math.cos(pi) == -1"))
     }
 
     func testPrecision() {
@@ -108,5 +108,6 @@ class CalculateTests: XCTestCase {
         XCTAssertEqual("a++".breakOnSymbols(), "a++")
         XCTAssertEqual("a++;b++".breakOnSymbols(), "a++;\u{200B}b++")
         XCTAssertEqual("1+2+3".breakOnSymbols(), "1+\u{200B}2+\u{200B}3")
+        XCTAssertEqual("1+\u{200B}2+\u{200B}3".removedInvisibleBreaks(), "1+2+3")
     }
 }

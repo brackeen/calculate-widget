@@ -44,7 +44,11 @@ class AppView: NSView {
     }
     
     func showTitleBar(_ visible: Bool, animated: Bool = true) {
-        if let titleBarView = window?.standardWindowButton(.closeButton)?.superview {
+        var titleBarView = window?.standardWindowButton(.closeButton)?.superview
+        if #available(macOS 11, *) {
+            titleBarView = titleBarView?.superview
+        }
+        if let titleBarView = titleBarView {
             let newAlpha: CGFloat = visible ? 1.0 : 0.0
             if titleBarView.alphaValue != newAlpha {
                 if animated {

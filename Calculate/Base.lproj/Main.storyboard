@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -250,13 +250,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-k8-6jO">
-                                <rect key="frame" x="0.0" y="37" width="256" height="305"/>
+                                <rect key="frame" x="0.0" y="39" width="256" height="303"/>
                                 <clipView key="contentView" drawsBackground="NO" id="0bz-EC-GNj">
-                                    <rect key="frame" x="0.0" y="0.0" width="256" height="305"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="256" height="303"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="9nv-DJ-Gcl">
-                                            <rect key="frame" x="0.0" y="0.0" width="256" height="305"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="256" height="303"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" id="tvm-x7-VmH" customClass="VerticalListCollectionViewLayout" customModule="Calculate" customModuleProvider="target">
                                                 <size key="itemSize" width="280" height="42"/>
@@ -275,12 +275,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="7i8-ja-fMU">
-                                    <rect key="frame" x="240" y="0.0" width="16" height="285"/>
+                                    <rect key="frame" x="240" y="0.0" width="16" height="303"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="buw-3S-gyR">
-                                <rect key="frame" x="8" y="8" width="240" height="22"/>
+                                <rect key="frame" x="8" y="8" width="240" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="XEK-9g-b88"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" usesSingleLineMode="YES" bezelStyle="round" id="SJg-cX-nly">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -292,16 +295,16 @@
                                 </connections>
                             </textField>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="UYS-w3-Dt6">
-                                <rect key="frame" x="0.0" y="34" width="256" height="5"/>
+                                <rect key="frame" x="1" y="36" width="254" height="5"/>
                             </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="UYS-w3-Dt6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="5Jk-h2-USl"/>
+                            <constraint firstItem="UYS-w3-Dt6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="1" id="5Jk-h2-USl"/>
                             <constraint firstItem="buw-3S-gyR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="9kq-2q-qOw"/>
                             <constraint firstItem="UYS-w3-Dt6" firstAttribute="top" secondItem="bfv-k8-6jO" secondAttribute="bottom" id="Bdw-ro-1QK"/>
                             <constraint firstAttribute="trailing" secondItem="bfv-k8-6jO" secondAttribute="trailing" id="HAz-rN-u8Q"/>
                             <constraint firstAttribute="bottom" secondItem="buw-3S-gyR" secondAttribute="bottom" constant="8" id="OWh-0J-Rlf"/>
-                            <constraint firstAttribute="trailing" secondItem="UYS-w3-Dt6" secondAttribute="trailing" id="OqB-as-eMC"/>
+                            <constraint firstAttribute="trailing" secondItem="UYS-w3-Dt6" secondAttribute="trailing" constant="1" id="OqB-as-eMC"/>
                             <constraint firstItem="buw-3S-gyR" firstAttribute="top" secondItem="UYS-w3-Dt6" secondAttribute="bottom" constant="6" id="Pji-ha-zJp"/>
                             <constraint firstItem="bfv-k8-6jO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="h9x-pt-8oE"/>
                             <constraint firstAttribute="trailing" secondItem="buw-3S-gyR" secondAttribute="trailing" constant="8" id="jty-fc-Fof"/>

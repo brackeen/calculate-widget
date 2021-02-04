@@ -35,9 +35,11 @@ class AppView: NSView {
         showTitleBar(true)
     }
     
-    override func mouseEntered(with event: NSEvent) {
-        showTitleBar(true)
-    }
+    // Commented out: Wait until mouseMoved event to show title bar.
+    // The title bar should not appear when activating via hotkey (e.g., the window is activated underneath the mouse).
+    //override func mouseEntered(with event: NSEvent) {
+    //    showTitleBar(true)
+    //}
     
     override func mouseExited(with event: NSEvent) {
         showTitleBar(false)

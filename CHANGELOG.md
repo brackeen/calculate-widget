@@ -1,5 +1,17 @@
 # Change Log
 
+### Unreleased
+- Updated icon for Big Sur.
+- New input field appearance.
+- Display error when attempting to set a constant ("e=5").
+- Fixed bug where invisible break chars were included when copying to the clipboard.
+
+### 2.0 alpha 2 (May 24, 2020)
+- Add monospace font option.
+- Add option to automatically insert "ans".
+- Add undo/redo support for the input field.
+- Improved performance with a large output history.
+
 ### 2.0 alpha 1 (March 23, 2020)
 - Newly written native app using the original JS engine.
 

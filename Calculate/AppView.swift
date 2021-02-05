@@ -42,7 +42,10 @@ class AppView: NSView {
     //}
     
     override func mouseExited(with event: NSEvent) {
-        showTitleBar(false)
+        let customizationPaletteIsRunning = window?.toolbar?.customizationPaletteIsRunning ?? false
+        if !customizationPaletteIsRunning {
+            showTitleBar(false)
+        }
     }
     
     func showTitleBar(_ visible: Bool, animated: Bool = true) {

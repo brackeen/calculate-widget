@@ -117,7 +117,6 @@ class AppViewController: NSViewController {
     }
     
     @IBAction func clearOutput(_ sender: Any) {
-        (view as? AppView)?.showTitleBar(false)
         Calculate.shared.clearOutputHistory()
         outputCollectionView.reloadData()
         horizontalDivider.alphaValue = 0
@@ -125,7 +124,6 @@ class AppViewController: NSViewController {
     }
     
     @IBAction func showMemory(_ sender: Any) {
-        (view as? AppView)?.showTitleBar(false)
         let originalOutputCount = Calculate.shared.outputHistory.count
         let addedCount = Calculate.shared.showMemory()
         if addedCount > 0 {
@@ -134,7 +132,6 @@ class AppViewController: NSViewController {
     }
     
     @IBAction func showHelp(_ sender: Any) {
-        (view as? AppView)?.showTitleBar(false)
         let originalOutputCount = Calculate.shared.outputHistory.count
         let addedCount = Calculate.shared.showHelp()
         if addedCount > 0 {

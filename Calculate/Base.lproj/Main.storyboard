@@ -223,12 +223,46 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Calculate" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA" customClass="AppWindow" customModule="Calculate" customModuleProvider="target">
+                    <window key="window" title="Calculate" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" toolbarStyle="compact" titleVisibility="hidden" id="IQv-IB-iLA" customClass="AppWindow" customModule="Calculate" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="256" height="342"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="216" height="128"/>
+                        <toolbar key="toolbar" implicitIdentifier="DB17A415-6996-4EF2-9500-06AA3C392C84" displayMode="iconOnly" sizeMode="small" id="596-q5-qgP">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="LTk-nk-Ktf"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="G5n-YO-gGL"/>
+                                <toolbarItem implicitItemIdentifier="F421EB3A-86A0-49F7-B284-6B2624FE958A" label="Show Memory" paletteLabel="Show Memory" toolTip="Show Memory" tag="-1" image="memory" sizingBehavior="auto" id="PUv-DJ-mHW">
+                                    <connections>
+                                        <action selector="showMemory:" target="Oky-zY-oP4" id="XWQ-oL-xH6"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="DBAC7969-C67A-4A1F-A333-D08653646ED7" label="Show Help" paletteLabel="Show Help" toolTip="Show Help" tag="-1" image="help" sizingBehavior="auto" id="3bD-uW-a1M">
+                                    <connections>
+                                        <action selector="showHelp:" target="Oky-zY-oP4" id="a2G-vG-hBY"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="E519EEA4-4897-474F-A4E9-069DA46710B0" label="Copy Last Answer" paletteLabel="Copy Last Answer" toolTip="Copy Last Answer" tag="-1" image="copyLastAnswer" sizingBehavior="auto" id="E7O-Eh-IDe">
+                                    <connections>
+                                        <action selector="copyLastAnswer:" target="Oky-zY-oP4" id="a9L-2n-gii"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="203157B6-A7AA-4222-B8A9-9398EB32EE69" label="Clear Output" paletteLabel="Clear Output" toolTip="Clear Output" tag="-1" image="trash" id="yIR-go-hDS">
+                                    <size key="minSize" width="24" height="24"/>
+                                    <size key="maxSize" width="24" height="24"/>
+                                    <connections>
+                                        <action selector="clearOutput:" target="Oky-zY-oP4" id="EyL-XQ-wTK"/>
+                                    </connections>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="PUv-DJ-mHW"/>
+                                <toolbarItem reference="3bD-uW-a1M"/>
+                                <toolbarItem reference="G5n-YO-gGL"/>
+                                <toolbarItem reference="yIR-go-hDS"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -485,4 +519,10 @@ To disable, type a space before the operator, like " -1".</string>
             <point key="canvasLocation" x="637" y="794"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="copyLastAnswer" width="24" height="24"/>
+        <image name="help" width="24" height="24"/>
+        <image name="memory" width="24" height="24"/>
+        <image name="trash" width="24" height="24"/>
+    </resources>
 </document>

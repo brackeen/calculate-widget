@@ -10,6 +10,7 @@ import Cocoa
 
 class PreferencesViewController: NSViewController {
     
+    @IBOutlet weak var toolbarVisibilityButton: NSPopUpButton!
     @IBOutlet weak var angleModeButton: NSPopUpButton!
     @IBOutlet weak var insertAnsButton: NSButton!
     @IBOutlet weak var monospaceFontButton: NSButton!
@@ -19,12 +20,13 @@ class PreferencesViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        toolbarVisibilityButton.selectItem(withTag: UserDefaults.standard.toolbarVisibility.rawValue)
         angleModeButton.selectItem(withTag: Calculate.shared.angleMode.rawValue)
         insertAnsButton.state = UserDefaults.standard.insertAnsEnabled ? .on : .off
         monospaceFontButton.state = UserDefaults.standard.monospaceFont ? .on : .off
         
         shortcutView.style = MASShortcutViewStyleTexturedRect
-        shortcutView.associatedUserDefaultsKey = UserDefaults.HotkeyDefaultsKey
+        shortcutView.associatedUserDefaultsKey = UserDefaults.hotkeyDefaultsKey
         shortcutView.shortcutValueChange = { [weak self] shortcutView in
             self?.moveToActiveSpaceButton.isEnabled = (shortcutView?.shortcutValue != nil)
         }
@@ -36,6 +38,12 @@ class PreferencesViewController: NSViewController {
     @IBAction func angleModeChanged(_ sender: Any) {
         if let angleMode = Calculate.AngleMode(rawValue: angleModeButton.selectedTag()) {
             Calculate.shared.angleMode = angleMode
+        }
+    }
+    
+    @IBAction func toolbarVisibilityChanged(_ sender: Any) {
+        if let toolbarVisibility = UserDefaults.ToolbarVisibility(rawValue: toolbarVisibilityButton.selectedTag()) {
+            UserDefaults.standard.toolbarVisibility = toolbarVisibility
         }
     }
     

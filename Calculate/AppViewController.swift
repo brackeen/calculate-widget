@@ -53,7 +53,7 @@ class AppViewController: NSViewController {
         inputField.selectText(nil)
         (view as? AppView)?.viewToFocusOnClick = inputField
         
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: UserDefaults.HotkeyDefaultsKey, toAction: { [weak self] in
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: UserDefaults.hotkeyDefaultsKey, toAction: { [weak self] in
             if let inputField = self?.inputField, let window = inputField.window {
                 if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
                     NSApp.hide(nil)
@@ -70,7 +70,7 @@ class AppViewController: NSViewController {
             }
         })
         
-        NotificationCenter.default.addObserver(self, selector: #selector(fontDidChange), name: UserDefaults.FontDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fontDidChange), name: UserDefaults.fontDidChangeNotification, object: nil)
         
         if let scrollContentView = outputCollectionView.superview as? NSClipView {
             scrollContentView.postsBoundsChangedNotifications = true

@@ -12,6 +12,13 @@ class AppView: NSView {
     
     weak var viewToFocusOnClick: NSView?
     private var trackingArea: NSTrackingArea?
+    private var toolbarVisibility: UserDefaults.ToolbarVisibility = .auto;
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        toolbarVisibility = UserDefaults.standard.toolbarVisibility;
+        NotificationCenter.default.addObserver(self, selector: #selector(toolbarVisibilityDidChange), name: UserDefaults.toolbarVisibilityDidChangeNotification, object: nil)
+    }
     
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
@@ -23,7 +30,9 @@ class AppView: NSView {
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
         updateTrackingArea()
-        showTitleBar(false, animated: false)
+        if toolbarVisibility != .always {
+            showTitleBar(false, animated: false)
+        }
     }
     
     override func setFrameSize(_ newSize: NSSize) {
@@ -32,18 +41,26 @@ class AppView: NSView {
     }
     
     override func mouseMoved(with event: NSEvent) {
-        showTitleBar(true)
+        if toolbarVisibility == .auto {
+            showTitleBar(true)
+        }
     }
     
-    // Commented out: Wait until mouseMoved event to show title bar.
-    // The title bar should not appear when activating via hotkey (e.g., the window is activated underneath the mouse).
-    //override func mouseEntered(with event: NSEvent) {
-    //    showTitleBar(true)
-    //}
-    
     override func mouseExited(with event: NSEvent) {
+        guard toolbarVisibility == .auto else {
+            return
+        }
         let customizationPaletteIsRunning = window?.toolbar?.customizationPaletteIsRunning ?? false
         if !customizationPaletteIsRunning {
+            showTitleBar(false)
+        }
+    }
+    
+    @objc func toolbarVisibilityDidChange(_ sender: Any) {
+        toolbarVisibility = UserDefaults.standard.toolbarVisibility
+        if toolbarVisibility == .always {
+            showTitleBar(true)
+        } else if toolbarVisibility == .never {
             showTitleBar(false)
         }
     }

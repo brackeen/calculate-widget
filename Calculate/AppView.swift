@@ -12,7 +12,8 @@ class AppView: NSView {
     
     weak var viewToFocusOnClick: NSView?
     private var trackingArea: NSTrackingArea?
-    private var toolbarVisibility: UserDefaults.ToolbarVisibility = .auto;
+    private var toolbarVisibility: UserDefaults.ToolbarVisibility = .auto
+    private var currentAnimationId: UUID = UUID()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +32,7 @@ class AppView: NSView {
         super.viewDidMoveToWindow()
         updateTrackingArea()
         if toolbarVisibility != .always {
-            showTitleBar(false, animated: false)
+            showTitleBar(false, animated: false, force: true)
         }
     }
     
@@ -59,23 +60,52 @@ class AppView: NSView {
     @objc func toolbarVisibilityDidChange(_ sender: Any) {
         toolbarVisibility = UserDefaults.standard.toolbarVisibility
         if toolbarVisibility == .always {
-            showTitleBar(true)
+            showTitleBar(true, force: true)
         } else if toolbarVisibility == .never {
-            showTitleBar(false)
+            showTitleBar(false, force: true)
         }
+        updateTrackingArea()
     }
     
-    func showTitleBar(_ visible: Bool, animated: Bool = true) {
+    private func setToolbarVisibility(_ visible: Bool) {
+        guard let window = window else {
+            return
+        }
+        if let toolbar = window.toolbar, !toolbar.items.isEmpty {
+            // Prevent buttons from being tappable (or showing tooltips) when toolbar is invisible.
+            // Only set if (!toolbar.items.isEmpty) otherwise the toolbar items will not be added on launch.
+            toolbar.isVisible = visible
+        }
+        window.standardWindowButton(.closeButton)?.isHidden = !visible
+        window.standardWindowButton(.miniaturizeButton)?.isHidden = !visible
+        window.standardWindowButton(.zoomButton)?.isHidden = !visible
+    }
+    
+    func showTitleBar(_ visible: Bool, animated: Bool = true, force: Bool = false) {
         var titleBarView = window?.standardWindowButton(.closeButton)?.superview
         if #available(macOS 11, *) {
             titleBarView = titleBarView?.superview
         }
         if let titleBarView = titleBarView {
             let newAlpha: CGFloat = visible ? 1.0 : 0.0
-            if titleBarView.alphaValue != newAlpha {
+            if force || titleBarView.alphaValue != newAlpha {
+                let animationId = UUID()
+                currentAnimationId = animationId
                 if animated {
-                    titleBarView.animator().alphaValue = newAlpha
+                    if toolbarVisibility != .never {
+                        setToolbarVisibility(true)
+                    }
+                    NSAnimationContext.runAnimationGroup { context in
+                        titleBarView.animator().alphaValue = newAlpha
+                    } completionHandler: { [weak self] in
+                        if let self = self, self.currentAnimationId == animationId {
+                            if self.toolbarVisibility == .never {
+                                self.setToolbarVisibility(false)
+                            }
+                        }
+                    }
                 } else {
+                    setToolbarVisibility(toolbarVisibility != .never)
                     titleBarView.alphaValue = newAlpha
                 }
             }
@@ -87,7 +117,7 @@ class AppView: NSView {
             removeTrackingArea(oldTrackingArea)
             trackingArea = nil
         }
-        if window != nil {
+        if window != nil && toolbarVisibility == .auto {
             let newTrackingArea = NSTrackingArea(rect: frame, options: [.mouseEnteredAndExited, .mouseMoved, .activeAlways], owner: self, userInfo: nil)
             addTrackingArea(newTrackingArea)
             trackingArea = newTrackingArea

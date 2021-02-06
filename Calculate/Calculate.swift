@@ -88,7 +88,7 @@ public class Calculate {
 
     public func getInputHistoryNext() -> String? {
         if inputHistoryIndex < inputHistory.count - 1 {
-            inputHistoryIndex = max(0, inputHistoryIndex + 1);
+            inputHistoryIndex = max(0, inputHistoryIndex + 1)
             return inputHistory[inputHistoryIndex]
         } else {
             inputHistoryIndex = inputHistory.count
@@ -199,7 +199,7 @@ public class Calculate {
         }
         if inputHistoryNeedsSaving {
             inputHistoryNeedsSaving = false
-            saveInputHistory();
+            saveInputHistory()
         }
     }
     

@@ -268,7 +268,7 @@ class AppViewController: NSViewController {
         var frame = outputCollectionView.visibleRect
         frame.origin.y += amount
         if amount > 0, let clipView = outputCollectionView.superview as? NSClipView {
-            frame.origin.y += clipView.contentInsets.top;
+            frame.origin.y += clipView.contentInsets.top
         }
         outputCollectionView.animator().scrollToVisible(frame)
     }

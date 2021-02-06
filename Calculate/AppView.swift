@@ -17,7 +17,7 @@ class AppView: NSView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        toolbarVisibility = UserDefaults.standard.toolbarVisibility;
+        toolbarVisibility = UserDefaults.standard.toolbarVisibility
         NotificationCenter.default.addObserver(self, selector: #selector(toolbarVisibilityDidChange), name: UserDefaults.toolbarVisibilityDidChangeNotification, object: nil)
     }
     

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import KeyboardShortcuts
 
 class AppViewController: NSViewController {
     
@@ -53,7 +54,7 @@ class AppViewController: NSViewController {
         inputField.selectText(nil)
         (view as? AppView)?.viewToFocusOnClick = inputField
         
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: UserDefaults.hotkeyDefaultsKey, toAction: { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .hotkey) { [weak self] in
             if let inputField = self?.inputField, let window = inputField.window {
                 if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
                     NSApp.hide(nil)
@@ -68,7 +69,7 @@ class AppViewController: NSViewController {
                     }
                 }
             }
-        })
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(fontDidChange), name: UserDefaults.fontDidChangeNotification, object: nil)
         

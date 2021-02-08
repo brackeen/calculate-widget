@@ -69,7 +69,6 @@
 		E35AC3F224212A8F0041BF6A /* OutputItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputItem.swift; sourceTree = "<group>"; };
 		E35AC3F42421450B0041BF6A /* String+Break.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Break.swift"; sourceTree = "<group>"; };
 		E35AC3FB242182110041BF6A /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		E35AC3FD242184D40041BF6A /* Calculate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calculate-Bridging-Header.h"; sourceTree = "<group>"; };
 		E35AC40D2426B27C0041BF6A /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		E35AC40F2426BC3E0041BF6A /* SelectAllTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAllTextField.swift; sourceTree = "<group>"; };
 		E35AC4112426C4650041BF6A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -158,7 +157,6 @@
 				E321A0B32417C3AA00D40474 /* Info.plist */,
 				E321A0B42417C3AA00D40474 /* Calculate.entitlements */,
 				E30E631324190F49002EF546 /* container-migration.plist */,
-				E35AC3FD242184D40041BF6A /* Calculate-Bridging-Header.h */,
 			);
 			path = Calculate;
 			sourceTree = "<group>";
@@ -525,7 +523,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brackeen.Calculate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Calculate/Calculate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -558,7 +555,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brackeen.Calculate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Calculate/Calculate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

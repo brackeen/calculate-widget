@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import KeyboardShortcuts
 
 class PreferencesViewController: NSViewController {
     
@@ -15,7 +16,7 @@ class PreferencesViewController: NSViewController {
     @IBOutlet weak var insertAnsButton: NSButton!
     @IBOutlet weak var monospaceFontButton: NSButton!
     @IBOutlet weak var moveToActiveSpaceButton: NSButton!
-    @IBOutlet weak var shortcutView: MASShortcutView!
+    @IBOutlet weak var shortcutContainerView: NSView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,13 @@ class PreferencesViewController: NSViewController {
         insertAnsButton.state = UserDefaults.standard.insertAnsEnabled ? .on : .off
         monospaceFontButton.state = UserDefaults.standard.monospaceFont ? .on : .off
         
-        shortcutView.style = MASShortcutViewStyleTexturedRect
-        shortcutView.associatedUserDefaultsKey = UserDefaults.hotkeyDefaultsKey
-        shortcutView.shortcutValueChange = { [weak self] shortcutView in
-            self?.moveToActiveSpaceButton.isEnabled = (shortcutView?.shortcutValue != nil)
-        }
+        let recorderView = KeyboardShortcuts.RecorderCocoa(for: .hotkey, onChange: { [weak self] shortcut in
+            self?.moveToActiveSpaceButton.isEnabled = (shortcut != nil)
+        })
+        shortcutContainerView.addSubview(recorderView)
 
         moveToActiveSpaceButton.state = UserDefaults.standard.moveToActiveSpaceEnabled ? .on : .off
-        moveToActiveSpaceButton.isEnabled = (shortcutView.shortcutValue != nil)
+        moveToActiveSpaceButton.isEnabled = UserDefaults.standard.isHotKeySet
     }
     
     @IBAction func angleModeChanged(_ sender: Any) {

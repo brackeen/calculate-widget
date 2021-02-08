@@ -7,10 +7,9 @@
 //
 
 import Foundation
+import KeyboardShortcuts
 
 extension UserDefaults {
-    
-    static let hotkeyDefaultsKey = "hotkey"
     
     static let fontDidChangeNotification = NSNotification.Name("fontDidChangeNotification")
     static let toolbarVisibilityDidChangeNotification = NSNotification.Name("toolbarVisibilityDidChangeNotification")
@@ -67,9 +66,7 @@ extension UserDefaults {
     }
     
     var isHotKeySet: Bool {
-        let shortcutView = MASShortcutView()
-        shortcutView.associatedUserDefaultsKey = UserDefaults.hotkeyDefaultsKey
-        return shortcutView.shortcutValue != nil
+        return KeyboardShortcuts.getShortcut(for: .hotkey) != nil
     }
     
     func registerDefaults() {
@@ -80,4 +77,8 @@ extension UserDefaults {
             UserDefaults.toolbarVisibilityKey: ToolbarVisibility.auto.rawValue,
         ])
     }
+}
+
+extension KeyboardShortcuts.Name {
+    static let hotkey = Self("hotkey")
 }

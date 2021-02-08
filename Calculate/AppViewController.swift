@@ -15,6 +15,7 @@ class AppViewController: NSViewController {
     @IBOutlet weak var outputCollectionView: NSCollectionView!
     @IBOutlet weak var horizontalDivider: NSBox!
     
+    fileprivate var allowHorizontalDividerUpdate = false
     fileprivate var textFieldWasEmpty = true
     fileprivate var historyEnd: String?
     fileprivate var completions: [String]?
@@ -83,6 +84,7 @@ class AppViewController: NSViewController {
         // Focus Input Field in an async block to get around window restoration
         DispatchQueue.main.async { [weak self] in
             self?.focusInputField()
+            self?.allowHorizontalDividerUpdate = true
             self?.adjustDividerIfNeeded()
         }
     }
@@ -147,6 +149,9 @@ class AppViewController: NSViewController {
     }
     
     private func adjustDividerIfNeeded() {
+        guard allowHorizontalDividerUpdate else {
+            return
+        }
         // Show the divider if bottom content is clipped
         let alpha: CGFloat = outputCollectionView.visibleRect.minY + outputCollectionView.visibleRect.height < outputCollectionView.frame.height ? 1.0 : 0.0
         if horizontalDivider.alphaValue != alpha {

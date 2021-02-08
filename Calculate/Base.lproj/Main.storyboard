@@ -248,9 +248,7 @@
                                         <action selector="copyLastAnswer:" target="Oky-zY-oP4" id="a9L-2n-gii"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="203157B6-A7AA-4222-B8A9-9398EB32EE69" label="Clear Output" paletteLabel="Clear Output" toolTip="Clear Output" tag="-1" image="trash" id="yIR-go-hDS">
-                                    <size key="minSize" width="24" height="24"/>
-                                    <size key="maxSize" width="24" height="24"/>
+                                <toolbarItem implicitItemIdentifier="203157B6-A7AA-4222-B8A9-9398EB32EE69" label="Clear Output" paletteLabel="Clear Output" toolTip="Clear Output" tag="-1" image="trash" sizingBehavior="auto" id="yIR-go-hDS">
                                     <connections>
                                         <action selector="clearOutput:" target="Oky-zY-oP4" id="EyL-XQ-wTK"/>
                                     </connections>

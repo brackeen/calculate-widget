@@ -14,7 +14,7 @@ extension NSWindow {
      Moves the window to the active space, allowing it to appear on top of full screen windows.
      Note: This window should not have the .moveToActiveSpace collection behavior at all times because
      this causes window ordering issues when switching spaces.
-     Tested on macOS 10.15.4 (Catalina) only.
+     Tested on macOS 10.15 (Catalina) and macOS 11 (Big Sur).
      */
     func moveToActiveSpace(allowOverFullscreen: Bool = true, completion: (() -> Void)? = nil) {
         guard !isOnActiveSpace, NSApp.activationPolicy() == .regular else {

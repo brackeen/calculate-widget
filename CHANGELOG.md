@@ -1,9 +1,11 @@
 # Change Log
 
 ### Unreleased
-- Updated icon for Big Sur.
+- New toolbar.
 - New input field appearance.
-- Display error when attempting to set a constant ("e=5").
+- New icon for Big Sur.
+- Updated error when attempting to set a constant ("e=5").
+- Updated keyboard shortcut library. (You will have to reset your hotkey in Calculate's Preferences).
 - Fixed bug where invisible break chars were included when copying to the clipboard.
 
 ### 2.0 alpha 2 (May 24, 2020)

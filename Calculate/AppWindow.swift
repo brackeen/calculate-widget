@@ -16,12 +16,16 @@ class AppWindow: NSWindow {
     }
     
     override func fieldEditor(_ createFlag: Bool, for object: Any?) -> NSText? {
-        if let textField = object as? SelectAllTextField {
-            return textField.fieldEditor(createFlag)
+        if let field = object as? HasCustomFieldEditor {
+            return type(of: field).customFieldEditor
         } else {
             return super.fieldEditor(createFlag, for: object)
         }
     }
+}
+
+protocol HasCustomFieldEditor {
+    static var customFieldEditor: NSText { get }
 }
 
 extension NSWindow {

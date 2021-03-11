@@ -8,10 +8,11 @@
 
 import Cocoa
 
-class SelectAllTextField: NSTextField {
+class SelectAllTextField: NSTextField, HasCustomFieldEditor {
     
-    private weak var fieldEditor: NSTextView?
+    static var customFieldEditor: NSText = SelectAllTextView()
     
+    // Select all when clicking
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
         if let textEditor = currentEditor(), textEditor.selectedRange.length == 0 {
@@ -19,23 +20,15 @@ class SelectAllTextField: NSTextField {
         }
     }
     
+    // Focus input field when pressing "Esc"
     override func cancelOperation(_ sender: Any?) {
         (window?.contentViewController as? AppViewController)?.focusInputField()
     }
-    
-    func fieldEditor(_ createFlag: Bool) -> NSText? {
-        var fieldEditor = self.fieldEditor
-        if !createFlag || fieldEditor != nil {
-            return fieldEditor
-        }
-        fieldEditor = SelectAllTextView()
-        self.fieldEditor = fieldEditor
-        return fieldEditor
-    }
 }
 
-class SelectAllTextView: NSTextView {
+fileprivate class SelectAllTextView: NSTextView {
 
+    // When copying text to the clipboard, do not include invisible break characters.
     override func writeSelection(to pboard: NSPasteboard, type: NSPasteboard.PasteboardType) -> Bool {
         var stringToCopy = ""
         selectedRanges.forEach { value in

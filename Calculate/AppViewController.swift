@@ -383,6 +383,9 @@ extension AppViewController: NSTextFieldDelegate {
         } else if commandSelector == #selector(insertBacktab(_:)) {
             doAutocomplete(forward: false)
             return true
+        } else if commandSelector == #selector(insertNewline(_:)) {
+            enterPressed(control)
+            return true
         }
         
         completions = nil

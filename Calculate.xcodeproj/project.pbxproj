@@ -34,6 +34,7 @@
 		E35AC436242E47610041BF6A /* NSFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC435242E47610041BF6A /* NSFont+App.swift */; };
 		E3744842243AABA700CC8E69 /* NSWindow+MoveToActiveSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3744841243AABA700CC8E69 /* NSWindow+MoveToActiveSpace.swift */; };
 		E399AF8D2479C4C800A52026 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399AF8C2479C4C800A52026 /* Preferences.swift */; };
+		E3DD20BB25F9744500529684 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD20BA25F9744500529684 /* InputTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E35AC435242E47610041BF6A /* NSFont+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+App.swift"; sourceTree = "<group>"; };
 		E3744841243AABA700CC8E69 /* NSWindow+MoveToActiveSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+MoveToActiveSpace.swift"; sourceTree = "<group>"; };
 		E399AF8C2479C4C800A52026 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		E3DD20BA25F9744500529684 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				E35AC3F42421450B0041BF6A /* String+Break.swift */,
 				E3744841243AABA700CC8E69 /* NSWindow+MoveToActiveSpace.swift */,
 				E35AC40F2426BC3E0041BF6A /* SelectAllTextField.swift */,
+				E3DD20BA25F9744500529684 /* InputTextField.swift */,
 				E35AC3F224212A8F0041BF6A /* OutputItem.swift */,
 				E35AC3EA241FC4EC0041BF6A /* OutputCollectionViewItem.swift */,
 				E35AC3EB241FC4EC0041BF6A /* OutputCollectionViewItem.xib */,
@@ -303,6 +306,7 @@
 				E35AC436242E47610041BF6A /* NSFont+App.swift in Sources */,
 				E35AC3F0242127450041BF6A /* MemoryCollectionViewItem.swift in Sources */,
 				E35AC4122426C4650041BF6A /* AppView.swift in Sources */,
+				E3DD20BB25F9744500529684 /* InputTextField.swift in Sources */,
 				E35AC3FC242182110041BF6A /* PreferencesViewController.swift in Sources */,
 				E35AC4102426BC3E0041BF6A /* SelectAllTextField.swift in Sources */,
 				E321A0AD2417C3A900D40474 /* AppViewController.swift in Sources */,

@@ -21,6 +21,8 @@ class AppViewController: NSViewController {
     fileprivate var completions: [String]?
     fileprivate var completionWordStart = "".endIndex
     
+    fileprivate var appHideTime: TimeInterval = 0
+    
     fileprivate var inputFieldUndoManager: UndoManager? {
         return inputField?.currentEditor()?.undoManager
     }
@@ -60,18 +62,24 @@ class AppViewController: NSViewController {
                 if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
                     NSApp.hide(nil)
                 } else {
+                    // If it's been a minute since the user has hidden the app, select all the text in the input field.
+                    // The idea is that the user is switching quickly back and forth to Calculate, the cursor should be in the same place.
+                    // But if it's been a minute since the app was activated, the user has probably lost interest in whatever he was typing.
+                    let durationSinceLastHidden = CACurrentMediaTime() - (self?.appHideTime ?? 0.0)
+                    let selectAll = durationSinceLastHidden >= 60.0
                     if UserDefaults.standard.moveToActiveSpaceEnabled {
                         window.moveToActiveSpace(completion: {
-                            self?.focusInputField()
+                            self?.focusInputField(selectAll: selectAll)
                         })
                     } else {
                         NSApp.activate(ignoringOtherApps: true)
-                        self?.focusInputField()
+                        self?.focusInputField(selectAll: selectAll)
                     }
                 }
             }
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillHide), name: NSApplication.willHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(fontDidChange), name: UserDefaults.fontDidChangeNotification, object: nil)
         
         if let scrollContentView = outputCollectionView.superview as? NSClipView {
@@ -89,13 +97,20 @@ class AppViewController: NSViewController {
         }
     }
     
-    func focusInputField() {
+    func focusInputField(selectAll: Bool = false) {
         if let window = inputField.window {
             window.makeKeyAndOrderFront(nil)
             if !window.viewIsFirstResponder(inputField) {
                 window.makeFirstResponder(inputField)
             }
+            if selectAll, let textEditor = inputField.currentEditor() {
+                textEditor.selectAll(inputField)
+            }
         }
+    }
+    
+    @objc func appWillHide(_ sender: Any) {
+        appHideTime = CACurrentMediaTime()
     }
     
     @objc func fontDidChange(_ sender: Any) {

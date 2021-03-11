@@ -112,7 +112,16 @@ public class Calculate {
         }
 
         var completions = possibleCompletions.filter { $0.starts(with: prefix) }
-        completions.sort()
+        completions.sort { (a, b) -> Bool in
+            // Always complete with "ans" first
+            if a == "ans" {
+                return true
+            } else if b == "ans" {
+                return false
+            } else {
+                return a < b
+            }
+        }
         return completions
     }
     

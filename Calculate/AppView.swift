@@ -31,7 +31,10 @@ class AppView: NSView {
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
         updateTrackingArea()
-        if toolbarVisibility != .always {
+        
+        let isFullScreen = window?.styleMask.contains(.fullScreen) ?? false
+        let hideTitleBar = toolbarVisibility == .never || (toolbarVisibility == .auto && !isFullScreen)
+        if hideTitleBar {
             showTitleBar(false, animated: false, force: true)
         }
     }
@@ -51,8 +54,9 @@ class AppView: NSView {
         guard toolbarVisibility == .auto else {
             return
         }
+        let isFullScreen = window?.styleMask.contains(.fullScreen) ?? false
         let customizationPaletteIsRunning = window?.toolbar?.customizationPaletteIsRunning ?? false
-        if !customizationPaletteIsRunning {
+        if !customizationPaletteIsRunning && !isFullScreen {
             showTitleBar(false)
         }
     }
@@ -117,7 +121,8 @@ class AppView: NSView {
             removeTrackingArea(oldTrackingArea)
             trackingArea = nil
         }
-        if window != nil && toolbarVisibility == .auto {
+        let isFullScreen = window?.styleMask.contains(.fullScreen) ?? false
+        if window != nil && toolbarVisibility == .auto && !isFullScreen {
             let newTrackingArea = NSTrackingArea(rect: frame, options: [.mouseEnteredAndExited, .mouseMoved, .activeAlways], owner: self, userInfo: nil)
             addTrackingArea(newTrackingArea)
             trackingArea = newTrackingArea

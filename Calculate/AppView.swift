@@ -54,9 +54,14 @@ class AppView: NSView {
         guard toolbarVisibility == .auto else {
             return
         }
+        hideTitleBarIfPossible()
+    }
+    
+    func hideTitleBarIfPossible() {
         let isFullScreen = window?.styleMask.contains(.fullScreen) ?? false
+        let hideTitleBar = toolbarVisibility == .never || (toolbarVisibility == .auto && !isFullScreen)
         let customizationPaletteIsRunning = window?.toolbar?.customizationPaletteIsRunning ?? false
-        if !customizationPaletteIsRunning && !isFullScreen {
+        if !customizationPaletteIsRunning && hideTitleBar {
             showTitleBar(false)
         }
     }
@@ -85,7 +90,7 @@ class AppView: NSView {
         window.standardWindowButton(.zoomButton)?.isHidden = !visible
     }
     
-    func showTitleBar(_ visible: Bool, animated: Bool = true, force: Bool = false) {
+    private func showTitleBar(_ visible: Bool, animated: Bool = true, force: Bool = false) {
         var titleBarView = window?.standardWindowButton(.closeButton)?.superview
         if #available(macOS 11, *) {
             titleBarView = titleBarView?.superview

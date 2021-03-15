@@ -377,7 +377,7 @@ class AppViewController: NSViewController {
 extension AppViewController: NSTextFieldDelegate {
 
     func controlTextDidChange(_ obj: Notification) {
-        (view as? AppView)?.showTitleBar(false)
+        (view as? AppView)?.hideTitleBarIfPossible()
         completions = nil
         let text = inputField.stringValue
         if text.isEmpty {
@@ -395,7 +395,7 @@ extension AppViewController: NSTextFieldDelegate {
     }
     
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
-        (view as? AppView)?.showTitleBar(false)
+        (view as? AppView)?.hideTitleBarIfPossible()
         if commandSelector == #selector(insertTab(_:)) {
             doAutocomplete(forward: true)
             return true

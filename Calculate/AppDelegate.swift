@@ -11,12 +11,27 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    private var didDecodeRestorableState = false
+    
+    override init() {
         UserDefaults.standard.registerDefaults()
+    }
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Scroll to bottom when the window was newly created
+        if !didDecodeRestorableState {
+            for case let window as AppWindow in NSApp.windows {
+                window.scrollToBottom()
+            }
+        }
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
+    }
+    
+    func application(_ app: NSApplication, didDecodeRestorableState coder: NSCoder) {
+        didDecodeRestorableState = true
     }
 
     func applicationDidResignActive(_ notification: Notification) {

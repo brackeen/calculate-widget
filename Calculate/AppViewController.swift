@@ -261,6 +261,10 @@ class AppViewController: NSViewController {
         scrollRelative(amount: height)
     }
     
+    func scrollToBottom() {
+        scrollTo(item: Calculate.shared.outputHistory.count - 1)
+    }
+    
     fileprivate func scrollTo(item: Int) {
         let outputCount = Calculate.shared.outputHistory.count
         if item >= 0 && item < outputCount {

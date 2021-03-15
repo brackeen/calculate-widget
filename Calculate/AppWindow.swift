@@ -22,6 +22,12 @@ class AppWindow: NSWindow {
             return super.fieldEditor(createFlag, for: object)
         }
     }
+    
+    func scrollToBottom() {
+        if let viewController = contentViewController as? AppViewController {
+            viewController.scrollToBottom()
+        }
+    }
 }
 
 protocol HasCustomFieldEditor {

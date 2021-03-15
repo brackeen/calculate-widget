@@ -69,7 +69,14 @@ class VerticalListCollectionViewLayout: NSCollectionViewFlowLayout {
         guard bottomAligned, let collectionView = collectionView, collectionView.bounds.height > collectionViewContentSize.height else {
             return attributes
         }
-        let offset = collectionView.bounds.height - collectionViewContentSize.height
+        
+        var offsetY: CGFloat = 0
+        if let clipView = collectionView.superview as? NSClipView, clipView.documentRect.height == clipView.documentVisibleRect.height {
+            // This is required when the user launches with the default window
+            offsetY = clipView.documentVisibleRect.minY
+        }
+        
+        let offset = collectionView.bounds.height - collectionViewContentSize.height + offsetY
         return attributes.map { attribute in
             let newAttribute = attribute.copy() as! NSCollectionViewLayoutAttributes
             newAttribute.frame.origin.y += offset

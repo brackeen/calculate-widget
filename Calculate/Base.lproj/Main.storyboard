@@ -226,7 +226,7 @@
                     <window key="window" title="Calculate" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" toolbarStyle="compact" titleVisibility="hidden" id="IQv-IB-iLA" customClass="AppWindow" customModule="Calculate" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="256" height="342"/>
+                        <rect key="contentRect" x="196" y="240" width="232" height="320"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="216" height="128"/>
                         <toolbar key="toolbar" implicitIdentifier="DB17A415-6996-4EF2-9500-06AA3C392C84" displayMode="iconOnly" sizeMode="small" id="596-q5-qgP">
@@ -278,17 +278,17 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="AppViewController" customModule="Calculate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl" customClass="AppView" customModule="Calculate" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="256" height="342"/>
+                        <rect key="frame" x="0.0" y="0.0" width="232" height="320"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-k8-6jO">
-                                <rect key="frame" x="0.0" y="39" width="256" height="303"/>
+                                <rect key="frame" x="0.0" y="39" width="232" height="281"/>
                                 <clipView key="contentView" drawsBackground="NO" id="0bz-EC-GNj">
-                                    <rect key="frame" x="0.0" y="0.0" width="256" height="303"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="232" height="281"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="9nv-DJ-Gcl">
-                                            <rect key="frame" x="0.0" y="0.0" width="256" height="303"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="232" height="281"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" id="tvm-x7-VmH" customClass="VerticalListCollectionViewLayout" customModule="Calculate" customModuleProvider="target">
                                                 <size key="itemSize" width="280" height="42"/>
@@ -307,12 +307,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="7i8-ja-fMU">
-                                    <rect key="frame" x="240" y="0.0" width="16" height="303"/>
+                                    <rect key="frame" x="208" y="0.0" width="16" height="281"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="buw-3S-gyR" customClass="InputTextField" customModule="Calculate" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="240" height="24"/>
+                                <rect key="frame" x="8" y="8" width="216" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="XEK-9g-b88"/>
                                 </constraints>
@@ -327,7 +327,7 @@
                                 </connections>
                             </textField>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="UYS-w3-Dt6">
-                                <rect key="frame" x="1" y="36" width="254" height="5"/>
+                                <rect key="frame" x="1" y="36" width="230" height="5"/>
                             </box>
                         </subviews>
                         <constraints>

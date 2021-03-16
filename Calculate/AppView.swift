@@ -51,13 +51,14 @@ class AppView: NSView {
     }
     
     override func mouseExited(with event: NSEvent) {
-        guard toolbarVisibility == .auto else {
-            return
-        }
         hideTitleBarIfPossible()
     }
     
     func hideTitleBarIfPossible() {
+        if let view = viewToFocusOnClick, let window = view.window, !window.viewIsFirstResponder(view) {
+            // Don't hide the title bar if the input field is not focused
+            return
+        }
         let isFullScreen = window?.styleMask.contains(.fullScreen) ?? false
         let hideTitleBar = toolbarVisibility == .never || (toolbarVisibility == .auto && !isFullScreen)
         let customizationPaletteIsRunning = window?.toolbar?.customizationPaletteIsRunning ?? false

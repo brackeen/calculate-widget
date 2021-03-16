@@ -11,9 +11,14 @@ import Cocoa
 class InputTextField: NSTextField, HasCustomFieldEditor {
     
     static var customFieldEditor: NSText = {
-        // Prevent focus loss when moving the window. Caveat: to detect return key, check `insertNewline` comand
+        // Set `isFieldEditor` to false to prevent focus loss when moving the window.
+        // Caveat: to detect return key, check `insertNewline` comand
         let textView = NSTextView()
+        textView.isRichText = false
         textView.isFieldEditor = false
+        textView.isAutomaticQuoteSubstitutionEnabled = false
+        textView.isAutomaticDashSubstitutionEnabled = false
+        textView.isAutomaticDataDetectionEnabled = false
         return textView
     }()
 }

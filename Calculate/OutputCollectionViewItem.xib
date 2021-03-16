@@ -44,7 +44,7 @@
                 <constraint firstItem="crO-o1-fuQ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="7oD-Na-sID"/>
                 <constraint firstItem="XX2-tv-cju" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="38" id="dGH-is-2rv"/>
                 <constraint firstItem="crO-o1-fuQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="doV-pc-dqR"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XX2-tv-cju" secondAttribute="trailing" constant="20" id="lud-ak-Dh7"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XX2-tv-cju" secondAttribute="trailing" constant="10" id="lud-ak-Dh7"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="crO-o1-fuQ" secondAttribute="trailing" constant="20" id="rHh-7T-wct"/>
                 <constraint firstItem="XX2-tv-cju" firstAttribute="top" secondItem="crO-o1-fuQ" secondAttribute="bottom" constant="1" id="uOO-Sz-bgo"/>
             </constraints>

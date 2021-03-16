@@ -33,7 +33,7 @@
             <constraints>
                 <constraint firstItem="m4Y-Q0-Ka1" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="JLp-Co-jve"/>
                 <constraint firstItem="m4Y-Q0-Ka1" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="jzk-9W-h8o"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m4Y-Q0-Ka1" secondAttribute="trailing" constant="20" id="qlf-sD-yID"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m4Y-Q0-Ka1" secondAttribute="trailing" constant="10" id="qlf-sD-yID"/>
                 <constraint firstAttribute="bottom" secondItem="m4Y-Q0-Ka1" secondAttribute="bottom" id="ulL-6W-ZfA"/>
             </constraints>
             <point key="canvasLocation" x="140" y="153.5"/>

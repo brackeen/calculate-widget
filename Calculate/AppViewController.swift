@@ -139,6 +139,7 @@ class AppViewController: NSViewController {
         outputCollectionView.reloadData()
         horizontalDivider.alphaValue = 0
         (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.notifyReloadData()
+        focusInputField();
     }
     
     @IBAction func showMemory(_ sender: Any) {

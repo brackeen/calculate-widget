@@ -135,6 +135,8 @@ Calculate.knownMembers = (function() {
 
 Calculate.sandbox = { "ans": 0 };
 
+Calculate.sandboxNewFunctions = { };
+
 /* Use a proxy prevents access to:
  - Globals (Calculate, org.antlr.*, etc)
 */
@@ -165,6 +167,9 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
        }
        const isGlobalConst = key === "globalThis" || (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key));
        if (!isGlobalConst) {
+           if (typeof key === "string" && typeof value === "function") {
+               Calculate.sandboxNewFunctions[key] = value;
+           }
            return Reflect.set(...arguments);
        }
    },
@@ -182,8 +187,30 @@ Calculate.evaluate = function(__input__) {
     // Wrap in anonymous function so "this" is the global object, not Calculate
     // Use "eval" instead of "Function" to get the last statement on the line ("5;6;")
     return (function() {
+        Calculate.sandboxNewFunctions = { };
         with (Calculate.sandboxProxy) {
             return eval(__input__);
+        }
+    })();
+};
+
+// Same as Calculate.evaluate, but evalulates a no-argument function
+Calculate.evaluateSimpleFunction = function(__input__) {
+    if (typeof __input__ !== "function") {
+        throw TypeError("Expected function");
+    }
+    if (__input__.length > 0) {
+        const name = (typeof __input__.name === "string") ? __input__.name : "Function";
+        if (__input__.length === 1) {
+            throw new Error(name + " requires an argument")
+        } else {
+            throw new Error(name + " requires " + __input__.length + " arguments")
+        }
+    }
+    return (function() {
+        Calculate.sandboxNewFunctions = { };
+        with (Calculate.sandboxProxy) {
+            return __input__();
         }
     })();
 };
@@ -282,13 +309,26 @@ Calculate.calc = function(expression) {
         //Calculate.log("Converted to: " + expression);
     }
     
-    const answer = Calculate.evaluate(expression);
-    if (typeof answer === "function") {
-        return "Function defined";
-    } else {
-        Calculate.sandbox["ans"] = answer;
-        return Calculate.valueToString(answer);
+    var answer = Calculate.evaluate(expression);
+
+    const maxFunctionCalls = 256;
+    var numFunctionCalls = 0;
+    while (typeof answer === "function") {
+        // If it's a newly defined function, print "Function defined"
+        for (const newFunctionName in Calculate.sandboxNewFunctions) {
+            if (answer === Calculate.sandboxNewFunctions[newFunctionName]) {
+                return "Function defined";
+            }
+        }
+        if (numFunctionCalls >= maxFunctionCalls) {
+            throw new RangeError("Maximum function calls exceeded");
+        }
+        // Automatically execute the function if it requires no arguments
+        answer = Calculate.evaluateSimpleFunction(answer);
+        numFunctionCalls++;
     }
+    Calculate.sandbox["ans"] = answer;
+    return Calculate.valueToString(answer);
 };
 
 Calculate.angleScale = 1;

@@ -34,6 +34,17 @@ Calculate.isNativeFunction = function(value) {
     return typeof value === "function" && /\{\s+\[native code\]/.test(Function.prototype.toString.call(value))
 };
 
+Calculate.getFunctionName = function(f) {
+    if (typeof f === "function") {
+        for (const i in Calculate.Math) {
+            if (Calculate.Math[i] === f) {
+                return i.toString();
+            }
+        }
+    }
+    return undefined;
+};
+
 Calculate.valueToString = function(value) {
     if (value === undefined) {
         return "undefined";
@@ -50,7 +61,8 @@ Calculate.valueToString = function(value) {
     } else if (typeof value === "string") {
         return '"' + value + '"';
     } else if (typeof value === "function") {
-        return value.toString();
+        const name = Calculate.getFunctionName(value)
+        return (name !== undefined) ? name : value.toString();
     } else if (typeof value === "object" && value.toString() == "[object Object]") {
         return Calculate.objectToString(value);
     } else {
@@ -149,7 +161,8 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
         if (typeof key !== "string") {
             return undefined;
         } else if (key === "globalThis") {
-            return globalThis;
+            // Prevent "globalThis.org = 0"
+            return { };
         } else if (Calculate.Math.hasOwnProperty(key)) {
             return Calculate.Math[key];
         } else if (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key)) {
@@ -164,6 +177,11 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
    set: function(target, key, value) {
        if (Calculate.Math.hasOwnProperty(key)) {
            throw new TypeError("\"" + key + "\" is a constant");
+       }
+       if (value === eval) {
+           // Prevent this from happening, which sets "this.x" instead of "Calculate.sandbox.x"
+           //    eval2 = eval; eval2("x=5")
+           throw new ReferenceError("Can't set eval");
        }
        const isGlobalConst = key === "globalThis" || (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key));
        if (!isGlobalConst) {
@@ -184,14 +202,14 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
 });
 
 Calculate.evaluate = function(__input__) {
-    // Wrap in anonymous function so "this" is the global object, not Calculate
+    // Wrap so "this" is a temporary object, not Calculate.
     // Use "eval" instead of "Function" to get the last statement on the line ("5;6;")
-    return (function() {
-        Calculate.sandboxNewFunctions = { };
-        with (Calculate.sandboxProxy) {
-            return eval(__input__);
-        }
-    })();
+    Calculate.sandboxNewFunctions = { };
+    with (Calculate.sandboxProxy) {
+        return Object.freeze({
+            eval: function(__input__) { return eval(__input__); }
+        }).eval(__input__);
+    }
 };
 
 // Same as Calculate.evaluate, but evalulates a no-argument function
@@ -207,12 +225,12 @@ Calculate.evaluateSimpleFunction = function(__input__) {
             throw new Error(name + " requires " + __input__.length + " arguments")
         }
     }
-    return (function() {
-        Calculate.sandboxNewFunctions = { };
-        with (Calculate.sandboxProxy) {
-            return __input__();
-        }
-    })();
+    Calculate.sandboxNewFunctions = { };
+    with (Calculate.sandboxProxy) {
+        return Object.freeze({
+            eval: function(__input__) { return __input__(); }
+        }).eval(__input__);
+    }
 };
 
 Calculate.log = function(message) {
@@ -243,9 +261,11 @@ Calculate.getMemoryVars = function() {
         if (userVars.hasOwnProperty(i)) {
             const name = userVars[i];
             const value = Calculate.sandbox[name];
-            if (!Calculate.isNativeFunction(value)) {
-                memory.push([name, Calculate.valueToString(value)])
+            if (Calculate.isNativeFunction(value) && Calculate.getFunctionName(value) === undefined) {
+                // Skip native functions that are not recognized
+                continue;
             }
+            memory.push([name, Calculate.valueToString(value)])
         }
     }
     return memory;
@@ -349,6 +369,10 @@ Calculate.Math = Object.freeze({
     // Constants in case user likes the JavaScript Math class.
     PI:       Math.PI,
     E:        Math.E,
+    
+    // Global aliases
+    isFinite: isFinite,
+    isNaN:    isNaN,
 
     // Basic Math
     abs:      Math.abs,

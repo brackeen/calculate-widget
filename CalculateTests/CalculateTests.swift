@@ -29,7 +29,7 @@ class CalculateTests: XCTestCase {
     }
     
     func testThis() {
-        XCTAssert(testExpression("this == globalThis"))
+        XCTAssert(testExpression("this !== globalThis"))
     }
     
     func testAns() {
@@ -76,12 +76,42 @@ class CalculateTests: XCTestCase {
     
     func testBadBehaviour() {
         XCTAssert(testExpression("Math = 0; Math.PI == pi"))
+        XCTAssert(testExpression("globalThis.org = 0; 1 + 1 == 2"))
+        XCTAssert(testExpression("this.org = 0; 1 + 1 == 2"))
         XCTAssert(testExpression("delete Math; Math.PI == pi"))
         XCTAssert(testExpression("delete globalThis; 1 + 1 == 2"))
         XCTAssert(testExpression("Calculate = 2; 1 + 1 == Calculate"))
         XCTAssert(testExpression("org = { antlr: 2 }; 1 + 1 == org.antlr"))
         XCTAssert(testExpression("delete Calculate; delete org; 1 + 1 == 2"))
         XCTAssert(testExpression("try { cos = 0 } catch (err) { }; Math.cos(pi) == -1"))
+    }
+    
+    func testEval() {
+        calc("eval(\"x=42\")")
+        XCTAssert(testExpression("x==42"))
+        XCTAssert(testExpression("delete x"))
+        
+        // eval2 should not be created
+        calc("eval2 = eval")
+        XCTAssert(testExpression("(delete eval2) == false"))
+    }
+    
+    func testAutomaticFunctions() {
+        calc("cool = function () { return \"cool\"; }")
+        calc("cool2 = function () { return cool; }")
+        XCTAssertEqual(calc("cool2"), "\"cool\"")
+        calc("delete cool; delete cool2")
+        XCTAssert((calc("cos") ?? "").starts(with: "Error: "))
+        
+        // Prevent infinite loop
+        calc("oranges = function() { return oranges; }")
+        XCTAssert((calc("oranges") ?? "").starts(with: "RangeError: "))
+        calc("delete oranges")
+    }
+    
+    func testAliases() {
+        XCTAssert(testExpression("cos2 = cos;cos(pi) == -1"))
+        calc("delete cos2")
     }
 
     func testPrecision() {

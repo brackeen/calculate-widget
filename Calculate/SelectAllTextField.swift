@@ -20,6 +20,12 @@ class SelectAllTextField: NSTextField, HasCustomFieldEditor {
         }
     }
     
+    // Focus input field when pressing "Tab"
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        nextKeyView = (window?.contentViewController as? AppViewController)?.inputField
+    }
+    
     // Focus input field when pressing "Esc"
     override func cancelOperation(_ sender: Any?) {
         (window?.contentViewController as? AppViewController)?.focusInputField()

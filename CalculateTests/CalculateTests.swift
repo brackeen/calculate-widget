@@ -29,7 +29,12 @@ class CalculateTests: XCTestCase {
     }
     
     func testThis() {
+        // globalThis is the sandbox
         XCTAssert(testExpression("this !== globalThis"))
+        calc("globalThis.x=256")
+        calc("42")
+        XCTAssert(testExpression("globalThis.ans == 42"))
+        XCTAssert(testExpression("x == 256"))
     }
     
     func testAns() {
@@ -79,7 +84,7 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("globalThis.org = 0; 1 + 1 == 2"))
         XCTAssert(testExpression("this.org = 0; 1 + 1 == 2"))
         XCTAssert(testExpression("delete Math; Math.PI == pi"))
-        XCTAssert(testExpression("delete globalThis; 1 + 1 == 2"))
+        XCTAssert(testExpression("(delete globalThis) == false"))
         XCTAssert(testExpression("Calculate = 2; 1 + 1 == Calculate"))
         XCTAssert(testExpression("org = { antlr: 2 }; 1 + 1 == org.antlr"))
         XCTAssert(testExpression("delete Calculate; delete org; 1 + 1 == 2"))
@@ -94,6 +99,33 @@ class CalculateTests: XCTestCase {
         // eval2 should not be created
         calc("eval2 = eval")
         XCTAssert(testExpression("(delete eval2) == false"))
+        calc("obj = { inner: { } }; obj.inner.eval2 = eval")
+        XCTAssert(testExpression("(delete obj.inner.eval2) == false"))
+        XCTAssert(testExpression("(delete obj.inner) == true"))
+        XCTAssert(testExpression("(delete obj) == true"))
+        
+        // eval as inner object
+        calc("obj = { eval2: eval }")
+        XCTAssert((calc("obj.eval2(\"x=42\")") ?? "").starts(with: "ReferenceError"))
+        XCTAssert(testExpression("(delete x) == false"))
+        XCTAssert(testExpression("(delete obj) == true"))
+    }
+    
+    func testObjectEquality() {
+        calc("obj1 = { id: 1 }; obj2 = { id: 2 }")
+        XCTAssert(testExpression("obj1 != obj2"))
+        XCTAssert(testExpression("obj3 = obj1; obj1 == obj3"))
+        calc("obj1.inner = obj2;")
+        XCTAssert(testExpression("obj1.inner == obj2"))
+        
+        
+        calc("delete obj1; delete obj2; delete obj3")
+    }
+    
+    func testSelfReferences() {
+        XCTAssert(!(calc("arr = [1, 2, 3]; arr.push(arr); arr") ?? "Error").contains("Error"))
+        XCTAssert(!(calc("obj = { depth1: { } }; obj.depth1.depth2 = obj; obj") ?? "Error").contains("Error"))
+        calc("delete arr; delete obj")
     }
     
     func testAutomaticFunctions() {
@@ -107,6 +139,10 @@ class CalculateTests: XCTestCase {
         calc("oranges = function() { return oranges; }")
         XCTAssert((calc("oranges") ?? "").starts(with: "RangeError: "))
         calc("delete oranges")
+        
+        // Don't automatically execute newly defined object functions
+        XCTAssertEqual((calc("obj = { }; obj.f = function() { return 'yes'; }") ?? ""), "Function defined")
+        calc("delete obj")
     }
     
     func testAliases() {

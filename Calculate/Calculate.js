@@ -36,6 +36,9 @@ Calculate.isNativeFunction = function(value) {
 
 Calculate.getFunctionName = function(f) {
     if (typeof f === "function") {
+        if (f === eval) {
+            return "eval";
+        }
         for (const i in Calculate.Math) {
             if (Calculate.Math[i] === f) {
                 return i.toString();
@@ -45,7 +48,8 @@ Calculate.getFunctionName = function(f) {
     return undefined;
 };
 
-Calculate.valueToString = function(value) {
+Calculate.valueToString = function(value, ancestors) {
+    ancestors = ancestors !== undefined ? ancestors : [];
     if (value === undefined) {
         return "undefined";
     } else if (value === null) {
@@ -57,43 +61,57 @@ Calculate.valueToString = function(value) {
     } else if (typeof value === "number") {
         return Calculate.fixPrecision(value).toString();
     } else if (value instanceof Array) {
-        return Calculate.arrayToString(value);
+        return Calculate.arrayToString(value, ancestors);
     } else if (typeof value === "string") {
         return '"' + value + '"';
     } else if (typeof value === "function") {
         const name = Calculate.getFunctionName(value)
         return (name !== undefined) ? name : value.toString();
-    } else if (typeof value === "object" && value.toString() == "[object Object]") {
-        return Calculate.objectToString(value);
+    } else if (typeof value === "object") {
+        return Calculate.objectToString(value, ancestors);
     } else {
         return '"' + value.toString() + '"';
     }
 };
 
-Calculate.arrayToString = function(a) {
-    let s = "";
-    for (let i = 0; i < a.length; i++) {
-        s += Calculate.valueToString(a[i]);
-        if (i < a.length - 1) {
-            s += ", ";
+Calculate.arrayToString = function(arr, ancestors) {
+    const nextAncestors = [arr].concat(ancestors);
+    let str = "";
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] == "object" && ancestors.includes(arr[i])) {
+            // Don't print self-referencing arrays. arr = [1, 2, 3]; arr.push(arr); arr
+            continue;
         }
+        if (str.length > 0) {
+            str += ", ";
+        }
+        str += Calculate.valueToString(arr[i], nextAncestors);
     }
-    return "[" + s + "]";
+    return "[" + str + "]";
 };
 
-Calculate.objectToString = function(obj) {
-    let s = "";
+Calculate.objectToString = function(obj, ancestors) {
+    const nextAncestors = [obj].concat(ancestors);
+    let str = "";
     for (const i in obj) {
-        if (obj.hasOwnProperty(i)) {
-            const value = Calculate.valueToString(obj[i]);
-            s += '"' + i + '": ' + value + ", ";
+        if (!obj.hasOwnProperty(i)) {
+            continue;
         }
+        if (typeof obj[i] == "object" && ancestors.includes(obj[i])) {
+            // Don't print self-referencing objects. obj = { }; obj.self = obj; obj
+            continue;
+        }
+        const value = Calculate.valueToString(obj[i], nextAncestors);
+        if (str.length > 0) {
+            str += ", ";
+        }
+        str += '"' + i + '": ' + value;
     }
-    // Remove trailing comma
-    if (s.charAt(s.length - 2) === ",") {
-        s = s.substring(0, s.length - 2);
+    if (str.length == 0) {
+        return "{ }";
+    } else {
+        return "{ " + str + " }";
     }
-    return "{" + s + "}";
 };
 
 Calculate.fixPrecision = function(n) {
@@ -149,26 +167,81 @@ Calculate.sandbox = { "ans": 0 };
 
 Calculate.sandboxNewFunctions = { };
 
+Calculate.sandboxProxyObjects = new WeakMap();
+
+Calculate.simpleProxy = function(__obj__) {
+    if (typeof __obj__ !== "object" || __obj__.__isProxy) {
+        return __obj__;
+    }
+    if (!Calculate.sandboxProxyObjects.has(__obj__)) {
+        Calculate.sandboxProxyObjects.set(__obj__, new Proxy(__obj__, {
+            has: function(target, key) {
+                return key !== "__obj__" && key !== "__typeof__";
+            },
+            
+            get: function(target, key) {
+                if (typeof key !== "string") {
+                    return undefined;
+                } else if (key === "__isProxy") {
+                    return true;
+                } else {
+                    let result = Reflect.get(...arguments);
+                    if (result === eval) {
+                        let proxy = new Proxy(eval, {
+                            apply: function(target, thisArg, argumentsList) {
+                                throw new ReferenceError("Can't eval");
+                            }
+                        });
+                        proxy.toString = function() { return "eval"; };
+                        return proxy;
+                    }
+                    return Calculate.simpleProxy(result);
+                }
+            },
+            
+            set: function(target, key, value) {
+                if (value === eval) {
+                    throw new ReferenceError("Can't eval");
+                }
+                if (typeof key === "string" && typeof value === "function") {
+                    Calculate.sandboxNewFunctions[key] = value;
+                }
+                return Reflect.set(...arguments);
+            },
+            
+            deleteProperty: function(target, key) {
+                if (target.hasOwnProperty(key)) {
+                    return delete target[key];
+                } else {
+                    return false;
+                }
+            }
+        }));
+    }
+    return Calculate.sandboxProxyObjects.get(__obj__);
+};
+
 /* Use a proxy prevents access to:
  - Globals (Calculate, org.antlr.*, etc)
 */
 Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
     has: function(target, key) {
-        return key !== "__input__" && key != "__typeof__";
+        return key !== "__input__" && key !== "__typeof__";
     },
 
     get: function(target, key) {
         if (typeof key !== "string") {
             return undefined;
+        } else if (key === "__isProxy") {
+            return true;
         } else if (key === "globalThis") {
-            // Prevent "globalThis.org = 0"
-            return { };
+            return Calculate.simpleProxy(Calculate.sandbox);
         } else if (Calculate.Math.hasOwnProperty(key)) {
             return Calculate.Math[key];
         } else if (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key)) {
-            return globalThis[key];
+            return Calculate.simpleProxy(globalThis[key]);
         } else if (target.hasOwnProperty(key)) {
-            return Reflect.get(...arguments);
+            return Calculate.simpleProxy(Reflect.get(...arguments));
         } else {
             throw new ReferenceError("Can't find variable: " + key);
         }
@@ -179,9 +252,7 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
            throw new TypeError("\"" + key + "\" is a constant");
        }
        if (value === eval) {
-           // Prevent this from happening, which sets "this.x" instead of "Calculate.sandbox.x"
-           //    eval2 = eval; eval2("x=5")
-           throw new ReferenceError("Can't set eval");
+           throw new ReferenceError("Can't eval");
        }
        const isGlobalConst = key === "globalThis" || (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key));
        if (!isGlobalConst) {
@@ -218,7 +289,7 @@ Calculate.evaluateSimpleFunction = function(__input__) {
         throw TypeError("Expected function");
     }
     if (__input__.length > 0) {
-        const name = (typeof __input__.name === "string") ? __input__.name : "Function";
+        const name = (typeof __input__.name === "string") && __input__.name.length > 0 ? __input__.name : "Function";
         if (__input__.length === 1) {
             throw new Error(name + " requires an argument")
         } else {
@@ -265,7 +336,7 @@ Calculate.getMemoryVars = function() {
                 // Skip native functions that are not recognized
                 continue;
             }
-            memory.push([name, Calculate.valueToString(value)])
+            memory.push([name, Calculate.valueToString(Calculate.simpleProxy(value))])
         }
     }
     return memory;

@@ -360,8 +360,7 @@
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="ujP-t0-gze">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="425" y="461" width="480" height="304"/>
+                        <rect key="contentRect" x="1024" y="512" width="480" height="304"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                         <value key="minSize" type="size" width="480" height="304"/>
                         <connections>

@@ -12,6 +12,7 @@ import KeyboardShortcuts
 class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var toolbarVisibilityButton: NSPopUpButton!
+    @IBOutlet weak var appearanceButton: NSPopUpButton!
     @IBOutlet weak var angleModeButton: NSPopUpButton!
     @IBOutlet weak var insertAnsButton: NSButton!
     @IBOutlet weak var monospaceFontButton: NSButton!
@@ -22,6 +23,7 @@ class PreferencesViewController: NSViewController {
         super.viewDidLoad()
         
         toolbarVisibilityButton.selectItem(withTag: UserDefaults.standard.toolbarVisibility.rawValue)
+        appearanceButton.selectItem(withTag: UserDefaults.standard.appearance.rawValue)
         angleModeButton.selectItem(withTag: Calculate.shared.angleMode.rawValue)
         insertAnsButton.state = UserDefaults.standard.insertAnsEnabled ? .on : .off
         monospaceFontButton.state = UserDefaults.standard.monospaceFont ? .on : .off
@@ -57,5 +59,14 @@ class PreferencesViewController: NSViewController {
     
     @IBAction func monospaceFontChanged(_ sender: Any) {
         UserDefaults.standard.monospaceFont = monospaceFontButton.state == .on
+    }
+    
+    @IBAction func appearanceChanged(_ sender: Any) {
+        if let appearance = UserDefaults.Appearance(rawValue: appearanceButton.selectedTag()) {
+            UserDefaults.standard.appearance = appearance
+            NSApp.windows.forEach { window in
+                window.appearance = appearance.nsAppearance
+            }
+        }
     }
 }

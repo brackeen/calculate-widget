@@ -34,6 +34,7 @@
 		E35AC436242E47610041BF6A /* NSFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35AC435242E47610041BF6A /* NSFont+App.swift */; };
 		E3744842243AABA700CC8E69 /* NSWindow+MoveToActiveSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3744841243AABA700CC8E69 /* NSWindow+MoveToActiveSpace.swift */; };
 		E399AF8D2479C4C800A52026 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399AF8C2479C4C800A52026 /* Preferences.swift */; };
+		E3A08A142603FA0C006F798D /* AppearanceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A08A132603FA0C006F798D /* AppearanceWindow.swift */; };
 		E3DD20BB25F9744500529684 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD20BA25F9744500529684 /* InputTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		E35AC435242E47610041BF6A /* NSFont+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+App.swift"; sourceTree = "<group>"; };
 		E3744841243AABA700CC8E69 /* NSWindow+MoveToActiveSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+MoveToActiveSpace.swift"; sourceTree = "<group>"; };
 		E399AF8C2479C4C800A52026 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		E3A08A132603FA0C006F798D /* AppearanceWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceWindow.swift; sourceTree = "<group>"; };
 		E3DD20BA25F9744500529684 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				E321A0AA2417C3A900D40474 /* AppDelegate.swift */,
+				E3A08A132603FA0C006F798D /* AppearanceWindow.swift */,
 				E35AC40D2426B27C0041BF6A /* AppWindow.swift */,
 				E35AC4112426C4650041BF6A /* AppView.swift */,
 				E321A0AC2417C3A900D40474 /* AppViewController.swift */,
@@ -311,6 +314,7 @@
 				E35AC4102426BC3E0041BF6A /* SelectAllTextField.swift in Sources */,
 				E321A0AD2417C3A900D40474 /* AppViewController.swift in Sources */,
 				E35AC3F52421450B0041BF6A /* String+Break.swift in Sources */,
+				E3A08A142603FA0C006F798D /* AppearanceWindow.swift in Sources */,
 				E35AC3F324212A8F0041BF6A /* OutputItem.swift in Sources */,
 				E338A4DE2476C73800AE85BF /* VerticalListCollectionViewLayout.swift in Sources */,
 				E321A0AB2417C3A900D40474 /* AppDelegate.swift in Sources */,

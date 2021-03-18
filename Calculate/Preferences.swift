@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AppKit
 import KeyboardShortcuts
 
 extension UserDefaults {
@@ -19,11 +20,29 @@ extension UserDefaults {
         case always = 1
         case never = 2
     }
+    
+    enum Appearance: Int {
+        case system = 0
+        case light = 1
+        case dark = 2
+        
+        var nsAppearance: NSAppearance? {
+            switch self {
+            case .system:
+                return nil
+            case .light:
+                return NSAppearance(named: .aqua)
+            case .dark:
+                return NSAppearance(named: .darkAqua)
+            }
+        }
+    }
 
     private static let hotkeyMoveToActiveSpaceDefaultsKey = "hotkeyMoveToActiveSpace"
     private static let insertAnsDefaultsKey = "insertAns"
     private static let monospaceFontKey = "monospace"
     private static let toolbarVisibilityKey = "toolbarVisibility"
+    private static let appearanceKey = "appearance"
     
     var moveToActiveSpaceEnabled: Bool {
         get {
@@ -65,6 +84,15 @@ extension UserDefaults {
         }
     }
     
+    var appearance: Appearance {
+        get {
+            return Appearance(rawValue: integer(forKey: UserDefaults.appearanceKey)) ?? .system
+        }
+        set {
+            set(newValue.rawValue, forKey: UserDefaults.appearanceKey)
+        }
+    }
+    
     var isHotKeySet: Bool {
         return KeyboardShortcuts.getShortcut(for: .hotkey) != nil
     }
@@ -74,6 +102,7 @@ extension UserDefaults {
             UserDefaults.hotkeyMoveToActiveSpaceDefaultsKey: true,
             UserDefaults.insertAnsDefaultsKey: true,
             UserDefaults.monospaceFontKey: false,
+            UserDefaults.appearanceKey: Appearance.system.rawValue,
             UserDefaults.toolbarVisibilityKey: ToolbarVisibility.auto.rawValue,
         ])
     }

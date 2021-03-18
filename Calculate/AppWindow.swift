@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class AppWindow: NSWindow {
+class AppWindow: AppearanceWindow {
     
     override func awakeFromNib() {
         super.awakeFromNib()

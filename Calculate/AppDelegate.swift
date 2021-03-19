@@ -41,4 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         Calculate.shared.save()
     }
+    
+    @IBAction func checkForUpdates(_ sender: Any) {
+        if let url = URL(string: "https://github.com/brackeen/calculate-widget/releases") {
+            NSWorkspace.shared.open(url)
+        }
+    }
 }

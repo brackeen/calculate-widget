@@ -25,7 +25,7 @@
                                         <menuItem title="Check for Updates..." id="G3v-v0-Kq2">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="checkForUpdates:" target="Ady-hI-5gd" id="Ep4-mm-s5k"/>
+                                                <action selector="checkForUpdates:" target="Voe-Tx-rLC" id="ifZ-jp-mM4"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>

@@ -158,12 +158,6 @@ class AppViewController: NSViewController {
         }
     }
     
-    @IBAction func checkForUpdates(_ sender: Any) {
-        if let url = URL(string: "https://github.com/brackeen/calculate-widget/releases") {
-            NSWorkspace.shared.open(url)
-        }
-    }
-    
     private func adjustDividerIfNeeded() {
         guard allowHorizontalDividerUpdate else {
             return

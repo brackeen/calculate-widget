@@ -21,7 +21,7 @@ class AppViewController: NSViewController {
     fileprivate var completions: [String]?
     fileprivate var completionWordStart = "".endIndex
     
-    fileprivate var appHideTime: TimeInterval = 0
+    fileprivate var appResignActiveTime: TimeInterval = 0
     
     fileprivate var inputFieldUndoManager: UndoManager? {
         return inputField?.currentEditor()?.undoManager
@@ -65,7 +65,7 @@ class AppViewController: NSViewController {
                     // If it's been a minute since the user has hidden the app, select all the text in the input field.
                     // The idea is that the user is switching quickly back and forth to Calculate, the cursor should be in the same place.
                     // But if it's been a minute since the app was activated, the user has probably lost interest in whatever he was typing.
-                    let durationSinceLastHidden = CACurrentMediaTime() - (self?.appHideTime ?? 0.0)
+                    let durationSinceLastHidden = CACurrentMediaTime() - (self?.appResignActiveTime ?? 0.0)
                     let selectAll = durationSinceLastHidden >= 60.0
                     if UserDefaults.standard.moveToActiveSpaceEnabled {
                         window.moveToActiveSpace(completion: {
@@ -79,7 +79,7 @@ class AppViewController: NSViewController {
             }
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(appWillHide), name: NSApplication.willHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: NSApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(fontDidChange), name: UserDefaults.fontDidChangeNotification, object: nil)
         
         if let scrollContentView = outputCollectionView.superview as? NSClipView {
@@ -109,8 +109,8 @@ class AppViewController: NSViewController {
         }
     }
     
-    @objc func appWillHide(_ sender: Any) {
-        appHideTime = CACurrentMediaTime()
+    @objc func appWillResignActive(_ sender: Any) {
+        appResignActiveTime = CACurrentMediaTime()
     }
     
     @objc func fontDidChange(_ sender: Any) {

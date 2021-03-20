@@ -13,5 +13,6 @@ class AppearanceWindow: NSWindow {
     override func awakeFromNib() {
         super.awakeFromNib()
         appearance = UserDefaults.standard.appearance.nsAppearance
+        isExcludedFromWindowsMenu = true
     }
 }

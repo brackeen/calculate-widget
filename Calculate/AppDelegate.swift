@@ -33,20 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
-        var mainOrPrefsFound = false
-        if let appWindow = NSApp.windows.first(where: { $0 is AppWindow}) as? AppWindow {
-            mainOrPrefsFound = true
-            appWindow.makeKeyAndOrderFront(self)
-            appWindow.focusInputField()
-        } else {
-            NSApp.windows.filter { $0 is AppearanceWindow }.forEach {
-                mainOrPrefsFound = true
-                $0.makeKeyAndOrderFront(self)
-            }
-        }
-        if !mainOrPrefsFound {
-            instantiateMainWindow()
-        }
+        activateMainWindow(sender)
         return true
     }
     
@@ -61,6 +48,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         Calculate.shared.save()
+    }
+    
+    @IBAction func activateMainWindow(_ sender: Any) {
+        if let appWindow = NSApp.windows.first(where: { $0 is AppWindow}) as? AppWindow {
+            appWindow.makeKeyAndOrderFront(self)
+            appWindow.focusInputField()
+        } else {
+            instantiateMainWindow()
+        }
     }
     
     @IBAction func checkForUpdates(_ sender: Any) {

@@ -185,6 +185,12 @@
                                                 <action selector="performZoom:" target="Ady-hI-5gd" id="jLh-Fv-NJK"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="WP0-oi-H5a"/>
+                                        <menuItem title="Calculate" keyEquivalent="0" id="vLr-Ye-6gL">
+                                            <connections>
+                                                <action selector="activateMainWindow:" target="Voe-Tx-rLC" id="7hu-lp-izV"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4X7-1C-GUC"/>
                                         <menuItem title="Bring All to Front" id="Dcw-6r-wOh">
                                             <modifierMask key="keyEquivalentModifierMask"/>

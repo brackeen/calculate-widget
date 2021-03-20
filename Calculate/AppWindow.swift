@@ -23,10 +23,22 @@ class AppWindow: AppearanceWindow {
         }
     }
     
+    override func close() {
+        // Release the window without crashing. This seems to be required for the first window created
+        isReleasedWhenClosed = windowController != nil
+        super.close()
+    }
+    
     func scrollToBottom() {
-        if let viewController = contentViewController as? AppViewController {
-            viewController.scrollToBottom()
-        }
+        (contentViewController as? AppViewController)?.scrollToBottom()
+    }
+    
+    func toggleActive() {
+        (contentViewController as? AppViewController)?.toggleActive()
+    }
+    
+    func focusInputField() {
+        (contentViewController as? AppViewController)?.focusInputField()
     }
 }
 

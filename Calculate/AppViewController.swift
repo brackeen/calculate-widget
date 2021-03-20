@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import KeyboardShortcuts
 
 class AppViewController: NSViewController {
     
@@ -17,11 +16,12 @@ class AppViewController: NSViewController {
     
     fileprivate var allowHorizontalDividerUpdate = false
     fileprivate var textFieldWasEmpty = true
+    fileprivate var scrollToBottomOnAppear = true
     fileprivate var historyEnd: String?
     fileprivate var completions: [String]?
     fileprivate var completionWordStart = "".endIndex
     
-    fileprivate var appResignActiveTime: TimeInterval = 0
+    fileprivate var appResignActiveTime: TimeInterval = .greatestFiniteMagnitude
     
     fileprivate var inputFieldUndoManager: UndoManager? {
         return inputField?.currentEditor()?.undoManager
@@ -57,28 +57,6 @@ class AppViewController: NSViewController {
         inputField.selectText(nil)
         (view as? AppView)?.viewToFocusOnClick = inputField
         
-        KeyboardShortcuts.onKeyDown(for: .hotkey) { [weak self] in
-            if let inputField = self?.inputField, let window = inputField.window {
-                if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
-                    NSApp.hide(nil)
-                } else {
-                    // If it's been a minute since the user has hidden the app, select all the text in the input field.
-                    // The idea is that the user is switching quickly back and forth to Calculate, the cursor should be in the same place.
-                    // But if it's been a minute since the app was activated, the user has probably lost interest in whatever he was typing.
-                    let durationSinceLastHidden = CACurrentMediaTime() - (self?.appResignActiveTime ?? 0.0)
-                    let selectAll = durationSinceLastHidden >= 60.0
-                    if UserDefaults.standard.moveToActiveSpaceEnabled {
-                        window.moveToActiveSpace(completion: {
-                            self?.focusInputField(selectAll: selectAll)
-                        })
-                    } else {
-                        NSApp.activate(ignoringOtherApps: true)
-                        self?.focusInputField(selectAll: selectAll)
-                    }
-                }
-            }
-        }
-        
         NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: NSApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(fontDidChange), name: UserDefaults.fontDidChangeNotification, object: nil)
         
@@ -93,18 +71,51 @@ class AppViewController: NSViewController {
         DispatchQueue.main.async { [weak self] in
             self?.focusInputField()
             self?.allowHorizontalDividerUpdate = true
-            self?.adjustDividerIfNeeded()
+            self?.scrollToBottom()
         }
     }
     
-    func focusInputField(selectAll: Bool = false) {
-        if let window = inputField.window {
-            window.makeKeyAndOrderFront(nil)
-            if !window.viewIsFirstResponder(inputField) {
-                window.makeFirstResponder(inputField)
-            }
-            if selectAll, let textEditor = inputField.currentEditor() {
-                textEditor.selectAll(inputField)
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if scrollToBottomOnAppear {
+            scrollToBottomOnAppear = false
+            scrollToBottom()
+        }
+    }
+    
+    func focusInputField() {
+        guard let window = inputField.window else {
+            return
+        }
+        // If it's been a minute since the user has hidden the app, select all the text in the input field.
+        // The idea is that the user is switching quickly back and forth to Calculate, the cursor should be in the same place.
+        // But if it's been a minute since the app was activated, the user has probably lost interest in whatever he was typing.
+        let durationSinceLastHidden = CACurrentMediaTime() - appResignActiveTime
+        let selectAll = durationSinceLastHidden >= 60.0
+        appResignActiveTime = .greatestFiniteMagnitude
+        window.makeKeyAndOrderFront(nil)
+        if !window.viewIsFirstResponder(inputField) {
+            window.makeFirstResponder(inputField)
+        }
+        if selectAll, let textEditor = inputField.currentEditor() {
+            textEditor.selectAll(inputField)
+        }
+    }
+    
+    func toggleActive() {
+        guard let inputField = inputField, let window = inputField.window else {
+            return
+        }
+        if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
+            NSApp.hide(nil)
+        } else {
+            if UserDefaults.standard.moveToActiveSpaceEnabled {
+                window.moveToActiveSpace(completion: { [weak self] in
+                    self?.focusInputField()
+                })
+            } else {
+                NSApp.activate(ignoringOtherApps: true)
+                focusInputField()
             }
         }
     }
@@ -139,7 +150,7 @@ class AppViewController: NSViewController {
         outputCollectionView.reloadData()
         horizontalDivider.alphaValue = 0
         (outputCollectionView.collectionViewLayout as? VerticalListCollectionViewLayout)?.notifyReloadData()
-        focusInputField();
+        focusInputField()
     }
     
     @IBAction func showMemory(_ sender: Any) {

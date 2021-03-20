@@ -14,33 +14,44 @@ extension NSWindow {
      Moves the window to the active space, allowing it to appear on top of full screen windows.
      Note: This window should not have the .moveToActiveSpace collection behavior at all times because
      this causes window ordering issues when switching spaces.
-     Tested on macOS 10.15 (Catalina) and macOS 11 (Big Sur).
+     
+     Tested on macOS 11 (Big Sur).
      */
     func moveToActiveSpace(allowOverFullscreen: Bool = true, completion: (() -> Void)? = nil) {
-        guard !isOnActiveSpace, NSApp.activationPolicy() == .regular else {
+        let willMoveToFullScreenSpace = allowOverFullscreen && NSWorkspace.shared.isActiveSpaceFullScreen()
+        
+        if NSApp.activationPolicy() != .regular ||
+            isOnActiveSpace ||
+            (!NSApp.isHidden && !isVisible && !willMoveToFullScreenSpace) {
             NSApp.activate(ignoringOtherApps: true)
             completion?()
-            return
-        }
-        
-        guard NSApp.isHidden else {
-            NSApp.hide(nil)
+        } else if !NSApp.isHidden && willMoveToFullScreenSpace {
             DispatchQueue.main.async {
-                self.moveToActiveSpace(completion: completion)
+                self.moveToActiveSpaceImpl(willMoveToFullScreenSpace: willMoveToFullScreenSpace, completion: completion)
             }
-            return
+        } else {
+            orderFront(NSApp)
+            moveToActiveSpaceImpl(willMoveToFullScreenSpace: willMoveToFullScreenSpace, completion: completion)
         }
-        
+    }
+    
+    private func moveToActiveSpaceImpl(willMoveToFullScreenSpace: Bool, completion: (() -> Void)? = nil) {
         let originalWindowCollectionBehavior = collectionBehavior
-        collectionBehavior = [ .moveToActiveSpace ]
-        if allowOverFullscreen && NSWorkspace.shared.isActiveSpaceFullScreen() {
-            // Hack to appear on a full screen space. Tested on Catalina
+        if willMoveToFullScreenSpace {
             NSApp.setActivationPolicy(.accessory)
+            collectionBehavior = [ .moveToActiveSpace ]
             NSApp.unhideWithoutActivation()
             NSApp.hide(nil)
             NSApp.setActivationPolicy(.regular)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                NSApp.activate(ignoringOtherApps: true)
+                DispatchQueue.main.async {
+                    self.collectionBehavior = originalWindowCollectionBehavior
+                    completion?()
+                }
+            }
+        } else {
+            collectionBehavior = [ .moveToActiveSpace ]
             NSApp.activate(ignoringOtherApps: true)
             DispatchQueue.main.async {
                 self.collectionBehavior = originalWindowCollectionBehavior

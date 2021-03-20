@@ -107,6 +107,20 @@ class AppViewController: NSViewController {
             return
         }
         if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
+            
+            /*
+             Fixes bug where tooltips can permanantly display. Steps to reproduce:
+             1. Hover mouse over toolbar button until tooltip appears.
+             2. Press hotkey to hide app.
+             3. Move mouse away.
+             4. Press hotkey to show app.
+             This fix closes the tooltips when hidding.
+             */
+            NSApp.windows.forEach { (window) in
+                if type(of: window).description() == "NSToolTipPanel" {
+                    window.close()
+                }
+            }
             NSApp.hide(nil)
         } else {
             if UserDefaults.standard.moveToActiveSpaceEnabled {

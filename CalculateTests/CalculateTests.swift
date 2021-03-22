@@ -171,7 +171,10 @@ class CalculateTests: XCTestCase {
     
     func testStringBreak() {
         XCTAssertEqual("1 + 2".breakOnSymbols(), "1 + 2")
+        XCTAssertEqual("a=0".breakOnSymbols(), "a=\u{200B}0")
         XCTAssertEqual("a++".breakOnSymbols(), "a++")
+        XCTAssertEqual("a+=1".breakOnSymbols(), "a+=\u{200B}1")
+        XCTAssertEqual("a==2".breakOnSymbols(), "a==\u{200B}2")
         XCTAssertEqual("a++;b++".breakOnSymbols(), "a++;\u{200B}b++")
         XCTAssertEqual("1+2+3".breakOnSymbols(), "1+\u{200B}2+\u{200B}3")
         XCTAssertEqual("1+\u{200B}2+\u{200B}3".removedInvisibleBreaks(), "1+2+3")

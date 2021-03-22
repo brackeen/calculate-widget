@@ -79,8 +79,10 @@ extension UserDefaults {
             return ToolbarVisibility(rawValue: integer(forKey: UserDefaults.toolbarVisibilityKey)) ?? .auto
         }
         set {
-            set(newValue.rawValue, forKey: UserDefaults.toolbarVisibilityKey)
-            NotificationCenter.default.post(name: UserDefaults.toolbarVisibilityDidChangeNotification, object: nil)
+            if newValue != toolbarVisibility {
+                set(newValue.rawValue, forKey: UserDefaults.toolbarVisibilityKey)
+                NotificationCenter.default.post(name: UserDefaults.toolbarVisibilityDidChangeNotification, object: nil)
+            }
         }
     }
     

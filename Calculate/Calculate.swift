@@ -30,7 +30,7 @@ public class Calculate {
         let input: String
         let output: String
         let type: OutputType
-        var newSection: Bool
+        var newSection: Bool = false
     }
     
     public private(set) var outputHistory: [Output] = []
@@ -66,7 +66,7 @@ public class Calculate {
             .call(withArguments: [expression])?.toString()
         context.exceptionHandler = originalExceptionHandler
         
-        let output = Output(input: expression, output: errorResult ?? result ?? "", type: type, newSection: false)
+        let output = Output(input: expression, output: errorResult ?? result ?? "", type: type)
         appendOutputHistory(output)
         return output.output
     }
@@ -151,7 +151,7 @@ public class Calculate {
         
         var memoryOutput: [Output] = allMemory.compactMap {
             if $0.count == 2 {
-                return Output(input: $0[0], output: $0[1], type: .memory, newSection: false)
+                return Output(input: $0[0], output: $0[1], type: .memory)
             } else {
                 return nil
             }
@@ -172,28 +172,28 @@ public class Calculate {
     
     public func showHelp() -> Int {
         let helpOutput: [Output] = [
-            Output(input: "Calculate", output: " is a math expression calculator with persistent memory for variables and functions. Nearly any JavaScript expression can be evaluated.", type: .help, newSection: false),
-            Output(input: "Samples", output: "", type: .help, newSection: false),
-            Output(input: "2+2", output: "4", type: .helpExample, newSection: false),
-            Output(input: "2^8", output: "256", type: .helpExample, newSection: false),
-            Output(input: "(1+sqrt(5))/2", output: "1.618033988749895", type: .helpExample, newSection: false),
-            Output(input: "r=1/2", output: "0.5", type: .helpExample, newSection: false),
-            Output(input: "2*pi*r", output: "3.141592653589793", type: .helpExample, newSection: false),
-            Output(input: "cos(ans)", output: "-1", type: .helpExample, newSection: false),
-            Output(input: "sqr = function(x) { return x*x }", output: "Function defined", type: .helpExample, newSection: false),
-            Output(input: "sqr(3)", output: "9", type: .helpExample, newSection: false),
-            Output(input: "Previous answer", output: "\nans", type: .help, newSection: false),
-            Output(input: "Constants", output: "\npi, e", type: .help, newSection: false),
-            Output(input: "Basic functions", output: "\nsqrt pow abs round floor ceil min max random", type: .help, newSection: false),
-            Output(input: "Log functions", output: "\nexp ln log2 log10", type: .help, newSection: false),
-            Output(input: "Trig functions", output: "\nsin cos tan csc sec cot\nasin acos atan atan2 acsc asec acot", type: .help, newSection: false),
-            Output(input: "Hyperbolic functions", output: "\nsinh cosh tanh csch sech coth\nasinh acosh atanh acsch asech acoth", type: .help, newSection: false),
+            Output(input: "Calculate", output: " is a math expression calculator with persistent memory for variables and functions. Nearly any JavaScript expression can be evaluated.", type: .help),
+            Output(input: "Samples", output: "", type: .help),
+            Output(input: "2+2", output: "4", type: .helpExample),
+            Output(input: "2^8", output: "256", type: .helpExample),
+            Output(input: "(1+sqrt(5))/2", output: "1.618033988749895", type: .helpExample),
+            Output(input: "r=1/2", output: "0.5", type: .helpExample),
+            Output(input: "2*pi*r", output: "3.141592653589793", type: .helpExample),
+            Output(input: "cos(ans)", output: "-1", type: .helpExample),
+            Output(input: "sqr = function(x) { return x*x }", output: "Function defined", type: .helpExample),
+            Output(input: "sqr(3)", output: "9", type: .helpExample),
+            Output(input: "Previous answer", output: "\nans", type: .help),
+            Output(input: "Constants", output: "\npi, e", type: .help),
+            Output(input: "Basic functions", output: "\nsqrt pow abs round floor ceil min max random", type: .help),
+            Output(input: "Log functions", output: "\nexp ln log2 log10", type: .help),
+            Output(input: "Trig functions", output: "\nsin cos tan csc sec cot\nasin acos atan atan2 acsc asec acot", type: .help),
+            Output(input: "Hyperbolic functions", output: "\nsinh cosh tanh csch sech coth\nasinh acosh atanh acsch asech acoth", type: .help),
             Output(input: "More info", output:
                 "\n \u{2022}\tTyping an operator (+, -, *, /) on an empty line automatically inserts \"ans\" before it. So typing \"+1\" expands to \"ans+1\"." +
                 "\n \u{2022}\tPress the Up and Down arrow keys to browse input history." +
                 "\n \u{2022}\tUse the Tab key to automplete. Type the first few letters of a variable name or function name then press Tab." +
                 "\n \u{2022}\tTo delete a variable or function by name, enter \"delete name\".",
-                   type: .help, newSection: false),
+                   type: .help),
         ]
         
         appendOutputHistoryList(helpOutput)
@@ -252,18 +252,18 @@ public class Calculate {
     
     private func evalulateScript(_ name: String) {
         guard let url = Bundle.main.url(forResource: name, withExtension: "js") else {
-            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't find script", type: .error, newSection: false))
+            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't find script", type: .error))
             return
         }
         
         guard let source = try? String(contentsOf: url) else {
-            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't load script",  type: .error, newSection: false))
+            appendOutputHistory(Output(input: "\(name).js", output: "Couldn't load script",  type: .error))
             return
         }
 
         let originalExceptionHandler = context.exceptionHandler
         context.exceptionHandler = { context, exception in
-            self.appendOutputHistory(Output(input: "\(name).js", output: exception?.toString() ?? "Couldn't load script",  type: .error, newSection: false))
+            self.appendOutputHistory(Output(input: "\(name).js", output: exception?.toString() ?? "Couldn't load script",  type: .error))
         }
         context.evaluateScript(source, withSourceURL: url)
         context.exceptionHandler = originalExceptionHandler
@@ -313,7 +313,7 @@ public class Calculate {
                     let value = tuple[1]
                     let originalExceptionHandler = context.exceptionHandler
                     context.exceptionHandler = { context, exception in
-                        self.appendOutputHistory(Output(input: name, output: exception?.toString() ?? "Couldn't load variable", type: .error, newSection: false))
+                        self.appendOutputHistory(Output(input: name, output: exception?.toString() ?? "Couldn't load variable", type: .error))
                     }
                     context.objectForKeyedSubscript("Calculate")?
                         .objectForKeyedSubscript("applyMemoryVar")?

@@ -12,19 +12,23 @@ extension String {
     
     // For prettier word wrapping.
     // Insert zero-width space ("\u200B") after break chars.
-    // For example, "3.141592653589793+1.0000000000000000" on a small-width window should break on the "+"
+    // For example, "3.141592653589793+1.0000000000000000" on a small-width window should break after the "+".
+    // Also, make a special case for object members. For example, "array.length" should break before the period.
     public func breakOnSymbols() -> String {
         let symbols = CharacterSet(charactersIn: "+-*/%&|^,;!<>=")
         var prevCharIsWhitespaceOrSymbol = true
+        var prevCharIsPeriod = false
         return unicodeScalars.reversed().map ( { ch in
             let isWhitespace = CharacterSet.whitespacesAndNewlines.contains(ch)
             let isSymbol = symbols.contains(ch)
             let result: String
-            if isSymbol && !prevCharIsWhitespaceOrSymbol {
+            if (isSymbol && !prevCharIsWhitespaceOrSymbol) ||
+                (prevCharIsPeriod && CharacterSet.letters.contains(ch)){
                 result = String(ch) + "\u{200B}"
             } else {
                 result = String(ch)
             }
+            prevCharIsPeriod = ch == "."
             prevCharIsWhitespaceOrSymbol = isWhitespace || isSymbol
             return result
         }).reversed().joined()

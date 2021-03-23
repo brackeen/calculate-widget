@@ -54,7 +54,11 @@ class MemoryCollectionViewItem: NSCollectionViewItem, OutputItem {
                 .paragraphStyle: paragraphStyle,
                 .font: font,
                 .foregroundColor: textColor])
-            attributedString.addAttribute(.font, value: boldFont, range: keyRange)
+            if output.type == .memory {
+                attributedString.addAttribute(.foregroundColor, value: NSColor.labelColor, range: keyRange)
+            } else {
+                attributedString.addAttribute(.font, value: boldFont, range: keyRange)
+            }
             
             textField?.attributedStringValue = attributedString
             textField?.allowsEditingTextAttributes = true

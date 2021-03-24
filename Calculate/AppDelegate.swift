@@ -60,7 +60,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func checkForUpdates(_ sender: Any) {
-        if let url = URL(string: "https://github.com/brackeen/calculate-widget/releases") {
+        if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+           let encodedAppVersion = appVersion.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: "http://www.brackeen.com/calculate/?version=" + encodedAppVersion) {
             NSWorkspace.shared.open(url)
         }
     }

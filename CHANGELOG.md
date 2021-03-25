@@ -4,9 +4,13 @@
 - New toolbar.
 - New input field appearance.
 - New icon for Big Sur.
+- Add ability to automatically execute existing no-argument functions.
+- Add Appearance preference (Light/Dark).
 - Updated error when attempting to set a constant ("e=5").
 - Updated keyboard shortcut library. (You will have to reset your hotkey in Calculate's Preferences).
+- If hotkey is set, keep app alive after closing the window.
 - Fixed bug where invisible break chars were included when copying to the clipboard.
+- Fixed several other minor UI issues.
 
 ### 2.0 alpha 2 (May 24, 2020)
 - Add monospace font option.

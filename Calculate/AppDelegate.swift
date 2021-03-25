@@ -39,7 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         Calculate.shared.save()
-        return false
+        // Terminate if hotkey not set
+        return KeyboardShortcuts.getShortcut(for: .hotkey) == nil
     }
 
     func applicationDidResignActive(_ notification: Notification) {

@@ -243,7 +243,7 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
         } else if (target.hasOwnProperty(key)) {
             return Calculate.simpleProxy(Reflect.get(...arguments));
         } else {
-            throw new ReferenceError("Can't find variable: " + key);
+            throw new ReferenceError("Undefined variable \"" + key + "\"");
         }
     },
                                    

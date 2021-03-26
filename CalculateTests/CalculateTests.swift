@@ -30,11 +30,12 @@ class CalculateTests: XCTestCase {
     
     func testThis() {
         // globalThis is the sandbox
-        XCTAssert(testExpression("this !== globalThis"))
+        XCTAssert(testExpression("this === globalThis"))
         calc("globalThis.x=256")
         calc("42")
-        XCTAssert(testExpression("globalThis.ans == 42"))
+        XCTAssert(testExpression("this.ans == 42"))
         XCTAssert(testExpression("x == 256"))
+        XCTAssert(testExpression("this.x == 256"))
     }
     
     func testAns() {
@@ -63,6 +64,7 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("testvar=2;testvar^=8;testvar == 256"))
         XCTAssert(testExpression("testvar=2;testvar**=8;testvar == 256"))
         XCTAssert(testExpression("testvar={x: 1, y: 2};testvar.y == 2"))
+        XCTAssert(testExpression("typeof testvar.y === 'number'"))
         XCTAssert(testExpression("delete testvar"))
         XCTAssert(testExpression("typeof testvar === 'undefined'"))
     }
@@ -88,6 +90,7 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("Calculate = 2; 1 + 1 == Calculate"))
         XCTAssert(testExpression("org = { antlr: 2 }; 1 + 1 == org.antlr"))
         XCTAssert(testExpression("delete Calculate; delete org; 1 + 1 == 2"))
+        XCTAssert(testExpression("typeof Calculate === 'undefined'"))
         XCTAssert(testExpression("try { cos = 0 } catch (err) { }; Math.cos(pi) == -1"))
     }
     
@@ -113,7 +116,6 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("obj3 = obj1; obj1 == obj3"))
         calc("obj1.inner = obj2;")
         XCTAssert(testExpression("obj1.inner == obj2"))
-        
         
         calc("delete obj1; delete obj2; delete obj3")
     }

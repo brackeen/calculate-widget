@@ -11,22 +11,25 @@ String.prototype.matches = function(regex) {
     return this.match(regex) != null
 }
 
-function __typeof__(v) {
+function __typeof__(__input__) {
     // This works for unknown variables
     //   typeof unknown == "undefined"
     // However, it should throw a ReferenceError for expressions, but instead returns "undefined"
     //   typeof (unknown + 1) // should throw ReferenceError
-    with (Calculate.sandbox) {
-        try {
-            return typeof eval(v);
-        } catch (err) {
-            if (err instanceof ReferenceError) {
-                return "undefined";
-            } else {
-                throw err;
+    Calculate.evalAllowed = true;
+    return (function (__input__) {
+        with (Calculate.sandboxProxy) {
+            try {
+                return typeof eval(__input__);
+            } catch (err) {
+                if (err instanceof ReferenceError) {
+                    return "undefined";
+                } else {
+                    throw err;
+                }
             }
         }
-    }
+    }).bind(Calculate.sandbox)(__input__);
 };
 
 Calculate.isNativeFunction = function(value) {
@@ -274,15 +277,14 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
 });
 
 Calculate.evaluate = function(__input__) {
-    // Wrap so "this" is a temporary object, not Calculate.
     // Use "eval" instead of "Function" to get the last statement on the line ("5;6;")
     Calculate.sandboxNewFunctions = { };
     Calculate.evalAllowed = true;
-    with (Calculate.sandboxProxy) {
-        return Object.freeze({
-            eval: function(__input__) { return eval(__input__); }
-        }).eval(__input__);
-    }
+    return (function (__input__) {
+        with (Calculate.sandboxProxy) {
+            return eval(__input__);
+        }
+    }).bind(Calculate.sandbox)(__input__);
 };
 
 Calculate.log = function(message) {

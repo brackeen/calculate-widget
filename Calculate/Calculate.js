@@ -48,6 +48,35 @@ Calculate.getFunctionName = function(f) {
     return undefined;
 };
 
+Calculate.getFunctionArgumentNames = function(f) {
+    // From https://stackoverflow.com/a/9924463/15214672
+    const STRIP_COMMENTS = /(\/\/.*$)|(\/\*[\s\S]*?\*\/)|(\s*=[^,\)]*(('(?:\\'|[^'\r\n])*')|("(?:\\"|[^"\r\n])*"))|(\s*=[^,\)]*))/mg;
+    const ARGUMENT_NAMES = /([^\s,]+)/g;
+    let fnStr = f.toString().replace(STRIP_COMMENTS, '');
+    let result = fnStr.slice(fnStr.indexOf('(') + 1, fnStr.indexOf(')')).match(ARGUMENT_NAMES);
+    if (result === null) {
+        result = [];
+    }
+    return result;
+};
+
+Calculate.getFunctionSignature = function(f) {
+    let argNames = Calculate.getFunctionArgumentNames(f);
+    if (argNames.length != f.length) {
+        const defaultArgumentNames = ["x", "y", "z"];
+        if (f.length <= defaultArgumentNames.length) {
+            argNames = defaultArgumentNames.slice(0, f.length);
+        } else {
+            argNames = Array(f.length);
+            for (let i = 0; i < f.length; i++) {
+                argNames[i] = "v" + i;
+            }
+        }
+    }
+    //return "function " + f.name + "(" + argNames + ")";
+    return "function (" + argNames + ")";
+};
+
 Calculate.valueToString = function(value, ancestors) {
     ancestors = ancestors !== undefined ? ancestors : [];
     if (value === undefined) {
@@ -60,13 +89,23 @@ Calculate.valueToString = function(value, ancestors) {
         return value.toString();
     } else if (typeof value === "number") {
         return Calculate.fixPrecision(value).toString();
-    } else if (value instanceof Array) {
-        return Calculate.arrayToString(value, ancestors);
     } else if (typeof value === "string") {
         return '"' + value + '"';
     } else if (typeof value === "function") {
         const name = Calculate.getFunctionName(value)
         return (name !== undefined) ? name : value.toString();
+    } else if (value instanceof Int8Array ||
+               value instanceof Uint8Array ||
+               value instanceof Uint8ClampedArray ||
+               value instanceof Int16Array ||
+               value instanceof Uint16Array ||
+               value instanceof Int32Array ||
+               value instanceof Uint32Array ||
+               value instanceof Float32Array ||
+               value instanceof Float64Array) {
+        return "[" + value.toString() + "]";
+    } else if (value instanceof Array) {
+        return Calculate.arrayToString(value, ancestors);
     } else if (typeof value === "object") {
         return Calculate.objectToString(value, ancestors);
     } else {
@@ -83,7 +122,7 @@ Calculate.arrayToString = function(arr, ancestors) {
             continue;
         }
         if (str.length > 0) {
-            str += ", ";
+            str += ",";
         }
         str += Calculate.valueToString(arr[i], nextAncestors);
     }
@@ -108,7 +147,13 @@ Calculate.objectToString = function(obj, ancestors) {
         str += '"' + i + '": ' + value;
     }
     if (str.length == 0) {
-        return "{ }";
+        str = obj.toString();
+        if (str != "[object Object]") {
+            // Probably a native object, like Date
+            return "\"" + str + "\"";
+        } else {
+            return "{ }";
+        }
     } else {
         return "{ " + str + " }";
     }
@@ -167,59 +212,7 @@ Calculate.sandbox = { "ans": 0 };
 
 Calculate.sandboxNewFunctions = { };
 
-Calculate.sandboxProxyObjects = new WeakMap();
-
-Calculate.simpleProxy = function(__obj__) {
-    if (typeof __obj__ !== "object" || __obj__.__isProxy) {
-        return __obj__;
-    }
-    if (!Calculate.sandboxProxyObjects.has(__obj__)) {
-        Calculate.sandboxProxyObjects.set(__obj__, new Proxy(__obj__, {
-            has: function(target, key) {
-                return key !== "__obj__" && key !== "__typeof__";
-            },
-            
-            get: function(target, key) {
-                if (typeof key !== "string") {
-                    return undefined;
-                } else if (key === "__isProxy") {
-                    return true;
-                } else {
-                    let result = Reflect.get(...arguments);
-                    if (result === eval) {
-                        let proxy = new Proxy(eval, {
-                            apply: function(target, thisArg, argumentsList) {
-                                throw new ReferenceError("Can't eval");
-                            }
-                        });
-                        proxy.toString = function() { return "eval"; };
-                        return proxy;
-                    }
-                    return Calculate.simpleProxy(result);
-                }
-            },
-            
-            set: function(target, key, value) {
-                if (value === eval) {
-                    throw new ReferenceError("Can't eval");
-                }
-                if (typeof key === "string" && typeof value === "function") {
-                    Calculate.sandboxNewFunctions[key] = value;
-                }
-                return Reflect.set(...arguments);
-            },
-            
-            deleteProperty: function(target, key) {
-                if (target.hasOwnProperty(key)) {
-                    return delete target[key];
-                } else {
-                    return false;
-                }
-            }
-        }));
-    }
-    return Calculate.sandboxProxyObjects.get(__obj__);
-};
+Calculate.evalAllowed = false;
 
 /* Use a proxy prevents access to:
  - Globals (Calculate, org.antlr.*, etc)
@@ -235,13 +228,21 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
         } else if (key === "__isProxy") {
             return true;
         } else if (key === "globalThis") {
-            return Calculate.simpleProxy(Calculate.sandbox);
+            return Calculate.sandbox;
         } else if (Calculate.Math.hasOwnProperty(key)) {
             return Calculate.Math[key];
         } else if (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key)) {
-            return Calculate.simpleProxy(globalThis[key]);
+            let result = globalThis[key];
+            if (result === eval) {
+                if (!Calculate.evalAllowed) {
+                    throw new ReferenceError("Can't eval");
+                }
+                Calculate.evalAllowed = false;
+                return eval;
+            }
+            return result;
         } else if (target.hasOwnProperty(key)) {
-            return Calculate.simpleProxy(Reflect.get(...arguments));
+            return Reflect.get(...arguments);
         } else {
             throw new ReferenceError("Undefined variable \"" + key + "\"");
         }
@@ -276,30 +277,10 @@ Calculate.evaluate = function(__input__) {
     // Wrap so "this" is a temporary object, not Calculate.
     // Use "eval" instead of "Function" to get the last statement on the line ("5;6;")
     Calculate.sandboxNewFunctions = { };
+    Calculate.evalAllowed = true;
     with (Calculate.sandboxProxy) {
         return Object.freeze({
             eval: function(__input__) { return eval(__input__); }
-        }).eval(__input__);
-    }
-};
-
-// Same as Calculate.evaluate, but evalulates a no-argument function
-Calculate.evaluateSimpleFunction = function(__input__) {
-    if (typeof __input__ !== "function") {
-        throw TypeError("Expected function");
-    }
-    if (__input__.length > 0) {
-        const name = (typeof __input__.name === "string") && __input__.name.length > 0 ? __input__.name : "Function";
-        if (__input__.length === 1) {
-            throw new Error(name + " requires an argument")
-        } else {
-            throw new Error(name + " requires " + __input__.length + " arguments")
-        }
-    }
-    Calculate.sandboxNewFunctions = { };
-    with (Calculate.sandboxProxy) {
-        return Object.freeze({
-            eval: function(__input__) { return __input__(); }
         }).eval(__input__);
     }
 };
@@ -336,7 +317,7 @@ Calculate.getMemoryVars = function() {
                 // Skip native functions that are not recognized
                 continue;
             }
-            memory.push([name, Calculate.valueToString(Calculate.simpleProxy(value))])
+            memory.push([name, Calculate.valueToString(value)])
         }
     }
     return memory;
@@ -400,26 +381,18 @@ Calculate.calc = function(expression) {
         //Calculate.log("Converted to: " + expression);
     }
     
-    var answer = Calculate.evaluate(expression);
-
-    const maxFunctionCalls = 256;
-    var numFunctionCalls = 0;
-    while (typeof answer === "function") {
-        // If it's a newly defined function, print "Function defined"
+    const answer = Calculate.evaluate(expression);
+    if (typeof answer === "function") {
         for (const newFunctionName in Calculate.sandboxNewFunctions) {
             if (answer === Calculate.sandboxNewFunctions[newFunctionName]) {
                 return "Function defined";
             }
         }
-        if (numFunctionCalls >= maxFunctionCalls) {
-            throw new RangeError("Maximum function calls exceeded");
-        }
-        // Automatically execute the function if it requires no arguments
-        answer = Calculate.evaluateSimpleFunction(answer);
-        numFunctionCalls++;
+        return Calculate.getFunctionSignature(answer);
+    } else {
+        Calculate.sandbox["ans"] = answer;
+        return Calculate.valueToString(answer);
     }
-    Calculate.sandbox["ans"] = answer;
-    return Calculate.valueToString(answer);
 };
 
 Calculate.angleScale = 1;

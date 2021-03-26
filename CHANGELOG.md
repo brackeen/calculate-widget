@@ -4,7 +4,6 @@
 - New toolbar.
 - New input field appearance.
 - New icon for Big Sur.
-- Add ability to automatically execute existing no-argument functions.
 - Add Appearance preference (Light/Dark).
 - Updated error when attempting to set a constant ("e=5").
 - Updated keyboard shortcut library. (You will have to reset your hotkey in Calculate's Preferences).

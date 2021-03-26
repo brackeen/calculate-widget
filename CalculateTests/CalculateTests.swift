@@ -93,22 +93,18 @@ class CalculateTests: XCTestCase {
     
     func testEval() {
         calc("eval(\"x=42\")")
-        XCTAssert(testExpression("x==42"))
-        XCTAssert(testExpression("delete x"))
+        XCTAssert(testExpression("typeof x === 'undefined'"))
         
         // eval2 should not be created
         calc("eval2 = eval")
-        XCTAssert(testExpression("(delete eval2) == false"))
+        XCTAssert(testExpression("typeof eval2 === 'undefined'"))
         calc("obj = { inner: { } }; obj.inner.eval2 = eval")
-        XCTAssert(testExpression("(delete obj.inner.eval2) == false"))
-        XCTAssert(testExpression("(delete obj.inner) == true"))
-        XCTAssert(testExpression("(delete obj) == true"))
+        XCTAssert(testExpression("typeof obj.inner.eval2 === 'undefined'"))
+        XCTAssert(testExpression("delete obj"))
         
         // eval as inner object
         calc("obj = { eval2: eval }")
-        XCTAssert((calc("obj.eval2(\"x=42\")") ?? "").starts(with: "ReferenceError"))
-        XCTAssert(testExpression("(delete x) == false"))
-        XCTAssert(testExpression("(delete obj) == true"))
+        XCTAssert(testExpression("typeof obj === 'undefined'"))
     }
     
     func testObjectEquality() {
@@ -122,31 +118,33 @@ class CalculateTests: XCTestCase {
         calc("delete obj1; delete obj2; delete obj3")
     }
     
+    func testTypedArrays() {
+        calc("typedArray = Uint8Array.from([1, 2, 3, 4])");
+        XCTAssert(testExpression("typedArray.length == 4"))
+        XCTAssert(testExpression("typedArray[0] = 42;typedArray[0] == 42"))
+        calc("delete typedAray");
+    }
+    
+    func testDate() {
+        XCTAssert(calc("date = new Date(2021,0);date")?.hasPrefix("\"Fri Jan 01 2021 00:00:00") ?? false)
+        calc("delete date");
+    }
+    
     func testSelfReferences() {
         XCTAssert(!(calc("arr = [1, 2, 3]; arr.push(arr); arr") ?? "Error").contains("Error"))
         XCTAssert(!(calc("obj = { depth1: { } }; obj.depth1.depth2 = obj; obj") ?? "Error").contains("Error"))
         calc("delete arr; delete obj")
     }
     
-    func testAutomaticFunctions() {
-        calc("cool = function () { return \"cool\"; }")
-        calc("cool2 = function () { return cool; }")
-        XCTAssertEqual(calc("cool2"), "\"cool\"")
-        calc("delete cool; delete cool2")
-        XCTAssert((calc("cos") ?? "").starts(with: "Error: "))
-        
-        // Prevent infinite loop
-        calc("oranges = function() { return oranges; }")
-        XCTAssert((calc("oranges") ?? "").starts(with: "RangeError: "))
-        calc("delete oranges")
-        
-        // Don't automatically execute newly defined object functions
-        XCTAssertEqual((calc("obj = { }; obj.f = function() { return 'yes'; }") ?? ""), "Function defined")
-        calc("delete obj")
+    func testFunctionNames() {
+        XCTAssertEqual(calc("cool = function () { return 42; }"), "Function defined");
+        XCTAssertEqual(calc("cool"), "function ()");
+        XCTAssertEqual(calc("log"), "function (x)");
+        XCTAssertEqual(calc("atan2"), "function (y,x)");
     }
     
     func testAliases() {
-        XCTAssert(testExpression("cos2 = cos;cos(pi) == -1"))
+        XCTAssert(testExpression("cos2 = cos;cos2(pi) == -1"))
         calc("delete cos2")
     }
 

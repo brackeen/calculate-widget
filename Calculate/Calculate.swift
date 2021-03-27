@@ -306,22 +306,28 @@ public class Calculate {
     }
     
     private func loadMemory() {
-        if let memory = UserDefaults.standard.array(forKey: memoryKey) as? [[String]] {
-            for tuple in memory {
-                if tuple.count == 2 {
-                    let name = tuple[0]
-                    let value = tuple[1]
-                    let originalExceptionHandler = context.exceptionHandler
-                    context.exceptionHandler = { context, exception in
-                        self.appendOutputHistory(Output(input: name, output: exception?.toString() ?? "Couldn't load variable", type: .error))
-                    }
-                    context.objectForKeyedSubscript("Calculate")?
-                        .objectForKeyedSubscript("applyMemoryVar")?
-                        .call(withArguments: [name, value])
-                    context.exceptionHandler = originalExceptionHandler
+        guard let memory = UserDefaults.standard.array(forKey: memoryKey) as? [[String]] else {
+            return
+        }
+        let originalExceptionHandler = context.exceptionHandler
+        for tuple in memory where tuple.count >= 2 {
+            let name = tuple[0]
+            let value = tuple[1]
+            
+            context.exceptionHandler = { context, exception in
+                var message = "Couldn't load \"\(name)\" from memory"
+                if let errorString = exception?.toString() {
+                    message += " (" + errorString + ")"
                 }
+                self.appendOutputHistory(Output(input: name + " = " + value, output: message, type: .error))
+            }
+            if let jsFunction = context.objectForKeyedSubscript("Calculate")?.objectForKeyedSubscript("applyMemoryVar") {
+                jsFunction.call(withArguments: [name, value])
+            } else {
+                context.exceptionHandler(nil, nil);
             }
         }
+        context.exceptionHandler = originalExceptionHandler
     }
     
     private func saveMemory() {

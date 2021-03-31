@@ -3,13 +3,13 @@ if (typeof Calculate === "undefined" || !Calculate) {
 }
 
 org.antlr.runtime.BaseRecognizer.prototype.emitErrorMessage = function(message) {
-    Calculate.log(message)
-}
+    Calculate.log(message);
+};
 
 // For ECMAScript3ExtParser
 String.prototype.matches = function(regex) {
-    return this.match(regex) != null
-}
+    return this.match(regex) != null;
+};
 
 function __typeof__(__input__) {
     // This works for unknown variables
@@ -34,7 +34,7 @@ function __typeof__(__input__) {
 
 Calculate.isNativeFunction = function(value) {
     // From https://stackoverflow.com/a/6599105
-    return typeof value === "function" && /\{\s+\[native code\]/.test(Function.prototype.toString.call(value))
+    return typeof value === "function" && (/\{\s+\[native\ code\]/).test(Function.prototype.toString.call(value))
 };
 
 Calculate.getFunctionName = function(f) {
@@ -251,7 +251,7 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
             throw new ReferenceError("Undefined variable \"" + key + "\"");
         }
     },
-                                   
+
    set: function(target, key, value) {
        if (Calculate.Math.hasOwnProperty(key)) {
            throw new TypeError("\"" + key + "\" is a constant");
@@ -294,18 +294,18 @@ Calculate.log = function(message) {
 
 Calculate.getUserVars = function() {
     var userVars = [];
-    
+
     for (const i in Calculate.sandbox) {
         if (Calculate.sandbox.hasOwnProperty(i)) {
             userVars.push(i);
         }
     }
-    
+
     return userVars;
 };
 
 Calculate.getUserVar = function(name) {
-    return Calculate.sandbox[name] 
+    return Calculate.sandbox[name];
 }
 
 // Returns an array of tuples, like: [[name, value], [name, value]]
@@ -335,7 +335,7 @@ Calculate.getConstants = function() {
 
 Calculate.clearUserVars = function() {
     Calculate.sandbox["ans"] = 0;
-    
+
     const userVars = Calculate.getUserVars();
     for (const i in userVars) {
         if (userVars.hasOwnProperty(i)) {
@@ -376,14 +376,14 @@ Calculate.calc = function(expression) {
     const parser = new ECMAScript3ExtParser(tokens);
     const t = parser.program().getTree();
     const n = lexer.getNumberOfSyntaxErrors() + parser.getNumberOfSyntaxErrors();
-    
+
     if (t != null && n == 0) {
         const emitter = new ECMAScript3ExtEmitter();
         emitter.includeWhitespace = false;
         expression = emitter.emit(t);
         //Calculate.log("Converted to: " + expression);
     }
-    
+
     const answer = Calculate.evaluate(expression);
     if (typeof answer === "function") {
         for (const newFunctionName in Calculate.sandboxNewFunctions) {
@@ -408,19 +408,19 @@ Calculate.setAngleMode = function(v) {
     Math functions.
 */
 Calculate.Math = Object.freeze({
-    "Infinity": Infinity,
-    "NaN": NaN,
+    "Infinity":  Infinity,
+    "NaN":       NaN,
     "undefined": undefined,
 
     // Constants
-    \u03c0:   Math.PI,
+    "\u03c0": Math.PI,
     pi:       Math.PI,
     e:        Math.E,
 
     // Constants in case user likes the JavaScript Math class.
     PI:       Math.PI,
     E:        Math.E,
-    
+
     // Global aliases
     isFinite: isFinite,
     isNaN:    isNaN,
@@ -478,7 +478,7 @@ Calculate.Math = Object.freeze({
     acoth:    function(x) { return 0.5 * Math.log((x + 1) / (x - 1)) / Calculate.angleScale; },
     asech:    function(x) { return Math.log(1 / x + Math.sqrt(1 / (x * x) + 1)) / Calculate.angleScale; },
     acsch:    function(x) { return Math.log(1 / x + Math.sqrt(1 / (x * x) - 1)) / Calculate.angleScale; },
-    
+
     factorial: function(n) {
         // Factorial based on code from http://www.univie.ac.at/future.media/moe/JavaCalc/jcintro.html
 

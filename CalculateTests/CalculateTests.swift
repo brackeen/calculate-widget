@@ -91,6 +91,7 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("org = { antlr: 2 }; 1 + 1 == org.antlr"))
         XCTAssert(testExpression("delete Calculate; delete org; 1 + 1 == 2"))
         XCTAssert(testExpression("typeof Calculate === 'undefined'"))
+        XCTAssert(testExpression("typeof console === 'undefined'"))
         XCTAssert(testExpression("try { cos = 0 } catch (err) { }; Math.cos(pi) == -1"))
     }
     

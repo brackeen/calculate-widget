@@ -202,7 +202,8 @@ Calculate.fixPrecision = function(n) {
 
 Calculate.knownMembers = (function() {
     // List of known properties at startup (like Calculate, org.antlr.*)
-    var knownMembers = [];
+    // Also include the global "console"
+    var knownMembers = [ "console" ];
     for (const i in globalThis) {
         if (globalThis.hasOwnProperty(i)) {
             knownMembers.push(i);

@@ -45,10 +45,10 @@ class CalculateTests: XCTestCase {
     
     func testConstants() {
         XCTAssert(testExpression("(delete pi) == false"))
-        XCTAssert(testExpression("try { pi = 42 } catch (err) { }; pi == π"))
-        XCTAssert(testExpression("testvar = Infinity; Infinity = 42; testvar == Infinity"))
-        XCTAssert(testExpression("testvar = undefined; undefined = 42; testvar == undefined"))
-        XCTAssert(testExpression("testvar = NaN; NaN = 42; isNaN(testvar)"))
+        XCTAssert(testExpression("try { pi = 42; } catch (err) { }; pi == π"))
+        XCTAssert(testExpression("testvar = Infinity; try { Infinity = 42; } catch (err) { }; testvar == Infinity"))
+        XCTAssert(testExpression("testvar = undefined; try { undefined = 42; } catch (err) { }; testvar == undefined"))
+        XCTAssert(testExpression("testvar = NaN; try { NaN = 42; } catch (err) { }; isNaN(testvar)"))
         XCTAssert(testExpression("delete testvar"))
     }
     

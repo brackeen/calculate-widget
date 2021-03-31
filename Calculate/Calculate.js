@@ -407,6 +407,10 @@ Calculate.setAngleMode = function(v) {
     Math functions.
 */
 Calculate.Math = Object.freeze({
+    "Infinity": Infinity,
+    "NaN": NaN,
+    "undefined": undefined,
+
     // Constants
     \u03c0:   Math.PI,
     pi:       Math.PI,

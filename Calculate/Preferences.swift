@@ -103,7 +103,7 @@ extension UserDefaults {
         register(defaults: [
             UserDefaults.hotkeyMoveToActiveSpaceDefaultsKey: true,
             UserDefaults.insertAnsDefaultsKey: true,
-            UserDefaults.monospaceFontKey: false,
+            UserDefaults.monospaceFontKey: true,
             UserDefaults.appearanceKey: Appearance.system.rawValue,
             UserDefaults.toolbarVisibilityKey: ToolbarVisibility.auto.rawValue,
         ])

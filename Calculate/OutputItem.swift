@@ -8,7 +8,7 @@
 
 import Cocoa
 
-protocol OutputItem: class {
+protocol OutputItem: AnyObject {
     
     var widthConstraint: NSLayoutConstraint? { get set }
     var view: NSView { get }

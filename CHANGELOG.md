@@ -1,9 +1,10 @@
 # Change Log
 
-### Unreleased
+### 2.0 alpha 3 (May 5, 2021)
 - New toolbar.
 - New input field appearance.
 - New icon for Big Sur.
+- Support for Apple Silicon.
 - Add Appearance preference (Light/Dark).
 - Updated error when attempting to set a constant ("e=5").
 - Updated keyboard shortcut library. (You will have to reset your hotkey in Calculate's Preferences).

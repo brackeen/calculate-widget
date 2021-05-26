@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1800"
+   height="1800"
+   viewBox="0 0 1800 1800"
+   version="1.1"
+   id="svg13211"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   sodipodi:docname="AppIcon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview13213"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:zoom="0.5"
+     inkscape:cx="888"
+     inkscape:cy="63"
+     inkscape:window-width="1917"
+     inkscape:window-height="1387"
+     inkscape:window-x="370"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g10065"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:bbox-nodes="true" />
+  <defs
+     id="defs13208">
+    <rect
+       x="1092"
+       y="-874"
+       width="654"
+       height="462"
+       id="rect3710" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1115">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop1111" />
+      <stop
+         style="stop-color:#e8f5f5;stop-opacity:1"
+         offset="1"
+         id="stop1113" />
+    </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter2080"
+       x="-0.014548981"
+       y="-0.014563106"
+       width="1.028128"
+       height="1.0412621">
+      <feFlood
+         flood-opacity="0.301961"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood2070" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2072" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="5"
+         result="blur"
+         id="feGaussianBlur2074" />
+      <feOffset
+         dx="0"
+         dy="10"
+         result="offset"
+         id="feOffset2076" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2078" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath869">
+      <path
+         style="display:inline;fill:none;fill-opacity:1;stroke:none;stroke-width:0.999515px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 823.20076,-767.37293 c 0,-9.78197 0,-19.56493 -0.056,-29.3479 -0.0489,-8.24097 -0.14386,-16.47994 -0.36764,-24.71691 -0.48352,-17.95293 -1.5415,-36.05987 -4.73137,-53.8128 -3.23484,-18.00894 -8.51767,-34.76987 -16.84253,-51.13282 -8.18399,-16.08294 -18.87453,-30.79988 -31.63005,-43.55884 -12.75253,-12.75895 -27.45914,-23.45291 -43.53241,-31.6399 -16.36399,-8.335 -33.12659,-13.6209 -51.13797,-16.8579 -17.73765,-3.188 -35.83194,-4.245 -53.7674,-4.73 -8.23494,-0.223 -16.46989,-0.317 -24.70683,-0.368 -9.77844,-0.06 -19.55686,-0.055 -29.3353,-0.055 L 453.55628,-1024 h -84.91692 l -111.5279,0.407 c -9.79741,0 -19.59482,0 -29.39224,0.055 -8.25393,0.051 -16.50386,0.145 -24.75478,0.368 -17.97741,0.485 -36.11267,1.543 -53.89227,4.735 -18.03536,3.236 -34.82294,8.5199 -51.208903,16.8489 -16.107252,8.18799 -30.845832,18.88295 -43.625325,31.6439 -12.777504,12.75796 -23.488025,27.4719 -31.687005,43.55184 -8.347835,16.37095 -13.640656,33.14188 -16.8834775,51.16082 -3.1928801,17.74593 -4.2508429,35.84687 -4.73737052,53.7918 -0.22178467,8.23797 -0.31768157,16.47694 -0.36763307,24.71691 -0.0599418,9.78397 -0.5624539119399,21.93692 -0.5624539119399,31.71989 v 110.0896 85.90968 L 0.50750926,-456.57307 c 0,9.79597 -0.003996,19.59193 0.0549466,29.3879 0.0499515,8.25197 0.1458484,16.50194 0.3686321,24.75091 0.48552854,17.97593 1.54548944,36.10887 4.74136664,53.8858 3.2418225,18.03293 8.5336544,34.81787 16.8744864,51.20181 8.199979,16.10595 18.912498,30.84189 31.691001,43.61885 12.778494,12.77695 27.513078,23.48491 43.617322,31.68388 16.395966,8.34597 33.191536,13.63895 51.237876,16.87994 17.77161,3.19299 35.90088,4.25198 53.8713,4.73698 8.25092,0.223 16.50185,0.318 24.75578,0.368 9.79742,0.059 19.59383,0.059 29.39124,0.059 h 112.53591 85.12772 112.31812 c 9.77844,0 19.55686,0 29.3353,-0.059 8.23694,-0.05 16.47189,-0.145 24.70683,-0.368 17.94244,-0.486 36.04274,-1.54599 53.78838,-4.74098 18.00039,-3.24099 34.75499,-8.53197 51.11,-16.87294 16.07627,-8.19797 30.78588,-18.90793 43.5394,-31.68688 12.75352,-12.77496 23.44306,-27.5089 31.62706,-43.61185 8.32985,-16.39194 13.61268,-33.18488 16.84952,-51.22981 3.18687,-17.76993 4.24385,-35.89587 4.72837,-53.8648 0.22278,-8.24997 0.31769,-16.49994 0.36664,-24.75091 0.056,-9.79597 0.056,-19.59193 0.056,-29.3879 0,0 0,-110.44359 0,-112.42859 v -85.99968 c 0,-1.466 0,-112.37159 0,-112.37159 z"
+         id="path871"
+         inkscape:label="Icon path" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1115"
+       id="linearGradient1117"
+       x1="518.69574"
+       y1="-593.98828"
+       x2="518.69574"
+       y2="-181.98828"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g16176"
+       inkscape:label="512x512@2x"
+       inkscape:export-filename="icon_512x512@2x.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="display:inline;fill:#000000;fill-opacity:0;stroke:none"
+         id="rect879"
+         width="1024"
+         height="1024"
+         x="0"
+         y="0"
+         inkscape:label="Image bounds" />
+      <g
+         id="g2038"
+         style="display:inline;filter:url(#filter2080)"
+         inkscape:label="Shadow group">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#g10065"
+           id="use866"
+           transform="matrix(1.0009709,0,0,1,99.999998,1124)"
+           width="100%"
+           height="100%"
+           style="display:inline"
+           inkscape:label="Icon clone"
+           clip-path="url(#clipPath869)" />
+      </g>
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g16176"
+       id="use1408"
+       width="100%"
+       height="100%"
+       transform="matrix(0.5,0,0,0.5,1024,68)"
+       inkscape:label="256x256@2x"
+       inkscape:export-filename="icon_256x256@2x.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g16176"
+       id="use3175"
+       width="100%"
+       height="100%"
+       transform="matrix(0.25,0,0,0.25,1080,626)"
+       inkscape:label="128x128@2x"
+       inkscape:export-filename="icon_128x128@2x.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g16176"
+       id="use3255"
+       width="100%"
+       height="100%"
+       transform="matrix(0.0625,0,0,0.0625,1378,670)"
+       inkscape:label="32x32@2x"
+       inkscape:export-filename="icon_32x32@2x.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g16176"
+       id="use1028"
+       width="100%"
+       height="100%"
+       transform="matrix(0.03125,0,0,0.03125,1514,672)"
+       inkscape:label="16x16@2x"
+       inkscape:export-filename="icon_16x16@2x.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g16176"
+       id="use22684"
+       width="100%"
+       height="100%"
+       transform="matrix(0.5,0,0,0.5,32,1256)"
+       inkscape:label="512x512"
+       inkscape:export-filename="icon_512x512.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g16176"
+       id="use22742"
+       width="100%"
+       height="100%"
+       transform="matrix(0.25,0,0,0.25,622,1280)"
+       inkscape:label="256x256"
+       inkscape:export-filename="icon_256x256.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g16176"
+       id="use22744"
+       width="100%"
+       height="100%"
+       transform="matrix(0.125,0,0,0.125,960,1298)"
+       inkscape:label="128x128"
+       inkscape:export-filename="icon_128x128.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g16176"
+       id="use22746"
+       width="100%"
+       height="100%"
+       transform="matrix(0.03125,0,0,0.03125,1138,1312)"
+       inkscape:label="32x32"
+       inkscape:export-filename="icon_32x32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g16176"
+       id="use22748"
+       width="100%"
+       height="100%"
+       transform="matrix(0.015625,0,0,0.015625,1224,1310)"
+       inkscape:label="16x16"
+       inkscape:export-filename="icon_16x16.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+  <text
+     xml:space="preserve"
+     id="text3708"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3710);fill:#000000;fill-opacity:1;stroke:none"
+     transform="matrix(1.0036706,0,0,1.0036706,-36.913951,372.21183)"
+     inkscape:label="Instructions"><tspan
+       x="1092"
+       y="-837.50679"
+       id="tspan3558"><tspan
+         style="font-size:24px;-inkscape-font-specification:'sans-serif, Normal'"
+         id="tspan3556">Instructions
+</tspan></tspan><tspan
+       x="1092"
+       y="-787.50679"
+       id="tspan3562"><tspan
+         style="font-size:24px;-inkscape-font-specification:'sans-serif, Normal'"
+         id="tspan3560">1. Edit the source icon  (824x824 on the left)
+</tspan></tspan><tspan
+       x="1092"
+       y="-737.50679"
+       id="tspan3566"><tspan
+         style="font-size:24px;-inkscape-font-specification:'sans-serif, Normal'"
+         id="tspan3564">2. Select all objects in Layer 1
+</tspan></tspan><tspan
+       x="1092"
+       y="-687.50679"
+       id="tspan3570"><tspan
+         style="font-size:24px;-inkscape-font-specification:'sans-serif, Normal'"
+         id="tspan3568">3. Click menu item &quot;File-&gt;Export PNG Image...&quot;
+</tspan></tspan><tspan
+       x="1092"
+       y="-637.50679"
+       id="tspan3574"><tspan
+         style="font-size:24px;-inkscape-font-specification:'sans-serif, Normal'"
+         id="tspan3572">4. Select &quot;Batch export selected objects&quot;
+</tspan></tspan><tspan
+       x="1092"
+       y="-587.50679"
+       id="tspan3578"><tspan
+         style="font-size:24px;-inkscape-font-specification:'sans-serif, Normal'"
+         id="tspan3576">5. Click &quot;Export&quot;</tspan></tspan></text>
+  <g
+     id="g10065"
+     inkscape:label="Icon"
+     style="display:inline"
+     transform="translate(-106.69573,-18.011719)">
+    <rect
+       style="fill:url(#linearGradient1117);fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="rect4112"
+       width="824"
+       height="824"
+       x="106.69573"
+       y="-1005.9883"
+       inkscape:label="Background" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#261f40;fill-opacity:1;stroke:none"
+       x="219.94574"
+       y="-543.63672"
+       id="text6542"
+       inkscape:label="2*pi*r"><tspan
+         sodipodi:role="line"
+         id="tspan6540"
+         x="219.94574"
+         y="-543.63672"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:160px;font-family:'SF Mono';-inkscape-font-specification:'SF Mono, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#261f40;fill-opacity:1">2*pi*r</tspan></text>
+  </g>
+</svg>

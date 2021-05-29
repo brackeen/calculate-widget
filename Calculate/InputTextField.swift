@@ -12,7 +12,7 @@ class InputTextField: NSTextField, HasCustomFieldEditor {
     
     static var customFieldEditor: NSText = {
         // Set `isFieldEditor` to false to prevent focus loss when moving the window.
-        // Caveat: to detect return key, check `insertNewline` comand
+        // Caveat: to detect return key, check `insertNewline` command
         let textView = NSTextView()
         textView.isRichText = false
         textView.isFieldEditor = false
@@ -21,4 +21,9 @@ class InputTextField: NSTextField, HasCustomFieldEditor {
         textView.isAutomaticDataDetectionEnabled = false
         return textView
     }()
+    
+    // Hide app when pressing "Esc"
+    override func cancelOperation(_ sender: Any?) {
+        NSApp.hide(nil)
+    }
 }

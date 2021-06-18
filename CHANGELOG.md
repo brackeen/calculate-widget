@@ -1,5 +1,8 @@
 # Change Log
 
+### Unreleased
+- When input field is focused, pressing ESC hides the app.
+
 ### 2.0 alpha 3 (May 5, 2021)
 - New toolbar.
 - New input field appearance.

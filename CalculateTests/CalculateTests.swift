@@ -96,8 +96,8 @@ class CalculateTests: XCTestCase {
     }
     
     func testEval() {
-        calc("eval(\"x=42\")")
-        XCTAssert(testExpression("typeof x === 'undefined'"))
+        calc("eval(\"evalVarTest=42\")")
+        XCTAssert(testExpression("typeof evalVarTest === 'undefined'"))
         
         // eval2 should not be created
         calc("eval2 = eval")
@@ -141,6 +141,7 @@ class CalculateTests: XCTestCase {
     
     func testFunctionNames() {
         XCTAssertEqual(calc("cool = function () { return 42; }"), "Function defined");
+        XCTAssertEqual(calc("function cool() { return 42; }"), "Function defined");
         XCTAssertEqual(calc("cool"), "function ()");
         XCTAssertEqual(calc("log"), "function (x)");
         XCTAssertEqual(calc("atan2"), "function (y,x)");

@@ -385,7 +385,9 @@ Calculate.calc = function(expression) {
     }
 
     const answer = Calculate.evaluate(expression);
-    if (typeof answer === "function") {
+    if (typeof answer === "undefined" && Object.keys(Calculate.sandboxNewFunctions).length > 0) {
+        return "Function defined";
+    } else if (typeof answer === "function") {
         for (const newFunctionName in Calculate.sandboxNewFunctions) {
             if (answer === Calculate.sandboxNewFunctions[newFunctionName]) {
                 return "Function defined";

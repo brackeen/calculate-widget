@@ -141,8 +141,9 @@ class CalculateTests: XCTestCase {
     
     func testFunctionNames() {
         XCTAssertEqual(calc("cool = function () { return 42; }"), "Function defined");
-        XCTAssertEqual(calc("function cool() { return 42; }"), "Function defined");
+        XCTAssertEqual(calc("function cool2(a) { return a * 2; }"), "Function defined");
         XCTAssertEqual(calc("cool"), "function ()");
+        XCTAssertEqual(calc("cool2"), "function (a)");
         XCTAssertEqual(calc("log"), "function (x)");
         XCTAssertEqual(calc("atan2"), "function (y,x)");
     }

@@ -216,6 +216,8 @@ Calculate.sandbox = { "ans": 0 };
 
 Calculate.sandboxNewFunctions = { };
 
+Calculate.sandboxLastValue = undefined;
+
 Calculate.evalAllowed = false;
 
 /* Use a proxy prevents access to:
@@ -261,8 +263,11 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
        }
        const isGlobalConst = key === "globalThis" || (globalThis.hasOwnProperty(key) && !Calculate.knownMembers.includes(key));
        if (!isGlobalConst) {
-           if (typeof key === "string" && typeof value === "function") {
-               Calculate.sandboxNewFunctions[key] = value;
+           if (typeof key === "string") {
+               Calculate.sandboxLastValue = value;
+               if (typeof value === "function") {
+                   Calculate.sandboxNewFunctions[key] = value;
+               }
            }
            return Reflect.set(...arguments);
        }
@@ -280,6 +285,7 @@ Calculate.sandboxProxy = new Proxy(Calculate.sandbox, {
 Calculate.evaluate = function(__input__) {
     // Use "eval" instead of "Function" to get the last statement on the line ("5;6;")
     Calculate.sandboxNewFunctions = { };
+    Calculate.sandboxLastValue = undefined;
     Calculate.evalAllowed = true;
     return (function (__input__) {
         with (Calculate.sandboxProxy) {
@@ -384,10 +390,11 @@ Calculate.calc = function(expression) {
         //Calculate.log("Converted to: " + expression);
     }
 
-    const answer = Calculate.evaluate(expression);
-    if (typeof answer === "undefined" && Object.keys(Calculate.sandboxNewFunctions).length > 0) {
-        return "Function defined";
-    } else if (typeof answer === "function") {
+    var answer = Calculate.evaluate(expression);
+    if (typeof answer === "undefined") {
+        answer = Calculate.sandboxLastValue;
+    }
+    if (typeof answer === "function") {
         for (const newFunctionName in Calculate.sandboxNewFunctions) {
             if (answer === Calculate.sandboxNewFunctions[newFunctionName]) {
                 return "Function defined";

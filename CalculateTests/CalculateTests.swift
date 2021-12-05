@@ -67,6 +67,8 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("typeof testvar.y === 'number'"))
         XCTAssert(testExpression("delete testvar"))
         XCTAssert(testExpression("typeof testvar === 'undefined'"))
+        XCTAssertEqual(calc("var testvar = 42"), "42");
+        XCTAssert(testExpression("delete testvar"))
     }
     
     func testComments() {

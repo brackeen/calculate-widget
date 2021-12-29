@@ -310,11 +310,12 @@ Calculate.getUserVars = function() {
     return userVars;
 };
 
+// Gets the value of a user variable as a string
 Calculate.getUserVar = function(name) {
-    return Calculate.sandbox[name];
+    return Calculate.valueToString(Calculate.sandbox[name]);
 }
 
-// Returns an array of tuples, like: [[name, value], [name, value]]
+// Returns an array of name/value pairs, where the values are strings. [[name, value], [name, value]]
 Calculate.getMemoryVars = function() {
     const userVars = Calculate.getUserVars();
     let memory = [];

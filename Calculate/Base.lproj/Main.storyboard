@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -139,6 +139,12 @@
                                         <menuItem title="Clear Output" keyEquivalent="k" id="lTf-mO-USy">
                                             <connections>
                                                 <action selector="clearOutput:" target="Ady-hI-5gd" id="BG6-nv-ciM"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Clear Output" hidden="YES" keyEquivalent="l" allowsKeyEquivalentWhenHidden="YES" id="hNf-g3-L1Z">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="clearOutput:" target="Ady-hI-5gd" id="BtP-7p-ESu"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="hBC-tn-yvN"/>
@@ -444,7 +450,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G0W-at-fKB">
-                                <rect key="frame" x="137" y="59" width="183" height="18"/>
+                                <rect key="frame" x="137" y="59" width="182" height="18"/>
                                 <buttonCell key="cell" type="check" title="Insert &quot;ans&quot; automatically" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bDB-zp-Ujk">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>

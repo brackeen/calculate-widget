@@ -107,21 +107,39 @@ class AppViewController: NSViewController {
             return
         }
         if NSApp.isActive && window.isOnActiveSpace && window.isVisible && window.viewIsFirstResponder(inputField) {
-            
             /*
-             Fixes bug where tooltips can permanantly display. Steps to reproduce:
-             1. Hover mouse over toolbar button until tooltip appears.
+             Hide tooltips.
+             This fixes a bug where tooltips can permanently display. Steps to reproduce:
+             1. Hover mouse over a toolbar button until a tooltip appears.
              2. Press hotkey to hide app.
              3. Move mouse away.
              4. Press hotkey to show app.
-             This fix closes the tooltips when hidding.
              */
             NSApp.windows.forEach { (window) in
                 if type(of: window).description() == "NSToolTipPanel" {
                     window.close()
                 }
             }
+            
+            // Hide the app
             NSApp.hide(nil)
+            
+            /*
+             Move Calculate to the end of the App Switcher list.
+             This makes using Command+Tab more intuitive.
+             1. Open App 1.
+             2. Open App 2.
+             3. Press hotkey to activate Calculate.
+             4. Press hotkey to hide Calculate.
+                App 2 should be the front app.
+             5. Press Command+Tab.
+                App 1 should be the front app, not Calculate.
+             
+             The drawback here is that if the "Keep in Dock" options is not selected for Calculate,
+             then the dock icon will disappear for a moment.
+             */
+            NSApp.setActivationPolicy(.accessory)
+            NSApp.setActivationPolicy(.regular)
         } else {
             if UserDefaults.standard.moveToActiveSpaceEnabled {
                 window.moveToActiveSpace(completion: { [weak self] in

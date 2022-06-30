@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "KeyboardShortcuts",
-        "repositoryURL": "https://github.com/sindresorhus/KeyboardShortcuts.git",
-        "state": {
-          "branch": null,
-          "revision": "a7a3ff6248b7564ef4ef2e9003672bf1b9f77ad1",
-          "version": "1.2.0"
-        }
+  "pins" : [
+    {
+      "identity" : "keyboardshortcuts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/KeyboardShortcuts.git",
+      "state" : {
+        "revision" : "8a2cc9130b0eec6e1dae0a9a405a17741437caa5",
+        "version" : "1.6.0"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }

@@ -242,11 +242,11 @@ public class Calculate {
         loadInputHistory()
         loadOutputHistory()
         
-        evalulateScript("antlr3-all")
-        evalulateScript("ECMAScript3ExtLexer")
-        evalulateScript("ECMAScript3ExtParser")
-        evalulateScript("ECMAScript3ExtEmitter")
-        evalulateScript("Calculate")
+        evaluateScript("antlr3-all")
+        evaluateScript("ECMAScript3ExtLexer")
+        evaluateScript("ECMAScript3ExtParser")
+        evaluateScript("ECMAScript3ExtEmitter")
+        evaluateScript("Calculate")
                 
         setLogFunction()
 
@@ -255,7 +255,7 @@ public class Calculate {
         loadMemory()
     }
     
-    private func evalulateScript(_ name: String) {
+    private func evaluateScript(_ name: String) {
         guard let url = Bundle.main.url(forResource: name, withExtension: "js") else {
             appendOutputHistory(Output(input: "\(name).js", output: "Couldn't find script", type: .error))
             return

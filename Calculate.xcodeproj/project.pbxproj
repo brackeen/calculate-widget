@@ -83,6 +83,7 @@
 		E3744841243AABA700CC8E69 /* NSWindow+MoveToActiveSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+MoveToActiveSpace.swift"; sourceTree = "<group>"; };
 		E399AF8C2479C4C800A52026 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		E3A08A132603FA0C006F798D /* AppearanceWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceWindow.swift; sourceTree = "<group>"; };
+		E3AFE3C4299EABBA00A40810 /* Calculate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calculate-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3DD20BA25F9744500529684 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,8 +162,9 @@
 				E35AC423242CF1EF0041BF6A /* Calculate.js */,
 				E321A0AE2417C3AA00D40474 /* Assets.xcassets */,
 				E321A0B32417C3AA00D40474 /* Info.plist */,
-				E321A0B42417C3AA00D40474 /* Calculate.entitlements */,
 				E30E631324190F49002EF546 /* container-migration.plist */,
+				E321A0B42417C3AA00D40474 /* Calculate.entitlements */,
+				E3AFE3C4299EABBA00A40810 /* Calculate-Bridging-Header.h */,
 			);
 			path = Calculate;
 			sourceTree = "<group>";
@@ -226,7 +228,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = "David Brackeen";
 				TargetAttributes = {
 					E3198E70241A7A7C00A167C7 = {
@@ -476,6 +478,7 @@
 				);
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Calculate/Calculate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -566,6 +569,7 @@
 				);
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Calculate/Calculate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;

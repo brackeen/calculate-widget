@@ -222,7 +222,8 @@ public class Calculate {
     private let outputHistoryKey = "output"
     private let inputHistoryKey = "input"
     private let widgetPreferencesMigratedKey = "widgetMigrated"
-    
+
+    private let executionTimeLimit = 1.9 // Right before the spinning wheel appears
     private let maxOutputHistory = 1000
     private let maxInputHistory = 1000
     private var inputHistory: [String] = []
@@ -232,6 +233,10 @@ public class Calculate {
     private var memoryNeedsSaving = false
     
     private init() {
+        // Use private API to set the execution time limit
+        JSContextGroupSetExecutionTimeLimit(JSContextGetGroup(context.jsGlobalContextRef),
+                                            executionTimeLimit, nil, nil)
+
         migrateWidgetPreferences()
         
         loadInputHistory()

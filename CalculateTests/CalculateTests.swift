@@ -96,6 +96,11 @@ class CalculateTests: XCTestCase {
         XCTAssert(testExpression("typeof console === 'undefined'"))
         XCTAssert(testExpression("try { cos = 0 } catch (err) { }; Math.cos(pi) == -1"))
     }
+
+    func testInfiniteLoop() {
+        XCTAssertEqual(calc("x=0; while (true) { x++ }"), "JavaScript execution terminated.")
+        calc("delete x");
+    }
     
     func testEval() {
         calc("eval(\"evalVarTest=42\")")
@@ -127,7 +132,7 @@ class CalculateTests: XCTestCase {
         calc("typedArray = Uint8Array.from([1, 2, 3, 4])");
         XCTAssert(testExpression("typedArray.length == 4"))
         XCTAssert(testExpression("typedArray[0] = 42;typedArray[0] == 42"))
-        calc("delete typedAray");
+        calc("delete typedArray");
     }
     
     func testDate() {
